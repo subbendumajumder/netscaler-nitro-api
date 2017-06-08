@@ -1,0 +1,7 @@
+#HTML INJECTION ERRORS
+
+#HTML INJECTION ERRORS
+
+
+
+<table><thead><tr><th>Error Code</th><th>Error Code(Decimal)</th><th>Error Code(Hex)</th><th>Error Message</th></tr></thead><tbody><tr><td>NSERR_PREBODY_FILE_NOT_FOUND</td><td>3840</td><td>0xF00</td><td>Prebody file not found</td><tr><tr><td>NSERR_PREBODY_FILE_TOO_BIG</td><td>3841</td><td>0xF01</td><td>Prebody file too big</td><tr><tr><td>NSERR_PREBODY_FILE_READ_ERR</td><td>3842</td><td>0xF02</td><td>Prebody file read error</td><tr><tr><td>NSERR_POSTBODY_FILE_NOT_FOUND</td><td>3843</td><td>0xF03</td><td>Postbody file not found</td><tr><tr><td>NSERR_POSTBODY_FILE_TOO_BIG</td><td>3844</td><td>0xF04</td><td>Postbody file too big</td><tr><tr><td>NSERR_POSTBODY_FILE_READ_ERR</td><td>3845</td><td>0xF05</td><td>Postbody file read error</td><tr><tr><td>NSERR_HTML_INJECTION_VAR_EXISTS</td><td>3846</td><td>0xF06</td><td>HTML injection variable already exists</td><tr><tr><td>NSERR_HTML_INJECTION_VAR_NEXISTS</td><td>3847</td><td>0xF07</td><td>HTML injection variable does not exist</td><tr><tr><td>NSERR_HTML_INJECTION_VAR_NAME_TOO_LONG</td><td>3851</td><td>0xF0B</td><td>variable name too long</td><tr><tr><td>NSERR_HTML_INJECTION_INVALID_VAR_NAME</td><td>3852</td><td>0xF0C</td><td>Invalid variable name</td><tr><tr><td>NSERR_HTML_INJECTION_INCOMLETE_VAR_DEFINE</td><td>3853</td><td>0xF0D</td><td>Unpaired %% for variable name</td><tr></tbody></table>

@@ -1,0 +1,6 @@
+#NS
+
+System/Global level statistics.
+
+
+<table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="../../../statistics/ns/ns/ns">ns</a></td><td>Statistics for ns.</td><tr><tr><td><a href="../../../statistics/ns/nsacl/nsacl">nsacl</a></td><td>Statistics for ACL entry resource.</td><tr><tr><td><a href="../../../statistics/ns/nsacl6/nsacl6">nsacl6</a></td><td>Statistics for ACL6 entry resource.</td><tr><tr><td><a href="../../../statistics/ns/nslimitidentifier/nslimitidentifier">nslimitidentifier</a></td><td>Statistics for limit Indetifier resource.</td><tr><tr><td><a href="../../../statistics/ns/nsmemory/nsmemory">nsmemory</a></td><td></td><tr><tr><td><a href="../../../statistics/ns/nspbr/nspbr">nspbr</a></td><td>Statistics for Policy Based Routing(PBR) entry resource.</td><tr><tr><td><a href="../../../statistics/ns/nspbr6/nspbr6">nspbr6</a></td><td>Statistics for PBR6 entry resource.</td><tr><tr><td><a href="../../../statistics/ns/nssimpleacl/nssimpleacl">nssimpleacl</a></td><td>Statistics for simple ACL resource.</td><tr><tr><td><a href="../../../statistics/ns/nssimpleacl6/nssimpleacl6">nssimpleacl6</a></td><td>Statistics for simple ACL6 resource.</td><tr><tr><td><a href="../../../statistics/ns/nstrafficdomain/nstrafficdomain">nstrafficdomain</a></td><td>Statistics for Traffic Domain resource.</td><tr></tbody></table>
