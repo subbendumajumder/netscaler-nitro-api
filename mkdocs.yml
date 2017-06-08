@@ -9,7 +9,7 @@ markdown_extensions:
      anchorlink: True
 
 pages:
-- API Reference: api-reference.md
+- API Reference: index.md
 - Configuration:
     - Configuration: configuration/configuration.md
     - AAA:
