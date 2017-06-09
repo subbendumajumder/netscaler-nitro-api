@@ -7,7 +7,7 @@ Configuration for subscriber sesions resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ip</td><td>&lt;String></td><td>Read-write</td><td>Subscriber IP Address.</td><tr><tr><td>subscriptionidtype</td><td>&lt;String></td><td>Read-only</td><td>Subscription-Id type.&lt;br>Possible values = E164, IMSI, SIP_URI, NAI, PRIVATE</td><tr><tr><td>subscriptionidvalue</td><td>&lt;String></td><td>Read-only</td><td>Subscription-Id value.</td><tr><tr><td>subscriberrules</td><td>&lt;String[]></td><td>Read-only</td><td>Rules stored in this session for this subscriber. When PCRF sends Charging-Rule-Name or Charging-Rule-Base-Name AVP for a subscriber, Netscaler stores these AVPs in the subscriber session. These Rules can be retreived using Subscriber.Rule_Active(;lt;rule name;gt;) expression. For static subscriber profiles, these rules are configured using -subscriberRules ;lt;list of rules;gt;.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Subscriber Session flags.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-only</td><td>Subscriber Session Activity Timeout remaining. Netscaler will send a CCR-U after ttl expires. If subscriber sessions is a negative session, then Netscaler will send a CCR-I after TTL expires. Negative Sessions are sessions which have not been resolved by PCRF and instead of polling PCRF continously, Netscaler has installed a negative session. If default subscriber is configued, then Negative Sessions inherits default subscriber profile. .</td><tr><tr><td>avpdisplaybuffer</td><td>&lt;String></td><td>Read-only</td><td>Subscriber Attributes Display.</td><tr><tr><td>servicepath</td><td>&lt;String></td><td>Read-only</td><td>Name of the servicepath to be taken for this subscriber.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ip</td><td>&lt;String></td><td>Read-write</td><td>Subscriber IP Address.</td><tr><tr><td>subscriptionidtype</td><td>&lt;String></td><td>Read-only</td><td>Subscription-Id type.&lt;br>Possible values = E164, IMSI, SIP_URI, NAI, PRIVATE</td><tr><tr><td>subscriptionidvalue</td><td>&lt;String></td><td>Read-only</td><td>Subscription-Id value.</td><tr><tr><td>subscriberrules</td><td>&lt;String[]></td><td>Read-only</td><td>Rules stored in this session for this subscriber. When PCRF sends Charging-Rule-Name or Charging-Rule-Base-Name AVP for a subscriber, Netscaler stores these AVPs in the subscriber session. These Rules can be retreived using Subscriber.Rule_Active(;lt;rule name;gt;) expression. For static subscriber profiles, these rules are configured using -subscriberRules ;lt;list of rules;gt;.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Subscriber Session flags.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-only</td><td>Subscriber Session revalidation Timeout remaining. This TTL gets refreshed when a radius or CCA or RAR message is received for this subscriber session.&lt;br>Netscaler will send a CCR-U after revalidation timer expires.&lt;br>If subscriber sessions is a negative session, then Netscaler will send a CCR-I after TTL expires. Negative Sessions are sessions which have not been resolved by PCRF and instead of polling PCRF continously, Netscaler has installed a negative session. If default subscriber is configued, then Negative Sessions inherits default subscriber profile. .</td><tr><tr><td>idlettl</td><td>&lt;Double></td><td>Read-only</td><td>Subscriber Session Activity Timeout remaining. Netscaler will take an idleAction after ttl expires. idleaction could be --;gt;&lt;br>1. ccrTerminate: (default) send CCR-T to inform PCRF about session termination and delete the session. &lt;br>2. delete: Just delete the subscriber session without informing PCRF.&lt;br>3. ccrUpdate: Do not delete the session and instead send a CCR-U to PCRF requesting for an updated session.&lt;br> But if this is a negative session and idleaction is ccrUpdate then NS wont take any action. Also on negative sessions ccrTerminate translates to delete.</td><tr><tr><td>avpdisplaybuffer</td><td>&lt;String></td><td>Read-only</td><td>Subscriber Attributes Display.</td><tr><tr><td>servicepath</td><td>&lt;String></td><td>Read-only</td><td>Name of the servicepath to be taken for this subscriber.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,47 +27,60 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?action=clear
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"clear"},"sessionid":"##sessionid","subscribersessions":{      "ip":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"subscribersessions":{      "ip":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/subscribersessions
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/subscribersessions?args=      "ip":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?args=ip:&lt;String_value&gt;
 Use this query-parameter to get subscribersessions resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/subscribersessions?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of subscribersessions resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/subscribersessions?view=summary
-Use this query-parameter to get the summary output of subscribersessions resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/subscribersessions?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?pagesize=#no;pageno=#no
 Use this query-parameter to get the subscribersessions resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/subscribersessions?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "subscribersessions": [ {      "ip":<String_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "subscribersessions": [ {ip:<String_value>      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "idlettl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
 
 
 
@@ -75,9 +88,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/subscribersessions?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscribersessions?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",subscribersessions: [ { "__count": "#no"} ] }
+{ "subscribersessions": [ { "__count": "#no"} ] }
 
 

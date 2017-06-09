@@ -7,7 +7,7 @@ Configuration for audit message resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>loglevel</td><td>&lt;String[]></td><td>Read-write</td><td>Audit log level filter, which specifies the types of events to display. The following loglevels are valid: * ALL - All events. * EMERGENCY - Events that indicate an immediate crisis on the server. * ALERT - Events that might require action. * CRITICAL - Events that indicate an imminent server crisis. * ERROR - Events that indicate some type of error. * WARNING - Events that require action in the near future. * NOTICE - Events that the administrator should know about. * INFORMATIONAL - All but low-level events. * DEBUG - All events, in extreme detail.&lt;br>Possible values = ALL, EMERGENCY, ALERT, CRITICAL, ERROR, WARNING, NOTICE, INFORMATIONAL, DEBUG</td><tr><tr><td>numofmesgs</td><td>&lt;Double></td><td>Read-write</td><td>Number of log messages to be displayed.&lt;br>Default value: 20&lt;br>Minimum value = 1&lt;br>Maximum value = 256</td><tr><tr><td>value</td><td>&lt;String></td><td>Read-only</td><td>The Audit message.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>loglevel</td><td>&lt;String[]></td><td>Read-write</td><td>Audit log level filter, which specifies the types of events to display. &lt;br>The following loglevels are valid:&lt;br>* ALL - All events.&lt;br>* EMERGENCY - Events that indicate an immediate crisis on the server.&lt;br>* ALERT - Events that might require action.&lt;br>* CRITICAL - Events that indicate an imminent server crisis.&lt;br>* ERROR - Events that indicate some type of error.&lt;br>* WARNING - Events that require action in the near future.&lt;br>* NOTICE - Events that the administrator should know about.&lt;br>* INFORMATIONAL - All but low-level events.&lt;br>* DEBUG - All events, in extreme detail.&lt;br>Possible values = ALL, EMERGENCY, ALERT, CRITICAL, ERROR, WARNING, NOTICE, INFORMATIONAL, DEBUG</td><tr><tr><td>numofmesgs</td><td>&lt;Double></td><td>Read-write</td><td>Number of log messages to be displayed.&lt;br>Default value: 20&lt;br>Minimum value = 1&lt;br>Maximum value = 256</td><tr><tr><td>value</td><td>&lt;String></td><td>Read-only</td><td>The Audit message.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,36 +27,45 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/auditmessages
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/auditmessages?args=      "loglevel":&lt;String[]_value&gt;,      "numofmesgs":&lt;Double_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?args=loglevel:&lt;String[]_value&gt;,numofmesgs:&lt;Double_value&gt;
 Use this query-parameter to get auditmessages resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/auditmessages?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of auditmessages resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/auditmessages?view=summary
-Use this query-parameter to get the summary output of auditmessages resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/auditmessages?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?pagesize=#no;pageno=#no
 Use this query-parameter to get the auditmessages resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/auditmessages?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "auditmessages": [ {      "loglevel":<String[]_value>,      "numofmesgs":<Double_value>,      "value":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "auditmessages": [ {loglevel:<String[]_value>,numofmesgs:<Double_value>      "value":<String_value>}]}```
 
 
 
@@ -64,9 +73,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/auditmessages?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditmessages?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",auditmessages: [ { "__count": "#no"} ] }
+{ "auditmessages": [ { "__count": "#no"} ] }
 
 

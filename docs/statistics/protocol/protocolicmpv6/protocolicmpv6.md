@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/protocolicmpv6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolicmpv6
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/protocolicmpv6?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolicmpv6?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get protocolicmpv6 resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "protocolicmpv6": [ {      "icmpv6tottxns":<Double_value>,      "icmpv6txpktsrate":<Double_value>,      "icmpv6unspt":<Double_value>,      "icmpv6totrxechoreply":<Double_value>,      "icmpv6tottxra":<Double_value>,      "icmpv6tottxechoreply":<Double_value>,      "icmpv6badchecksums":<Double_value>,      "icmpv6txnarate":<Double_value>,      "icmpv6txrsrate":<Double_value>,      "icmpv6tottxna":<Double_value>,      "icmpv6totrxra":<Double_value>,      "icmpv6tottxrs":<Double_value>,      "icmpv6rxpktsrate":<Double_value>,      "icmpv6totrxpkts":<Double_value>,      "icmpv6totrxns":<Double_value>,      "icmpv6rxechoreplyrate":<Double_value>,      "icmpv6txechoreqrate":<Double_value>,      "icmpv6rxrsrate":<Double_value>,      "icmpv6errna":<Double_value>,      "icmpv6rxnsrate":<Double_value>,      "icmpv6rxbytesrate":<Double_value>,      "icmpv6rtthsld":<Double_value>,      "icmpv6totrxrs":<Double_value>,      "icmpv6totrxna":<Double_value>,      "icmpv6txechoreplyrate":<Double_value>,      "icmpv6totrxbytes":<Double_value>,      "icmpv6txrarate":<Double_value>,      "icmpv6errns":<Double_value>,      "icmpv6totrxechoreq":<Double_value>,      "icmpv6tottxechoreq":<Double_value>,      "icmpv6rxrarate":<Double_value>,      "icmpv6rxechoreqrate":<Double_value>,      "icmpv6tottxpkts":<Double_value>,      "icmpv6tottxbytes":<Double_value>,      "icmpv6rxnarate":<Double_value>,      "icmpv6txnsrate":<Double_value>,      "icmpv6errra":<Double_value>,      "icmpv6txbytesrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocolicmpv6": [ {      "icmpv6tottxns":<Double_value>,      "icmpv6txpktsrate":<Double_value>,      "icmpv6unspt":<Double_value>,      "icmpv6totrxechoreply":<Double_value>,      "icmpv6tottxra":<Double_value>,      "icmpv6tottxechoreply":<Double_value>,      "icmpv6badchecksums":<Double_value>,      "icmpv6txnarate":<Double_value>,      "icmpv6txrsrate":<Double_value>,      "icmpv6tottxna":<Double_value>,      "icmpv6totrxra":<Double_value>,      "icmpv6tottxrs":<Double_value>,      "icmpv6rxpktsrate":<Double_value>,      "icmpv6totrxpkts":<Double_value>,      "icmpv6totrxns":<Double_value>,      "icmpv6rxechoreplyrate":<Double_value>,      "icmpv6txechoreqrate":<Double_value>,      "icmpv6rxrsrate":<Double_value>,      "icmpv6errna":<Double_value>,      "icmpv6rxnsrate":<Double_value>,      "icmpv6rxbytesrate":<Double_value>,      "icmpv6rtthsld":<Double_value>,      "icmpv6totrxrs":<Double_value>,      "icmpv6totrxna":<Double_value>,      "icmpv6txechoreplyrate":<Double_value>,      "icmpv6totrxbytes":<Double_value>,      "icmpv6txrarate":<Double_value>,      "icmpv6errns":<Double_value>,      "icmpv6totrxechoreq":<Double_value>,      "icmpv6tottxechoreq":<Double_value>,      "icmpv6rxrarate":<Double_value>,      "icmpv6rxechoreqrate":<Double_value>,      "icmpv6tottxpkts":<Double_value>,      "icmpv6tottxbytes":<Double_value>,      "icmpv6rxnarate":<Double_value>,      "icmpv6txnsrate":<Double_value>,      "icmpv6errra":<Double_value>,      "icmpv6txbytesrate":<Double_value>}]}```
 
 
 

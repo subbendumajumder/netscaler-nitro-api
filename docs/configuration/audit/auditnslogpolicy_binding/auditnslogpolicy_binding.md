@@ -1,18 +1,18 @@
 #auditnslogpolicy_binding
 
-Binding object showing the resources that can be bound to auditnslogpolicy.
+Binding object which returns the resources bound to auditnslogpolicy.
 
 
 ##Properties 
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>auditnslogpolicy_tmglobal_binding</td><td>&lt;auditnslogpolicy_tmglobal_binding[]></td><td>Read-only</td><td>tmglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_appfwglobal_binding</td><td>&lt;auditnslogpolicy_appfwglobal_binding[]></td><td>Read-only</td><td>appfwglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_lbvserver_binding</td><td>&lt;auditnslogpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_vpnglobal_binding</td><td>&lt;auditnslogpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_vpnvserver_binding</td><td>&lt;auditnslogpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_csvserver_binding</td><td>&lt;auditnslogpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_aaauser_binding</td><td>&lt;auditnslogpolicy_aaauser_binding[]></td><td>Read-only</td><td>aaauser that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_systemglobal_binding</td><td>&lt;auditnslogpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_authenticationvserver_binding</td><td>&lt;auditnslogpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_aaagroup_binding</td><td>&lt;auditnslogpolicy_aaagroup_binding[]></td><td>Read-only</td><td>aaagroup that can be bound to auditnslogpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>auditnslogpolicy_tmglobal_binding</td><td>&lt;auditnslogpolicy_tmglobal_binding[]></td><td>Read-only</td><td>tmglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_appfwglobal_binding</td><td>&lt;auditnslogpolicy_appfwglobal_binding[]></td><td>Read-only</td><td>appfwglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_lbvserver_binding</td><td>&lt;auditnslogpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_vpnglobal_binding</td><td>&lt;auditnslogpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_vpnvserver_binding</td><td>&lt;auditnslogpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_auditnslogglobal_binding</td><td>&lt;auditnslogpolicy_auditnslogglobal_binding[]></td><td>Read-only</td><td>auditnslogglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_csvserver_binding</td><td>&lt;auditnslogpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_aaauser_binding</td><td>&lt;auditnslogpolicy_aaauser_binding[]></td><td>Read-only</td><td>aaauser that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_systemglobal_binding</td><td>&lt;auditnslogpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_authenticationvserver_binding</td><td>&lt;auditnslogpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to auditnslogpolicy.</td><tr><tr><td>auditnslogpolicy_aaagroup_binding</td><td>&lt;auditnslogpolicy_aaagroup_binding[]></td><td>Read-only</td><td>aaagroup that can be bound to auditnslogpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/auditnslogpolicy_binding/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditnslogpolicy_binding/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "auditnslogpolicy_binding": [ {      "name":<String_value>,      "auditnslogpolicy_systemglobal_binding":<auditnslogpolicy_systemglobal_binding[]_value>,      "auditnslogpolicy_aaagroup_binding":<auditnslogpolicy_aaagroup_binding[]_value>,      "auditnslogpolicy_lbvserver_binding":<auditnslogpolicy_lbvserver_binding[]_value>,      "auditnslogpolicy_csvserver_binding":<auditnslogpolicy_csvserver_binding[]_value>,      "auditnslogpolicy_vpnglobal_binding":<auditnslogpolicy_vpnglobal_binding[]_value>,      "auditnslogpolicy_aaauser_binding":<auditnslogpolicy_aaauser_binding[]_value>,      "auditnslogpolicy_authenticationvserver_binding":<auditnslogpolicy_authenticationvserver_binding[]_value>,      "auditnslogpolicy_vpnvserver_binding":<auditnslogpolicy_vpnvserver_binding[]_value>,      "auditnslogpolicy_appfwglobal_binding":<auditnslogpolicy_appfwglobal_binding[]_value>,      "auditnslogpolicy_tmglobal_binding":<auditnslogpolicy_tmglobal_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "auditnslogpolicy_binding": [ {      "name":<String_value>,      "auditnslogpolicy_systemglobal_binding":<auditnslogpolicy_systemglobal_binding[]_value>,      "auditnslogpolicy_aaagroup_binding":<auditnslogpolicy_aaagroup_binding[]_value>,      "auditnslogpolicy_lbvserver_binding":<auditnslogpolicy_lbvserver_binding[]_value>,      "auditnslogpolicy_csvserver_binding":<auditnslogpolicy_csvserver_binding[]_value>,      "auditnslogpolicy_vpnglobal_binding":<auditnslogpolicy_vpnglobal_binding[]_value>,      "auditnslogpolicy_aaauser_binding":<auditnslogpolicy_aaauser_binding[]_value>,      "auditnslogpolicy_authenticationvserver_binding":<auditnslogpolicy_authenticationvserver_binding[]_value>,      "auditnslogpolicy_auditnslogglobal_binding":<auditnslogpolicy_auditnslogglobal_binding[]_value>,      "auditnslogpolicy_vpnvserver_binding":<auditnslogpolicy_vpnvserver_binding[]_value>,      "auditnslogpolicy_appfwglobal_binding":<auditnslogpolicy_appfwglobal_binding[]_value>,      "auditnslogpolicy_tmglobal_binding":<auditnslogpolicy_tmglobal_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditnslogpolicy_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/auditnslogpolicy_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "auditnslogpolicy_binding": [ {      "name":<String_value>,      "auditnslogpolicy_systemglobal_binding":<auditnslogpolicy_systemglobal_binding[]_value>,      "auditnslogpolicy_aaagroup_binding":<auditnslogpolicy_aaagroup_binding[]_value>,      "auditnslogpolicy_lbvserver_binding":<auditnslogpolicy_lbvserver_binding[]_value>,      "auditnslogpolicy_csvserver_binding":<auditnslogpolicy_csvserver_binding[]_value>,      "auditnslogpolicy_vpnglobal_binding":<auditnslogpolicy_vpnglobal_binding[]_value>,      "auditnslogpolicy_aaauser_binding":<auditnslogpolicy_aaauser_binding[]_value>,      "auditnslogpolicy_authenticationvserver_binding":<auditnslogpolicy_authenticationvserver_binding[]_value>,      "auditnslogpolicy_auditnslogglobal_binding":<auditnslogpolicy_auditnslogglobal_binding[]_value>,      "auditnslogpolicy_vpnvserver_binding":<auditnslogpolicy_vpnvserver_binding[]_value>,      "auditnslogpolicy_appfwglobal_binding":<auditnslogpolicy_appfwglobal_binding[]_value>,      "auditnslogpolicy_tmglobal_binding":<auditnslogpolicy_tmglobal_binding[]_value>}]}```
 
 
 

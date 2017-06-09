@@ -7,7 +7,7 @@ Configuration for server resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the PCP server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my pcpServer" or my pcpServer).</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>The IP address of the PCP server.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Port number for the PCP server.&lt;br>Default value: 5351&lt;br>Range 1 - 65535</td><tr><tr><td>pcpprofile</td><td>&lt;String></td><td>Read-write</td><td>pcp profile name.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the PCP server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my pcpServer" or my pcpServer).</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>The IP address of the PCP server.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Port number for the PCP server.&lt;br>Default value: 5351&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>pcpprofile</td><td>&lt;String></td><td>Read-write</td><td>pcp profile name.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -35,7 +35,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"pcpserver":{      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "pcpprofile":<String_value>}}```
 Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
@@ -49,7 +49,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
@@ -64,7 +64,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"pcpserver":{      "name":<String_value>,      "port":<Integer_value>,      "pcpprofile":<String_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
@@ -79,7 +79,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"pcpserver":{      "name":<String_value>,      "port":true,      "pcpprofile":true}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -88,11 +88,6 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/pcpserver
 Query-parameters:
-args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/pcpserver?args=      "name":&lt;String_value&gt;
-Use this query-parameter to get pcpserver resources based on additional properties.
-
-
 attrs
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/pcpserver?attrs=property-name1,property-name2
 Use this query parameter to specify the resource details that you want to retrieve.
@@ -108,7 +103,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/pcpserver?view=summary
 Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/pcpserver?pagesize=#no;pageno=#no
 Use this query-parameter to get the pcpserver resources in chunks.
 
@@ -120,7 +115,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
@@ -151,7 +146,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
@@ -170,7 +165,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

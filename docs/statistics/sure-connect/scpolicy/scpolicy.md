@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/scpolicy
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/scpolicy
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/scpolicy?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/scpolicy?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get scpolicy resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "scpolicy": [ {      "name":<String_value>,      "sctotalresponsesreceived":<Double_value>,      "sccurrentwaitingtime":<Double_value>,      "clienttransactionrate":<Double_value>,      "sccurrentwaitingtimerate":<Double_value>,      "sccurrentwaitingclients":<Double_value>,      "sctotalrequestsreceived":<Double_value>,      "screquestsreceivedrate":<Double_value>,      "scresponsebytesrate":<Double_value>,      "screquestbytesrate":<Double_value>,      "sctotalresponsebytes":<Double_value>,      "scserverconnectionsrate":<Double_value>,      "sctotalservertransactions":<Double_value>,      "sccurrentwaitingclientsrate":<Double_value>,      "scaverageclientttlb":<Double_value>,      "avgservertransactiontime":<Double_value>,      "scphysicalserviceip":<String_value>,      "sccurrentclientconnectionsrate":<Double_value>,      "sccurrentclientconnections":<Double_value>,      "openconnrate":<Double_value>,      "scclientconnectionsrate":<Double_value>,      "scaverageclientttlbrate":<Double_value>,      "totclienttransaction":<Double_value>,      "scservertransactionsrate":<Double_value>,      "sctotalclientconnections":<Double_value>,      "scphysicalserviceport":<Integer_value>,      "totopenconn":<Double_value>,      "avgservertransactiontimerate":<Double_value>,      "scresponsesreceivedrate":<Double_value>,      "sctotalrequestbytes":<Double_value>,      "sctotalserverconnections":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "scpolicy": [ {      "name":<String_value>,      "sctotalresponsesreceived":<Double_value>,      "sccurrentwaitingtime":<Double_value>,      "clienttransactionrate":<Double_value>,      "sccurrentwaitingtimerate":<Double_value>,      "sccurrentwaitingclients":<Double_value>,      "sctotalrequestsreceived":<Double_value>,      "screquestsreceivedrate":<Double_value>,      "scresponsebytesrate":<Double_value>,      "screquestbytesrate":<Double_value>,      "sctotalresponsebytes":<Double_value>,      "scserverconnectionsrate":<Double_value>,      "sctotalservertransactions":<Double_value>,      "sccurrentwaitingclientsrate":<Double_value>,      "scaverageclientttlb":<Double_value>,      "avgservertransactiontime":<Double_value>,      "scphysicalserviceip":<String_value>,      "sccurrentclientconnectionsrate":<Double_value>,      "sccurrentclientconnections":<Double_value>,      "openconnrate":<Double_value>,      "scclientconnectionsrate":<Double_value>,      "scaverageclientttlbrate":<Double_value>,      "totclienttransaction":<Double_value>,      "scservertransactionsrate":<Double_value>,      "sctotalclientconnections":<Double_value>,      "scphysicalserviceport":<Integer_value>,      "totopenconn":<Double_value>,      "avgservertransactiontimerate":<Double_value>,      "scresponsesreceivedrate":<Double_value>,      "sctotalrequestbytes":<Double_value>,      "sctotalserverconnections":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "scpolicy": [ {    
 
 
 
-URL: http://NS_IP/nitro/v1/stat/scpolicy/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/scpolicy/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "scpolicy": [ {      "name":<String_value>,      "sctotalresponsesreceived":<Double_value>,      "sccurrentwaitingtime":<Double_value>,      "clienttransactionrate":<Double_value>,      "sccurrentwaitingtimerate":<Double_value>,      "sccurrentwaitingclients":<Double_value>,      "sctotalrequestsreceived":<Double_value>,      "screquestsreceivedrate":<Double_value>,      "scresponsebytesrate":<Double_value>,      "screquestbytesrate":<Double_value>,      "sctotalresponsebytes":<Double_value>,      "scserverconnectionsrate":<Double_value>,      "sctotalservertransactions":<Double_value>,      "sccurrentwaitingclientsrate":<Double_value>,      "scaverageclientttlb":<Double_value>,      "avgservertransactiontime":<Double_value>,      "scphysicalserviceip":<String_value>,      "sccurrentclientconnectionsrate":<Double_value>,      "sccurrentclientconnections":<Double_value>,      "openconnrate":<Double_value>,      "scclientconnectionsrate":<Double_value>,      "scaverageclientttlbrate":<Double_value>,      "totclienttransaction":<Double_value>,      "scservertransactionsrate":<Double_value>,      "sctotalclientconnections":<Double_value>,      "scphysicalserviceport":<Integer_value>,      "totopenconn":<Double_value>,      "avgservertransactiontimerate":<Double_value>,      "scresponsesreceivedrate":<Double_value>,      "sctotalrequestbytes":<Double_value>,      "sctotalserverconnections":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "scpolicy": [ {      "name":<String_value>,      "sctotalresponsesreceived":<Double_value>,      "sccurrentwaitingtime":<Double_value>,      "clienttransactionrate":<Double_value>,      "sccurrentwaitingtimerate":<Double_value>,      "sccurrentwaitingclients":<Double_value>,      "sctotalrequestsreceived":<Double_value>,      "screquestsreceivedrate":<Double_value>,      "scresponsebytesrate":<Double_value>,      "screquestbytesrate":<Double_value>,      "sctotalresponsebytes":<Double_value>,      "scserverconnectionsrate":<Double_value>,      "sctotalservertransactions":<Double_value>,      "sccurrentwaitingclientsrate":<Double_value>,      "scaverageclientttlb":<Double_value>,      "avgservertransactiontime":<Double_value>,      "scphysicalserviceip":<String_value>,      "sccurrentclientconnectionsrate":<Double_value>,      "sccurrentclientconnections":<Double_value>,      "openconnrate":<Double_value>,      "scclientconnectionsrate":<Double_value>,      "scaverageclientttlbrate":<Double_value>,      "totclienttransaction":<Double_value>,      "scservertransactionsrate":<Double_value>,      "sctotalclientconnections":<Double_value>,      "scphysicalserviceport":<Integer_value>,      "totopenconn":<Double_value>,      "avgservertransactiontimerate":<Double_value>,      "scresponsesreceivedrate":<Double_value>,      "sctotalrequestbytes":<Double_value>,      "sctotalserverconnections":<Double_value>}]}```
 
 
 

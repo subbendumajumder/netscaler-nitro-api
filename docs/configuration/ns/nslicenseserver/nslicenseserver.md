@@ -7,7 +7,7 @@ Configuration for licenseserver resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>licenseserverip</td><td>&lt;String></td><td>Read-write</td><td>IP address of the License server.&lt;br>Minimum length = 1</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-write</td><td>Fully qualified domain name of the License server.</td><tr><tr><td>port</td><td>&lt;Double></td><td>Read-write</td><td>License server port.</td><tr><tr><td>status</td><td>&lt;Double></td><td>Read-only</td><td>Status of license server.</td><tr><tr><td>grace</td><td>&lt;Double></td><td>Read-only</td><td>Grace status of server.</td><tr><tr><td>gptimeleft</td><td>&lt;Double></td><td>Read-only</td><td>Grace time left.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>licenseserverip</td><td>&lt;String></td><td>Read-write</td><td>IP address of the License server.&lt;br>Minimum length = 1</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-write</td><td>Fully qualified domain name of the License server.</td><tr><tr><td>port</td><td>&lt;Double></td><td>Read-write</td><td>License server port.</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>status</td><td>&lt;Double></td><td>Read-only</td><td>Status of license server.</td><tr><tr><td>grace</td><td>&lt;Double></td><td>Read-only</td><td>Grace status of server.</td><tr><tr><td>gptimeleft</td><td>&lt;Double></td><td>Read-only</td><td>Grace time left.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -35,7 +35,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"nslicenseserver":{      "licenseserverip":<String_value>,      "servername":<String_value>,      "port":<Double_value>}}```
 Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
@@ -49,7 +49,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
@@ -64,7 +64,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"nslicenseserver":{      "licenseserverip":<String_value>,      "servername":<String_value>,      "port":<Double_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -74,7 +74,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nslicenseserver
 Query-parameters:
 args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nslicenseserver?args=      "licenseserverip":&lt;String_value&gt;,      "servername":&lt;String_value&gt;
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nslicenseserver?args=licenseserverip:&lt;String_value&gt;,servername:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
 Use this query-parameter to get nslicenseserver resources based on additional properties.
 
 
@@ -93,7 +93,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nslicenseserver?view=summary
 Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nslicenseserver?pagesize=#no;pageno=#no
 Use this query-parameter to get the nslicenseserver resources in chunks.
 
@@ -105,11 +105,11 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "nslicenseserver": [ {      "licenseserverip":<String_value>,      "servername":<String_value>,      "port":<Double_value>,      "status":<Double_value>,      "grace":<Double_value>,      "gptimeleft":<Double_value>}]}```
+Response Payload: ```{ "nslicenseserver": [ {licenseserverip:<String_value>,servername:<String_value>,nodeid:<Double_value>      "port":<Double_value>,      "status":<Double_value>,      "grace":<Double_value>,      "gptimeleft":<Double_value>}]}```
 
 
 
@@ -124,7 +124,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

@@ -7,7 +7,7 @@ Configuration for transform action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the URL transformation action. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the URL Transformation action is added. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my transform action? or ?my transform action).&lt;br>Minimum length = 1</td><tr><tr><td>profilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation profile with which to associate this action.&lt;br>Minimum length = 1</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Positive integer specifying the priority of the action within the profile. A lower number specifies a higher priority. Must be unique within the list of actions bound to the profile. Policies are evaluated in the order of their priority numbers, and the first policy that matches is applied.&lt;br>Minimum value = 1&lt;br>Maximum value = 2147483647</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Enable or disable this action.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>requrlfrom</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the request URL pattern to be transformed.&lt;br>Minimum length = 1</td><tr><tr><td>requrlinto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on URLs that match the reqUrlFrom pattern.&lt;br>Minimum length = 1</td><tr><tr><td>resurlfrom</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the response URL pattern to be transformed.&lt;br>Minimum length = 1</td><tr><tr><td>resurlinto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on URLs that match the resUrlFrom pattern.&lt;br>Minimum length = 1</td><tr><tr><td>cookiedomainfrom</td><td>&lt;String></td><td>Read-write</td><td>Pattern that matches the domain to be transformed in Set-Cookie headers.&lt;br>Minimum length = 1</td><tr><tr><td>cookiedomaininto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on cookie domains that match the cookieDomainFrom pattern. NOTE: The cookie domain to be transformed is extracted from the request.&lt;br>Minimum length = 1</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this URL Transformation action.</td><tr><tr><td>continuematching</td><td>&lt;String></td><td>Read-only</td><td>Continue transforming using the next rule in the list.&lt;br>Possible values = ON, OFF</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the URL transformation action.&lt;br>Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the URL Transformation action is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my transform action? or ?my transform action).&lt;br>Minimum length = 1</td><tr><tr><td>profilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation profile with which to associate this action.&lt;br>Minimum length = 1</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Positive integer specifying the priority of the action within the profile. A lower number specifies a higher priority. Must be unique within the list of actions bound to the profile. Policies are evaluated in the order of their priority numbers, and the first policy that matches is applied.&lt;br>Minimum value = 1&lt;br>Maximum value = 2147483647</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Enable or disable this action.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>requrlfrom</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the request URL pattern to be transformed.&lt;br>Minimum length = 1</td><tr><tr><td>requrlinto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on URLs that match the reqUrlFrom pattern.&lt;br>Minimum length = 1</td><tr><tr><td>resurlfrom</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the response URL pattern to be transformed.&lt;br>Minimum length = 1</td><tr><tr><td>resurlinto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on URLs that match the resUrlFrom pattern.&lt;br>Minimum length = 1</td><tr><tr><td>cookiedomainfrom</td><td>&lt;String></td><td>Read-write</td><td>Pattern that matches the domain to be transformed in Set-Cookie headers.&lt;br>Minimum length = 1</td><tr><tr><td>cookiedomaininto</td><td>&lt;String></td><td>Read-write</td><td>PCRE-format regular expression that describes the transformation to be performed on cookie domains that match the cookieDomainFrom pattern. &lt;br>NOTE: The cookie domain to be transformed is extracted from the request.&lt;br>Minimum length = 1</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this URL Transformation action.</td><tr><tr><td>continuematching</td><td>&lt;String></td><td>Read-only</td><td>Continue transforming using the next rule in the list.&lt;br>Possible values = ON, OFF</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","transformaction":{      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "state":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformaction":{      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "state":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","transformaction":{      "name":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "state":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformaction":{      "name":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "state":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","transformaction":{      "name":<String_value>,      "requrlfrom":true,      "requrlinto":true,      "resurlfrom":true,      "resurlinto":true,      "cookiedomainfrom":true,      "cookiedomaininto":true,      "state":true,      "comment":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformaction":{      "name":<String_value>,      "requrlfrom":true,      "requrlinto":true,      "resurlfrom":true,      "resurlinto":true,      "cookiedomainfrom":true,      "cookiedomaininto":true,      "state":true,      "comment":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/transformaction
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/transformaction?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of transformaction resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/transformaction?view=summary
-Use this query-parameter to get the summary output of transformaction resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/transformaction?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?pagesize=#no;pageno=#no
 Use this query-parameter to get the transformaction resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/transformaction?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "transformaction": [ {      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "continuematching":<String_value>,      "state":<String_value>,      "comment":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "transformaction": [ {      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "continuematching":<String_value>,      "state":<String_value>,      "comment":<String_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "transformaction": [ {      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "continuematching":<String_value>,      "state":<String_value>,      "comment":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "transformaction": [ {      "name":<String_value>,      "profilename":<String_value>,      "priority":<Double_value>,      "requrlfrom":<String_value>,      "requrlinto":<String_value>,      "resurlfrom":<String_value>,      "resurlinto":<String_value>,      "cookiedomainfrom":<String_value>,      "cookiedomaininto":<String_value>,      "continuematching":<String_value>,      "state":<String_value>,      "comment":<String_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "transformaction": [
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/transformaction?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformaction?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",transformaction: [ { "__count": "#no"} ] }
+{ "transformaction": [ { "__count": "#no"} ] }
 
 

@@ -7,12 +7,12 @@ Configuration for HTTP request/response band resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>reqbandsize</td><td>&lt;Integer></td><td>Read-write</td><td>Band size, in bytes, for HTTP request band statistics. For example, if you specify a band size of 100 bytes, statistics will be maintained and displayed for the following size ranges: 0 - 99 bytes 100 - 199 bytes 200 - 299 bytes and so on.&lt;br>Default value: 100&lt;br>Minimum value = 50</td><tr><tr><td>respbandsize</td><td>&lt;Integer></td><td>Read-write</td><td>Band size, in bytes, for HTTP response band statistics. For example, if you specify a band size of 100 bytes, statistics will be maintained and displayed for the following size ranges: 0 - 99 bytes 100 - 199 bytes 200 - 299 bytes and so on.&lt;br>Default value: 1024&lt;br>Minimum value = 50</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of statistics to display.&lt;br>Possible values = REQUEST, RESPONSE</td><tr><tr><td>bandrange</td><td>&lt;Integer></td><td>Read-only</td><td>The range of the HTTP request/response size, in bytes.</td><tr><tr><td>numberofbands</td><td>&lt;Integer></td><td>Read-only</td><td>The total number of http bands.</td><tr><tr><td>totalbandsize</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range.</td><tr><tr><td>avgbandsize</td><td>&lt;Double[]></td><td>Read-only</td><td>The average size of all HTTP requests/responses in this size range.</td><tr><tr><td>avgbandsizenew</td><td>&lt;Double[]></td><td>Read-only</td><td>The average size of all HTTP requests/responses in this size range.</td><tr><tr><td>banddata</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range, expressed as a percentage of the total size of all HTTP requests/responses.</td><tr><tr><td>banddatanew</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range, expressed as a percentage of the total size of all HTTP requests/responses.</td><tr><tr><td>accesscount</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range.</td><tr><tr><td>accessratio</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range, expressed as a percentage of the total number of HTTP requests/responses.</td><tr><tr><td>accessrationew</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range, expressed as a percentage of the total number of HTTP requests/responses.</td><tr><tr><td>totals</td><td>&lt;Integer[]></td><td>Read-only</td><td>The total of totalBandSize, avgBandSize, BandData, accessCount, accessRatio respectively.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>reqbandsize</td><td>&lt;Integer></td><td>Read-write</td><td>Band size, in bytes, for HTTP request band statistics. For example, if you specify a band size of 100 bytes, statistics will be maintained and displayed for the following size ranges:&lt;br>0 - 99 bytes&lt;br>100 - 199 bytes&lt;br>200 - 299 bytes and so on.&lt;br>Default value: 100&lt;br>Minimum value = 50</td><tr><tr><td>respbandsize</td><td>&lt;Integer></td><td>Read-write</td><td>Band size, in bytes, for HTTP response band statistics. For example, if you specify a band size of 100 bytes, statistics will be maintained and displayed for the following size ranges:&lt;br>0 - 99 bytes&lt;br>100 - 199 bytes&lt;br>200 - 299 bytes and so on.&lt;br>Default value: 1024&lt;br>Minimum value = 50</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of statistics to display.&lt;br>Possible values = REQUEST, RESPONSE</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>bandrange</td><td>&lt;Integer></td><td>Read-only</td><td>The range of the HTTP request/response size, in bytes.</td><tr><tr><td>numberofbands</td><td>&lt;Integer></td><td>Read-only</td><td>The total number of http bands.</td><tr><tr><td>totalbandsize</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range.</td><tr><tr><td>avgbandsize</td><td>&lt;Double[]></td><td>Read-only</td><td>The average size of all HTTP requests/responses in this size range.</td><tr><tr><td>avgbandsizenew</td><td>&lt;Double[]></td><td>Read-only</td><td>The average size of all HTTP requests/responses in this size range.</td><tr><tr><td>banddata</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range, expressed as a percentage of the total size of all HTTP requests/responses.</td><tr><tr><td>banddatanew</td><td>&lt;Double[]></td><td>Read-only</td><td>The total size of all HTTP requests/responses in this size range, expressed as a percentage of the total size of all HTTP requests/responses.</td><tr><tr><td>accesscount</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range.</td><tr><tr><td>accessratio</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range, expressed as a percentage of the total number of HTTP requests/responses.</td><tr><tr><td>accessrationew</td><td>&lt;Double[]></td><td>Read-only</td><td>The number of HTTP requests/responses in this size range, expressed as a percentage of the total number of HTTP requests/responses.</td><tr><tr><td>totals</td><td>&lt;Integer[]></td><td>Read-only</td><td>The total of totalBandSize, avgBandSize, BandData, accessCount, accessRatio respectively.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[UPDATE](#update) | [UNSET](#unset) | [GET (ALL)](#get-(all))
+[UPDATE](#update) | [UNSET](#unset) | [CLEAR](#clear) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,38 +27,70 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/protocolhttpband
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","protocolhttpband":{      "reqbandsize":<Integer_value>,      "respbandsize":<Integer_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"protocolhttpband":{      "reqbandsize":<Integer_value>,      "respbandsize":<Integer_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/protocolhttpband?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","protocolhttpband":{      "reqbandsize":true,      "respbandsize":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"protocolhttpband":{      "reqbandsize":true,      "respbandsize":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###clear
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/protocolhttpband?action=clear
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"protocolhttpband":{      "type":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/protocolhttpband
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/protocolhttpband
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/protocolhttpband?args=      "type":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/protocolhttpband?args=type:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
 Use this query-parameter to get protocolhttpband resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "protocolhttpband": [ {      "type":<String_value>,      "bandrange":<Integer_value>,      "numberofbands":<Integer_value>,      "totalbandsize":<Double[]_value>,      "avgbandsize":<Double[]_value>,      "avgbandsizenew":<Double[]_value>,      "banddata":<Double[]_value>,      "banddatanew":<Double[]_value>,      "accesscount":<Double[]_value>,      "accessratio":<Double[]_value>,      "accessrationew":<Double[]_value>,      "totals":<Integer[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocolhttpband": [ {type:<String_value>,nodeid:<Double_value>      "bandrange":<Integer_value>,      "numberofbands":<Integer_value>,      "totalbandsize":<Double[]_value>,      "avgbandsize":<Double[]_value>,      "avgbandsizenew":<Double[]_value>,      "banddata":<Double[]_value>,      "banddatanew":<Double[]_value>,      "accesscount":<Double[]_value>,      "accessratio":<Double[]_value>,      "accessrationew":<Double[]_value>,      "totals":<Integer[]_value>,      "reqbandsize":<Integer_value>,      "respbandsize":<Integer_value>}]}```
 
 
 

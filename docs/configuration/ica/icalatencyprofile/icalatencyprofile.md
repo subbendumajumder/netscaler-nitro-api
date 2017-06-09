@@ -35,7 +35,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"icalatencyprofile":{      "name":<String_value>,      "l7latencymonitoring":<String_value>,      "l7latencythresholdfactor":<Double_value>,      "l7latencywaittime":<Double_value>,      "l7latencynotifyinterval":<Double_value>,      "l7latencymaxnotifycount":<Double_value>}}```
 Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
@@ -49,7 +49,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
@@ -64,7 +64,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"icalatencyprofile":{      "name":<String_value>,      "l7latencymonitoring":<String_value>,      "l7latencythresholdfactor":<Double_value>,      "l7latencywaittime":<Double_value>,      "l7latencynotifyinterval":<Double_value>,      "l7latencymaxnotifycount":<Double_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
@@ -79,7 +79,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"icalatencyprofile":{      "name":<String_value>,      "l7latencymonitoring":true,      "l7latencythresholdfactor":true,      "l7latencywaittime":true,      "l7latencynotifyinterval":true,      "l7latencymaxnotifycount":true}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -88,11 +88,6 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icalatencyprofile
 Query-parameters:
-args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icalatencyprofile?args=      "name":&lt;String_value&gt;
-Use this query-parameter to get icalatencyprofile resources based on additional properties.
-
-
 attrs
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icalatencyprofile?attrs=property-name1,property-name2
 Use this query parameter to specify the resource details that you want to retrieve.
@@ -108,7 +103,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icalatencyprofile?view=summa
 Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icalatencyprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the icalatencyprofile resources in chunks.
 
@@ -120,7 +115,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
@@ -151,7 +146,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
@@ -170,7 +165,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

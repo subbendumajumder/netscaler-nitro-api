@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/systembw
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/systembw
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/systembw?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/systembw?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get systembw resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "systembw": [ {      "httpcltttfp_4rate":<Double_value>,      "httpcltttlp_5rate":<Double_value>,      "httpcltttfp_2rate":<Double_value>,      "httpcltttfp_7rate":<Double_value>,      "httpcltttlphwmrate":<Double_value>,      "httpcltttfp_0rate":<Double_value>,      "httpcltttlplwmrate":<Double_value>,      "httpcltttfp_4":<Double_value>,      "httpcltpooloutactive":<Double_value>,      "httpcltttlplwm":<Double_value>,      "httpcltttlp_1":<Double_value>,      "httpsvr404notfoundrate":<Double_value>,      "httpcltttlp_6":<Double_value>,      "httpcltttlphwm":<Double_value>,      "httpcltttlp_1rate":<Double_value>,      "httpcltpoolinactive":<Double_value>,      "httpcltttlp_3":<Double_value>,      "httpcltttlp_5":<Double_value>,      "httpcltttlp_6rate":<Double_value>,      "httpsvr200okresprate":<Double_value>,      "httpcltttfp_1rate":<Double_value>,      "httpcltttfp_1":<Double_value>,      "httpcltttfphwmrate":<Double_value>,      "httpcltttfp_6":<Double_value>,      "httpcltttfpmax":<Double_value>,      "httpcltttfp_5":<Double_value>,      "httpcltttlpmax":<Double_value>,      "httpcltttlp_4rate":<Double_value>,      "httpcltttlp_7rate":<Double_value>,      "httpcltttfp_0":<Double_value>,      "httpcltttfp_3":<Double_value>,      "httpcltttfphwm":<Double_value>,      "httpclterrstray":<Double_value>,      "httpcltttlp_0rate":<Double_value>,      "httpcltttfplwm":<Double_value>,      "httpcltttlp_0":<Double_value>,      "httpclterrstrayrate":<Double_value>,      "httpcltttfplwmrate":<Double_value>,      "httpcltttlp_2":<Double_value>,      "httpcltttfp_2":<Double_value>,      "httpcltttlp_2rate":<Double_value>,      "httpcltttlp_4":<Double_value>,      "httpcltttfp_7":<Double_value>,      "httpsvr200okresp":<Double_value>,      "httpsvr404notfound":<Double_value>,      "httpcltttlp_3rate":<Double_value>,      "httpcltttfp_6rate":<Double_value>,      "httpcltttfp_5rate":<Double_value>,      "httpcltttfp_3rate":<Double_value>,      "httpcltttlp_7":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "systembw": [ {      "httpcltttfp_4rate":<Double_value>,      "httpcltttlp_5rate":<Double_value>,      "httpcltttfp_2rate":<Double_value>,      "httpcltttfp_7rate":<Double_value>,      "httpcltttlphwmrate":<Double_value>,      "httpcltttfp_0rate":<Double_value>,      "httpcltttlplwmrate":<Double_value>,      "httpcltttfp_4":<Double_value>,      "httpcltpooloutactive":<Double_value>,      "httpcltttlplwm":<Double_value>,      "httpcltttlp_1":<Double_value>,      "httpsvr404notfoundrate":<Double_value>,      "httpcltttlp_6":<Double_value>,      "httpcltttlphwm":<Double_value>,      "httpcltttlp_1rate":<Double_value>,      "httpcltpoolinactive":<Double_value>,      "httpcltttlp_3":<Double_value>,      "httpcltttlp_5":<Double_value>,      "httpcltttlp_6rate":<Double_value>,      "httpsvr200okresprate":<Double_value>,      "httpcltttfp_1rate":<Double_value>,      "httpcltttfp_1":<Double_value>,      "httpcltttfphwmrate":<Double_value>,      "httpcltttfp_6":<Double_value>,      "httpcltttfpmax":<Double_value>,      "httpcltttfp_5":<Double_value>,      "httpcltttlpmax":<Double_value>,      "httpcltttlp_4rate":<Double_value>,      "httpcltttlp_7rate":<Double_value>,      "httpcltttfp_0":<Double_value>,      "httpcltttfp_3":<Double_value>,      "httpcltttfphwm":<Double_value>,      "httpclterrstray":<Double_value>,      "httpcltttlp_0rate":<Double_value>,      "httpcltttfplwm":<Double_value>,      "httpcltttlp_0":<Double_value>,      "httpclterrstrayrate":<Double_value>,      "httpcltttfplwmrate":<Double_value>,      "httpcltttlp_2":<Double_value>,      "httpcltttfp_2":<Double_value>,      "httpcltttlp_2rate":<Double_value>,      "httpcltttlp_4":<Double_value>,      "httpcltttfp_7":<Double_value>,      "httpsvr200okresp":<Double_value>,      "httpsvr404notfound":<Double_value>,      "httpcltttlp_3rate":<Double_value>,      "httpcltttfp_6rate":<Double_value>,      "httpcltttfp_5rate":<Double_value>,      "httpcltttfp_3rate":<Double_value>,      "httpcltttlp_7":<Double_value>}]}```
 
 
 

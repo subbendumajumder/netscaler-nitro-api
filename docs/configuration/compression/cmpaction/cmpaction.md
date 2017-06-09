@@ -7,7 +7,7 @@ Configuration for compression action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the compression action. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Can be changed after the action is added. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my cmp action" or my cmp action).&lt;br>Minimum length = 1</td><tr><tr><td>cmptype</td><td>&lt;String></td><td>Read-write</td><td>Type of compression performed by this action. Available settings function as follows: * COMPRESS - Apply GZIP or DEFLATE compression to the response, depending on the request header. Prefer GZIP. * GZIP - Apply GZIP compression. * DEFLATE - Apply DEFLATE compression. * NOCOMPRESS - Do not compress the response if the request matches a policy that uses this action.&lt;br>Possible values = compress, gzip, deflate, nocompress</td><tr><tr><td>addvaryheader</td><td>&lt;String></td><td>Read-write</td><td>Control insertion of the Vary header in HTTP responses compressed by NetScaler. Intermediate caches store different versions of the response for different values of the headers present in the Vary response header.&lt;br>Default value: GLOBAL&lt;br>Possible values = GLOBAL, DISABLED, ENABLED</td><tr><tr><td>varyheadervalue</td><td>&lt;String></td><td>Read-write</td><td>The value of the HTTP Vary header for compressed responses.&lt;br>Minimum length = 1</td><tr><tr><td>deltatype</td><td>&lt;String></td><td>Read-write</td><td>The type of delta action (if delta type compression action is defined).&lt;br>Default value: PERURL&lt;br>Possible values = PERURL, PERPOLICY</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the compression action. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Choose a name that can be correlated with the function that the action performs. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my cmp action" or my cmp action).&lt;br>Minimum length = 1</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether compression is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the compression action. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Can be changed after the action is added. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my cmp action" or my cmp action).&lt;br>Minimum length = 1</td><tr><tr><td>cmptype</td><td>&lt;String></td><td>Read-write</td><td>Type of compression performed by this action. &lt;br>Available settings function as follows: &lt;br>* COMPRESS - Apply GZIP or DEFLATE compression to the response, depending on the request header. Prefer GZIP.&lt;br>* GZIP - Apply GZIP compression.&lt;br>* DEFLATE - Apply DEFLATE compression.&lt;br>* NOCOMPRESS - Do not compress the response if the request matches a policy that uses this action.&lt;br>Possible values = compress, gzip, deflate, nocompress</td><tr><tr><td>addvaryheader</td><td>&lt;String></td><td>Read-write</td><td>Control insertion of the Vary header in HTTP responses compressed by NetScaler. Intermediate caches store different versions of the response for different values of the headers present in the Vary response header.&lt;br>Default value: GLOBAL&lt;br>Possible values = GLOBAL, DISABLED, ENABLED</td><tr><tr><td>varyheadervalue</td><td>&lt;String></td><td>Read-write</td><td>The value of the HTTP Vary header for compressed responses.&lt;br>Minimum length = 1</td><tr><tr><td>deltatype</td><td>&lt;String></td><td>Read-write</td><td>The type of delta action (if delta type compression action is defined).&lt;br>Default value: PERURL&lt;br>Possible values = PERURL, PERPOLICY</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the compression action. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at&lt;br>(@), equals (=), and hyphen (-) characters. &lt;br>Choose a name that can be correlated with the function that the action performs. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my cmp action" or my cmp action).&lt;br>Minimum length = 1</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether compression is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,92 +27,114 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","cmpaction":{      "name":<String_value>,      "cmptype":<String_value>,      "addvaryheader":<String_value>,                  "varyheadervalue":<String_value>,      "deltatype":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cmpaction":{      "name":<String_value>,      "cmptype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>,      "deltatype":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","cmpaction":{      "name":<String_value>,      "cmptype":<String_value>,      "addvaryheader":<String_value>,                  "varyheadervalue":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cmpaction":{      "name":<String_value>,      "cmptype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","cmpaction":{      "name":<String_value>,      "addvaryheader":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cmpaction":{      "name":<String_value>,      "addvaryheader":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###rename
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?action=rename
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"rename"},"sessionid":"##sessionid","cmpaction":{      "name":<String_value>,      "newname":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cmpaction":{      "name":<String_value>,      "newname":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/cmpaction
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/cmpaction?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of cmpaction resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction?view=summary
-Use this query-parameter to get the summary output of cmpaction resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?pagesize=#no;pageno=#no
 Use this query-parameter to get the cmpaction resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "cmpaction": [ {      "name":<String_value>,      "cmptype":<String_value>,      "deltatype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cmpaction": [ {      "name":<String_value>,      "cmptype":<String_value>,      "deltatype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -120,9 +142,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "cmpaction": [ {      "name":<String_value>,      "cmptype":<String_value>,      "deltatype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cmpaction": [ {      "name":<String_value>,      "cmptype":<String_value>,      "deltatype":<String_value>,      "addvaryheader":<String_value>,      "varyheadervalue":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -130,9 +173,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "cmpaction": [ {   
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/cmpaction?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cmpaction?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",cmpaction: [ { "__count": "#no"} ] }
+{ "cmpaction": [ { "__count": "#no"} ] }
 
 

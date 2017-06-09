@@ -7,7 +7,7 @@ Configuration for Imported Certfile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the imported certificate file. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or my file).&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL specifying the protocol, host, and path, including file name, to the certificate file to be imported. For example, http://www.example.com/cert_file. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the imported certificate file. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or my file).&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL specifying the protocol, host, and path, including file name, to the certificate file to be imported. For example, http://www.example.com/cert_file.&lt;br>NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,59 +27,69 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?action=Import
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","sslcertfile":{      "name":<String_value>,      "src":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslcertfile":{      "name":<String_value>,      "src":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/sslcertfile
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcertfile/_value&lt;&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/sslcertfile
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/sslcertfile?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of sslcertfile resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcertfile?view=summary
-Use this query-parameter to get the summary output of sslcertfile resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcertfile?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?pagesize=#no;pageno=#no
 Use this query-parameter to get the sslcertfile resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcertfile?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "sslcertfile": [ {      "name":<String_value>,      "src":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslcertfile": [ {      "name":<String_value>,      "src":<String_value>}]}```
 
 
 
@@ -87,9 +97,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslcertfile?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertfile?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",sslcertfile: [ { "__count": "#no"} ] }
+{ "sslcertfile": [ { "__count": "#no"} ] }
 
 

@@ -1,6 +1,6 @@
 #vpnvserver_binding
 
-Binding object showing the resources that can be bound to vpnvserver.
+Binding object which returns the resources bound to vpnvserver.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to vpnvserver.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vpnvserver_binding/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnvserver_binding/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnvserver_binding": [ {      "name":<String_value>,      "vpnvserver_authenticationloginschemapolicy_binding":<vpnvserver_authenticationloginschemapolicy_binding[]_value>,      "vpnvserver_authenticationsamlpolicy_binding":<vpnvserver_authenticationsamlpolicy_binding[]_value>,      "vpnvserver_cspolicy_binding":<vpnvserver_cspolicy_binding[]_value>,      "vpnvserver_icapolicy_binding":<vpnvserver_icapolicy_binding[]_value>,      "vpnvserver_vpnportaltheme_binding":<vpnvserver_vpnportaltheme_binding[]_value>,      "vpnvserver_appflowpolicy_binding":<vpnvserver_appflowpolicy_binding[]_value>,      "vpnvserver_intranetip_binding":<vpnvserver_intranetip_binding[]_value>,      "vpnvserver_vpntrafficpolicy_binding":<vpnvserver_vpntrafficpolicy_binding[]_value>,      "vpnvserver_vpnepaprofile_binding":<vpnvserver_vpnepaprofile_binding[]_value>,      "vpnvserver_authenticationtacacspolicy_binding":<vpnvserver_authenticationtacacspolicy_binding[]_value>,      "vpnvserver_vpnintranetapplication_binding":<vpnvserver_vpnintranetapplication_binding[]_value>,      "vpnvserver_authenticationradiuspolicy_binding":<vpnvserver_authenticationradiuspolicy_binding[]_value>,      "vpnvserver_authenticationpolicy_binding":<vpnvserver_authenticationpolicy_binding[]_value>,      "vpnvserver_aaapreauthenticationpolicy_binding":<vpnvserver_aaapreauthenticationpolicy_binding[]_value>,      "vpnvserver_feopolicy_binding":<vpnvserver_feopolicy_binding[]_value>,      "vpnvserver_authenticationlocalpolicy_binding":<vpnvserver_authenticationlocalpolicy_binding[]_value>,      "vpnvserver_intranetip6_binding":<vpnvserver_intranetip6_binding[]_value>,      "vpnvserver_vpnsessionpolicy_binding":<vpnvserver_vpnsessionpolicy_binding[]_value>,      "vpnvserver_staserver_binding":<vpnvserver_staserver_binding[]_value>,      "vpnvserver_authenticationcertpolicy_binding":<vpnvserver_authenticationcertpolicy_binding[]_value>,      "vpnvserver_authenticationsamlidppolicy_binding":<vpnvserver_authenticationsamlidppolicy_binding[]_value>,      "vpnvserver_vpnnexthopserver_binding":<vpnvserver_vpnnexthopserver_binding[]_value>,      "vpnvserver_auditnslogpolicy_binding":<vpnvserver_auditnslogpolicy_binding[]_value>,      "vpnvserver_auditsyslogpolicy_binding":<vpnvserver_auditsyslogpolicy_binding[]_value>,      "vpnvserver_sharefileserver_binding":<vpnvserver_sharefileserver_binding[]_value>,      "vpnvserver_responderpolicy_binding":<vpnvserver_responderpolicy_binding[]_value>,      "vpnvserver_vpnurl_binding":<vpnvserver_vpnurl_binding[]_value>,      "vpnvserver_cachepolicy_binding":<vpnvserver_cachepolicy_binding[]_value>,      "vpnvserver_authenticationldappolicy_binding":<vpnvserver_authenticationldappolicy_binding[]_value>,      "vpnvserver_authenticationwebauthpolicy_binding":<vpnvserver_authenticationwebauthpolicy_binding[]_value>,      "vpnvserver_rewritepolicy_binding":<vpnvserver_rewritepolicy_binding[]_value>,      "vpnvserver_authenticationnegotiatepolicy_binding":<vpnvserver_authenticationnegotiatepolicy_binding[]_value>,      "vpnvserver_appcontroller_binding":<vpnvserver_appcontroller_binding[]_value>,      "vpnvserver_vpnclientlessaccesspolicy_binding":<vpnvserver_vpnclientlessaccesspolicy_binding[]_value>,      "vpnvserver_authenticationdfapolicy_binding":<vpnvserver_authenticationdfapolicy_binding[]_value>,      "vpnvserver_vpneula_binding":<vpnvserver_vpneula_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnvserver_binding": [ {      "name":<String_value>,      "vpnvserver_authenticationloginschemapolicy_binding":<vpnvserver_authenticationloginschemapolicy_binding[]_value>,      "vpnvserver_authenticationsamlpolicy_binding":<vpnvserver_authenticationsamlpolicy_binding[]_value>,      "vpnvserver_cspolicy_binding":<vpnvserver_cspolicy_binding[]_value>,      "vpnvserver_icapolicy_binding":<vpnvserver_icapolicy_binding[]_value>,      "vpnvserver_vpnportaltheme_binding":<vpnvserver_vpnportaltheme_binding[]_value>,      "vpnvserver_appflowpolicy_binding":<vpnvserver_appflowpolicy_binding[]_value>,      "vpnvserver_intranetip_binding":<vpnvserver_intranetip_binding[]_value>,      "vpnvserver_vpntrafficpolicy_binding":<vpnvserver_vpntrafficpolicy_binding[]_value>,      "vpnvserver_vpnepaprofile_binding":<vpnvserver_vpnepaprofile_binding[]_value>,      "vpnvserver_authenticationtacacspolicy_binding":<vpnvserver_authenticationtacacspolicy_binding[]_value>,      "vpnvserver_vpnintranetapplication_binding":<vpnvserver_vpnintranetapplication_binding[]_value>,      "vpnvserver_authenticationradiuspolicy_binding":<vpnvserver_authenticationradiuspolicy_binding[]_value>,      "vpnvserver_authenticationpolicy_binding":<vpnvserver_authenticationpolicy_binding[]_value>,      "vpnvserver_aaapreauthenticationpolicy_binding":<vpnvserver_aaapreauthenticationpolicy_binding[]_value>,      "vpnvserver_feopolicy_binding":<vpnvserver_feopolicy_binding[]_value>,      "vpnvserver_authenticationlocalpolicy_binding":<vpnvserver_authenticationlocalpolicy_binding[]_value>,      "vpnvserver_intranetip6_binding":<vpnvserver_intranetip6_binding[]_value>,      "vpnvserver_vpnsessionpolicy_binding":<vpnvserver_vpnsessionpolicy_binding[]_value>,      "vpnvserver_staserver_binding":<vpnvserver_staserver_binding[]_value>,      "vpnvserver_authenticationcertpolicy_binding":<vpnvserver_authenticationcertpolicy_binding[]_value>,      "vpnvserver_authenticationsamlidppolicy_binding":<vpnvserver_authenticationsamlidppolicy_binding[]_value>,      "vpnvserver_vpnnexthopserver_binding":<vpnvserver_vpnnexthopserver_binding[]_value>,      "vpnvserver_auditnslogpolicy_binding":<vpnvserver_auditnslogpolicy_binding[]_value>,      "vpnvserver_auditsyslogpolicy_binding":<vpnvserver_auditsyslogpolicy_binding[]_value>,      "vpnvserver_sharefileserver_binding":<vpnvserver_sharefileserver_binding[]_value>,      "vpnvserver_responderpolicy_binding":<vpnvserver_responderpolicy_binding[]_value>,      "vpnvserver_vpnurl_binding":<vpnvserver_vpnurl_binding[]_value>,      "vpnvserver_cachepolicy_binding":<vpnvserver_cachepolicy_binding[]_value>,      "vpnvserver_authenticationldappolicy_binding":<vpnvserver_authenticationldappolicy_binding[]_value>,      "vpnvserver_authenticationwebauthpolicy_binding":<vpnvserver_authenticationwebauthpolicy_binding[]_value>,      "vpnvserver_rewritepolicy_binding":<vpnvserver_rewritepolicy_binding[]_value>,      "vpnvserver_authenticationnegotiatepolicy_binding":<vpnvserver_authenticationnegotiatepolicy_binding[]_value>,      "vpnvserver_appcontroller_binding":<vpnvserver_appcontroller_binding[]_value>,      "vpnvserver_vpnclientlessaccesspolicy_binding":<vpnvserver_vpnclientlessaccesspolicy_binding[]_value>,      "vpnvserver_authenticationdfapolicy_binding":<vpnvserver_authenticationdfapolicy_binding[]_value>,      "vpnvserver_vpneula_binding":<vpnvserver_vpneula_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnvserver_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnvserver_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnvserver_binding": [ {      "name":<String_value>,      "vpnvserver_authenticationloginschemapolicy_binding":<vpnvserver_authenticationloginschemapolicy_binding[]_value>,      "vpnvserver_authenticationsamlpolicy_binding":<vpnvserver_authenticationsamlpolicy_binding[]_value>,      "vpnvserver_cspolicy_binding":<vpnvserver_cspolicy_binding[]_value>,      "vpnvserver_icapolicy_binding":<vpnvserver_icapolicy_binding[]_value>,      "vpnvserver_vpnportaltheme_binding":<vpnvserver_vpnportaltheme_binding[]_value>,      "vpnvserver_appflowpolicy_binding":<vpnvserver_appflowpolicy_binding[]_value>,      "vpnvserver_intranetip_binding":<vpnvserver_intranetip_binding[]_value>,      "vpnvserver_vpntrafficpolicy_binding":<vpnvserver_vpntrafficpolicy_binding[]_value>,      "vpnvserver_vpnepaprofile_binding":<vpnvserver_vpnepaprofile_binding[]_value>,      "vpnvserver_authenticationtacacspolicy_binding":<vpnvserver_authenticationtacacspolicy_binding[]_value>,      "vpnvserver_vpnintranetapplication_binding":<vpnvserver_vpnintranetapplication_binding[]_value>,      "vpnvserver_authenticationradiuspolicy_binding":<vpnvserver_authenticationradiuspolicy_binding[]_value>,      "vpnvserver_authenticationpolicy_binding":<vpnvserver_authenticationpolicy_binding[]_value>,      "vpnvserver_aaapreauthenticationpolicy_binding":<vpnvserver_aaapreauthenticationpolicy_binding[]_value>,      "vpnvserver_feopolicy_binding":<vpnvserver_feopolicy_binding[]_value>,      "vpnvserver_authenticationlocalpolicy_binding":<vpnvserver_authenticationlocalpolicy_binding[]_value>,      "vpnvserver_intranetip6_binding":<vpnvserver_intranetip6_binding[]_value>,      "vpnvserver_vpnsessionpolicy_binding":<vpnvserver_vpnsessionpolicy_binding[]_value>,      "vpnvserver_staserver_binding":<vpnvserver_staserver_binding[]_value>,      "vpnvserver_authenticationcertpolicy_binding":<vpnvserver_authenticationcertpolicy_binding[]_value>,      "vpnvserver_authenticationsamlidppolicy_binding":<vpnvserver_authenticationsamlidppolicy_binding[]_value>,      "vpnvserver_vpnnexthopserver_binding":<vpnvserver_vpnnexthopserver_binding[]_value>,      "vpnvserver_auditnslogpolicy_binding":<vpnvserver_auditnslogpolicy_binding[]_value>,      "vpnvserver_auditsyslogpolicy_binding":<vpnvserver_auditsyslogpolicy_binding[]_value>,      "vpnvserver_sharefileserver_binding":<vpnvserver_sharefileserver_binding[]_value>,      "vpnvserver_responderpolicy_binding":<vpnvserver_responderpolicy_binding[]_value>,      "vpnvserver_vpnurl_binding":<vpnvserver_vpnurl_binding[]_value>,      "vpnvserver_cachepolicy_binding":<vpnvserver_cachepolicy_binding[]_value>,      "vpnvserver_authenticationldappolicy_binding":<vpnvserver_authenticationldappolicy_binding[]_value>,      "vpnvserver_authenticationwebauthpolicy_binding":<vpnvserver_authenticationwebauthpolicy_binding[]_value>,      "vpnvserver_rewritepolicy_binding":<vpnvserver_rewritepolicy_binding[]_value>,      "vpnvserver_authenticationnegotiatepolicy_binding":<vpnvserver_authenticationnegotiatepolicy_binding[]_value>,      "vpnvserver_appcontroller_binding":<vpnvserver_appcontroller_binding[]_value>,      "vpnvserver_vpnclientlessaccesspolicy_binding":<vpnvserver_vpnclientlessaccesspolicy_binding[]_value>,      "vpnvserver_authenticationdfapolicy_binding":<vpnvserver_authenticationdfapolicy_binding[]_value>,      "vpnvserver_vpneula_binding":<vpnvserver_vpneula_binding[]_value>}]}```
 
 
 

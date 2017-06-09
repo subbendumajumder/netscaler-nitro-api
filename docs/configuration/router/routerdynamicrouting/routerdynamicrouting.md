@@ -7,12 +7,12 @@ Configuration for dynamic routing config resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>commandstring</td><td>&lt;String></td><td>Read-write</td><td>command to be executed.</td><tr><tr><td>output</td><td>&lt;String></td><td>Read-only</td><td>command output.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>commandstring</td><td>&lt;String></td><td>Read-write</td><td>command to be executed.</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>output</td><td>&lt;String></td><td>Read-only</td><td>command output.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[APPLY](#apply) | [GET (ALL)](#get-(all)) | [COUNT](#count)
+[ADD](#add) | [DELETE](#delete) | [UPDATE](#update) | [UNSET](#unset) | [APPLY](#apply) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -23,51 +23,123 @@ Some options that you can use for each operations:
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
+###add
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"routerdynamicrouting":{      "commandstring":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###delete
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting
+HTTP Method: DELETE
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###update
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting
+HTTP Method: PUT
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"routerdynamicrouting":{      "commandstring":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###unset
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?action=unset
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"routerdynamicrouting":{      "commandstring":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
 ###apply
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?action=apply
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"apply"},"sessionid":"##sessionid","routerdynamicrouting":{      "commandstring":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"routerdynamicrouting":{      "commandstring":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/routerdynamicrouting
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/routerdynamicrouting?args=      "commandstring":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?args=commandstring:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
 Use this query-parameter to get routerdynamicrouting resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/routerdynamicrouting?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of routerdynamicrouting resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/routerdynamicrouting?view=summary
-Use this query-parameter to get the summary output of routerdynamicrouting resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/routerdynamicrouting?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?pagesize=#no;pageno=#no
 Use this query-parameter to get the routerdynamicrouting resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/routerdynamicrouting?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "routerdynamicrouting": [ {      "commandstring":<String_value>,      "output":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "routerdynamicrouting": [ {commandstring:<String_value>,nodeid:<Double_value>      "output":<String_value>}]}```
 
 
 
@@ -75,9 +147,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/routerdynamicrouting?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/routerdynamicrouting?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",routerdynamicrouting: [ { "__count": "#no"} ] }
+{ "routerdynamicrouting": [ { "__count": "#no"} ] }
 
 

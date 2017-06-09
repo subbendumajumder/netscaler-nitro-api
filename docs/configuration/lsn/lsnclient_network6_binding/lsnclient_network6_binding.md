@@ -7,12 +7,12 @@ Binding object showing the network6 that can be bound to lsnclient.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN client entity. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN client is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn client1" or lsn client1). .&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>network6</td><td>&lt;String></td><td>Read-write</td><td>IPv6 address(es) of the LSN subscriber(s) or subscriber network(s) on whose traffic you want the NetScaler ADC to perform Large Scale NAT.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>ID of the traffic domain on which this subscriber or the subscriber network (as specified by the network parameter) belongs. If you do not specify an ID, the subscriber or the subscriber network becomes part of the default traffic domain.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>network</td><td>&lt;String></td><td>Read-write</td><td>IPv4 address(es) of the LSN subscriber(s) or subscriber network(s) on whose traffic you want the NetScaler ADC to perform Large Scale NAT.&lt;br>Minimum length = 1</td><tr><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN client entity. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN client is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn client1" or lsn client1). .&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>network6</td><td>&lt;String></td><td>Read-write</td><td>IPv6 address(es) of the LSN subscriber(s) or subscriber network(s) on whose traffic you want the NetScaler ADC to perform Large Scale NAT.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>ID of the traffic domain on which this subscriber or the subscriber network (as specified by the network parameter) belongs. If you do not specify an ID, the subscriber or the subscriber network becomes part of the default traffic domain.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>netmask</td><td>&lt;String></td><td>Read-write</td><td>Subnet mask for the IPv4 address specified in the Network parameter.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/lsnclient_network6_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","lsnclient_network6_binding":{      "clientname":<String_value>,      "network6":<String_value>,      "td":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"lsnclient_network6_binding":{      "clientname":<String_value>,      "network":<String_value>,      "netmask":<String_value>,      "network6":<String_value>,      "td":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of lsnclient_network6_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the lsnclient_network6_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "lsnclient_network6_binding": [ {      "clientname":<String_value>,      "network6":<String_value>,      "td":<Double_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsnclient_network6_binding": [ {      "network":<String_value>,      "clientname":<String_value>,      "network6":<String_value>,      "td":<Double_value>,      "netmask":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsnclient_network6_binding": [ {      "network":<String_value>,      "clientname":<String_value>,      "network6":<String_value>,      "td":<Double_value>,      "netmask":<String_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnclient_network6_binding/clientname_value&lt;String&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",lsnclient_network6_binding: [ { "__count": "#no"} ] }
+{"lsnclient_network6_binding": [ { "__count": "#no"} ] }
 
 

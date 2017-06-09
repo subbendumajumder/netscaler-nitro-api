@@ -7,7 +7,7 @@ Configuration for RISE Apbr services resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-only</td><td>Name for the APBR service.</td><tr><tr><td>risesvctype</td><td>&lt;String></td><td>Read-only</td><td>Service or Service Group.&lt;br>Possible values = Service, ServiceGroup</td><tr><tr><td>serverip</td><td>&lt;String></td><td>Read-only</td><td>Server IP for APBR service.</td><tr><tr><td>nexthopip</td><td>&lt;String></td><td>Read-only</td><td>Nexthop IP for APBR service.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>Vlan id for APBR service.</td><tr><tr><td>protocol</td><td>&lt;String></td><td>Read-only</td><td>Protocol type for APBR service.&lt;br>Possible values = HTTP, FTP, TCP, UDP, SSL, SSL_BRIDGE, SSL_TCP, DTLS, NNTP, RPCSVR, DNS, ADNS, SNMP, RTSP, DHCPRA, ANY, SIP_UDP, SIP_TCP, SIP_SSL, DNS_TCP, ADNS_TCP, MYSQL, MSSQL, ORACLE, RADIUS, RADIUSListener, RDP, DIAMETER, SSL_DIAMETER, TFTP, SMPP, PPTP, GRE, SYSLOGTCP, SYSLOGUDP</td><tr><tr><td>serverport</td><td>&lt;Integer></td><td>Read-only</td><td>Server port for APBR service.&lt;br>Range 1 - 65535</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-only</td><td>Name for the APBR service.</td><tr><tr><td>risesvctype</td><td>&lt;String></td><td>Read-only</td><td>Service or Service Group.&lt;br>Possible values = Service, ServiceGroup</td><tr><tr><td>serverip</td><td>&lt;String></td><td>Read-only</td><td>Server IP for APBR service.</td><tr><tr><td>nexthopip</td><td>&lt;String></td><td>Read-only</td><td>Nexthop IP for APBR service.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>Vlan id for APBR service.</td><tr><tr><td>protocol</td><td>&lt;String></td><td>Read-only</td><td>Protocol type for APBR service.&lt;br>Possible values = HTTP, FTP, TCP, UDP, SSL, SSL_BRIDGE, SSL_TCP, DTLS, NNTP, RPCSVR, DNS, ADNS, SNMP, RTSP, DHCPRA, ANY, SIP_UDP, SIP_TCP, SIP_SSL, DNS_TCP, ADNS_TCP, MYSQL, MSSQL, ORACLE, RADIUS, RADIUSListener, RDP, DIAMETER, SSL_DIAMETER, TFTP, SMPP, PPTP, GRE, SYSLOGTCP, SYSLOGUDP, FIX, SSL_FIX</td><tr><tr><td>serverport</td><td>&lt;Integer></td><td>Read-only</td><td>Server port for APBR service.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,40 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/riseapbrsvc
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/riseapbrsvc?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of riseapbrsvc resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/riseapbrsvc?view=summary
-Use this query-parameter to get the summary output of riseapbrsvc resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/riseapbrsvc?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc?pagesize=#no;pageno=#no
 Use this query-parameter to get the riseapbrsvc resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/riseapbrsvc?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "riseapbrsvc": [ {      "name":<String_value>,      "risesvctype":<String_value>,      "serverip":<String_value>,      "nexthopip":<String_value>,      "vlan":<Double_value>,      "protocol":<String_value>,      "serverport":<Integer_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "riseapbrsvc": [ {      "name":<String_value>,      "risesvctype":<String_value>,      "serverip":<String_value>,      "nexthopip":<String_value>,      "vlan":<Double_value>,      "protocol":<String_value>,      "serverport":<Integer_value>}]}```
 
 
 
@@ -59,9 +68,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/riseapbrsvc?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riseapbrsvc?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",riseapbrsvc: [ { "__count": "#no"} ] }
+{ "riseapbrsvc": [ { "__count": "#no"} ] }
 
 

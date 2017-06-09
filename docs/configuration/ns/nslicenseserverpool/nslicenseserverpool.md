@@ -7,7 +7,7 @@ Configuration for licenseserver resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>instancetotal</td><td>&lt;Integer></td><td>Read-only</td><td>Instance Total.</td><tr><tr><td>instanceavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Instance Available.</td><tr><tr><td>standardbandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Standard Bandwidth Total.</td><tr><tr><td>standardbandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Standard Bandwidth Available.</td><tr><tr><td>enterprisebandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Enterprise Bandwidth Total.</td><tr><tr><td>enterprisebandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Enterprise Bandwidth Available.</td><tr><tr><td>platinumbandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Platinum Bandwidth Total.</td><tr><tr><td>platinumbandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Platinum Bandwidth Available.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>instancetotal</td><td>&lt;Integer></td><td>Read-only</td><td>Instance Total.</td><tr><tr><td>instanceavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Instance Available.</td><tr><tr><td>standardbandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Standard Bandwidth Total.</td><tr><tr><td>standardbandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Standard Bandwidth Available.</td><tr><tr><td>enterprisebandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Enterprise Bandwidth Total.</td><tr><tr><td>enterprisebandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Enterprise Bandwidth Available.</td><tr><tr><td>platinumbandwidthtotal</td><td>&lt;Integer></td><td>Read-only</td><td>Platinum Bandwidth Total.</td><tr><tr><td>platinumbandwidthavailable</td><td>&lt;Integer></td><td>Read-only</td><td>Platinum Bandwidth Available.</td><tr><tr><td>cpxinstancetotal</td><td>&lt;Integer></td><td>Read-only</td><td>CP1000 Instance Total.</td><tr><tr><td>cpxinstanceavailable</td><td>&lt;Integer></td><td>Read-only</td><td>CP1000 Instance Available.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -34,11 +34,11 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "nslicenseserverpool": [ {      "instancetotal":<Integer_value>,      "instanceavailable":<Integer_value>,      "standardbandwidthtotal":<Integer_value>,      "standardbandwidthavailable":<Integer_value>,      "enterprisebandwidthtotal":<Integer_value>,      "enterprisebandwidthavailable":<Integer_value>,      "platinumbandwidthtotal":<Integer_value>,      "platinumbandwidthavailable":<Integer_value>}]}```
+Response Payload: ```{ "nslicenseserverpool": [ {      "instancetotal":<Integer_value>,      "instanceavailable":<Integer_value>,      "standardbandwidthtotal":<Integer_value>,      "standardbandwidthavailable":<Integer_value>,      "enterprisebandwidthtotal":<Integer_value>,      "enterprisebandwidthavailable":<Integer_value>,      "platinumbandwidthtotal":<Integer_value>,      "platinumbandwidthavailable":<Integer_value>,      "cpxinstancetotal":<Integer_value>,      "cpxinstanceavailable":<Integer_value>}]}```
 
 
 

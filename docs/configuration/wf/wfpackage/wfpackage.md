@@ -7,7 +7,7 @@ Configuration for Web Front resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>jre</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the JRE tar file. You can use OpenJDK7 package for FreeBSD 8.x/amd64.The Java package can be downloaded from http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/8.4-RELEASE/packages/java/openjdk-7.17.02_2.tbz or http://www.freebsdfoundation.org/cgi-bin/download?download=diablo-jdk-freebsd6.amd64.1.7.17.07.02.tbz.&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>wf</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the WebFront tar file for installing the WebFront on the NetScaler appliance. This file includes Apache Tomcat Web server. The file name has the following format: nswf-;lt;version number;gt;.tar (for example, nswf-1.5.tar).&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>jre</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the JRE tar file. &lt;br>You can use OpenJDK7 package for FreeBSD 8.x/amd64.The Java package can be downloaded from http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/amd64/8.4-RELEASE/packages/java/openjdk-7.17.02_2.tbz or http://www.freebsdfoundation.org/cgi-bin/download?download=diablo-jdk-freebsd6.amd64.1.7.17.07.02.tbz.&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>wf</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the WebFront tar file for installing the WebFront on the NetScaler appliance. This file includes Apache Tomcat Web server. The file name has the following format: nswf-;lt;version number;gt;.tar (for example, nswf-1.5.tar).&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,20 +27,33 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/wfpackage
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Install"},"sessionid":"##sessionid","wfpackage":{      "jre":<String_value>,      "wf":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"wfpackage":{      "jre":<String_value>,      "wf":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/wfpackage
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/wfpackage
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "wfpackage": [ {      "jre":<String_value>,      "wf":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "wfpackage": [ {      "jre":<String_value>,      "wf":<String_value>}]}```
 
 
 

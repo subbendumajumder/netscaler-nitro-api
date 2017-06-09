@@ -1,6 +1,6 @@
 #nspartition_binding
 
-Binding object showing the resources that can be bound to nspartition.
+Binding object which returns the resources bound to nspartition.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to nspartition.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nspartition_binding/partitionname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nspartition_binding/partitionname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nspartition_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nspartition_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>}]}```
 
 
 

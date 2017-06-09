@@ -1,18 +1,18 @@
 #lsngroup_binding
 
-Binding object showing the resources that can be bound to lsngroup.
+Binding object which returns the resources bound to lsngroup.
 
 
 ##Properties 
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>groupname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN group. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN group is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn group1" or lsn group1).&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>lsngroup_lsnsipalgprofile_binding</td><td>&lt;lsngroup_lsnsipalgprofile_binding[]></td><td>Read-only</td><td>lsnsipalgprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsntransportprofile_binding</td><td>&lt;lsngroup_lsntransportprofile_binding[]></td><td>Read-only</td><td>lsntransportprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnhttphdrlogprofile_binding</td><td>&lt;lsngroup_lsnhttphdrlogprofile_binding[]></td><td>Read-only</td><td>lsnhttphdrlogprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnpool_binding</td><td>&lt;lsngroup_lsnpool_binding[]></td><td>Read-only</td><td>lsnpool that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnrtspalgprofile_binding</td><td>&lt;lsngroup_lsnrtspalgprofile_binding[]></td><td>Read-only</td><td>lsnrtspalgprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnappsprofile_binding</td><td>&lt;lsngroup_lsnappsprofile_binding[]></td><td>Read-only</td><td>lsnappsprofile that can be bound to lsngroup.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>groupname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN group. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN group is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn group1" or lsn group1).&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>lsngroup_lsnsipalgprofile_binding</td><td>&lt;lsngroup_lsnsipalgprofile_binding[]></td><td>Read-only</td><td>lsnsipalgprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_pcpserver_binding</td><td>&lt;lsngroup_pcpserver_binding[]></td><td>Read-only</td><td>pcpserver that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsntransportprofile_binding</td><td>&lt;lsngroup_lsntransportprofile_binding[]></td><td>Read-only</td><td>lsntransportprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnlogprofile_binding</td><td>&lt;lsngroup_lsnlogprofile_binding[]></td><td>Read-only</td><td>lsnlogprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnhttphdrlogprofile_binding</td><td>&lt;lsngroup_lsnhttphdrlogprofile_binding[]></td><td>Read-only</td><td>lsnhttphdrlogprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnpool_binding</td><td>&lt;lsngroup_lsnpool_binding[]></td><td>Read-only</td><td>lsnpool that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnrtspalgprofile_binding</td><td>&lt;lsngroup_lsnrtspalgprofile_binding[]></td><td>Read-only</td><td>lsnrtspalgprofile that can be bound to lsngroup.</td><tr><tr><td>lsngroup_lsnappsprofile_binding</td><td>&lt;lsngroup_lsnappsprofile_binding[]></td><td>Read-only</td><td>lsnappsprofile that can be bound to lsngroup.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lsngroup_binding/groupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsngroup_binding/groupname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "lsngroup_binding": [ {      "groupname":<String_value>,      "lsngroup_lsnhttphdrlogprofile_binding":<lsngroup_lsnhttphdrlogprofile_binding[]_value>,      "lsngroup_lsnrtspalgprofile_binding":<lsngroup_lsnrtspalgprofile_binding[]_value>,      "lsngroup_lsnsipalgprofile_binding":<lsngroup_lsnsipalgprofile_binding[]_value>,      "lsngroup_lsnappsprofile_binding":<lsngroup_lsnappsprofile_binding[]_value>,      "lsngroup_lsnpool_binding":<lsngroup_lsnpool_binding[]_value>,      "lsngroup_lsntransportprofile_binding":<lsngroup_lsntransportprofile_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsngroup_binding": [ {      "groupname":<String_value>,      "lsngroup_lsnhttphdrlogprofile_binding":<lsngroup_lsnhttphdrlogprofile_binding[]_value>,      "lsngroup_lsnrtspalgprofile_binding":<lsngroup_lsnrtspalgprofile_binding[]_value>,      "lsngroup_lsnsipalgprofile_binding":<lsngroup_lsnsipalgprofile_binding[]_value>,      "lsngroup_lsnlogprofile_binding":<lsngroup_lsnlogprofile_binding[]_value>,      "lsngroup_lsnappsprofile_binding":<lsngroup_lsnappsprofile_binding[]_value>,      "lsngroup_lsnpool_binding":<lsngroup_lsnpool_binding[]_value>,      "lsngroup_lsntransportprofile_binding":<lsngroup_lsntransportprofile_binding[]_value>,      "lsngroup_pcpserver_binding":<lsngroup_pcpserver_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsngroup_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsngroup_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsngroup_binding": [ {      "groupname":<String_value>,      "lsngroup_lsnhttphdrlogprofile_binding":<lsngroup_lsnhttphdrlogprofile_binding[]_value>,      "lsngroup_lsnrtspalgprofile_binding":<lsngroup_lsnrtspalgprofile_binding[]_value>,      "lsngroup_lsnsipalgprofile_binding":<lsngroup_lsnsipalgprofile_binding[]_value>,      "lsngroup_lsnlogprofile_binding":<lsngroup_lsnlogprofile_binding[]_value>,      "lsngroup_lsnappsprofile_binding":<lsngroup_lsnappsprofile_binding[]_value>,      "lsngroup_lsnpool_binding":<lsngroup_lsnpool_binding[]_value>,      "lsngroup_lsntransportprofile_binding":<lsngroup_lsntransportprofile_binding[]_value>,      "lsngroup_pcpserver_binding":<lsngroup_pcpserver_binding[]_value>}]}```
 
 
 

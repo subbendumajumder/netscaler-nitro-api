@@ -7,7 +7,7 @@ Configuration for aptlicense resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>serialno</td><td>&lt;String></td><td>Read-write</td><td>Hardware Serial Number/License Activation Code(LAC).</td><tr><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>License ID.</td><tr><tr><td>sessionid</td><td>&lt;String></td><td>Read-write</td><td>Session ID.</td><tr><tr><td>bindtype</td><td>&lt;String></td><td>Read-write</td><td>Bind type.</td><tr><tr><td>countavailable</td><td>&lt;String></td><td>Read-write</td><td>The user can allocate one or more licenses. Ensure the value is less than (for partial allocation) or equal to the total number of available licenses.</td><tr><tr><td>licensedir</td><td>&lt;String></td><td>Read-write</td><td>License Directory.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>Response data as text blob.</td><tr><tr><td>counttotal</td><td>&lt;String></td><td>Read-only</td><td>Count.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-only</td><td>License name.</td><tr><tr><td>relevance</td><td>&lt;String></td><td>Read-only</td><td>License relevance.</td><tr><tr><td>datepurchased</td><td>&lt;String></td><td>Read-only</td><td>License purchase date.</td><tr><tr><td>datesa</td><td>&lt;String></td><td>Read-only</td><td>License SA date.</td><tr><tr><td>dateexp</td><td>&lt;String></td><td>Read-only</td><td>License expiry date.</td><tr><tr><td>features</td><td>&lt;String[]></td><td>Read-only</td><td>Features.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>serialno</td><td>&lt;String></td><td>Read-write</td><td>Hardware Serial Number/License Activation Code(LAC).</td><tr><tr><td>useproxy</td><td>&lt;String></td><td>Read-write</td><td>Specifies whether to use the licenseproxyserver to reach the internet. Make sure to configure licenseproxyserver to use this option.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>License ID.</td><tr><tr><td>sessionid</td><td>&lt;String></td><td>Read-write</td><td>Session ID.</td><tr><tr><td>bindtype</td><td>&lt;String></td><td>Read-write</td><td>Bind type.</td><tr><tr><td>countavailable</td><td>&lt;String></td><td>Read-write</td><td>The user can allocate one or more licenses. Ensure the value is less than (for partial allocation) or equal to the total number of available licenses.</td><tr><tr><td>licensedir</td><td>&lt;String></td><td>Read-write</td><td>License Directory.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>Response data as text blob.</td><tr><tr><td>counttotal</td><td>&lt;String></td><td>Read-only</td><td>Count.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-only</td><td>License name.</td><tr><tr><td>relevance</td><td>&lt;String></td><td>Read-only</td><td>License relevance.</td><tr><tr><td>datepurchased</td><td>&lt;String></td><td>Read-only</td><td>License purchase date.</td><tr><tr><td>datesa</td><td>&lt;String></td><td>Read-only</td><td>License SA date.</td><tr><tr><td>dateexp</td><td>&lt;String></td><td>Read-only</td><td>License expiry date.</td><tr><tr><td>features</td><td>&lt;String[]></td><td>Read-only</td><td>Features.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,27 +27,40 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsaptlicense?action=update
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"update"},"sessionid":"##sessionid","nsaptlicense":{      "id":<String_value>,      "sessionid":<String_value>,      "bindtype":<String_value>,      "countavailable":<String_value>,      "licensedir":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsaptlicense":{      "id":<String_value>,      "sessionid":<String_value>,      "bindtype":<String_value>,      "countavailable":<String_value>,      "licensedir":<String_value>,      "useproxy":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nsaptlicense
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsaptlicense
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/nsaptlicense?args=      "serialno":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsaptlicense?args=serialno:&lt;String_value&gt;,useproxy:&lt;String_value&gt;
 Use this query-parameter to get nsaptlicense resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "nsaptlicense": [ {      "serialno":<String_value>,      "response":<String_value>,      "id":<String_value>,      "sessionid":<String_value>,      "bindtype":<String_value>,      "countavailable":<String_value>,      "counttotal":<String_value>,      "name":<String_value>,      "relevance":<String_value>,      "datepurchased":<String_value>,      "datesa":<String_value>,      "dateexp":<String_value>,      "features":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsaptlicense": [ {serialno:<String_value>,useproxy:<String_value>      "response":<String_value>,      "id":<String_value>,      "sessionid":<String_value>,      "bindtype":<String_value>,      "countavailable":<String_value>,      "counttotal":<String_value>,      "name":<String_value>,      "relevance":<String_value>,      "datepurchased":<String_value>,      "datesa":<String_value>,      "dateexp":<String_value>,      "features":<String[]_value>}]}```
 
 
 
@@ -55,9 +68,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nsaptlicense?args=     "serialno":&lt;String_value&gt;,;count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsaptlicense?args=serialno:&lt;String_value&gt;,useproxy:&lt;String_value&gt;;count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",nsaptlicense: [ { "__count": "#no"} ] }
+{ "nsaptlicense": [ { "__count": "#no"} ] }
 
 

@@ -7,7 +7,7 @@ Configuration for deterministic NAT resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>The name of the LSN Client.</td><tr><tr><td>subscrip</td><td>&lt;String></td><td>Read-write</td><td>The Client IP address.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>The LSN client TD.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>natip</td><td>&lt;String></td><td>Read-write</td><td>The NAT IP address.&lt;br>Minimum length = 1</td><tr><tr><td>subscrip2</td><td>&lt;String></td><td>Read-only</td><td>The Subscriber IP address.</td><tr><tr><td>natip2</td><td>&lt;String></td><td>Read-only</td><td>The NAT IP address.</td><tr><tr><td>firstport</td><td>&lt;Integer></td><td>Read-only</td><td>The Application Protocol Port of the Profile.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>lastport</td><td>&lt;Integer></td><td>Read-only</td><td>The Application Protocol Ending Port of the Profile.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>srctd</td><td>&lt;Double></td><td>Read-only</td><td>The LSN client TD.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>The name of the LSN Client.</td><tr><tr><td>network6</td><td>&lt;String></td><td>Read-write</td><td>IPv6 address of the LSN subscriber or B4 device.</td><tr><tr><td>subscrip</td><td>&lt;String></td><td>Read-write</td><td>The Client IP address.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>The LSN client TD.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>natip</td><td>&lt;String></td><td>Read-write</td><td>The NAT IP address.&lt;br>Minimum length = 1</td><tr><tr><td>natprefix</td><td>&lt;String></td><td>Read-only</td><td>IPv6 address of the LSN subscriber network(B4-Device) on whose traffic the NetScaler ADC perform Large Scale NAT.</td><tr><tr><td>subscrip2</td><td>&lt;String></td><td>Read-only</td><td>The Subscriber IP address.</td><tr><tr><td>natip2</td><td>&lt;String></td><td>Read-only</td><td>The NAT IP address.</td><tr><tr><td>firstport</td><td>&lt;Integer></td><td>Read-only</td><td>The Application Protocol Port of the Profile.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>lastport</td><td>&lt;Integer></td><td>Read-only</td><td>The Application Protocol Ending Port of the Profile.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>srctd</td><td>&lt;Double></td><td>Read-only</td><td>The LSN client TD.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>nattype</td><td>&lt;String></td><td>Read-only</td><td>Type of subscriber info(ex: nat44 or ds-lite).&lt;br>Default value: NAT44&lt;br>Possible values = NAT44, DS-Lite, NAT64</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,36 +27,45 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/lsndeterministicnat
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/lsndeterministicnat?args=      "clientname":&lt;String_value&gt;,      "subscrip":&lt;String_value&gt;,      "td":&lt;Double_value&gt;,      "natip":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?args=clientname:&lt;String_value&gt;,network6:&lt;String_value&gt;,subscrip:&lt;String_value&gt;,td:&lt;Double_value&gt;,natip:&lt;String_value&gt;
 Use this query-parameter to get lsndeterministicnat resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/lsndeterministicnat?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of lsndeterministicnat resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/lsndeterministicnat?view=summary
-Use this query-parameter to get the summary output of lsndeterministicnat resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/lsndeterministicnat?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?pagesize=#no;pageno=#no
 Use this query-parameter to get the lsndeterministicnat resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/lsndeterministicnat?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "lsndeterministicnat": [ {      "clientname":<String_value>,      "subscrip":<String_value>,      "td":<Double_value>,      "natip":<String_value>,      "subscrip2":<String_value>,      "natip2":<String_value>,      "firstport":<Integer_value>,      "lastport":<Integer_value>,      "srctd":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsndeterministicnat": [ {clientname:<String_value>,network6:<String_value>,subscrip:<String_value>,td:<Double_value>,natip:<String_value>      "natprefix":<String_value>,      "subscrip2":<String_value>,      "natip2":<String_value>,      "firstport":<Integer_value>,      "lastport":<Integer_value>,      "srctd":<Double_value>,      "nattype":<String_value>}]}```
 
 
 
@@ -64,9 +73,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lsndeterministicnat?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsndeterministicnat?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",lsndeterministicnat: [ { "__count": "#no"} ] }
+{ "lsndeterministicnat": [ { "__count": "#no"} ] }
 
 

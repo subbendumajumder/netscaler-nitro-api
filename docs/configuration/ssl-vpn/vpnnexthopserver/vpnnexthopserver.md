@@ -7,7 +7,7 @@ Configuration for Next Hop Server resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the NetScaler Gateway appliance in the first DMZ.&lt;br>Minimum length = 1&lt;br>Maximum length = 32</td><tr><tr><td>nexthopip</td><td>&lt;String></td><td>Read-write</td><td>IP address or FQDN of the NetScaler Gateway proxy in the second DMZ.</td><tr><tr><td>nexthopport</td><td>&lt;Integer></td><td>Read-write</td><td>Port number of the NetScaler Gateway proxy in the second DMZ.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>secure</td><td>&lt;String></td><td>Read-write</td><td>Use of a secure port, such as 443, for the double-hop configuration.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the NetScaler Gateway appliance in the first DMZ.&lt;br>Minimum length = 1&lt;br>Maximum length = 32</td><tr><tr><td>nexthopip</td><td>&lt;String></td><td>Read-write</td><td>IP address of the NetScaler Gateway proxy in the second DMZ.</td><tr><tr><td>nexthopfqdn</td><td>&lt;String></td><td>Read-write</td><td>FQDN of the NetScaler Gateway proxy in the second DMZ.&lt;br>Minimum length = 1</td><tr><tr><td>resaddresstype</td><td>&lt;String></td><td>Read-write</td><td>Address Type (IPV4/IPv6) of DNS name of nextHopServer FQDN.&lt;br>Minimum length = 1&lt;br>Possible values = IPV4, IPV6</td><tr><tr><td>nexthopport</td><td>&lt;Integer></td><td>Read-write</td><td>Port number of the NetScaler Gateway proxy in the second DMZ.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>secure</td><td>&lt;String></td><td>Read-write</td><td>Use of a secure port, such as 443, for the double-hop configuration.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,59 +27,69 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vpnnexthopserver":{      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"vpnnexthopserver":{      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopfqdn":<String_value>,      "resaddresstype":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/vpnnexthopserver
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/vpnnexthopserver?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of vpnnexthopserver resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver?view=summary
-Use this query-parameter to get the summary output of vpnnexthopserver resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver?pagesize=#no;pageno=#no
 Use this query-parameter to get the vpnnexthopserver resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vpnnexthopserver": [ {      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnnexthopserver": [ {      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopfqdn":<String_value>,      "resaddresstype":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>}]}```
 
 
 
@@ -87,9 +97,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnnexthopserver": [ {      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnnexthopserver": [ {      "name":<String_value>,      "nexthopip":<String_value>,      "nexthopfqdn":<String_value>,      "resaddresstype":<String_value>,      "nexthopport":<Integer_value>,      "secure":<String_value>}]}```
 
 
 
@@ -97,9 +128,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnnexthopserver": 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vpnnexthopserver?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnnexthopserver?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",vpnnexthopserver: [ { "__count": "#no"} ] }
+{ "vpnnexthopserver": [ { "__count": "#no"} ] }
 
 

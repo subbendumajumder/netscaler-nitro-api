@@ -7,7 +7,7 @@ Configuration for xml error page resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Indicates name of the imported xml error page to be removed. &lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL (protocol, host, path, and name) for the location at which to store the imported XML error object. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about the XML error object.&lt;br>Maximum length = 128</td><tr><tr><td>overwrite</td><td>&lt;Boolean></td><td>Read-write</td><td>Overwrite any existing XML error object of the same name.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Indicates name of the imported xml error page to be removed.&lt;br>&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL (protocol, host, path, and name) for the location at which to store the imported XML error object.&lt;br>NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about the XML error object.&lt;br>Maximum length = 128</td><tr><tr><td>overwrite</td><td>&lt;Boolean></td><td>Read-write</td><td>Overwrite any existing XML error object of the same name.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,48 +27,62 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###Import
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage?action=Import
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","appfwxmlerrorpage":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>,      "overwrite":<Boolean_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"appfwxmlerrorpage":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>,      "overwrite":<Boolean_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###change
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage?action=update
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"update"},"sessionid":"##sessionid","appfwxmlerrorpage":{      "name":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"appfwxmlerrorpage":{      "name":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/appfwxmlerrorpage
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "appfwxmlerrorpage": [ {      "name":<String_value>,      "response":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "appfwxmlerrorpage": [ {      "name":<String_value>,      "response":<String_value>}]}```
 
 
 
@@ -76,9 +90,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwxmlerrorpage/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "appfwxmlerrorpage": [ {      "name":<String_value>,      "response":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "appfwxmlerrorpage": [ {      "name":<String_value>,      "response":<String_value>}]}```
 
 
 

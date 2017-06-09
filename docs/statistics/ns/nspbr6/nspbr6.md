@@ -7,7 +7,7 @@ Statistics for PBR6 entry resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the PBR6 whose statistics you want the NetScaler appliance to display.&lt;br>Minimum length = 1</td><tr><tr><td>clearstats</td><td>&lt;String></td><td>Read-write</td><td>Clear the statsistics / counters.&lt;br>Possible values = basic, full</td><tr><tr><td>pbr6totpktsallowed</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched the PBR6 with action ALLOW</td><tr><tr><td>pbr6pktsallowedrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totpktsallowed</td><tr><tr><td>pbr6totpktsdenied</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched PBR6 with action DENY</td><tr><tr><td>pbr6pktsdeniedrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totpktsdenied</td><tr><tr><td>pbr6tothits</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched one of the configured PBR6</td><tr><tr><td>pbr6hitsrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6tothits</td><tr><tr><td>pbr6totmisses</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that did not match any PBR6</td><tr><tr><td>pbr6missesrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totmisses</td><tr><tr><td>pbr6perhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times the pbr6 was hit</td><tr><tr><td>pbr6perhitsrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6perhits</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the PBR6 whose statistics you want the NetScaler appliance to display.&lt;br>Minimum length = 1</td><tr><tr><td>clearstats</td><td>&lt;String></td><td>Read-write</td><td>Clear the statsistics / counters.&lt;br>Possible values = basic, full</td><tr><tr><td>pbr6totpktsallowed</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched the PBR6 with action ALLOW</td><tr><tr><td>pbr6pktsallowedrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totpktsallowed</td><tr><tr><td>pbr6totpktsdenied</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched PBR6 with action DENY</td><tr><tr><td>pbr6pktsdeniedrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totpktsdenied</td><tr><tr><td>pbr6tothits</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that matched one of the configured PBR6</td><tr><tr><td>pbr6hitsrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6tothits</td><tr><tr><td>pbr6totmisses</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that did not match any PBR6</td><tr><tr><td>pbr6missesrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totmisses</td><tr><tr><td>pbr6totnulldrop</td><td>&lt;Double></td><td>Read-only</td><td>Total packets that are dropped due to null next hop</td><tr><tr><td>pbr6nulldroprate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6totnulldrop</td><tr><tr><td>pbr6perhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times the pbr6 was hit</td><tr><tr><td>pbr6perhitsrate</td><td>&lt;Double></td><td>Read-only</td><td>Rate (/s) counter for pbr6perhits</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/nspbr6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/nspbr6
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/nspbr6?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/nspbr6?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get nspbr6 resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "nspbr6": [ {      "name":<String_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "nspbr6": [ {      
 
 
 
-URL: http://NS_IP/nitro/v1/stat/nspbr6/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/nspbr6/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "nspbr6": [ {      "name":<String_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
 
 
 

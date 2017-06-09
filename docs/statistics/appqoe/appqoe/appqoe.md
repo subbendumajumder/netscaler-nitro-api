@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/appqoe
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/appqoe
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/appqoe?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/appqoe?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get appqoe resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "appqoe": [ {      "totpriqvalidcookies":<Double_value>,      "totonhvalidcookies":<Double_value>,      "dosqvalidcookiesrate":<Double_value>,      "sidvalidcookiesrate":<Double_value>,      "onhvalidcookiesrate":<Double_value>,      "totdosqvalidcookies":<Double_value>,      "dostrigrate":<Double_value>,      "totgetinmemrsp":<Double_value>,      "totlowprireq":<Double_value>,      "totdoshfaultycookies":<Double_value>,      "doshfaultycookiesrate":<Double_value>,      "sessreqrate":<Double_value>,      "totpostinmemrspbytes":<Double_value>,      "totpriqfaultycookies":<Double_value>,      "totpostinmemrsp":<Double_value>,      "priembedlinksrate":<Double_value>,      "mediumprireqrate":<Double_value>,      "totdostrig":<Double_value>,      "totvalidcookies":<Double_value>,      "totinmemrsp":<Double_value>,      "totsidfaultycookies":<Double_value>,      "totsidvalidcookies":<Double_value>,      "totdosqfaultycookies":<Double_value>,      "tsvrsubfailedrate":<Double_value>,      "postinmemrsprate":<Double_value>,      "totpriembedlinks":<Double_value>,      "totmediumprireq":<Double_value>,      "priqvalidcookiesrate":<Double_value>,      "totfaultycookies":<Double_value>,      "doshvalidcookiesrate":<Double_value>,      "sidfaultycookiesrate":<Double_value>,      "highprireqrate":<Double_value>,      "dosqfaultycookiesrate":<Double_value>,      "inmemrsprate":<Double_value>,      "getinmemrsprate":<Double_value>,      "onhfaultycookiesrate":<Double_value>,      "validcookiesrate":<Double_value>,      "totaltcntreq":<Double_value>,      "totsessreq":<Double_value>,      "priqfaultycookiesrate":<Double_value>,      "tcntreqrate":<Double_value>,      "totdoshvalidcookies":<Double_value>,      "lowprireqrate":<Double_value>,      "tothighprireq":<Double_value>,      "totaltsvrsubfailed":<Double_value>,      "totlowestprireq":<Double_value>,      "lowestprireqrate":<Double_value>,      "totonhfaultycookies":<Double_value>,      "faultycookiesrate":<Double_value>,      "postinmemrspbytesrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "appqoe": [ {      "totpriqvalidcookies":<Double_value>,      "totonhvalidcookies":<Double_value>,      "dosqvalidcookiesrate":<Double_value>,      "sidvalidcookiesrate":<Double_value>,      "onhvalidcookiesrate":<Double_value>,      "totdosqvalidcookies":<Double_value>,      "dostrigrate":<Double_value>,      "totgetinmemrsp":<Double_value>,      "totlowprireq":<Double_value>,      "totdoshfaultycookies":<Double_value>,      "doshfaultycookiesrate":<Double_value>,      "sessreqrate":<Double_value>,      "totpostinmemrspbytes":<Double_value>,      "totpriqfaultycookies":<Double_value>,      "totpostinmemrsp":<Double_value>,      "priembedlinksrate":<Double_value>,      "mediumprireqrate":<Double_value>,      "totdostrig":<Double_value>,      "totvalidcookies":<Double_value>,      "totinmemrsp":<Double_value>,      "totsidfaultycookies":<Double_value>,      "totsidvalidcookies":<Double_value>,      "totdosqfaultycookies":<Double_value>,      "tsvrsubfailedrate":<Double_value>,      "postinmemrsprate":<Double_value>,      "totpriembedlinks":<Double_value>,      "totmediumprireq":<Double_value>,      "priqvalidcookiesrate":<Double_value>,      "totfaultycookies":<Double_value>,      "doshvalidcookiesrate":<Double_value>,      "sidfaultycookiesrate":<Double_value>,      "highprireqrate":<Double_value>,      "dosqfaultycookiesrate":<Double_value>,      "inmemrsprate":<Double_value>,      "getinmemrsprate":<Double_value>,      "onhfaultycookiesrate":<Double_value>,      "validcookiesrate":<Double_value>,      "totaltcntreq":<Double_value>,      "totsessreq":<Double_value>,      "priqfaultycookiesrate":<Double_value>,      "tcntreqrate":<Double_value>,      "totdoshvalidcookies":<Double_value>,      "lowprireqrate":<Double_value>,      "tothighprireq":<Double_value>,      "totaltsvrsubfailed":<Double_value>,      "totlowestprireq":<Double_value>,      "lowestprireqrate":<Double_value>,      "totonhfaultycookies":<Double_value>,      "faultycookiesrate":<Double_value>,      "postinmemrspbytesrate":<Double_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Configuration for 0 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new login schema. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after an action is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my action" or my action).&lt;br>Minimum length = 1</td><tr><tr><td>authenticationschema</td><td>&lt;String></td><td>Read-write</td><td>Name of the file for reading authentication schema to be sent for Login Page UI. This file should contain xml definition of elements as per Citrix Forms Authentication Protocol to be able to render login form.&lt;br>Minimum length = 1</td><tr><tr><td>userexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression for username extraction during login.&lt;br>Minimum length = 1</td><tr><tr><td>passwdexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression for password extraction during login.&lt;br>Minimum length = 1</td><tr><tr><td>usercredentialindex</td><td>&lt;Double></td><td>Read-write</td><td>The index at which user entered username should be stored in session.&lt;br>Minimum value = 1&lt;br>Maximum value = 16</td><tr><tr><td>passwordcredentialindex</td><td>&lt;Double></td><td>Read-write</td><td>The index at which user entered password should be stored in session.&lt;br>Minimum value = 1&lt;br>Maximum value = 16</td><tr><tr><td>authenticationstrength</td><td>&lt;Double></td><td>Read-write</td><td>Weight of the current authentication.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new login schema. Login schema defines the way login form is rendered. It provides a way to customize the fields that are shown to the user. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after an action is created.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my action" or my action).&lt;br>Minimum length = 1</td><tr><tr><td>authenticationschema</td><td>&lt;String></td><td>Read-write</td><td>Name of the file for reading authentication schema to be sent for Login Page UI. This file should contain xml definition of elements as per Citrix Forms Authentication Protocol to be able to render login form. If administrator does not want to prompt users for additional credentials but continue with previously obtained credentials, then "noschema" can be given as argument. Please note that this applies only to loginSchemas that are used with user-defined factors, and not the vserver factor.&lt;br>Minimum length = 1</td><tr><tr><td>userexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression for username extraction during login. This can be any relevant advanced policy expression.&lt;br>Minimum length = 1</td><tr><tr><td>passwdexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression for password extraction during login. This can be any relevant advanced policy expression.&lt;br>Minimum length = 1</td><tr><tr><td>usercredentialindex</td><td>&lt;Double></td><td>Read-write</td><td>The index at which user entered username should be stored in session.&lt;br>Minimum value = 1&lt;br>Maximum value = 16</td><tr><tr><td>passwordcredentialindex</td><td>&lt;Double></td><td>Read-write</td><td>The index at which user entered password should be stored in session.&lt;br>Minimum value = 1&lt;br>Maximum value = 16</td><tr><tr><td>authenticationstrength</td><td>&lt;Double></td><td>Read-write</td><td>Weight of the current authentication.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>ssocredentials</td><td>&lt;String></td><td>Read-write</td><td>This option indicates whether current factor credentials are the default SSO (SingleSignOn) credentials.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","authenticationloginschema":{      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationloginschema":{      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,      "ssocredentials":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","authenticationloginschema":{      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationloginschema":{      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,      "ssocredentials":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","authenticationloginschema":{      "name":<String_value>,      "userexpression":true,      "passwdexpression":true,      "usercredentialindex":true,      "passwordcredentialindex":true,      "authenticationstrength":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationloginschema":{      "name":<String_value>,      "userexpression":true,      "passwdexpression":true,      "usercredentialindex":true,      "passwordcredentialindex":true,      "authenticationstrength":true,      "ssocredentials":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/authenticationloginschema
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/authenticationloginschema?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of authenticationloginschema resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema?view=summary
-Use this query-parameter to get the summary output of authenticationloginschema resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?pagesize=#no;pageno=#no
 Use this query-parameter to get the authenticationloginschema resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "authenticationloginschema": [ {      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "authenticationloginschema": [ {      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,      "ssocredentials":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationloginschema": [ {      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "authenticationloginschema": [ {      "name":<String_value>,      "authenticationschema":<String_value>,      "userexpression":<String_value>,      "passwdexpression":<String_value>,      "usercredentialindex":<Double_value>,      "passwordcredentialindex":<Double_value>,      "authenticationstrength":<Double_value>,      "ssocredentials":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationlogin
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/authenticationloginschema?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationloginschema?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",authenticationloginschema: [ { "__count": "#no"} ] }
+{ "authenticationloginschema": [ { "__count": "#no"} ] }
 
 

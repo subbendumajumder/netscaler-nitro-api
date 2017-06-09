@@ -7,12 +7,12 @@ Binding object showing the lbmonitor that can be bound to gslbservice.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>weight</td><td>&lt;Double></td><td>Read-write</td><td>Weight to assign to the monitor-service binding. A larger number specifies a greater weight. Contributes to the monitoring threshold, which determines the state of the service.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the GSLB service.&lt;br>Minimum length = 1</td><tr><tr><td>monitor_name</td><td>&lt;String></td><td>Read-write</td><td>Monitor name.</td><tr><tr><td>monstate</td><td>&lt;String></td><td>Read-write</td><td>State of the monitor bound to gslb service.&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>monstatcode</td><td>&lt;Integer></td><td>Read-only</td><td>The code indicating the monitor response.</td><tr><tr><td>responsetime</td><td>&lt;Double></td><td>Read-only</td><td>Response time of this monitor.</td><tr><tr><td>totalfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>The total number of failed probs.</td><tr><tr><td>monstatparam2</td><td>&lt;Integer></td><td>Read-only</td><td>Second parameter for use with message code.</td><tr><tr><td>failedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Number of the current failed monitoring probes.</td><tr><tr><td>monstatparam3</td><td>&lt;Integer></td><td>Read-only</td><td>Third parameter for use with message code.</td><tr><tr><td>monitor_state</td><td>&lt;String></td><td>Read-only</td><td>The running state of the monitor on this service.&lt;br>Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED</td><tr><tr><td>monitortotalprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of probes sent to monitor this service.</td><tr><tr><td>monstatparam1</td><td>&lt;Integer></td><td>Read-only</td><td>First parameter for use with message code.</td><tr><tr><td>monitortotalfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of failed probes.</td><tr><tr><td>monitorcurrentfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of currently failed probes.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>weight</td><td>&lt;Double></td><td>Read-write</td><td>Weight to assign to the monitor-service binding. A larger number specifies a greater weight. Contributes to the monitoring threshold, which determines the state of the service.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the GSLB service.&lt;br>Minimum length = 1</td><tr><tr><td>monitor_name</td><td>&lt;String></td><td>Read-write</td><td>Monitor name.</td><tr><tr><td>monstate</td><td>&lt;String></td><td>Read-write</td><td>State of the monitor bound to gslb service.&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>monstatcode</td><td>&lt;Integer></td><td>Read-only</td><td>The code indicating the monitor response.</td><tr><tr><td>responsetime</td><td>&lt;Double></td><td>Read-only</td><td>Response time of this monitor.</td><tr><tr><td>totalfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>The total number of failed probs.</td><tr><tr><td>monstatparam2</td><td>&lt;Integer></td><td>Read-only</td><td>Second parameter for use with message code.</td><tr><tr><td>lastresponse</td><td>&lt;String></td><td>Read-only</td><td>Displays the gslb monitor status in string format.</td><tr><tr><td>failedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Number of the current failed monitoring probes.</td><tr><tr><td>monstatparam3</td><td>&lt;Integer></td><td>Read-only</td><td>Third parameter for use with message code.</td><tr><tr><td>monitor_state</td><td>&lt;String></td><td>Read-only</td><td>The running state of the monitor on this service.&lt;br>Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED</td><tr><tr><td>monitortotalprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of probes sent to monitor this service.</td><tr><tr><td>monstatparam1</td><td>&lt;Integer></td><td>Read-only</td><td>First parameter for use with message code.</td><tr><tr><td>monitortotalfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of failed probes.</td><tr><tr><td>monitorcurrentfailedprobes</td><td>&lt;Double></td><td>Read-only</td><td>Total number of currently failed probes.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/gslbservice_lbmonitor_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","gslbservice_lbmonitor_binding":{      "servicename":<String_value>,      "monitor_name":<String_value>,                  "monstate":<String_value>,                  "weight":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"gslbservice_lbmonitor_binding":{      "servicename":<String_value>,      "monitor_name":<String_value>,      "monstate":<String_value>,      "weight":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of gslbservice_lbmonitor_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the gslbservice_lbmonitor_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "gslbservice_lbmonitor_binding": [ {      "weight":<Double_value>,      "servicename":<String_value>,      "monitor_name":<String_value>,      "monstate":<String_value>,      "monstatcode":<Integer_value>,      "responsetime":<Double_value>,      "totalfailedprobes":<Double_value>,      "monstatparam2":<Integer_value>,      "failedprobes":<Double_value>,      "monstatparam3":<Integer_value>,      "monitor_state":<String_value>,      "monitortotalprobes":<Double_value>,      "monstatparam1":<Integer_value>,      "monitortotalfailedprobes":<Double_value>,      "monitorcurrentfailedprobes":<Double_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "gslbservice_lbmonitor_binding": [ {      "weight":<Double_value>,      "servicename":<String_value>,      "monitor_name":<String_value>,      "monstate":<String_value>,      "monstatcode":<Integer_value>,      "responsetime":<Double_value>,      "totalfailedprobes":<Double_value>,      "monstatparam2":<Integer_value>,      "lastresponse":<String_value>,      "failedprobes":<Double_value>,      "monstatparam3":<Integer_value>,      "monitor_state":<String_value>,      "monitortotalprobes":<Double_value>,      "monstatparam1":<Integer_value>,      "monitortotalfailedprobes":<Double_value>,      "monitorcurrentfailedprobes":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "gslbservice_lbmonitor_binding": [ {      "weight":<Double_value>,      "servicename":<String_value>,      "monitor_name":<String_value>,      "monstate":<String_value>,      "monstatcode":<Integer_value>,      "responsetime":<Double_value>,      "totalfailedprobes":<Double_value>,      "monstatparam2":<Integer_value>,      "lastresponse":<String_value>,      "failedprobes":<Double_value>,      "monstatparam3":<Integer_value>,      "monitor_state":<String_value>,      "monitortotalprobes":<Double_value>,      "monstatparam1":<Integer_value>,      "monitortotalfailedprobes":<Double_value>,      "monitorcurrentfailedprobes":<Double_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/gslbservice_lbmonitor_binding/servicename_value&lt;String&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",gslbservice_lbmonitor_binding: [ { "__count": "#no"} ] }
+{"gslbservice_lbmonitor_binding": [ { "__count": "#no"} ] }
 
 

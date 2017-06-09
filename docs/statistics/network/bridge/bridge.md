@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/bridge
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/bridge
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/bridge?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/bridge?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get bridge resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "bridge": [ {      "bdgpktsrate":<Double_value>,      "totbdgmbits":<Double_value>,      "bdgmbitsrate":<Double_value>,      "totbdgpkts":<Double_value>,      "tcperrbdgmuted":<Double_value>,      "tcpbdgcollisionsrate":<Double_value>,      "tcptotbdgcollisions":<Double_value>,      "tcperrbdgmutedrate":<Double_value>,      "tcpbdgmacmovedrate":<Double_value>,      "tcptotbdgmacmoved":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "bridge": [ {      "bdgpktsrate":<Double_value>,      "totbdgmbits":<Double_value>,      "bdgmbitsrate":<Double_value>,      "totbdgpkts":<Double_value>,      "tcperrbdgmuted":<Double_value>,      "tcpbdgcollisionsrate":<Double_value>,      "tcptotbdgcollisions":<Double_value>,      "tcperrbdgmutedrate":<Double_value>,      "tcpbdgmacmovedrate":<Double_value>,      "tcptotbdgmacmoved":<Double_value>}]}```
 
 
 

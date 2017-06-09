@@ -7,7 +7,7 @@ Configuration for tech support resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>scope</td><td>&lt;String></td><td>Read-write</td><td>Use this option to gather data on the present node, all cluster nodes, or for the specified partitions. The CLUSTER scope generates smaller abbreviated archives for all nodes. The PARTITION scope collects the admin partition in addition to those specified. The partitionName option is only required for the PARTITION scope.&lt;br>Default value: NODE&lt;br>Possible values = NODE, CLUSTER, PARTITION</td><tr><tr><td>partitionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the partition.&lt;br>Minimum length = 1</td><tr><tr><td>upload</td><td>&lt;Boolean></td><td>Read-write</td><td>Securely upload the collector archive to Citrix Technical Support using SSL. MyCitrix credentials will be required. If used with the -file option, no new collector archive is generated. Instead, the specified archive is uploaded. Note that the upload operation time depends on the size of the archive file, and the connection bandwidth.</td><tr><tr><td>proxy</td><td>&lt;String></td><td>Read-write</td><td>Specifies the proxy server to be used when uploading a collector archive. Use this parameter if the NetScaler appliance does not have direct internet connectivity. The basic format of the proxy string is: "proxy_IP:;lt;proxy_port;gt;" (without quotes). If the proxy requires authentication the format is: "username:password@proxy_IP:;lt;proxy_port;gt;".</td><tr><tr><td>casenumber</td><td>&lt;String></td><td>Read-write</td><td>Specifies the associated case or service request number if it has already been opened with Citrix Technical Support.</td><tr><tr><td>file</td><td>&lt;String></td><td>Read-write</td><td>Specifies the name (with full path) of the collector archive file to be uploaded. If this is specified, no new collector archive is generated.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Provides a text description for the the upload, and can be used for logging purposes.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>Output as text printed to console and syslog at NOTICE level.</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>scope</td><td>&lt;String></td><td>Read-write</td><td>Use this option to gather data on the present node, all cluster nodes, or for the specified partitions. The CLUSTER scope generates smaller abbreviated archives for all nodes. The PARTITION scope collects the admin partition in addition to those specified. The partitionName option is only required for the PARTITION scope.&lt;br>Default value: NODE&lt;br>Possible values = NODE, CLUSTER, PARTITION</td><tr><tr><td>partitionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the partition.&lt;br>Minimum length = 1</td><tr><tr><td>upload</td><td>&lt;Boolean></td><td>Read-write</td><td>Securely upload the collector archive to Citrix Technical Support using SSL. MyCitrix credentials will be required. If used with the -file option, no new collector archive is generated. Instead, the specified archive is uploaded. Note that the upload operation time depends on the size of the archive file, and the connection bandwidth.</td><tr><tr><td>proxy</td><td>&lt;String></td><td>Read-write</td><td>Specifies the proxy server to be used when uploading a collector archive. Use this parameter if the NetScaler appliance does not have direct internet connectivity. The basic format of the proxy string is: "proxy_IP:;lt;proxy_port;gt;" (without quotes). If the proxy requires authentication the format is: "username:password@proxy_IP:;lt;proxy_port;gt;".</td><tr><tr><td>casenumber</td><td>&lt;String></td><td>Read-write</td><td>Specifies the associated case or service request number if it has already been opened with Citrix Technical Support.</td><tr><tr><td>file</td><td>&lt;String></td><td>Read-write</td><td>Specifies the name (with full path) of the collector archive file to be uploaded. If this is specified, no new collector archive is generated.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Provides a text description for the the upload, and can be used for logging purposes.</td><tr><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>Specifies My Citrix user name, which is used to login to Citrix upload server.</td><tr><tr><td>password</td><td>&lt;String></td><td>Read-write</td><td>Specifies My Citrix password, which is used to login to Citrix upload server.</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>Output as text printed to console and syslog at NOTICE level.</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/techsupport
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/techsupport
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/techsupport?args=      "scope":&lt;String_value&gt;,                  "partitionname":&lt;String_value&gt;,      "upload":&lt;Boolean_value&gt;,                  "proxy":&lt;String_value&gt;,                  "casenumber":&lt;String_value&gt;,                  "file":&lt;String_value&gt;,                  "description":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/techsupport?args=scope:&lt;String_value&gt;,partitionname:&lt;String_value&gt;,upload:&lt;Boolean_value&gt;,proxy:&lt;String_value&gt;,casenumber:&lt;String_value&gt;,file:&lt;String_value&gt;,description:&lt;String_value&gt;,username:&lt;String_value&gt;,password:&lt;String_value&gt;
 Use this query-parameter to get techsupport resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "techsupport": [ {      "scope":<String_value>,                  "partitionname":<String_value>,      "upload":<Boolean_value>,                  "proxy":<String_value>,                  "casenumber":<String_value>,                  "file":<String_value>,                  "description":<String_value>,      "response":<String_value>,      "servername":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "techsupport": [ {scope:<String_value>,partitionname:<String_value>,upload:<Boolean_value>,proxy:<String_value>,casenumber:<String_value>,file:<String_value>,description:<String_value>,username:<String_value>,password:<String_value>      "response":<String_value>,      "servername":<String_value>}]}```
 
 
 

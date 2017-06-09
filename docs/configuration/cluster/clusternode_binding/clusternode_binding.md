@@ -1,6 +1,6 @@
 #clusternode_binding
 
-Binding object showing the resources that can be bound to clusternode.
+Binding object which returns the resources bound to clusternode.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to clusternode.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -31,10 +31,40 @@ URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_binding/nod
 HTTP Method: GET
 Request Headers:
 
-Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Payload: ```{ "clusternode_binding": [ {      "nodeid":<Double_value>,      "clusternode_routemonitor_binding":<clusternode_routemonitor_binding[]_value>}]}```
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusternode_binding": [ {      "nodeid":<Double_value>,      "clusternode_routemonitor_binding":<clusternode_routemonitor_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusternode_binding": [ {      "nodeid":<Double_value>,      "clusternode_routemonitor_binding":<clusternode_routemonitor_binding[]_value>}]}```
 
 
 

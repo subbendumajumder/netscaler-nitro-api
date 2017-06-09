@@ -7,7 +7,7 @@ Statistics for Global system memory stats resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clearstats</td><td>&lt;String></td><td>Read-write</td><td>Clear the statsistics / counters.&lt;br>Possible values = basic, full</td><tr><tr><td>shmemallocpcnt</td><td>&lt;Double></td><td>Read-only</td><td>Shared memory insue percent.</td><tr><tr><td>shmemallocinmb</td><td>&lt;Double></td><td>Read-only</td><td>Shared memory insue, in megabytes.</td><tr><tr><td>shmemtotinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total shared memory allowed to allocate, in megabytes.</td><tr><tr><td>memtotfree</td><td>&lt;Double></td><td>Read-only</td><td>Total Free PE Memory in the System.</td><tr><tr><td>memusagepcnt</td><td>&lt;Double></td><td>Read-only</td><td>Percentage of memory utilization on NetScaler.</td><tr><tr><td>memtotuseinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total NetScaler Memory in use, in megabytes.</td><tr><tr><td>memtotallocpcnt</td><td>&lt;Double></td><td>Read-only</td><td>Currently allocated memory in percent.</td><tr><tr><td>memtotallocmb</td><td>&lt;Double></td><td>Read-only</td><td>Currently allocated memory, in megabytes.</td><tr><tr><td>memtotinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total memory available (grabbed) for use by packet engine (PE), in megabytes.</td><tr><tr><td>memtotavail</td><td>&lt;Double></td><td>Read-only</td><td>Total system memory available for PE to grab from the system.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clearstats</td><td>&lt;String></td><td>Read-write</td><td>Clear the statsistics / counters.&lt;br>Possible values = basic, full</td><tr><tr><td>cacmemmaxmemlimitpcnt</td><td>&lt;Double></td><td>Read-only</td><td>Integrated Cache memory insue percent.</td><tr><tr><td>cacmemmaxmemlimit</td><td>&lt;Double></td><td>Read-only</td><td>Integrated Cache memory insue, in megabytes.</td><tr><tr><td>shmemerrallocfailed</td><td>&lt;Double></td><td>Read-only</td><td>Total shared memory allocation failed.</td><tr><tr><td>shmemallocpcnt</td><td>&lt;Double></td><td>Read-only</td><td>Shared memory insue percent.</td><tr><tr><td>shmemallocinmb</td><td>&lt;Double></td><td>Read-only</td><td>Shared memory insue, in megabytes.</td><tr><tr><td>shmemtotinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total shared memory allowed to allocate, in megabytes.</td><tr><tr><td>memtotallocfailed</td><td>&lt;Double></td><td>Read-only</td><td>Total system memory allocation failed.</td><tr><tr><td>memtotfree</td><td>&lt;Double></td><td>Read-only</td><td>Total Free PE Memory in the System.</td><tr><tr><td>memusagepcnt</td><td>&lt;Double></td><td>Read-only</td><td>Percentage of memory utilization on NetScaler.</td><tr><tr><td>memtotuseinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total NetScaler Memory in use, in megabytes.</td><tr><tr><td>memtotallocpcnt</td><td>&lt;Double></td><td>Read-only</td><td>Currently allocated memory in percent.</td><tr><tr><td>memtotallocmb</td><td>&lt;Double></td><td>Read-only</td><td>Currently allocated memory, in megabytes.</td><tr><tr><td>memtotinmb</td><td>&lt;Double></td><td>Read-only</td><td>Total memory available (grabbed) for use by packet engine (PE), in megabytes.</td><tr><tr><td>memtotavail</td><td>&lt;Double></td><td>Read-only</td><td>Total system memory available for PE to grab from the system.</td><tr><tr><td>cacmemmaxsyslimitmb</td><td>&lt;Double></td><td>Read-only</td><td>Integrated Cache memory, in megabytes.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/systemmemory
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/systemmemory
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/systemmemory?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/systemmemory?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get systemmemory resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "systemmemory": [ {      "memtotallocpcnt":<Double_value>,      "memtotfree":<Double_value>,      "shmemallocpcnt":<Double_value>,      "shmemallocinmb":<Double_value>,      "memtotuseinmb":<Double_value>,      "memusagepcnt":<Double_value>,      "memtotinmb":<Double_value>,      "memtotallocmb":<Double_value>,      "memtotavail":<Double_value>,      "shmemtotinmb":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "systemmemory": [ {      "memtotallocpcnt":<Double_value>,      "memtotfree":<Double_value>,      "shmemallocpcnt":<Double_value>,      "cacmemmaxmemlimitpcnt":<Double_value>,      "shmemallocinmb":<Double_value>,      "memtotuseinmb":<Double_value>,      "cacmemmaxmemlimit":<Double_value>,      "memusagepcnt":<Double_value>,      "memtotinmb":<Double_value>,      "cacmemmaxsyslimitmb":<Double_value>,      "memtotallocfailed":<Double_value>,      "memtotallocmb":<Double_value>,      "shmemerrallocfailed":<Double_value>,      "memtotavail":<Double_value>,      "shmemtotinmb":<Double_value>}]}```
 
 
 

@@ -3,8 +3,16 @@
 Binding object showing the gslbservice that can be bound to server.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the server for which to display parameters.&lt;br>Minimum length = 1</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>The services attatched to the server.</td><tr><tr><td>serviceipstr</td><td>&lt;String></td><td>Read-only</td><td>This field has been intorduced to show the dbs services ip.</td><tr><tr><td>svctype</td><td>&lt;String></td><td>Read-only</td><td>The type of bound service.&lt;br>Possible values = HTTP, FTP, TCP, UDP, SSL, SSL_BRIDGE, SSL_TCP, DTLS, NNTP, RPCSVR, DNS, ADNS, SNMP, RTSP, DHCPRA, ANY, SIP_UDP, SIP_TCP, SIP_SSL, DNS_TCP, ADNS_TCP, MYSQL, MSSQL, ORACLE, RADIUS, RADIUSListener, RDP, DIAMETER, SSL_DIAMETER, TFTP, SMPP, PPTP, GRE, SYSLOGTCP, SYSLOGUDP, FIX, SSL_FIX</td><tr><tr><td>svrstate</td><td>&lt;String></td><td>Read-only</td><td>The state of the bound service.&lt;br>Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-only</td><td>The port number to be used for the bound service.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>serviceipaddress</td><td>&lt;String></td><td>Read-only</td><td>The IP address of the bound service.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
+
+
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -14,4 +22,80 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###get
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding/name_value&lt;String&gt;
+Query-parameters:
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding/name_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+Use this query-parameter to get the filtered set of server_gslbservice_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding/name_value&lt;String&gt;?pagesize=#no;pageno=#no
+Use this query-parameter to get the server_gslbservice_binding resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "server_gslbservice_binding": [ {      "name":<String_value>,      "servicename":<String_value>,      "serviceipstr":<String_value>,      "svctype":<String_value>,      "svrstate":<String_value>,      "port":<Integer_value>,      "serviceipaddress":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "server_gslbservice_binding": [ {      "name":<String_value>,      "servicename":<String_value>,      "serviceipstr":<String_value>,      "svctype":<String_value>,      "svrstate":<String_value>,      "port":<Integer_value>,      "serviceipaddress":<String_value>}]}```
+
+
+
+###count
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server_gslbservice_binding/name_value&lt;String&gt;?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
+{"server_gslbservice_binding": [ { "__count": "#no"} ] }
+
 

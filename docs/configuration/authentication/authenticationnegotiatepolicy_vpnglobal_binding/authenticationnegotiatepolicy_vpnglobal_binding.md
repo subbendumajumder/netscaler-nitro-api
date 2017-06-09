@@ -12,7 +12,7 @@ Binding object showing the vpnglobal that can be bound to authenticationnegotiat
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get) | [COUNT](#count)
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -34,7 +34,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationnegotiatepolic
 Use this query-parameter to get the filtered set of authenticationnegotiatepolicy_vpnglobal_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationnegotiatepolicy_vpnglobal_binding/name_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the authenticationnegotiatepolicy_vpnglobal_binding resources in chunks.
 
@@ -46,7 +46,33 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "authenticationnegotiatepolicy_vpnglobal_binding": [ {      "boundto":<String_value>,      "name":<String_value>,      "priority":<Double_value>,      "activepolicy":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationnegotiatepolicy_vpnglobal_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationnegotiatepolicy_vpnglobal_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
@@ -65,7 +91,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

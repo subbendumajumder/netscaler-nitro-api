@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/gslbsite
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/gslbsite
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/gslbsite?args=      sitename:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/gslbsite?args=sitename:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get gslbsite resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "gslbsite": [ {      "sitename":<String_value>,      "siteresponsesrate":<Double_value>,      "siteipstr":<String_value>,      "sitetotalrequests":<Double_value>,      "siterequestsrate":<Double_value>,      "nwmetricmepstatus":<String_value>,      "sitemetricexchange":<String_value>,      "sitepublicip":<String_value>,      "sitetotalresponsebytes":<Double_value>,      "sitecursrvrconnections":<Double_value>,      "sitepublicipstr":<String_value>,      "sitetotalrequestbytes":<Double_value>,      "siteip":<String_value>,      "sitemepstatus":<String_value>,      "sitecurclntconnections":<Double_value>,      "sitetype":<String_value>,      "nwmetricexchange":<String_value>,      "persexchange":<String_value>,      "siterequestbytesrate":<Double_value>,      "siteresponsebytesrate":<Double_value>,      "sitetotalresponses":<Double_value>,      "sitemetricmepstatus":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "gslbsite": [ {      "sitename":<String_value>,      "siteresponsesrate":<Double_value>,      "siteipstr":<String_value>,      "sitetotalrequests":<Double_value>,      "siterequestsrate":<Double_value>,      "nwmetricmepstatus":<String_value>,      "sitemetricexchange":<String_value>,      "sitepublicip":<String_value>,      "sitetotalresponsebytes":<Double_value>,      "sitecursrvrconnections":<Double_value>,      "sitepublicipstr":<String_value>,      "sitetotalrequestbytes":<Double_value>,      "siteip":<String_value>,      "sitemepstatus":<String_value>,      "sitecurclntconnections":<Double_value>,      "sitetype":<String_value>,      "nwmetricexchange":<String_value>,      "persexchange":<String_value>,      "siterequestbytesrate":<Double_value>,      "siteresponsebytesrate":<Double_value>,      "sitetotalresponses":<Double_value>,      "sitemetricmepstatus":<String_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "gslbsite": [ {    
 
 
 
-URL: http://NS_IP/nitro/v1/stat/gslbsite/sitename_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/gslbsite/sitename_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "gslbsite": [ {      "sitename":<String_value>,      "siteresponsesrate":<Double_value>,      "siteipstr":<String_value>,      "sitetotalrequests":<Double_value>,      "siterequestsrate":<Double_value>,      "nwmetricmepstatus":<String_value>,      "sitemetricexchange":<String_value>,      "sitepublicip":<String_value>,      "sitetotalresponsebytes":<Double_value>,      "sitecursrvrconnections":<Double_value>,      "sitepublicipstr":<String_value>,      "sitetotalrequestbytes":<Double_value>,      "siteip":<String_value>,      "sitemepstatus":<String_value>,      "sitecurclntconnections":<Double_value>,      "sitetype":<String_value>,      "nwmetricexchange":<String_value>,      "persexchange":<String_value>,      "siterequestbytesrate":<Double_value>,      "siteresponsebytesrate":<Double_value>,      "sitetotalresponses":<Double_value>,      "sitemetricmepstatus":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "gslbsite": [ {      "sitename":<String_value>,      "siteresponsesrate":<Double_value>,      "siteipstr":<String_value>,      "sitetotalrequests":<Double_value>,      "siterequestsrate":<Double_value>,      "nwmetricmepstatus":<String_value>,      "sitemetricexchange":<String_value>,      "sitepublicip":<String_value>,      "sitetotalresponsebytes":<Double_value>,      "sitecursrvrconnections":<Double_value>,      "sitepublicipstr":<String_value>,      "sitetotalrequestbytes":<Double_value>,      "siteip":<String_value>,      "sitemepstatus":<String_value>,      "sitecurclntconnections":<Double_value>,      "sitetype":<String_value>,      "nwmetricexchange":<String_value>,      "persexchange":<String_value>,      "siterequestbytesrate":<Double_value>,      "siteresponsebytesrate":<Double_value>,      "sitetotalresponses":<Double_value>,      "sitemetricmepstatus":<String_value>}]}```
 
 
 

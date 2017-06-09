@@ -7,7 +7,7 @@ Configuration for Integrated Cache policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name for the policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Can be changed after the policy is created.&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression against which the traffic is evaluated. Note: Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" The following requirements apply only to the NetScaler CLI: * If the expression includes one or more spaces, enclose the entire expression in double quotation marks. * If the expression itself includes double quotation marks, escape the quotations by using the \\ character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to apply to content that matches the policy. * CACHE or MAY_CACHE action - positive cachability policy * NOCACHE or MAY_NOCACHE action - negative cachability policy * INVAL action - Dynamic Invalidation Policy.&lt;br>Possible values = CACHE, NOCACHE, MAY_CACHE, MAY_NOCACHE, INVAL</td><tr><tr><td>storeingroup</td><td>&lt;String></td><td>Read-write</td><td>Name of the content group in which to store the object when the final result of policy evaluation is CACHE. The content group must exist before being mentioned here. Use the "show cache contentgroup" command to view the list of existing content groups.&lt;br>Minimum length = 1</td><tr><tr><td>invalgroups</td><td>&lt;String[]></td><td>Read-write</td><td>Content group(s) to be invalidated when the INVAL action is applied. Maximum number of content groups that can be specified is 16.&lt;br>Minimum length = 1</td><tr><tr><td>invalobjects</td><td>&lt;String[]></td><td>Read-write</td><td>Content groups(s) in which the objects will be invalidated if the action is INVAL.&lt;br>Minimum length = 1</td><tr><tr><td>undefaction</td><td>&lt;String></td><td>Read-write</td><td>Action to be performed when the result of rule evaluation is undefined.&lt;br>Possible values = NOCACHE, RESET</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the cache policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Hits.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of Undef hits.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flag.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name for the policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Can be changed after the policy is created.&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression against which the traffic is evaluated.&lt;br>Note:&lt;br>Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to apply to content that matches the policy. &lt;br>* CACHE or MAY_CACHE action - positive cachability policy&lt;br>* NOCACHE or MAY_NOCACHE action - negative cachability policy&lt;br>* INVAL action - Dynamic Invalidation Policy.&lt;br>Possible values = CACHE, NOCACHE, MAY_CACHE, MAY_NOCACHE, INVAL</td><tr><tr><td>storeingroup</td><td>&lt;String></td><td>Read-write</td><td>Name of the content group in which to store the object when the final result of policy evaluation is CACHE. The content group must exist before being mentioned here. Use the "show cache contentgroup" command to view the list of existing content groups.&lt;br>Minimum length = 1</td><tr><tr><td>invalgroups</td><td>&lt;String[]></td><td>Read-write</td><td>Content group(s) to be invalidated when the INVAL action is applied. Maximum number of content groups that can be specified is 16.&lt;br>Minimum length = 1</td><tr><tr><td>invalobjects</td><td>&lt;String[]></td><td>Read-write</td><td>Content groups(s) in which the objects will be invalidated if the action is INVAL.&lt;br>Minimum length = 1</td><tr><tr><td>undefaction</td><td>&lt;String></td><td>Read-write</td><td>Action to be performed when the result of rule evaluation is undefined.&lt;br>Possible values = NOCACHE, RESET</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the cache policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Hits.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of Undef hits.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flag.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,92 +27,114 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","cachepolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "undefaction":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cachepolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "undefaction":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","cachepolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "undefaction":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cachepolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "undefaction":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","cachepolicy":{      "policyname":<String_value>,      "storeingroup":true,      "invalgroups":true,      "invalobjects":true,      "undefaction":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cachepolicy":{      "policyname":<String_value>,      "storeingroup":true,      "invalgroups":true,      "invalobjects":true,      "undefaction":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###rename
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?action=rename
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"rename"},"sessionid":"##sessionid","cachepolicy":{      "policyname":<String_value>,      "newname":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"cachepolicy":{      "policyname":<String_value>,      "newname":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/cachepolicy
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/cachepolicy?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of cachepolicy resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy?view=summary
-Use this query-parameter to get the summary output of cachepolicy resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?pagesize=#no;pageno=#no
 Use this query-parameter to get the cachepolicy resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "cachepolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "hits":<Double_value>,      "undefaction":<String_value>,      "undefhits":<Double_value>,      "flags":<Double_value>,      "precededefrules":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cachepolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "hits":<Double_value>,      "undefaction":<String_value>,      "undefhits":<Double_value>,      "flags":<Double_value>,      "precededefrules":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -120,9 +142,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy/policyname_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "cachepolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "hits":<Double_value>,      "undefaction":<String_value>,      "undefhits":<Double_value>,      "flags":<Double_value>,      "precededefrules":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cachepolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "storeingroup":<String_value>,      "invalgroups":<String[]_value>,      "invalobjects":<String[]_value>,      "hits":<Double_value>,      "undefaction":<String_value>,      "undefhits":<Double_value>,      "flags":<Double_value>,      "precededefrules":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -130,9 +173,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "cachepolicy": [ { 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/cachepolicy?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",cachepolicy: [ { "__count": "#no"} ] }
+{ "cachepolicy": [ { "__count": "#no"} ] }
 
 

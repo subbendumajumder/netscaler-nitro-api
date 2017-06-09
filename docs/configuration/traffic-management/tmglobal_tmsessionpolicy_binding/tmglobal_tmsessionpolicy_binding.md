@@ -7,12 +7,12 @@ Binding object showing the tmsessionpolicy that can be bound to tmglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,42 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/tmglobal_tmsessionpolicy_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","tmglobal_tmsessionpolicy_binding":{      "policyname":<String_value>,                  "priority":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"tmglobal_tmsessionpolicy_binding":{      "policyname":<String_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://NS_IP/nitro/v1/config/tmglobal_tmsessionpolicy_binding
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of tmglobal_tmsessionpolicy_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?pagesize=#no;pageno=#no
 Use this query-parameter to get the tmglobal_tmsessionpolicy_binding resources in chunks.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "bindpolicytype":<Double_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "bindpolicytype":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "bindpolicytype":<Double_value>}]}```
 
 
 
@@ -70,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "tmglobal_tmsessionp
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/tmglobal_tmsessionpolicy_binding?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",tmglobal_tmsessionpolicy_binding: [ { "__count": "#no"} ] }
+{ "tmglobal_tmsessionpolicy_binding": [ { "__count": "#no"} ] }
 
 

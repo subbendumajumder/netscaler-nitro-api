@@ -7,12 +7,12 @@ Binding object showing the nsip6 that can be bound to rnat6.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RNAT6 rule to which to bind NAT IPs.&lt;br>Minimum length = 1</td><tr><tr><td>natip6</td><td>&lt;String></td><td>Read-write</td><td>Nat IP Address.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for this rnat rule.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RNAT6 rule to which to bind NAT IPs.&lt;br>Minimum length = 1</td><tr><tr><td>natip6</td><td>&lt;String></td><td>Read-write</td><td>Nat IP Address.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/rnat6_nsip6_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","rnat6_nsip6_binding":{      "name":<String_value>,      "natip6":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"rnat6_nsip6_binding":{      "name":<String_value>,      "natip6":<String_value>,      "ownergroup":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of rnat6_nsip6_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the rnat6_nsip6_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "rnat6_nsip6_binding": [ {      "name":<String_value>,      "natip6":<String_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rnat6_nsip6_binding": [ {      "ownergroup":<String_value>,      "name":<String_value>,      "natip6":<String_value>,      "td":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rnat6_nsip6_binding": [ {      "ownergroup":<String_value>,      "name":<String_value>,      "natip6":<String_value>,      "td":<Double_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rnat6_nsip6_binding/name_value&lt;String&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",rnat6_nsip6_binding: [ { "__count": "#no"} ] }
+{"rnat6_nsip6_binding": [ { "__count": "#no"} ] }
 
 

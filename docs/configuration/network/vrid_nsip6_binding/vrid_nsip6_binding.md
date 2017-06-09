@@ -3,8 +3,16 @@
 Binding object showing the nsip6 that can be bound to vrid.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer that uniquely identifies the VMAC address. The generic VMAC address is in the form of 00:00:5e:00:01:;lt;VRID;gt;. For example, if you add a VRID with a value of 60 and bind it to an interface, the resulting VMAC address is 00:00:5e:00:01:3c, where 3c is the hexadecimal representation of 60.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>The IP address bound to the VRID.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
+
+
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -14,4 +22,80 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###get
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding/id_value&lt;Double&gt;
+Query-parameters:
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding/id_value&lt;Double&gt;?filter=property-name1:property-value1,property-name2:property-value2
+Use this query-parameter to get the filtered set of vrid_nsip6_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding/id_value&lt;Double&gt;?pagesize=#no;pageno=#no
+Use this query-parameter to get the vrid_nsip6_binding resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vrid_nsip6_binding": [ {      "id":<Double_value>,      "ipaddress":<String_value>,      "flags":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vrid_nsip6_binding": [ {      "id":<Double_value>,      "ipaddress":<String_value>,      "flags":<Double_value>}]}```
+
+
+
+###count
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid_nsip6_binding/id_value&lt;Double&gt;?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
+{"vrid_nsip6_binding": [ { "__count": "#no"} ] }
+
 

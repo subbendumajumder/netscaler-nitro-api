@@ -27,27 +27,28 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/lbmonitor_service_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","lbmonitor_service_binding":{      "monitorname":<String_value>,      "servicename":<String_value>,                  "dup_state":<String_value>,                  "dup_weight":<Double_value>,      "servicegroupname":<String_value>,                  "state":<String_value>,                  "weight":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"lbmonitor_service_binding":{      "monitorname":<String_value>,      "servicename":<String_value>,      "dup_state":<String_value>,      "dup_weight":<Double_value>,      "servicegroupname":<String_value>,      "state":<String_value>,      "weight":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lbmonitor_service_binding/monitorname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/lbmonitor_service_binding/monitorname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbmonitor_service_binding/monitorname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 

@@ -1,18 +1,18 @@
-#reputationipdata_binding
+#install
 
-Binding object showing the resources that can be bound to reputationipdata.
+Configuration for 0 resource.
 
 
 ##Properties 
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the IP data set. Must begin with a letter, number,or the underscore character (_), and can consist of letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore characters. Cannot be changed after the IP data set is created. Choose a name that helps identify the IP data set.&lt;br>Minimum length = 1</td><tr><tr><td>reputationipdata_nsip_binding</td><td>&lt;reputationipdata_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to reputationipdata.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>url</td><td>&lt;String></td><td>Read-write</td><td>.</td><tr><tr><td>y</td><td>&lt;Boolean></td><td>Read-write</td><td>Do not prompt for yes/no before rebooting.</td><tr><tr><td>l</td><td>&lt;Boolean></td><td>Read-write</td><td>Enable callhome.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[INSTALL](#install)
 
 
 Some options that you can use for each operations:
@@ -23,18 +23,18 @@ Some options that you can use for each operations:
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
-###get
+###Install
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/reputationipdata_binding/name_value&lt;String&gt;
-HTTP Method: GET
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/install
+HTTP Method: POST
 Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
+Request Payload: ```{"install":{      "url":<String_value>,      "y":<Boolean_value>,      "l":<Boolean_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Payload: ```{ "reputationipdata_binding": [ {      "name":<String_value>,      "reputationipdata_nsip_binding":<reputationipdata_nsip_binding[]_value>}]}```
-
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 

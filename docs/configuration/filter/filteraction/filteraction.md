@@ -7,7 +7,7 @@ Configuration for filter action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the filtering action. Must begin with a letter, number, or the underscore character (_). Other characters allowed, after the first character, are the hyphen (-), period (.) hash (#), space ( ), at sign (@), equals (=), and colon (:) characters. Choose a name that helps identify the type of action. The name of a filter action cannot be changed after it is created. CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my action" or my action).&lt;br>Minimum length = 1</td><tr><tr><td>qual</td><td>&lt;String></td><td>Read-write</td><td>Qualifier, which is the action to be performed. The qualifier cannot be changed after it is set. The available options function as follows: ADD - Adds the specified HTTP header. RESET - Terminates the connection, sending the appropriate termination notice to the users browser. FORWARD - Redirects the request to the designated service. You must specify either a service name or a page, but not both. DROP - Silently deletes the request, without sending a response to the users browser. CORRUPT - Modifies the designated HTTP header to prevent it from performing the function it was intended to perform, then sends the request/response to the server/browser. ERRORCODE. Returns the designated HTTP error code to the users browser (for example, 404, the standard HTTP code for a non-existent Web page).&lt;br>Possible values = reset, add, corrupt, forward, errorcode, drop</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Service to which to forward HTTP requests. Required if the qualifier is FORWARD.&lt;br>Minimum length = 1</td><tr><tr><td>value</td><td>&lt;String></td><td>Read-write</td><td>String containing the header_name and header_value. If the qualifier is ADD, specify ;lt;header_name;gt;:;lt;header_value;gt;. If the qualifier is CORRUPT, specify only the header_name.&lt;br>Minimum length = 1</td><tr><tr><td>respcode</td><td>&lt;Double></td><td>Read-write</td><td>Response code to be returned for HTTP requests (for use with the ERRORCODE qualifier).&lt;br>Minimum value = 1</td><tr><tr><td>page</td><td>&lt;String></td><td>Read-write</td><td>HTML page to return for HTTP requests (For use with the ERRORCODE qualifier).&lt;br>Minimum length = 1</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default filteraction.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the filtering action. Must begin with a letter, number, or the underscore character (_). Other characters allowed, after the first character, are the hyphen (-), period (.) hash (#), space ( ), at sign (@), equals (=), and colon (:) characters. Choose a name that helps identify the type of action. The name of a filter action cannot be changed after it is created.&lt;br>&lt;br>CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my action" or my action).&lt;br>Minimum length = 1</td><tr><tr><td>qual</td><td>&lt;String></td><td>Read-write</td><td>Qualifier, which is the action to be performed. The qualifier cannot be changed after it is set. The available options function as follows:&lt;br>ADD - Adds the specified HTTP header.&lt;br>RESET - Terminates the connection, sending the appropriate termination notice to the users browser.&lt;br>FORWARD - Redirects the request to the designated service. You must specify either a service name or a page, but not both.&lt;br>DROP - Silently deletes the request, without sending a response to the users browser. &lt;br>CORRUPT - Modifies the designated HTTP header to prevent it from performing the function it was intended to perform, then sends the request/response to the server/browser.&lt;br>ERRORCODE. Returns the designated HTTP error code to the users browser (for example, 404, the standard HTTP code for a non-existent Web page).&lt;br>Possible values = reset, add, corrupt, forward, errorcode, drop</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Service to which to forward HTTP requests. Required if the qualifier is FORWARD.&lt;br>Minimum length = 1</td><tr><tr><td>value</td><td>&lt;String></td><td>Read-write</td><td>String containing the header_name and header_value. If the qualifier is ADD, specify ;lt;header_name;gt;:;lt;header_value;gt;. If the qualifier is CORRUPT, specify only the header_name.&lt;br>Minimum length = 1</td><tr><tr><td>respcode</td><td>&lt;Double></td><td>Read-write</td><td>Response code to be returned for HTTP requests (for use with the ERRORCODE qualifier).&lt;br>Minimum value = 1</td><tr><tr><td>page</td><td>&lt;String></td><td>Read-write</td><td>HTML page to return for HTTP requests (For use with the ERRORCODE qualifier).&lt;br>Minimum length = 1</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default filteraction.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","filteraction":{      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"filteraction":{      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","filteraction":{      "name":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"filteraction":{      "name":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","filteraction":{      "name":<String_value>,      "page":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"filteraction":{      "name":<String_value>,      "page":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/filteraction
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/filteraction?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of filteraction resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/filteraction?view=summary
-Use this query-parameter to get the summary output of filteraction resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/filteraction?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?pagesize=#no;pageno=#no
 Use this query-parameter to get the filteraction resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/filteraction?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "filteraction": [ {      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "filteraction": [ {      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "filteraction": [ {      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "filteraction": [ {      "name":<String_value>,      "qual":<String_value>,      "servicename":<String_value>,      "value":<String_value>,      "respcode":<Double_value>,      "page":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "filteraction": [ {
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/filteraction?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/filteraction?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",filteraction: [ { "__count": "#no"} ] }
+{ "filteraction": [ { "__count": "#no"} ] }
 
 

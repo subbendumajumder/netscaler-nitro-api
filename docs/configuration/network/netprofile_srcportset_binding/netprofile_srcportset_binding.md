@@ -12,7 +12,7 @@ Binding object showing the srcportset that can be bound to netprofile.
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -33,9 +33,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: 
-{"netprofile_srcportset_binding": [ { "__count": "#no"} ] }Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+Request Payload: ```{"netprofile_srcportset_binding":{      "name":<String_value>,      "srcportrange":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
@@ -43,27 +43,88 @@ HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for
 
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding/name_value&lt;String&gt;
-HTTP Method: null
+HTTP Method: DELETE
+Request Headers:
 
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL:
-HTTP Method: null
-Request Payload: 
-{"netprofile_srcportset_binding": [ { "__count": "#no"} ] }
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding/name_value&lt;String&gt;
+Query-parameters:
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding/name_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+Use this query-parameter to get the filtered set of netprofile_srcportset_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding/name_value&lt;String&gt;?pagesize=#no;pageno=#no
+Use this query-parameter to get the netprofile_srcportset_binding resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "netprofile_srcportset_binding": [ {      "srcportrange":<String_value>,      "name":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "netprofile_srcportset_binding": [ {      "srcportrange":<String_value>,      "name":<String_value>}]}```
+
 
 
 ###count
 
 
 
-URL:
-HTTP Method: null
-Request Payload: 
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/netprofile_srcportset_binding/name_value&lt;String&gt;?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
 {"netprofile_srcportset_binding": [ { "__count": "#no"} ] }
 
 

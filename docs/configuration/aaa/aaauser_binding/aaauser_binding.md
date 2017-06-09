@@ -1,6 +1,6 @@
 #aaauser_binding
 
-Binding object showing the resources that can be bound to aaauser.
+Binding object which returns the resources bound to aaauser.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to aaauser.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/aaauser_binding/username_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaauser_binding/username_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "aaauser_binding": [ {      "username":<String_value>,      "aaauser_intranetip_binding":<aaauser_intranetip_binding[]_value>,      "aaauser_auditsyslogpolicy_binding":<aaauser_auditsyslogpolicy_binding[]_value>,      "aaauser_vpnintranetapplication_binding":<aaauser_vpnintranetapplication_binding[]_value>,      "aaauser_authorizationpolicy_binding":<aaauser_authorizationpolicy_binding[]_value>,      "aaauser_vpnurl_binding":<aaauser_vpnurl_binding[]_value>,      "aaauser_vpntrafficpolicy_binding":<aaauser_vpntrafficpolicy_binding[]_value>,      "aaauser_aaagroup_binding":<aaauser_aaagroup_binding[]_value>,      "aaauser_vpnsessionpolicy_binding":<aaauser_vpnsessionpolicy_binding[]_value>,      "aaauser_intranetip6_binding":<aaauser_intranetip6_binding[]_value>,      "aaauser_tmsessionpolicy_binding":<aaauser_tmsessionpolicy_binding[]_value>,      "aaauser_auditnslogpolicy_binding":<aaauser_auditnslogpolicy_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "aaauser_binding": [ {      "username":<String_value>,      "aaauser_intranetip_binding":<aaauser_intranetip_binding[]_value>,      "aaauser_auditsyslogpolicy_binding":<aaauser_auditsyslogpolicy_binding[]_value>,      "aaauser_vpnintranetapplication_binding":<aaauser_vpnintranetapplication_binding[]_value>,      "aaauser_authorizationpolicy_binding":<aaauser_authorizationpolicy_binding[]_value>,      "aaauser_vpnurl_binding":<aaauser_vpnurl_binding[]_value>,      "aaauser_vpntrafficpolicy_binding":<aaauser_vpntrafficpolicy_binding[]_value>,      "aaauser_aaagroup_binding":<aaauser_aaagroup_binding[]_value>,      "aaauser_vpnsessionpolicy_binding":<aaauser_vpnsessionpolicy_binding[]_value>,      "aaauser_intranetip6_binding":<aaauser_intranetip6_binding[]_value>,      "aaauser_tmsessionpolicy_binding":<aaauser_tmsessionpolicy_binding[]_value>,      "aaauser_auditnslogpolicy_binding":<aaauser_auditnslogpolicy_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaauser_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaauser_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "aaauser_binding": [ {      "username":<String_value>,      "aaauser_intranetip_binding":<aaauser_intranetip_binding[]_value>,      "aaauser_auditsyslogpolicy_binding":<aaauser_auditsyslogpolicy_binding[]_value>,      "aaauser_vpnintranetapplication_binding":<aaauser_vpnintranetapplication_binding[]_value>,      "aaauser_authorizationpolicy_binding":<aaauser_authorizationpolicy_binding[]_value>,      "aaauser_vpnurl_binding":<aaauser_vpnurl_binding[]_value>,      "aaauser_vpntrafficpolicy_binding":<aaauser_vpntrafficpolicy_binding[]_value>,      "aaauser_aaagroup_binding":<aaauser_aaagroup_binding[]_value>,      "aaauser_vpnsessionpolicy_binding":<aaauser_vpnsessionpolicy_binding[]_value>,      "aaauser_intranetip6_binding":<aaauser_intranetip6_binding[]_value>,      "aaauser_tmsessionpolicy_binding":<aaauser_tmsessionpolicy_binding[]_value>,      "aaauser_auditnslogpolicy_binding":<aaauser_auditnslogpolicy_binding[]_value>}]}```
 
 
 

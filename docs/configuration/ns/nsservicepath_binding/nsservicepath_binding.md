@@ -1,18 +1,18 @@
 #nsservicepath_binding
 
-Binding object showing the resources that can be bound to nsservicepath.
+Binding object which returns the resources bound to nsservicepath.
 
 
 ##Properties 
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>nsservicepath_nsservicefunction_binding</td><td>&lt;nsservicepath_nsservicefunction_binding[]></td><td>Read-only</td><td>nsservicefunction that can be bound to nsservicepath.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must &lt;br> contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-)&lt;br> characters.&lt;br>Minimum length = 1</td><tr><tr><td>nsservicepath_nsservicefunction_binding</td><td>&lt;nsservicepath_nsservicefunction_binding[]></td><td>Read-only</td><td>nsservicefunction that can be bound to nsservicepath.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nsservicepath_binding/servicepathname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsservicepath_binding/servicepathname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "nsservicepath_binding": [ {      "servicepathname":<String_value>,      "nsservicepath_nsservicefunction_binding":<nsservicepath_nsservicefunction_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsservicepath_binding": [ {      "servicepathname":<String_value>,      "nsservicepath_nsservicefunction_binding":<nsservicepath_nsservicefunction_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsservicepath_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsservicepath_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsservicepath_binding": [ {      "servicepathname":<String_value>,      "nsservicepath_nsservicefunction_binding":<nsservicepath_nsservicefunction_binding[]_value>}]}```
 
 
 

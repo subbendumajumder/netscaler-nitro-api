@@ -7,7 +7,7 @@ Configuration for cache redirection policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name for the cache redirection policy. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Cannot be changed after the policy is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my policy? or ?my policy?).&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, against which traffic is evaluated. Written in the classic syntax. Note:Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" The following requirements apply only to the NetScaler CLI: * If the expression includes one or more spaces, enclose the entire expression in double quotation marks. * If the expression itself includes double quotation marks, escape the quotations by using the \\ character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Name of the built-in cache redirection action: CACHE/ORIGIN.</td><tr><tr><td>logaction</td><td>&lt;String></td><td>Read-write</td><td>The log action associated with the cache redirection policy.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>The new name of the content switching policy.&lt;br>Minimum length = 1</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>Domain name.</td><tr><tr><td>vstype</td><td>&lt;Double></td><td>Read-only</td><td>Virtual server type.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>bindhits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>priority of bound policy.</td><tr><tr><td>activepolicy</td><td>&lt;Boolean></td><td>Read-only</td><td>Indicates whether policy is bound or not.</td><tr><tr><td>cspolicytype</td><td>&lt;String></td><td>Read-only</td><td>Indicates whether policy is PI or not.(used only during display).&lt;br>Possible values = Classic Policy, Advanced Policy</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label invoked.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default cr policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name for the cache redirection policy. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Cannot be changed after the policy is created.&lt;br>The following requirement applies only to the NetScaler CLI: &lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my policy? or ?my policy?).&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, against which traffic is evaluated. Written in the classic syntax.&lt;br>Note:Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Name of the built-in cache redirection action: CACHE/ORIGIN.</td><tr><tr><td>logaction</td><td>&lt;String></td><td>Read-write</td><td>The log action associated with the cache redirection policy.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>The new name of the content switching policy.&lt;br>Minimum length = 1</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>Domain name.</td><tr><tr><td>vstype</td><td>&lt;Double></td><td>Read-only</td><td>Virtual server type.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>bindhits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>priority of bound policy.</td><tr><tr><td>activepolicy</td><td>&lt;Boolean></td><td>Read-only</td><td>Indicates whether policy is bound or not.</td><tr><tr><td>cspolicytype</td><td>&lt;String></td><td>Read-only</td><td>Indicates whether policy is PI or not.(used only during display).&lt;br>Possible values = Classic Policy, Advanced Policy</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label invoked.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default cr policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,92 +27,114 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","crpolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "logaction":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"crpolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "logaction":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","crpolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "logaction":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"crpolicy":{      "policyname":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "logaction":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","crpolicy":{      "policyname":<String_value>,      "logaction":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"crpolicy":{      "policyname":<String_value>,      "logaction":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###rename
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?action=rename
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"rename"},"sessionid":"##sessionid","crpolicy":{      "policyname":<String_value>,      "newname":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"crpolicy":{      "policyname":<String_value>,      "newname":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/crpolicy
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/crpolicy?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of crpolicy resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy?view=summary
-Use this query-parameter to get the summary output of crpolicy resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?pagesize=#no;pageno=#no
 Use this query-parameter to get the crpolicy resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "crpolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "domain":<String_value>,      "action":<String_value>,      "vstype":<Double_value>,      "hits":<Double_value>,      "bindhits":<Double_value>,      "priority":<Double_value>,      "activepolicy":<Boolean_value>,      "cspolicytype":<String_value>,      "logaction":<String_value>,      "labelname":<String_value>,      "labeltype":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "crpolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "domain":<String_value>,      "action":<String_value>,      "vstype":<Double_value>,      "hits":<Double_value>,      "bindhits":<Double_value>,      "priority":<Double_value>,      "activepolicy":<Boolean_value>,      "cspolicytype":<String_value>,      "logaction":<String_value>,      "labelname":<String_value>,      "labeltype":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -120,9 +142,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy/policyname_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "crpolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "domain":<String_value>,      "action":<String_value>,      "vstype":<Double_value>,      "hits":<Double_value>,      "bindhits":<Double_value>,      "priority":<Double_value>,      "activepolicy":<Boolean_value>,      "cspolicytype":<String_value>,      "logaction":<String_value>,      "labelname":<String_value>,      "labeltype":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "crpolicy": [ {      "policyname":<String_value>,      "rule":<String_value>,      "domain":<String_value>,      "action":<String_value>,      "vstype":<Double_value>,      "hits":<Double_value>,      "bindhits":<Double_value>,      "priority":<Double_value>,      "activepolicy":<Boolean_value>,      "cspolicytype":<String_value>,      "logaction":<String_value>,      "labelname":<String_value>,      "labeltype":<String_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -130,9 +173,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "crpolicy": [ {    
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/crpolicy?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/crpolicy?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",crpolicy: [ { "__count": "#no"} ] }
+{ "crpolicy": [ { "__count": "#no"} ] }
 
 

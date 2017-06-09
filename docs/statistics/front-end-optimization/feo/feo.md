@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/feo
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/feo
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/feo?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/feo?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get feo resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "feo": [ {      "totaljsmoved":<Double_value>,      "totalimgslazyloaded":<Double_value>,      "htmlcommentsremovedrate":<Double_value>,      "urireplacedrate":<Double_value>,      "cssmovedrate":<Double_value>,      "htmlcommentsremoved":<Double_value>,      "jsmovedrate":<Double_value>,      "totalimgsinlinedincss":<Double_value>,      "totalinlinedcss":<Double_value>,      "inlinedimgsrate":<Double_value>,      "toturireplaced":<Double_value>,      "imgstowebprate":<Double_value>,      "totalinlinedjs":<Double_value>,      "totalcssmoved":<Double_value>,      "csscombinedrate":<Double_value>,      "imgslazyloadedrate":<Double_value>,      "totaljsmin":<Double_value>,      "optcacheobjects":<Double_value>,      "totalgifstopng":<Double_value>,      "totalimgsresized":<Double_value>,      "imgsinlinedincssrate":<Double_value>,      "inlinedcssrate":<Double_value>,      "totalimgstowebp":<Double_value>,      "inlinedjsrate":<Double_value>,      "origcacheobjectsrate":<Double_value>,      "cssminrate":<Double_value>,      "totalimgsdomainsharded":<Double_value>,      "imgsdomainshardedrate":<Double_value>,      "gifstopngrate":<Double_value>,      "importtolinkrate":<Double_value>,      "totalcsscombined":<Double_value>,      "totalimgstojxr":<Double_value>,      "imgsresizedrate":<Double_value>,      "optcacheobjectsrate":<Double_value>,      "totaljpegsoptimized":<Double_value>,      "totalcacheextended":<Double_value>,      "origcacheobjects":<Double_value>,      "jsminrate":<Double_value>,      "jpegsoptimizedrate":<Double_value>,      "totaldatasavings":<Double_value>,      "imgstojxrrate":<Double_value>,      "datasavingsrate":<Double_value>,      "cacheextendedrate":<Double_value>,      "totalcssmin":<Double_value>,      "totalinlinedimgs":<Double_value>,      "totalimporttolink":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "feo": [ {      "totaljsmoved":<Double_value>,      "totalimgslazyloaded":<Double_value>,      "htmlcommentsremovedrate":<Double_value>,      "urireplacedrate":<Double_value>,      "cssmovedrate":<Double_value>,      "htmlcommentsremoved":<Double_value>,      "jsmovedrate":<Double_value>,      "totalimgsinlinedincss":<Double_value>,      "totalinlinedcss":<Double_value>,      "inlinedimgsrate":<Double_value>,      "toturireplaced":<Double_value>,      "imgstowebprate":<Double_value>,      "totalinlinedjs":<Double_value>,      "totalcssmoved":<Double_value>,      "csscombinedrate":<Double_value>,      "imgslazyloadedrate":<Double_value>,      "totaljsmin":<Double_value>,      "optcacheobjects":<Double_value>,      "totalgifstopng":<Double_value>,      "totalimgsresized":<Double_value>,      "imgsinlinedincssrate":<Double_value>,      "inlinedcssrate":<Double_value>,      "totalimgstowebp":<Double_value>,      "inlinedjsrate":<Double_value>,      "origcacheobjectsrate":<Double_value>,      "cssminrate":<Double_value>,      "totalimgsdomainsharded":<Double_value>,      "imgsdomainshardedrate":<Double_value>,      "gifstopngrate":<Double_value>,      "importtolinkrate":<Double_value>,      "totalcsscombined":<Double_value>,      "totalimgstojxr":<Double_value>,      "imgsresizedrate":<Double_value>,      "optcacheobjectsrate":<Double_value>,      "totaljpegsoptimized":<Double_value>,      "totalcacheextended":<Double_value>,      "origcacheobjects":<Double_value>,      "jsminrate":<Double_value>,      "jpegsoptimizedrate":<Double_value>,      "totaldatasavings":<Double_value>,      "imgstojxrrate":<Double_value>,      "datasavingsrate":<Double_value>,      "cacheextendedrate":<Double_value>,      "totalcssmin":<Double_value>,      "totalinlinedimgs":<Double_value>,      "totalimporttolink":<Double_value>}]}```
 
 
 

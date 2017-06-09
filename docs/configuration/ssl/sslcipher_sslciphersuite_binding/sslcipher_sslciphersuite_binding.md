@@ -7,12 +7,12 @@ Binding object showing the sslciphersuite that can be bound to sslcipher.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>The cipher(s) to be removed from the cipher group.&lt;br>Minimum length = 1</td><tr><tr><td>ciphgrpals</td><td>&lt;String></td><td>Read-write</td><td>A cipher-suite can consist of an individual cipher name, the system predefined cipher-alias name, or user defined cipher-group name.&lt;br>Minimum length = 1</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Cipher suite description.</td><tr><tr><td>ciphergroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the user-defined cipher group.&lt;br>Minimum length = 1</td><tr><tr><td>cipheroperation</td><td>&lt;String></td><td>Read-write</td><td>The operation that is performed when adding the cipher-suite. Possible cipher operations are: ADD - Appends the given cipher-suite to the existing one configured for the virtual server. REM - Removes the given cipher-suite from the existing one configured for the virtual server. ORD - Overrides the current configured cipher-suite for the virtual server with the given cipher-suite.&lt;br>Default value: 0&lt;br>Possible values = ADD, REM, ORD</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>Cipher name.</td><tr><tr><td>ciphgrpals</td><td>&lt;String></td><td>Read-write</td><td>A cipher-suite can consist of an individual cipher name, the system predefined cipher-alias name, or user defined cipher-group name.&lt;br>Minimum length = 1</td><tr><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>This indicates priority assigned to the particular cipher.&lt;br>Minimum value = 1</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Cipher suite description.</td><tr><tr><td>ciphergroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the user-defined cipher group.&lt;br>Minimum length = 1</td><tr><tr><td>cipheroperation</td><td>&lt;String></td><td>Read-write</td><td>The operation that is performed when adding the cipher-suite. Possible cipher operations are: ADD - Appends the given cipher-suite to the existing one configured for the virtual server. REM - Removes the given cipher-suite from the existing one configured for the virtual server. ORD - Overrides the current configured cipher-suite for the virtual server with the given cipher-suite.&lt;br>Default value: 0&lt;br>Possible values = ADD, REM, ORD</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/sslcipher_sslciphersuite_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","sslcipher_sslciphersuite_binding":{      "ciphergroupname":<String_value>,      "cipheroperation":<String_value>,      "ciphgrpals":<String_value>,      "ciphername":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslcipher_sslciphersuite_binding":{      "ciphergroupname":<String_value>,      "cipheroperation":<String_value>,      "ciphgrpals":<String_value>,      "ciphername":<String_value>,      "cipherpriority":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of sslcipher_sslciphersuite_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the sslcipher_sslciphersuite_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "sslcipher_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "ciphgrpals":<String_value>,      "description":<String_value>,      "ciphergroupname":<String_value>,      "cipheroperation":<String_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslcipher_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "ciphgrpals":<String_value>,      "cipherpriority":<Double_value>,      "description":<String_value>,      "ciphergroupname":<String_value>,      "cipheroperation":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslcipher_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "ciphgrpals":<String_value>,      "cipherpriority":<Double_value>,      "description":<String_value>,      "ciphergroupname":<String_value>,      "cipheroperation":<String_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",sslcipher_sslciphersuite_binding: [ { "__count": "#no"} ] }
+{"sslcipher_sslciphersuite_binding": [ { "__count": "#no"} ] }
 
 

@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/protocolip
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolip
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/protocolip?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolip?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get protocolip resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "protocolip": [ {      "iproutedpktsrate":<Double_value>,      "iptotoutoforderfrag":<Double_value>,      "noniptottruncatedpackets":<Double_value>,      "iptotmaxclients":<Double_value>,      "iptotzerofragmentlen":<Double_value>,      "iptxbytesrate":<Double_value>,      "iptotvipdown":<Double_value>,      "iptotroutedpkts":<Double_value>,      "iprxmbitsrate":<Double_value>,      "iprxpktsrate":<Double_value>,      "iptxmbitsrate":<Double_value>,      "iptotroutedmbits":<Double_value>,      "iptotinvalidheadersz":<Double_value>,      "iptotaddrlookupfail":<Double_value>,      "iptotbadtransport":<Double_value>,      "iptotfragpktsgen":<Double_value>,      "iptotsuccreassembly":<Double_value>,      "iptotrxmbits":<Double_value>,      "iptottxbytes":<Double_value>,      "iptotbadmacaddrs":<Double_value>,      "iptottcpfragmentsfwd":<Double_value>,      "iptotrxpkts":<Double_value>,      "iptotrxbytes":<Double_value>,      "iptotlandattacks":<Double_value>,      "iptotunknowndstrcvd":<Double_value>,      "iptottruncatedpackets":<Double_value>,      "iptotttlexpired":<Double_value>,      "iprxbytesrate":<Double_value>,      "iptottxmbits":<Double_value>,      "iptotbadlens":<Double_value>,      "iptotunknownsvcs":<Double_value>,      "iptotdupfragments":<Double_value>,      "iptottoobig":<Double_value>,      "iptotzeronexthop":<Double_value>,      "iptotaddrlookup":<Double_value>,      "iptotfragments":<Double_value>,      "iptotinvalidpacketsize":<Double_value>,      "iptotunsuccreassembly":<Double_value>,      "iptotreassemblyattempt":<Double_value>,      "iptottxpkts":<Double_value>,      "iptxpktsrate":<Double_value>,      "iptotbadchecksums":<Double_value>,      "iptotfixheaderfail":<Double_value>,      "iproutedmbitsrate":<Double_value>,      "iptotudpfragmentsfwd":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocolip": [ {      "iproutedpktsrate":<Double_value>,      "iptotoutoforderfrag":<Double_value>,      "noniptottruncatedpackets":<Double_value>,      "iptotmaxclients":<Double_value>,      "iptotzerofragmentlen":<Double_value>,      "iptxbytesrate":<Double_value>,      "iptotvipdown":<Double_value>,      "iptotroutedpkts":<Double_value>,      "iprxmbitsrate":<Double_value>,      "iprxpktsrate":<Double_value>,      "iptxmbitsrate":<Double_value>,      "iptotroutedmbits":<Double_value>,      "iptotinvalidheadersz":<Double_value>,      "iptotaddrlookupfail":<Double_value>,      "iptotbadtransport":<Double_value>,      "iptotfragpktsgen":<Double_value>,      "iptotsuccreassembly":<Double_value>,      "iptotrxmbits":<Double_value>,      "iptottxbytes":<Double_value>,      "iptotbadmacaddrs":<Double_value>,      "iptottcpfragmentsfwd":<Double_value>,      "iptotrxpkts":<Double_value>,      "iptotrxbytes":<Double_value>,      "iptotlandattacks":<Double_value>,      "iptotunknowndstrcvd":<Double_value>,      "iptottruncatedpackets":<Double_value>,      "iptotttlexpired":<Double_value>,      "iprxbytesrate":<Double_value>,      "iptottxmbits":<Double_value>,      "iptotbadlens":<Double_value>,      "iptotunknownsvcs":<Double_value>,      "iptotdupfragments":<Double_value>,      "iptottoobig":<Double_value>,      "iptotzeronexthop":<Double_value>,      "iptotaddrlookup":<Double_value>,      "iptotfragments":<Double_value>,      "iptotinvalidpacketsize":<Double_value>,      "iptotunsuccreassembly":<Double_value>,      "iptotreassemblyattempt":<Double_value>,      "iptottxpkts":<Double_value>,      "iptxpktsrate":<Double_value>,      "iptotbadchecksums":<Double_value>,      "iptotfixheaderfail":<Double_value>,      "iproutedmbitsrate":<Double_value>,      "iptotudpfragmentsfwd":<Double_value>}]}```
 
 
 

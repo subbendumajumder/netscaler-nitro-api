@@ -3,8 +3,16 @@
 Binding object showing the cachepolicylabel that can be bound to cachepolicy.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache policy about which to display details.&lt;br>Minimum length = 1</td><tr><tr><td>boundto</td><td>&lt;String></td><td>Read-write</td><td>Location where policy is bound.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>Priority.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy label invocation.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>activepolicy</td><td>&lt;Integer></td><td>Read-only</td><td>Indicates whether policy is bound or not.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label to invoke if the current policy rule evaluates to TRUE.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
+
+
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -14,4 +22,80 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###get
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding/policyname_value&lt;String&gt;
+Query-parameters:
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding/policyname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+Use this query-parameter to get the filtered set of cachepolicy_cachepolicylabel_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding/policyname_value&lt;String&gt;?pagesize=#no;pageno=#no
+Use this query-parameter to get the cachepolicy_cachepolicylabel_binding resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cachepolicy_cachepolicylabel_binding": [ {      "policyname":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Integer_value>,      "labelname":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "cachepolicy_cachepolicylabel_binding": [ {      "policyname":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Integer_value>,      "labelname":<String_value>}]}```
+
+
+
+###count
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/cachepolicy_cachepolicylabel_binding/policyname_value&lt;String&gt;?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
+{"cachepolicy_cachepolicylabel_binding": [ { "__count": "#no"} ] }
+
 

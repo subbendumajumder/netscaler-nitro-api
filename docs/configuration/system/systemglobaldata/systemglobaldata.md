@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/systemglobaldata
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systemglobaldata
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/systemglobaldata?args=      "counters":&lt;String_value&gt;,      "countergroup":&lt;String_value&gt;,      "starttime":&lt;String_value&gt;,      "endtime":&lt;String_value&gt;,      "last":&lt;Integer_value&gt;,                  "unit":&lt;String_value&gt;,      "datasource":&lt;String_value&gt;,      "core":&lt;Integer_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systemglobaldata?args=counters:&lt;String_value&gt;,countergroup:&lt;String_value&gt;,starttime:&lt;String_value&gt;,endtime:&lt;String_value&gt;,last:&lt;Integer_value&gt;,unit:&lt;String_value&gt;,datasource:&lt;String_value&gt;,core:&lt;Integer_value&gt;
 Use this query-parameter to get systemglobaldata resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "systemglobaldata": [ {      "counters":<String_value>,      "countergroup":<String_value>,      "starttime":<String_value>,      "endtime":<String_value>,      "last":<Integer_value>,                  "unit":<String_value>,      "datasource":<String_value>,      "core":<Integer_value>,      "response":<String_value>,      "startupdate":<Double_value>,      "lastupdate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "systemglobaldata": [ {counters:<String_value>,countergroup:<String_value>,starttime:<String_value>,endtime:<String_value>,last:<Integer_value>,unit:<String_value>,datasource:<String_value>,core:<Integer_value>      "response":<String_value>,      "startupdate":<Double_value>,      "lastupdate":<Double_value>}]}```
 
 
 

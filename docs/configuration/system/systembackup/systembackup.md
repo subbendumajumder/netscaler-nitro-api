@@ -7,12 +7,12 @@ Configuration for Backup Data for ns backup and restore resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>filename</td><td>&lt;String></td><td>Read-write</td><td>Name of the backup file(*.tgz) to be restored.</td><tr><tr><td>level</td><td>&lt;String></td><td>Read-write</td><td>Level of data to be backed up.&lt;br>Default value: basic&lt;br>Possible values = basic, full</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comment specified at the time of creation of the backup file(*.tgz).</td><tr><tr><td>size</td><td>&lt;Double></td><td>Read-only</td><td>Size of the backup file(*.tgz) in KB.</td><tr><tr><td>creationtime</td><td>&lt;String></td><td>Read-only</td><td>Creation time of the backup file(*.tgz).</td><tr><tr><td>version</td><td>&lt;String></td><td>Read-only</td><td>Build version of the backup file(*.tgz).</td><tr><tr><td>createdby</td><td>&lt;String></td><td>Read-only</td><td>Name of user who created the backup file(*.tgz).</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-only</td><td>Ip of Netscaler box where the backup file(*.tgz) was created.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>filename</td><td>&lt;String></td><td>Read-write</td><td>Name of the backup file(*.tgz) to be restored.</td><tr><tr><td>level</td><td>&lt;String></td><td>Read-write</td><td>Level of data to be backed up.&lt;br>Default value: basic&lt;br>Possible values = basic, full</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comment specified at the time of creation of the backup file(*.tgz).</td><tr><tr><td>skipbackup</td><td>&lt;Boolean></td><td>Read-write</td><td>Use this option to skip taking backup during restore operation.</td><tr><tr><td>size</td><td>&lt;Double></td><td>Read-only</td><td>Size of the backup file(*.tgz) in KB.</td><tr><tr><td>creationtime</td><td>&lt;String></td><td>Read-only</td><td>Creation time of the backup file(*.tgz).</td><tr><tr><td>version</td><td>&lt;String></td><td>Read-only</td><td>Build version of the backup file(*.tgz).</td><tr><tr><td>createdby</td><td>&lt;String></td><td>Read-only</td><td>Name of user who created the backup file(*.tgz).</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-only</td><td>Ip of Netscaler box where the backup file(*.tgz) was created.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[CREATE](#create) | [RESTORE](#restore) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[CREATE](#create) | [RESTORE](#restore) | [ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,70 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?action=create
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"create"},"sessionid":"##sessionid","systembackup":{      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"systembackup":{      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###restore
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?action=restore
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"restore"},"sessionid":"##sessionid","systembackup":{      "filename":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"systembackup":{      "filename":<String_value>,      "skipbackup":<Boolean_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###add
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"systembackup":{      "filename":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/systembackup
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/systembackup?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of systembackup resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/systembackup?view=summary
-Use this query-parameter to get the summary output of systembackup resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/systembackup?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?pagesize=#no;pageno=#no
 Use this query-parameter to get the systembackup resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/systembackup?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "systembackup": [ {      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>,      "size":<Double_value>,      "creationtime":<String_value>,      "version":<String_value>,      "createdby":<String_value>,      "ipaddress":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "systembackup": [ {      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>,      "size":<Double_value>,      "creationtime":<String_value>,      "version":<String_value>,      "createdby":<String_value>,      "ipaddress":<String_value>}]}```
 
 
 
@@ -98,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup/filename_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "systembackup": [ {      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>,      "size":<Double_value>,      "creationtime":<String_value>,      "version":<String_value>,      "createdby":<String_value>,      "ipaddress":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "systembackup": [ {      "filename":<String_value>,      "level":<String_value>,      "comment":<String_value>,      "size":<Double_value>,      "creationtime":<String_value>,      "version":<String_value>,      "createdby":<String_value>,      "ipaddress":<String_value>}]}```
 
 
 
@@ -108,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "systembackup": [ {
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/systembackup?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systembackup?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",systembackup: [ { "__count": "#no"} ] }
+{ "systembackup": [ { "__count": "#no"} ] }
 
 

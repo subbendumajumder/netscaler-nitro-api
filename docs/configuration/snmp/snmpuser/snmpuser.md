@@ -7,7 +7,7 @@ Configuration for SNMP user resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the SNMPv3 user. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose it in double or single quotation marks (for example, "my user" or my user).&lt;br>Minimum length = 1</td><tr><tr><td>group</td><td>&lt;String></td><td>Read-write</td><td>Name of the configured SNMPv3 group to which to bind this SNMPv3 user. The access rights (bound SNMPv3 views) and security level set for this group are assigned to this user.&lt;br>Minimum length = 1</td><tr><tr><td>authtype</td><td>&lt;String></td><td>Read-write</td><td>Authentication algorithm used by the NetScaler appliance and the SNMPv3 user for authenticating the communication between them. You must specify the same authentication algorithm when you configure the SNMPv3 user in the SNMP manager.&lt;br>Possible values = MD5, SHA</td><tr><tr><td>authpasswd</td><td>&lt;String></td><td>Read-write</td><td>Plain-text pass phrase to be used by the authentication algorithm specified by the authType (Authentication Type) parameter. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. The following requirement applies only to the NetScaler CLI: If the pass phrase includes one or more spaces, enclose it in double or single quotation marks (for example, "my phrase" or my phrase).&lt;br>Minimum length = 8</td><tr><tr><td>privtype</td><td>&lt;String></td><td>Read-write</td><td>Encryption algorithm used by the NetScaler appliance and the SNMPv3 user for encrypting the communication between them. You must specify the same encryption algorithm when you configure the SNMPv3 user in the SNMP manager.&lt;br>Possible values = DES, AES</td><tr><tr><td>privpasswd</td><td>&lt;String></td><td>Read-write</td><td>Encryption key to be used by the encryption algorithm specified by the privType (Encryption Type) parameter. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. The following requirement applies only to the NetScaler CLI: If the key includes one or more spaces, enclose it in double or single quotation marks (for example, "my key" or my key).&lt;br>Minimum length = 8</td><tr><tr><td>engineid</td><td>&lt;String></td><td>Read-only</td><td>The context engine ID of the user.</td><tr><tr><td>storagetype</td><td>&lt;String></td><td>Read-only</td><td>The storage type for this user.&lt;br>Possible values = volatile, nonVolatile</td><tr><tr><td>status</td><td>&lt;String></td><td>Read-only</td><td>The status of this user.&lt;br>Possible values = active</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the SNMPv3 user. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose it in double or single quotation marks (for example, "my user" or my user).&lt;br>Minimum length = 1</td><tr><tr><td>group</td><td>&lt;String></td><td>Read-write</td><td>Name of the configured SNMPv3 group to which to bind this SNMPv3 user. The access rights (bound SNMPv3 views) and security level set for this group are assigned to this user.&lt;br>Minimum length = 1</td><tr><tr><td>authtype</td><td>&lt;String></td><td>Read-write</td><td>Authentication algorithm used by the NetScaler appliance and the SNMPv3 user for authenticating the communication between them. You must specify the same authentication algorithm when you configure the SNMPv3 user in the SNMP manager.&lt;br>Possible values = MD5, SHA</td><tr><tr><td>authpasswd</td><td>&lt;String></td><td>Read-write</td><td>Plain-text pass phrase to be used by the authentication algorithm specified by the authType (Authentication Type) parameter. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the pass phrase includes one or more spaces, enclose it in double or single quotation marks (for example, "my phrase" or my phrase).&lt;br>Minimum length = 8</td><tr><tr><td>privtype</td><td>&lt;String></td><td>Read-write</td><td>Encryption algorithm used by the NetScaler appliance and the SNMPv3 user for encrypting the communication between them. You must specify the same encryption algorithm when you configure the SNMPv3 user in the SNMP manager.&lt;br>Possible values = DES, AES</td><tr><tr><td>privpasswd</td><td>&lt;String></td><td>Read-write</td><td>Encryption key to be used by the encryption algorithm specified by the privType (Encryption Type) parameter. Can consist of 1 to 31 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the key includes one or more spaces, enclose it in double or single quotation marks (for example, "my key" or my key).&lt;br>Minimum length = 8</td><tr><tr><td>engineid</td><td>&lt;String></td><td>Read-only</td><td>The context engine ID of the user.</td><tr><tr><td>storagetype</td><td>&lt;String></td><td>Read-only</td><td>The storage type for this user.&lt;br>Possible values = volatile, nonVolatile</td><tr><tr><td>status</td><td>&lt;String></td><td>Read-only</td><td>The status of this user.&lt;br>Possible values = active</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","snmpuser":{      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,                  "authpasswd":<String_value>,      "privtype":<String_value>,                  "privpasswd":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"snmpuser":{      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "authpasswd":<String_value>,      "privtype":<String_value>,      "privpasswd":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","snmpuser":{      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,                  "authpasswd":<String_value>,      "privtype":<String_value>,                  "privpasswd":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"snmpuser":{      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "authpasswd":<String_value>,      "privtype":<String_value>,      "privpasswd":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","snmpuser":{      "name":<String_value>,      "authtype":true,      "privtype":true,      "authpasswd":true,      "privpasswd":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"snmpuser":{      "name":<String_value>,      "authtype":true,      "privtype":true,      "authpasswd":true,      "privpasswd":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/snmpuser
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/snmpuser?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of snmpuser resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser?view=summary
-Use this query-parameter to get the summary output of snmpuser resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?pagesize=#no;pageno=#no
 Use this query-parameter to get the snmpuser resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "snmpuser": [ {      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "privtype":<String_value>,      "engineid":<String_value>,      "storagetype":<String_value>,      "status":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmpuser": [ {      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "privtype":<String_value>,      "engineid":<String_value>,      "storagetype":<String_value>,      "status":<String_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "snmpuser": [ {      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "privtype":<String_value>,      "engineid":<String_value>,      "storagetype":<String_value>,      "status":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmpuser": [ {      "name":<String_value>,      "group":<String_value>,      "authtype":<String_value>,      "privtype":<String_value>,      "engineid":<String_value>,      "storagetype":<String_value>,      "status":<String_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "snmpuser": [ {    
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/snmpuser?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpuser?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",snmpuser: [ { "__count": "#no"} ] }
+{ "snmpuser": [ { "__count": "#no"} ] }
 
 

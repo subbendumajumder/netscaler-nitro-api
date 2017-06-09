@@ -12,7 +12,7 @@ Binding object showing the routemonitor that can be bound to hanode.
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/hanode_routemonitor_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","hanode_routemonitor_binding":{      "id":<Double_value>,      "routemonitor":<String_value>,                  "netmask":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"hanode_routemonitor_binding":{      "id":<Double_value>,      "routemonitor":<String_value>,      "netmask":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of hanode_routemonitor_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the hanode_routemonitor_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "hanode_routemonitor_binding": [ {      "routemonitor":<String_value>,      "id":<Double_value>,      "netmask":<String_value>,      "routemonitorstate":<String_value>,      "flags":<Double_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "hanode_routemonitor_binding": [ {      "routemonitor":<String_value>,      "id":<Double_value>,      "netmask":<String_value>,      "routemonitorstate":<String_value>,      "flags":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "hanode_routemonitor_binding": [ {      "routemonitor":<String_value>,      "id":<Double_value>,      "netmask":<String_value>,      "routemonitorstate":<String_value>,      "flags":<Double_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/hanode_routemonitor_binding/id_value&lt;Double&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",hanode_routemonitor_binding: [ { "__count": "#no"} ] }
+{"hanode_routemonitor_binding": [ { "__count": "#no"} ] }
 
 

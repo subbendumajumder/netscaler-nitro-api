@@ -7,7 +7,7 @@ Configuration for capacity resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>bandwidth</td><td>&lt;Double></td><td>Read-write</td><td>System bandwidth limit.</td><tr><tr><td>edition</td><td>&lt;String></td><td>Read-write</td><td>Product edition.&lt;br>Possible values = Standard, Enterprise, Platinum</td><tr><tr><td>unit</td><td>&lt;String></td><td>Read-write</td><td>Bandwidth unit.&lt;br>Possible values = Gbps, Mbps</td><tr><tr><td>actualbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Bandwith in MBPS.</td><tr><tr><td>maxbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Maximum Bandwidth.</td><tr><tr><td>minbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Minimum Bandwidth.</td><tr><tr><td>instancecount</td><td>&lt;Double></td><td>Read-only</td><td>VPX will consume one instance and MPX will consume zero instance.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>bandwidth</td><td>&lt;Double></td><td>Read-write</td><td>System bandwidth limit.</td><tr><tr><td>edition</td><td>&lt;String></td><td>Read-write</td><td>Product edition.&lt;br>Possible values = Standard, Enterprise, Platinum</td><tr><tr><td>unit</td><td>&lt;String></td><td>Read-write</td><td>Bandwidth unit.&lt;br>Possible values = Gbps, Mbps</td><tr><tr><td>platform</td><td>&lt;String></td><td>Read-write</td><td>appliance platform type.&lt;br>Possible values = CP1000</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>actualbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Bandwith in MBPS.</td><tr><tr><td>maxbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Maximum Bandwidth.</td><tr><tr><td>minbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Minimum Bandwidth.</td><tr><tr><td>instancecount</td><td>&lt;Double></td><td>Read-only</td><td>VPX will consume one instance and MPX will consume zero instance.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,9 +33,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"nscapacity":{      "bandwidth":<Double_value>,      "edition":<String_value>,      "unit":<String_value>}}```
+Request Payload: ```{"nscapacity":{      "bandwidth":<Double_value>,      "edition":<String_value>,      "unit":<String_value>,      "platform":<String_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
@@ -48,9 +48,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"nscapacity":{      "bandwidth":true}}```
+Request Payload: ```{"nscapacity":{      "bandwidth":true,      "platform":true}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -58,17 +58,24 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nscapacity
+Query-parameters:
+args
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nscapacity?args=nodeid:&lt;Double_value&gt;
+Use this query-parameter to get nscapacity resources based on additional properties.
+
+
+
 HTTP Method: GET
 Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "nscapacity": [ {      "actualbandwidth":<Double_value>,      "edition":<String_value>,      "unit":<String_value>,      "bandwidth":<Double_value>,      "maxbandwidth":<Double_value>,      "minbandwidth":<Double_value>,      "instancecount":<Double_value>}]}```
+Response Payload: ```{ "nscapacity": [ {nodeid:<Double_value>      "actualbandwidth":<Double_value>,      "platform":<String_value>,      "edition":<String_value>,      "unit":<String_value>,      "bandwidth":<Double_value>,      "maxbandwidth":<Double_value>,      "minbandwidth":<Double_value>,      "instancecount":<Double_value>}]}```
 
 
 

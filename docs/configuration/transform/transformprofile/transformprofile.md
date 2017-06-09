@@ -7,7 +7,7 @@ Configuration for URL Transformation profile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the URL transformation profile. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the URL transformation profile is added. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my transform profile? or ?my transform profile?).&lt;br>Minimum length = 1</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of transformation. Always URL for URL Transformation profiles.&lt;br>Possible values = URL</td><tr><tr><td>onlytransformabsurlinbody</td><td>&lt;String></td><td>Read-write</td><td>In the HTTP body, transform only absolute URLs. Relative URLs are ignored.&lt;br>Possible values = ON, OFF</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this URL Transformation profile.</td><tr><tr><td>regexforfindingurlinjavascript</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in JavaScript.</td><tr><tr><td>regexforfindingurlincss</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in CSS.</td><tr><tr><td>regexforfindingurlinxcomponent</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in X-Component.</td><tr><tr><td>regexforfindingurlinxml</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in XML.</td><tr><tr><td>additionalreqheaderslist</td><td>&lt;String></td><td>Read-only</td><td>Patclass having a list of additional request header names that should transformed.</td><tr><tr><td>additionalrespheaderslist</td><td>&lt;String></td><td>Read-only</td><td>Patclass having a list of additional response header names that should transformed.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the URL transformation profile. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the URL transformation profile is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my transform profile? or ?my transform profile?).&lt;br>Minimum length = 1</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of transformation. Always URL for URL Transformation profiles.&lt;br>Possible values = URL</td><tr><tr><td>onlytransformabsurlinbody</td><td>&lt;String></td><td>Read-write</td><td>In the HTTP body, transform only absolute URLs. Relative URLs are ignored.&lt;br>Possible values = ON, OFF</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this URL Transformation profile.</td><tr><tr><td>regexforfindingurlinjavascript</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in JavaScript.</td><tr><tr><td>regexforfindingurlincss</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in CSS.</td><tr><tr><td>regexforfindingurlinxcomponent</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in X-Component.</td><tr><tr><td>regexforfindingurlinxml</td><td>&lt;String></td><td>Read-only</td><td>Patclass having regexes to find the URLs in XML.</td><tr><tr><td>additionalreqheaderslist</td><td>&lt;String></td><td>Read-only</td><td>Patclass having a list of additional request header names that should transformed.</td><tr><tr><td>additionalrespheaderslist</td><td>&lt;String></td><td>Read-only</td><td>Patclass having a list of additional response header names that should transformed.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","transformprofile":{      "name":<String_value>,      "type":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformprofile":{      "name":<String_value>,      "type":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","transformprofile":{      "name":<String_value>,      "type":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformprofile":{      "name":<String_value>,      "type":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","transformprofile":{      "name":<String_value>,      "type":true,      "onlytransformabsurlinbody":true,      "comment":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"transformprofile":{      "name":<String_value>,      "type":true,      "onlytransformabsurlinbody":true,      "comment":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/transformprofile
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/transformprofile?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of transformprofile resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile?view=summary
-Use this query-parameter to get the summary output of transformprofile resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the transformprofile resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "transformprofile": [ {      "name":<String_value>,      "type":<String_value>,      "regexforfindingurlinjavascript":<String_value>,      "regexforfindingurlincss":<String_value>,      "regexforfindingurlinxcomponent":<String_value>,      "regexforfindingurlinxml":<String_value>,      "additionalreqheaderslist":<String_value>,      "additionalrespheaderslist":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "transformprofile": [ {      "name":<String_value>,      "type":<String_value>,      "regexforfindingurlinjavascript":<String_value>,      "regexforfindingurlincss":<String_value>,      "regexforfindingurlinxcomponent":<String_value>,      "regexforfindingurlinxml":<String_value>,      "additionalreqheaderslist":<String_value>,      "additionalrespheaderslist":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "transformprofile": [ {      "name":<String_value>,      "type":<String_value>,      "regexforfindingurlinjavascript":<String_value>,      "regexforfindingurlincss":<String_value>,      "regexforfindingurlinxcomponent":<String_value>,      "regexforfindingurlinxml":<String_value>,      "additionalreqheaderslist":<String_value>,      "additionalrespheaderslist":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "transformprofile": [ {      "name":<String_value>,      "type":<String_value>,      "regexforfindingurlinjavascript":<String_value>,      "regexforfindingurlincss":<String_value>,      "regexforfindingurlinxcomponent":<String_value>,      "regexforfindingurlinxml":<String_value>,      "additionalreqheaderslist":<String_value>,      "additionalrespheaderslist":<String_value>,      "onlytransformabsurlinbody":<String_value>,      "comment":<String_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "transformprofile": 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/transformprofile?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/transformprofile?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",transformprofile: [ { "__count": "#no"} ] }
+{ "transformprofile": [ { "__count": "#no"} ] }
 
 

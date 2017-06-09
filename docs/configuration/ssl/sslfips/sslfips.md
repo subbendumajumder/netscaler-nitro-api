@@ -27,53 +27,78 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslfips
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","sslfips":{      "inithsm":<String_value>,      "sopassword":<String_value>,      "oldsopassword":<String_value>,      "userpassword":<String_value>,      "hsmlabel":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslfips":{      "inithsm":<String_value>,      "sopassword":<String_value>,      "oldsopassword":<String_value>,      "userpassword":<String_value>,      "hsmlabel":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslfips?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","sslfips":{      "hsmlabel":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslfips":{      "hsmlabel":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###reset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslfips?action=reset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"reset"},"sessionid":"##sessionid","sslfips":{}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslfips":{}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###change
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslfips?action=update
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"update"},"sessionid":"##sessionid","sslfips":{      "fipsfw":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslfips":{      "fipsfw":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/sslfips
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslfips
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "sslfips": [ {      "inithsm":<String_value>,      "sopassword":<String_value>,      "userpassword":<String_value>,      "oldsopassword":<String_value>,      "erasedata":<String_value>,      "hsmlabel":<String_value>,      "serial":<Integer_value>,      "majorversion":<Integer_value>,      "minorversion":<Integer_value>,      "fipshwmajorversion":<Integer_value>,      "fipshwminorversion":<Integer_value>,      "fipshwversionstring":<String_value>,      "flashmemorytotal":<Integer_value>,      "flashmemoryfree":<Integer_value>,      "sramtotal":<Integer_value>,      "sramfree":<Integer_value>,      "status":<Integer_value>,      "flag":<Integer_value>,      "serialno":<String_value>,      "model":<String_value>,      "state":<Integer_value>,      "firmwarereleasedate":<String_value>,      "coresmax":<Integer_value>,      "coresenabled":<Integer_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslfips": [ {      "inithsm":<String_value>,      "sopassword":<String_value>,      "userpassword":<String_value>,      "oldsopassword":<String_value>,      "erasedata":<String_value>,      "hsmlabel":<String_value>,      "serial":<Integer_value>,      "majorversion":<Integer_value>,      "minorversion":<Integer_value>,      "fipshwmajorversion":<Integer_value>,      "fipshwminorversion":<Integer_value>,      "fipshwversionstring":<String_value>,      "flashmemorytotal":<Integer_value>,      "flashmemoryfree":<Integer_value>,      "sramtotal":<Integer_value>,      "sramfree":<Integer_value>,      "status":<Integer_value>,      "flag":<Integer_value>,      "serialno":<String_value>,      "model":<String_value>,      "state":<Integer_value>,      "firmwarereleasedate":<String_value>,      "coresmax":<Integer_value>,      "coresenabled":<Integer_value>}]}```
 
 
 

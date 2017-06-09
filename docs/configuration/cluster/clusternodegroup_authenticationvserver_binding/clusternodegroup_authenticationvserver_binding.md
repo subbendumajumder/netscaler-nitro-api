@@ -12,7 +12,7 @@ Binding object showing the authenticationvserver that can be bound to clusternod
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,42 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/clusternodegroup_authenticationvserver_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","clusternodegroup_authenticationvserver_binding":{      "name":<String_value>,      "vserver":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"clusternodegroup_authenticationvserver_binding":{      "name":<String_value>,      "vserver":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://NS_IP/nitro/v1/config/clusternodegroup_authenticationvserver_binding
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of clusternodegroup_authenticationvserver_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?pagesize=#no;pageno=#no
 Use this query-parameter to get the clusternodegroup_authenticationvserver_binding resources in chunks.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "clusternodegroup_authenticationvserver_binding": [ {      "vserver":<String_value>,      "name":<String_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusternodegroup_authenticationvserver_binding": [ {      "vserver":<String_value>,      "name":<String_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusternodegroup_authenticationvserver_binding": [ {      "vserver":<String_value>,      "name":<String_value>}]}```
 
 
 
@@ -70,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "clusternodegroup_au
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?args=;count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternodegroup_authenticationvserver_binding?args=;count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",clusternodegroup_authenticationvserver_binding: [ { "__count": "#no"} ] }
+{ "clusternodegroup_authenticationvserver_binding": [ { "__count": "#no"} ] }
 
 

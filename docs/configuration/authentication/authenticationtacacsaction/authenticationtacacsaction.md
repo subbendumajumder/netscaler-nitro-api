@@ -7,7 +7,7 @@ Configuration for TACACS action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the TACACS+ profile (action). Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after TACACS profile is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my authentication action" or y authentication action).&lt;br>Minimum length = 1</td><tr><tr><td>serverip</td><td>&lt;String></td><td>Read-write</td><td>IP address assigned to the TACACS+ server.&lt;br>Minimum length = 1</td><tr><tr><td>serverport</td><td>&lt;Integer></td><td>Read-write</td><td>Port number on which the TACACS+ server listens for connections.&lt;br>Default value: 49&lt;br>Minimum value = 1</td><tr><tr><td>authtimeout</td><td>&lt;Double></td><td>Read-write</td><td>Number of seconds the NetScaler appliance waits for a response from the TACACS+ server.&lt;br>Default value: 3&lt;br>Minimum value = 1</td><tr><tr><td>tacacssecret</td><td>&lt;String></td><td>Read-write</td><td>Key shared between the TACACS+ server and the NetScaler appliance. Required for allowing the NetScaler appliance to communicate with the TACACS+ server.&lt;br>Minimum length = 1</td><tr><tr><td>authorization</td><td>&lt;String></td><td>Read-write</td><td>Use streaming authorization on the TACACS+ server.&lt;br>Possible values = ON, OFF</td><tr><tr><td>accounting</td><td>&lt;String></td><td>Read-write</td><td>Whether the TACACS+ server is currently accepting accounting messages.&lt;br>Possible values = ON, OFF</td><tr><tr><td>auditfailedcmds</td><td>&lt;String></td><td>Read-write</td><td>The state of the TACACS+ server that will receive accounting messages.&lt;br>Possible values = ON, OFF</td><tr><tr><td>defaultauthenticationgroup</td><td>&lt;String></td><td>Read-write</td><td>This is the default group that is chosen when the authentication succeeds in addition to extracted groups.</td><tr><tr><td>success</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>failure</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the TACACS+ profile (action). &lt;br>Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after TACACS profile is created.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my authentication action" or y authentication action).&lt;br>Minimum length = 1</td><tr><tr><td>serverip</td><td>&lt;String></td><td>Read-write</td><td>IP address assigned to the TACACS+ server.&lt;br>Minimum length = 1</td><tr><tr><td>serverport</td><td>&lt;Integer></td><td>Read-write</td><td>Port number on which the TACACS+ server listens for connections.&lt;br>Default value: 49&lt;br>Minimum value = 1</td><tr><tr><td>authtimeout</td><td>&lt;Double></td><td>Read-write</td><td>Number of seconds the NetScaler appliance waits for a response from the TACACS+ server.&lt;br>Default value: 3&lt;br>Minimum value = 1</td><tr><tr><td>tacacssecret</td><td>&lt;String></td><td>Read-write</td><td>Key shared between the TACACS+ server and the NetScaler appliance. &lt;br>Required for allowing the NetScaler appliance to communicate with the TACACS+ server.&lt;br>Minimum length = 1</td><tr><tr><td>authorization</td><td>&lt;String></td><td>Read-write</td><td>Use streaming authorization on the TACACS+ server.&lt;br>Possible values = ON, OFF</td><tr><tr><td>accounting</td><td>&lt;String></td><td>Read-write</td><td>Whether the TACACS+ server is currently accepting accounting messages.&lt;br>Possible values = ON, OFF</td><tr><tr><td>auditfailedcmds</td><td>&lt;String></td><td>Read-write</td><td>The state of the TACACS+ server that will receive accounting messages.&lt;br>Possible values = ON, OFF</td><tr><tr><td>groupattrname</td><td>&lt;String></td><td>Read-write</td><td>TACACS+ group attribute name.&lt;br>Used for group extraction on the TACACS+ server.</td><tr><tr><td>defaultauthenticationgroup</td><td>&lt;String></td><td>Read-write</td><td>This is the default group that is chosen when the authentication succeeds in addition to extracted groups.</td><tr><tr><td>attribute1</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 1 (where 1 changes for each attribute).</td><tr><tr><td>attribute2</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 2 (where 2 changes for each attribute).</td><tr><tr><td>attribute3</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 3 (where 3 changes for each attribute).</td><tr><tr><td>attribute4</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 4 (where 4 changes for each attribute).</td><tr><tr><td>attribute5</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 5 (where 5 changes for each attribute).</td><tr><tr><td>attribute6</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 6 (where 6 changes for each attribute).</td><tr><tr><td>attribute7</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 7 (where 7 changes for each attribute).</td><tr><tr><td>attribute8</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 8 (where 8 changes for each attribute).</td><tr><tr><td>attribute9</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 9 (where 9 changes for each attribute).</td><tr><tr><td>attribute10</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 10 (where 10 changes for each attribute).</td><tr><tr><td>attribute11</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 11 (where 11 changes for each attribute).</td><tr><tr><td>attribute12</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 12 (where 12 changes for each attribute).</td><tr><tr><td>attribute13</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 13 (where 13 changes for each attribute).</td><tr><tr><td>attribute14</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 14 (where 14 changes for each attribute).</td><tr><tr><td>attribute15</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 15 (where 15 changes for each attribute).</td><tr><tr><td>attribute16</td><td>&lt;String></td><td>Read-write</td><td>Name of the custom attribute to be extracted from server and stored at index 16 (where 16 changes for each attribute).</td><tr><tr><td>success</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>failure</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","authenticationtacacsaction":{      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "defaultauthenticationgroup":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationtacacsaction":{      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "groupattrname":<String_value>,      "defaultauthenticationgroup":<String_value>,      "attribute1":<String_value>,      "attribute2":<String_value>,      "attribute3":<String_value>,      "attribute4":<String_value>,      "attribute5":<String_value>,      "attribute6":<String_value>,      "attribute7":<String_value>,      "attribute8":<String_value>,      "attribute9":<String_value>,      "attribute10":<String_value>,      "attribute11":<String_value>,      "attribute12":<String_value>,      "attribute13":<String_value>,      "attribute14":<String_value>,      "attribute15":<String_value>,      "attribute16":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","authenticationtacacsaction":{      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "defaultauthenticationgroup":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationtacacsaction":{      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "groupattrname":<String_value>,      "defaultauthenticationgroup":<String_value>,      "attribute1":<String_value>,      "attribute2":<String_value>,      "attribute3":<String_value>,      "attribute4":<String_value>,      "attribute5":<String_value>,      "attribute6":<String_value>,      "attribute7":<String_value>,      "attribute8":<String_value>,      "attribute9":<String_value>,      "attribute10":<String_value>,      "attribute11":<String_value>,      "attribute12":<String_value>,      "attribute13":<String_value>,      "attribute14":<String_value>,      "attribute15":<String_value>,      "attribute16":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","authenticationtacacsaction":{      "name":<String_value>,      "serverip":true,      "serverport":true,      "authtimeout":true,      "tacacssecret":true,      "authorization":true,      "accounting":true,      "auditfailedcmds":true,      "defaultauthenticationgroup":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"authenticationtacacsaction":{      "name":<String_value>,      "serverip":true,      "serverport":true,      "authtimeout":true,      "tacacssecret":true,      "authorization":true,      "accounting":true,      "auditfailedcmds":true,      "groupattrname":true,      "defaultauthenticationgroup":true,      "attribute1":true,      "attribute2":true,      "attribute3":true,      "attribute4":true,      "attribute5":true,      "attribute6":true,      "attribute7":true,      "attribute8":true,      "attribute9":true,      "attribute10":true,      "attribute11":true,      "attribute12":true,      "attribute13":true,      "attribute14":true,      "attribute15":true,      "attribute16":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/authenticationtacacsaction
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/authenticationtacacsaction?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of authenticationtacacsaction resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction?view=summary
-Use this query-parameter to get the summary output of authenticationtacacsaction resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?pagesize=#no;pageno=#no
 Use this query-parameter to get the authenticationtacacsaction resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "authenticationtacacsaction": [ {      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "success":<Double_value>,      "failure":<Double_value>,      "defaultauthenticationgroup":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "authenticationtacacsaction": [ {      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "groupattrname":<String_value>,      "success":<Double_value>,      "failure":<Double_value>,      "defaultauthenticationgroup":<String_value>,      "attribute1":<String_value>,      "attribute2":<String_value>,      "attribute3":<String_value>,      "attribute4":<String_value>,      "attribute5":<String_value>,      "attribute6":<String_value>,      "attribute7":<String_value>,      "attribute8":<String_value>,      "attribute9":<String_value>,      "attribute10":<String_value>,      "attribute11":<String_value>,      "attribute12":<String_value>,      "attribute13":<String_value>,      "attribute14":<String_value>,      "attribute15":<String_value>,      "attribute16":<String_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationtacacsaction": [ {      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "success":<Double_value>,      "failure":<Double_value>,      "defaultauthenticationgroup":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "authenticationtacacsaction": [ {      "name":<String_value>,      "serverip":<String_value>,      "serverport":<Integer_value>,      "authtimeout":<Double_value>,      "tacacssecret":<String_value>,      "authorization":<String_value>,      "accounting":<String_value>,      "auditfailedcmds":<String_value>,      "groupattrname":<String_value>,      "success":<Double_value>,      "failure":<Double_value>,      "defaultauthenticationgroup":<String_value>,      "attribute1":<String_value>,      "attribute2":<String_value>,      "attribute3":<String_value>,      "attribute4":<String_value>,      "attribute5":<String_value>,      "attribute6":<String_value>,      "attribute7":<String_value>,      "attribute8":<String_value>,      "attribute9":<String_value>,      "attribute10":<String_value>,      "attribute11":<String_value>,      "attribute12":<String_value>,      "attribute13":<String_value>,      "attribute14":<String_value>,      "attribute15":<String_value>,      "attribute16":<String_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationtacac
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/authenticationtacacsaction?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/authenticationtacacsaction?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",authenticationtacacsaction: [ { "__count": "#no"} ] }
+{ "authenticationtacacsaction": [ { "__count": "#no"} ] }
 
 

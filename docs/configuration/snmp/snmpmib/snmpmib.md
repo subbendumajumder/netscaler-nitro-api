@@ -7,12 +7,12 @@ Configuration for SNMP mib resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>contact</td><td>&lt;String></td><td>Read-write</td><td>Name of the administrator for this NetScaler appliance. Along with the name, you can include information on how to contact this person, such as a phone number or an email address. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. The following requirement applies only to the NetScaler CLI: If the information includes one or more spaces, enclose it in double or single quotation marks (for example, "my contact" or my contact).&lt;br>Default value: "WebMaster (default)"&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for this NetScaler appliance. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. You should choose a name that helps identify the NetScaler appliance. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose it in double or single quotation marks (for example, "my name" or my name).&lt;br>Default value: "NetScaler"&lt;br>Minimum length = 1</td><tr><tr><td>location</td><td>&lt;String></td><td>Read-write</td><td>Physical location of the NetScaler appliance. For example, you can specify building name, lab number, and rack number. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. The following requirement applies only to the NetScaler CLI: If the location includes one or more spaces, enclose it in double or single quotation marks (for example, "my location" or my location).&lt;br>Default value: "POP (default)"&lt;br>Minimum length = 1</td><tr><tr><td>customid</td><td>&lt;String></td><td>Read-write</td><td>Custom identification number for the NetScaler appliance. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. You should choose a custom identification that helps identify the NetScaler appliance. The following requirement applies only to the NetScaler CLI: If the ID includes one or more spaces, enclose it in double or single quotation marks (for example, "my ID" or my ID).&lt;br>Default value: "Default"&lt;br>Minimum length = 1</td><tr><tr><td>sysdesc</td><td>&lt;String></td><td>Read-only</td><td>The description of the system.</td><tr><tr><td>sysuptime</td><td>&lt;Double></td><td>Read-only</td><td>The UP time of the system in 100th of a second.</td><tr><tr><td>sysservices</td><td>&lt;Double></td><td>Read-only</td><td>The services offered by the system.</td><tr><tr><td>sysoid</td><td>&lt;String></td><td>Read-only</td><td>The OID of the systems management system.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>contact</td><td>&lt;String></td><td>Read-write</td><td>Name of the administrator for this NetScaler appliance. Along with the name, you can include information on how to contact this person, such as a phone number or an email address. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the information includes one or more spaces, enclose it in double or single quotation marks (for example, "my contact" or my contact).&lt;br>Default value: "WebMaster (default)"&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for this NetScaler appliance. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. You should choose a name that helps identify the NetScaler appliance.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose it in double or single quotation marks (for example, "my name" or my name).&lt;br>Default value: "NetScaler"&lt;br>Minimum length = 1</td><tr><tr><td>location</td><td>&lt;String></td><td>Read-write</td><td>Physical location of the NetScaler appliance. For example, you can specify building name, lab number, and rack number. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the location includes one or more spaces, enclose it in double or single quotation marks (for example, "my location" or my location).&lt;br>Default value: "POP (default)"&lt;br>Minimum length = 1</td><tr><tr><td>customid</td><td>&lt;String></td><td>Read-write</td><td>Custom identification number for the NetScaler appliance. Can consist of 1 to 127 characters that include uppercase and lowercase letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore (_) characters. You should choose a custom identification that helps identify the NetScaler appliance.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the ID includes one or more spaces, enclose it in double or single quotation marks (for example, "my ID" or my ID).&lt;br>Default value: "Default"&lt;br>Minimum length = 1</td><tr><tr><td>ownernode</td><td>&lt;Double></td><td>Read-write</td><td>ID of the cluster node for which we are setting the mib. This is a mandatory argument to set snmp mib on CLIP.&lt;br>Default value: -1&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>sysdesc</td><td>&lt;String></td><td>Read-only</td><td>The description of the system.</td><tr><tr><td>sysuptime</td><td>&lt;Double></td><td>Read-only</td><td>The UP time of the system in 100th of a second.</td><tr><tr><td>sysservices</td><td>&lt;Double></td><td>Read-only</td><td>The services offered by the system.</td><tr><tr><td>sysoid</td><td>&lt;String></td><td>Read-only</td><td>The OID of the systems management system.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[UPDATE](#update) | [UNSET](#unset) | [GET (ALL)](#get-(all))
+[UPDATE](#update) | [UNSET](#unset) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,31 +27,120 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","snmpmib":{      "contact":<String_value>,      "name":<String_value>,      "location":<String_value>,      "customid":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"snmpmib":{      "contact":<String_value>,      "name":<String_value>,      "location":<String_value>,      "customid":<String_value>,      "ownernode":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","snmpmib":{      "contact":true,      "name":true,      "location":true,      "customid":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"snmpmib":{      "contact":true,      "name":true,      "location":true,      "customid":true,      "ownernode":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/snmpmib
-HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "snmpmib": [ {      "contact":<String_value>,      "name":<String_value>,      "location":<String_value>,      "sysdesc":<String_value>,      "sysuptime":<Double_value>,      "sysservices":<Double_value>,      "sysoid":<String_value>,      "customid":<String_value>}]}```
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
 
+
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?filter=property-name1:property-val1,property-name2:property-val2
+Use this query-parameter to get the filtered set of snmpmib resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?pagesize=#no;pageno=#no
+Use this query-parameter to get the snmpmib resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmpmib": [ {      "ownernode":<Double_value>,      "contact":<String_value>,      "name":<String_value>,      "location":<String_value>,      "sysdesc":<String_value>,      "sysuptime":<Double_value>,      "sysservices":<Double_value>,      "sysoid":<String_value>,      "customid":<String_value>}]}```
+
+
+
+###get
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib/ownernode_value&lt;Double&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib/ownernode_value&lt;Double&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib/ownernode_value&lt;Double&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmpmib": [ {      "ownernode":<Double_value>,      "contact":<String_value>,      "name":<String_value>,      "location":<String_value>,      "sysdesc":<String_value>,      "sysuptime":<Double_value>,      "sysservices":<Double_value>,      "sysoid":<String_value>,      "customid":<String_value>}]}```
+
+
+
+###count
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpmib?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
+{ "snmpmib": [ { "__count": "#no"} ] }
 
 

@@ -7,12 +7,12 @@ Binding object showing the routemonitor that can be bound to clusternode.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>A number that uniquely identifies the cluster node. .&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>routemonitor</td><td>&lt;String></td><td>Read-write</td><td>The IP address (IPv4 or IPv6).</td><tr><tr><td>netmask</td><td>&lt;String></td><td>Read-write</td><td>The netmask.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>A number that uniquely identifies the cluster node. .&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>routemonitor</td><td>&lt;String></td><td>Read-write</td><td>The IP address (IPv4 or IPv6).</td><tr><tr><td>netmask</td><td>&lt;String></td><td>Read-write</td><td>The netmask.</td><tr><tr><td>routemonstate</td><td>&lt;Double></td><td>Read-only</td><td>Current routemonstate.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -35,7 +35,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"clusternode_routemonitor_binding":{      "nodeid":<Double_value>,      "routemonitor":<String_value>,      "netmask":<String_value>}}```
 Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
@@ -49,7 +49,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
@@ -63,7 +63,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_routemonitor_bin
 Use this query-parameter to get the filtered set of clusternode_routemonitor_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_routemonitor_binding/nodeid_value&lt;Double&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the clusternode_routemonitor_binding resources in chunks.
 
@@ -75,11 +75,37 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "clusternode_routemonitor_binding": [ {      "nodeid":<Double_value>,      "routemonitor":<String_value>,      "netmask":<String_value>}]}```
+Response Payload: ```{ "clusternode_routemonitor_binding": [ {      "nodeid":<Double_value>,      "routemonitor":<String_value>,      "netmask":<String_value>,      "routemonstate":<Double_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_routemonitor_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusternode_routemonitor_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusternode_routemonitor_binding": [ {      "nodeid":<Double_value>,      "routemonitor":<String_value>,      "netmask":<String_value>,      "routemonstate":<Double_value>}]}```
 
 
 
@@ -94,7 +120,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

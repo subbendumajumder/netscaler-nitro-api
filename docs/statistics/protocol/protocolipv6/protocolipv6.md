@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/protocolipv6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolipv6
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/protocolipv6?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolipv6?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get protocolipv6 resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "protocolipv6": [ {      "ipv6fragpktsforwardrate":<Double_value>,      "ipv6icmprstxrate":<Double_value>,      "ipv6fragrxpktsrate":<Double_value>,      "ipv6totroutepkts":<Double_value>,      "ipv6fragpkttoobig":<Double_value>,      "ipv6toticmpnarx":<Double_value>,      "ipv6fragtotrxpkts":<Double_value>,      "ipv6icmpnatxrate":<Double_value>,      "ipv6toticmpnsrx":<Double_value>,      "ipv6routembitsrate":<Double_value>,      "ipv6txpktsrate":<Double_value>,      "icmpv6rtthsld":<Double_value>,      "icmpv6unspt":<Double_value>,      "ipv6badcksum":<Double_value>,      "ipv6errrxhdr":<Double_value>,      "ipv6totrxbytes":<Double_value>,      "ipv6rxpktsrate":<Double_value>,      "ipv6icmpnstxrate":<Double_value>,      "ipv6icmprarxrate":<Double_value>,      "ipv6errhdr":<Double_value>,      "ipv6totrxpkts":<Double_value>,      "ipv6toticmprx":<Double_value>,      "ipv6fragtotpktsprocessnoreass":<Double_value>,      "ipv6rxbytesrate":<Double_value>,      "ipv6icmpnsrxrate":<Double_value>,      "ipv6toticmpnatx":<Double_value>,      "ipv6routepktsrate":<Double_value>,      "ipv6icmptxrate":<Double_value>,      "ipv6toticmprstx":<Double_value>,      "ipv6totroutembits":<Double_value>,      "ipv6icmprxrate":<Double_value>,      "ipv6fragpktsprocessnoreassrate":<Double_value>,      "ipv6fragtcpreassembledrate":<Double_value>,      "ipv6tottxpkts":<Double_value>,      "ipv6icmpnarxrate":<Double_value>,      "ipv6fragtotudpreassembled":<Double_value>,      "ipv6fragtottcpreassembled":<Double_value>,      "ipv6errrxpkt":<Double_value>,      "ipv6nextheadererr":<Double_value>,      "ipv6toticmptx":<Double_value>,      "ipv6toticmpnstx":<Double_value>,      "ipv6fragudpreassembledrate":<Double_value>,      "ipv6txbytesrate":<Double_value>,      "icmpv6error":<Double_value>,      "ipv6toticmprarx":<Double_value>,      "ipv6tottxbytes":<Double_value>,      "ipv6landattack":<Double_value>,      "ipv6fragtotpktsforward":<Double_value>,      "ipv6fragzerolenpkt":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocolipv6": [ {      "ipv6fragpktsforwardrate":<Double_value>,      "ipv6icmprstxrate":<Double_value>,      "ipv6fragrxpktsrate":<Double_value>,      "ipv6totroutepkts":<Double_value>,      "ipv6fragpkttoobig":<Double_value>,      "ipv6toticmpnarx":<Double_value>,      "ipv6fragtotrxpkts":<Double_value>,      "ipv6icmpnatxrate":<Double_value>,      "ipv6toticmpnsrx":<Double_value>,      "ipv6routembitsrate":<Double_value>,      "ipv6txpktsrate":<Double_value>,      "icmpv6rtthsld":<Double_value>,      "icmpv6unspt":<Double_value>,      "ipv6badcksum":<Double_value>,      "ipv6errrxhdr":<Double_value>,      "ipv6totrxbytes":<Double_value>,      "ipv6rxpktsrate":<Double_value>,      "ipv6icmpnstxrate":<Double_value>,      "ipv6icmprarxrate":<Double_value>,      "ipv6errhdr":<Double_value>,      "ipv6totrxpkts":<Double_value>,      "ipv6toticmprx":<Double_value>,      "ipv6fragtotpktsprocessnoreass":<Double_value>,      "ipv6rxbytesrate":<Double_value>,      "ipv6icmpnsrxrate":<Double_value>,      "ipv6toticmpnatx":<Double_value>,      "ipv6routepktsrate":<Double_value>,      "ipv6icmptxrate":<Double_value>,      "ipv6toticmprstx":<Double_value>,      "ipv6totroutembits":<Double_value>,      "ipv6icmprxrate":<Double_value>,      "ipv6fragpktsprocessnoreassrate":<Double_value>,      "ipv6fragtcpreassembledrate":<Double_value>,      "ipv6tottxpkts":<Double_value>,      "ipv6icmpnarxrate":<Double_value>,      "ipv6fragtotudpreassembled":<Double_value>,      "ipv6fragtottcpreassembled":<Double_value>,      "ipv6errrxpkt":<Double_value>,      "ipv6nextheadererr":<Double_value>,      "ipv6toticmptx":<Double_value>,      "ipv6toticmpnstx":<Double_value>,      "ipv6fragudpreassembledrate":<Double_value>,      "ipv6txbytesrate":<Double_value>,      "icmpv6error":<Double_value>,      "ipv6toticmprarx":<Double_value>,      "ipv6tottxbytes":<Double_value>,      "ipv6landattack":<Double_value>,      "ipv6fragtotpktsforward":<Double_value>,      "ipv6fragzerolenpkt":<Double_value>}]}```
 
 
 

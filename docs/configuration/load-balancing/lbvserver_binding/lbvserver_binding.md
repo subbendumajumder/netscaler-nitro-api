@@ -1,6 +1,6 @@
 #lbvserver_binding
 
-Binding object showing the resources that can be bound to lbvserver.
+Binding object which returns the resources bound to lbvserver.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to lbvserver.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/lbvserver_binding/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbvserver_binding/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "lbvserver_binding": [ {      "name":<String_value>,      "lbvserver_appfwpolicy_binding":<lbvserver_appfwpolicy_binding[]_value>,      "lbvserver_spilloverpolicy_binding":<lbvserver_spilloverpolicy_binding[]_value>,      "lbvserver_appqoepolicy_binding":<lbvserver_appqoepolicy_binding[]_value>,      "lbvserver_feopolicy_binding":<lbvserver_feopolicy_binding[]_value>,      "lbvserver_csvserver_binding":<lbvserver_csvserver_binding[]_value>,      "lbvserver_capolicy_binding":<lbvserver_capolicy_binding[]_value>,      "lbvserver_authorizationpolicy_binding":<lbvserver_authorizationpolicy_binding[]_value>,      "lbvserver_servicegroupmember_binding":<lbvserver_servicegroupmember_binding[]_value>,      "lbvserver_dospolicy_binding":<lbvserver_dospolicy_binding[]_value>,      "lbvserver_tmtrafficpolicy_binding":<lbvserver_tmtrafficpolicy_binding[]_value>,      "lbvserver_cmppolicy_binding":<lbvserver_cmppolicy_binding[]_value>,      "lbvserver_auditsyslogpolicy_binding":<lbvserver_auditsyslogpolicy_binding[]_value>,      "lbvserver_pqpolicy_binding":<lbvserver_pqpolicy_binding[]_value>,      "lbvserver_dnspolicy64_binding":<lbvserver_dnspolicy64_binding[]_value>,      "lbvserver_rewritepolicy_binding":<lbvserver_rewritepolicy_binding[]_value>,      "lbvserver_auditnslogpolicy_binding":<lbvserver_auditnslogpolicy_binding[]_value>,      "lbvserver_transformpolicy_binding":<lbvserver_transformpolicy_binding[]_value>,      "lbvserver_filterpolicy_binding":<lbvserver_filterpolicy_binding[]_value>,      "lbvserver_scpolicy_binding":<lbvserver_scpolicy_binding[]_value>,      "lbvserver_appflowpolicy_binding":<lbvserver_appflowpolicy_binding[]_value>,      "lbvserver_servicegroup_binding":<lbvserver_servicegroup_binding[]_value>,      "lbvserver_cachepolicy_binding":<lbvserver_cachepolicy_binding[]_value>,      "lbvserver_service_binding":<lbvserver_service_binding[]_value>,      "lbvserver_responderpolicy_binding":<lbvserver_responderpolicy_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lbvserver_binding": [ {      "name":<String_value>,      "lbvserver_appfwpolicy_binding":<lbvserver_appfwpolicy_binding[]_value>,      "lbvserver_spilloverpolicy_binding":<lbvserver_spilloverpolicy_binding[]_value>,      "lbvserver_appqoepolicy_binding":<lbvserver_appqoepolicy_binding[]_value>,      "lbvserver_feopolicy_binding":<lbvserver_feopolicy_binding[]_value>,      "lbvserver_csvserver_binding":<lbvserver_csvserver_binding[]_value>,      "lbvserver_capolicy_binding":<lbvserver_capolicy_binding[]_value>,      "lbvserver_authorizationpolicy_binding":<lbvserver_authorizationpolicy_binding[]_value>,      "lbvserver_servicegroupmember_binding":<lbvserver_servicegroupmember_binding[]_value>,      "lbvserver_dospolicy_binding":<lbvserver_dospolicy_binding[]_value>,      "lbvserver_tmtrafficpolicy_binding":<lbvserver_tmtrafficpolicy_binding[]_value>,      "lbvserver_cmppolicy_binding":<lbvserver_cmppolicy_binding[]_value>,      "lbvserver_auditsyslogpolicy_binding":<lbvserver_auditsyslogpolicy_binding[]_value>,      "lbvserver_pqpolicy_binding":<lbvserver_pqpolicy_binding[]_value>,      "lbvserver_dnspolicy64_binding":<lbvserver_dnspolicy64_binding[]_value>,      "lbvserver_rewritepolicy_binding":<lbvserver_rewritepolicy_binding[]_value>,      "lbvserver_auditnslogpolicy_binding":<lbvserver_auditnslogpolicy_binding[]_value>,      "lbvserver_transformpolicy_binding":<lbvserver_transformpolicy_binding[]_value>,      "lbvserver_filterpolicy_binding":<lbvserver_filterpolicy_binding[]_value>,      "lbvserver_scpolicy_binding":<lbvserver_scpolicy_binding[]_value>,      "lbvserver_appflowpolicy_binding":<lbvserver_appflowpolicy_binding[]_value>,      "lbvserver_servicegroup_binding":<lbvserver_servicegroup_binding[]_value>,      "lbvserver_cachepolicy_binding":<lbvserver_cachepolicy_binding[]_value>,      "lbvserver_service_binding":<lbvserver_service_binding[]_value>,      "lbvserver_responderpolicy_binding":<lbvserver_responderpolicy_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbvserver_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbvserver_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lbvserver_binding": [ {      "name":<String_value>,      "lbvserver_appfwpolicy_binding":<lbvserver_appfwpolicy_binding[]_value>,      "lbvserver_spilloverpolicy_binding":<lbvserver_spilloverpolicy_binding[]_value>,      "lbvserver_appqoepolicy_binding":<lbvserver_appqoepolicy_binding[]_value>,      "lbvserver_feopolicy_binding":<lbvserver_feopolicy_binding[]_value>,      "lbvserver_csvserver_binding":<lbvserver_csvserver_binding[]_value>,      "lbvserver_capolicy_binding":<lbvserver_capolicy_binding[]_value>,      "lbvserver_authorizationpolicy_binding":<lbvserver_authorizationpolicy_binding[]_value>,      "lbvserver_servicegroupmember_binding":<lbvserver_servicegroupmember_binding[]_value>,      "lbvserver_dospolicy_binding":<lbvserver_dospolicy_binding[]_value>,      "lbvserver_tmtrafficpolicy_binding":<lbvserver_tmtrafficpolicy_binding[]_value>,      "lbvserver_cmppolicy_binding":<lbvserver_cmppolicy_binding[]_value>,      "lbvserver_auditsyslogpolicy_binding":<lbvserver_auditsyslogpolicy_binding[]_value>,      "lbvserver_pqpolicy_binding":<lbvserver_pqpolicy_binding[]_value>,      "lbvserver_dnspolicy64_binding":<lbvserver_dnspolicy64_binding[]_value>,      "lbvserver_rewritepolicy_binding":<lbvserver_rewritepolicy_binding[]_value>,      "lbvserver_auditnslogpolicy_binding":<lbvserver_auditnslogpolicy_binding[]_value>,      "lbvserver_transformpolicy_binding":<lbvserver_transformpolicy_binding[]_value>,      "lbvserver_filterpolicy_binding":<lbvserver_filterpolicy_binding[]_value>,      "lbvserver_scpolicy_binding":<lbvserver_scpolicy_binding[]_value>,      "lbvserver_appflowpolicy_binding":<lbvserver_appflowpolicy_binding[]_value>,      "lbvserver_servicegroup_binding":<lbvserver_servicegroup_binding[]_value>,      "lbvserver_cachepolicy_binding":<lbvserver_cachepolicy_binding[]_value>,      "lbvserver_service_binding":<lbvserver_service_binding[]_value>,      "lbvserver_responderpolicy_binding":<lbvserver_responderpolicy_binding[]_value>}]}```
 
 
 

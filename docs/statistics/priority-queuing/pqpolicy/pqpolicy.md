@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/pqpolicy
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/pqpolicy
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/pqpolicy?args=      policyname:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/pqpolicy?args=policyname:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get pqpolicy resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "pqpolicy": [ {      "policyname":<String_value>,      "pqvserverip":<String_value>,      "pqqueuedepthrate":<Double_value>,      "pqdroppedrate":<Double_value>,      "pqtotqueuedepth":<Double_value>,      "pqvserverport":<Integer_value>,      "totclienttransactions":<Double_value>,      "clienttransactionsrate":<Double_value>,      "pqcurrentclientconnectionsrate":<Double_value>,      "pqqdepthrate":<Double_value>,      "pqqdepth":<Double_value>,      "pqclientconnectionsrate":<Double_value>,      "pqavgclienttransactiontimems":<Double_value>,      "pqavgclienttransactiontimemsrate":<Double_value>,      "pqtotavgqueuewaittime":<Double_value>,      "pqdropped":<Double_value>,      "pqtotclientconnections":<Double_value>,      "pqavgqueuewaittimerate":<Double_value>,      "pqcurrentclientconnections":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "pqpolicy": [ {      "policyname":<String_value>,      "pqvserverip":<String_value>,      "pqqueuedepthrate":<Double_value>,      "pqdroppedrate":<Double_value>,      "pqtotqueuedepth":<Double_value>,      "pqvserverport":<Integer_value>,      "totclienttransactions":<Double_value>,      "clienttransactionsrate":<Double_value>,      "pqcurrentclientconnectionsrate":<Double_value>,      "pqqdepthrate":<Double_value>,      "pqqdepth":<Double_value>,      "pqclientconnectionsrate":<Double_value>,      "pqavgclienttransactiontimems":<Double_value>,      "pqavgclienttransactiontimemsrate":<Double_value>,      "pqtotavgqueuewaittime":<Double_value>,      "pqdropped":<Double_value>,      "pqtotclientconnections":<Double_value>,      "pqavgqueuewaittimerate":<Double_value>,      "pqcurrentclientconnections":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "pqpolicy": [ {    
 
 
 
-URL: http://NS_IP/nitro/v1/stat/pqpolicy/policyname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/pqpolicy/policyname_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "pqpolicy": [ {      "policyname":<String_value>,      "pqvserverip":<String_value>,      "pqqueuedepthrate":<Double_value>,      "pqdroppedrate":<Double_value>,      "pqtotqueuedepth":<Double_value>,      "pqvserverport":<Integer_value>,      "totclienttransactions":<Double_value>,      "clienttransactionsrate":<Double_value>,      "pqcurrentclientconnectionsrate":<Double_value>,      "pqqdepthrate":<Double_value>,      "pqqdepth":<Double_value>,      "pqclientconnectionsrate":<Double_value>,      "pqavgclienttransactiontimems":<Double_value>,      "pqavgclienttransactiontimemsrate":<Double_value>,      "pqtotavgqueuewaittime":<Double_value>,      "pqdropped":<Double_value>,      "pqtotclientconnections":<Double_value>,      "pqavgqueuewaittimerate":<Double_value>,      "pqcurrentclientconnections":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "pqpolicy": [ {      "policyname":<String_value>,      "pqvserverip":<String_value>,      "pqqueuedepthrate":<Double_value>,      "pqdroppedrate":<Double_value>,      "pqtotqueuedepth":<Double_value>,      "pqvserverport":<Integer_value>,      "totclienttransactions":<Double_value>,      "clienttransactionsrate":<Double_value>,      "pqcurrentclientconnectionsrate":<Double_value>,      "pqqdepthrate":<Double_value>,      "pqqdepth":<Double_value>,      "pqclientconnectionsrate":<Double_value>,      "pqavgclienttransactiontimems":<Double_value>,      "pqavgclienttransactiontimemsrate":<Double_value>,      "pqtotavgqueuewaittime":<Double_value>,      "pqdropped":<Double_value>,      "pqtotclientconnections":<Double_value>,      "pqavgqueuewaittimerate":<Double_value>,      "pqcurrentclientconnections":<Double_value>}]}```
 
 
 

@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","subscriberprofile":{      "ip":<String_value>,      "subscriberrules":<String[]_value>,      "subscriptionidtype":<String_value>,                  "subscriptionidvalue":<String_value>,      "servicepath":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"subscriberprofile":{      "ip":<String_value>,      "subscriberrules":<String[]_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "servicepath":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","subscriberprofile":{      "ip":<String_value>,      "subscriberrules":<String[]_value>,      "subscriptionidtype":<String_value>,                  "subscriptionidvalue":<String_value>,      "servicepath":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"subscriberprofile":{      "ip":<String_value>,      "subscriberrules":<String[]_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "servicepath":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","subscriberprofile":{      "ip":<String_value>,      "servicepath":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"subscriberprofile":{      "ip":<String_value>,      "servicepath":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/subscriberprofile
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/subscriberprofile?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of subscriberprofile resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile?view=summary
-Use this query-parameter to get the summary output of subscriberprofile resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the subscriberprofile resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "subscriberprofile": [ {      "ip":<String_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "subscriberprofile": [ {      "ip":<String_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile/ip_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "subscriberprofile": [ {      "ip":<String_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "subscriberprofile": [ {      "ip":<String_value>,      "subscriptionidtype":<String_value>,      "subscriptionidvalue":<String_value>,      "subscriberrules":<String[]_value>,      "flags":<Double_value>,      "ttl":<Double_value>,      "avpdisplaybuffer":<String_value>,      "servicepath":<String_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "subscriberprofile":
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/subscriberprofile?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/subscriberprofile?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",subscriberprofile: [ { "__count": "#no"} ] }
+{ "subscriberprofile": [ { "__count": "#no"} ] }
 
 

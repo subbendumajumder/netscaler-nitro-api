@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/clusterinstance
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/clusterinstance
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/clusterinstance?args=      clid:&lt;Double_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/clusterinstance?args=clid:&lt;Double_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get clusterinstance resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "clusterinstance": [ {      "clid":<Double_value>,      "totpropagationtimeout":<Double_value>,      "clbkplanetx":<Double_value>,      "clbkplanetxrate":<Double_value>,      "totsteeredpkts":<Double_value>,      "numdfddroppkts":<Double_value>,      "clviewleader":<String_value>,      "clbkplanerx":<Double_value>,      "clcurstatus":<String_value>,      "clnumnodes":<Double_value>,      "clbkplanerxrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusterinstance": [ {      "clid":<Double_value>,      "totpropagationtimeout":<Double_value>,      "clbkplanetx":<Double_value>,      "clbkplanetxrate":<Double_value>,      "totsteeredpkts":<Double_value>,      "numdfddroppkts":<Double_value>,      "clviewleader":<String_value>,      "clbkplanerx":<Double_value>,      "clcurstatus":<String_value>,      "clnumnodes":<Double_value>,      "clbkplanerxrate":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "clusterinstance": [
 
 
 
-URL: http://NS_IP/nitro/v1/stat/clusterinstance/clid_value&lt;Double&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/clusterinstance/clid_value&gt;&lt;Double&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "clusterinstance": [ {      "clid":<Double_value>,      "totpropagationtimeout":<Double_value>,      "clbkplanetx":<Double_value>,      "clbkplanetxrate":<Double_value>,      "totsteeredpkts":<Double_value>,      "numdfddroppkts":<Double_value>,      "clviewleader":<String_value>,      "clbkplanerx":<Double_value>,      "clcurstatus":<String_value>,      "clnumnodes":<Double_value>,      "clbkplanerxrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "clusterinstance": [ {      "clid":<Double_value>,      "totpropagationtimeout":<Double_value>,      "clbkplanetx":<Double_value>,      "clbkplanetxrate":<Double_value>,      "totsteeredpkts":<Double_value>,      "numdfddroppkts":<Double_value>,      "clviewleader":<String_value>,      "clbkplanerx":<Double_value>,      "clcurstatus":<String_value>,      "clnumnodes":<Double_value>,      "clbkplanerxrate":<Double_value>}]}```
 
 
 

@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/vlan
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/vlan
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/vlan?args=      id:&lt;Double_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/vlan?args=id:&lt;Double_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get vlan resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vlan": [ {      "id":<Double_value>,      "vlanrxbytesrate":<Double_value>,      "vlantottxpkts":<Double_value>,      "vlantotdroppedpkts":<Double_value>,      "vlanrxpktsrate":<Double_value>,      "vlantotrxpkts":<Double_value>,      "vlantotbroadcastpkts":<Double_value>,      "vlantxbytesrate":<Double_value>,      "vlantotrxbytes":<Double_value>,      "vlantxpktsrate":<Double_value>,      "vlantottxbytes":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vlan": [ {      "id":<Double_value>,      "vlanrxbytesrate":<Double_value>,      "vlantottxpkts":<Double_value>,      "vlantotdroppedpkts":<Double_value>,      "vlanrxpktsrate":<Double_value>,      "vlantotrxpkts":<Double_value>,      "vlantotbroadcastpkts":<Double_value>,      "vlantxbytesrate":<Double_value>,      "vlantotrxbytes":<Double_value>,      "vlantxpktsrate":<Double_value>,      "vlantottxbytes":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "vlan": [ {      "i
 
 
 
-URL: http://NS_IP/nitro/v1/stat/vlan/id_value&lt;Double&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/vlan/id_value&gt;&lt;Double&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vlan": [ {      "id":<Double_value>,      "vlanrxbytesrate":<Double_value>,      "vlantottxpkts":<Double_value>,      "vlantotdroppedpkts":<Double_value>,      "vlanrxpktsrate":<Double_value>,      "vlantotrxpkts":<Double_value>,      "vlantotbroadcastpkts":<Double_value>,      "vlantxbytesrate":<Double_value>,      "vlantotrxbytes":<Double_value>,      "vlantxpktsrate":<Double_value>,      "vlantottxbytes":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vlan": [ {      "id":<Double_value>,      "vlanrxbytesrate":<Double_value>,      "vlantottxpkts":<Double_value>,      "vlantotdroppedpkts":<Double_value>,      "vlanrxpktsrate":<Double_value>,      "vlantotrxpkts":<Double_value>,      "vlantotbroadcastpkts":<Double_value>,      "vlantxbytesrate":<Double_value>,      "vlantotrxbytes":<Double_value>,      "vlantxpktsrate":<Double_value>,      "vlantottxbytes":<Double_value>}]}```
 
 
 

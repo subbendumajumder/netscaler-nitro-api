@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/dospolicy
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/dospolicy
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/dospolicy?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/dospolicy?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get dospolicy resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "dospolicy": [ {      "name":<String_value>,      "dosjsrefusedrate":<Double_value>,      "dosphysicalserviceip":<String_value>,      "dosnongetpostrequestsrate":<Double_value>,      "dosjssentrate":<Double_value>,      "dosphysicalserviceport":<Integer_value>,      "dosjsbytessentrate":<Double_value>,      "doscurrentcltdetectrate":<Double_value>,      "dostotnongetpostrequests":<Double_value>,      "dostotvalidclients":<Double_value>,      "dosvalidclientsrate":<Double_value>,      "doscurrentqueuesizerate":<Double_value>,      "dostotjsbytessent":<Double_value>,      "dostotjssent":<Double_value>,      "dostotjsrefused":<Double_value>,      "doscurrentqueuesize":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "dospolicy": [ {      "name":<String_value>,      "dosjsrefusedrate":<Double_value>,      "dosphysicalserviceip":<String_value>,      "dosnongetpostrequestsrate":<Double_value>,      "dosjssentrate":<Double_value>,      "dosphysicalserviceport":<Integer_value>,      "dosjsbytessentrate":<Double_value>,      "doscurrentcltdetectrate":<Double_value>,      "dostotnongetpostrequests":<Double_value>,      "dostotvalidclients":<Double_value>,      "dosvalidclientsrate":<Double_value>,      "doscurrentqueuesizerate":<Double_value>,      "dostotjsbytessent":<Double_value>,      "dostotjssent":<Double_value>,      "dostotjsrefused":<Double_value>,      "doscurrentqueuesize":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "dospolicy": [ {   
 
 
 
-URL: http://NS_IP/nitro/v1/stat/dospolicy/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/dospolicy/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "dospolicy": [ {      "name":<String_value>,      "dosjsrefusedrate":<Double_value>,      "dosphysicalserviceip":<String_value>,      "dosnongetpostrequestsrate":<Double_value>,      "dosjssentrate":<Double_value>,      "dosphysicalserviceport":<Integer_value>,      "dosjsbytessentrate":<Double_value>,      "doscurrentcltdetectrate":<Double_value>,      "dostotnongetpostrequests":<Double_value>,      "dostotvalidclients":<Double_value>,      "dosvalidclientsrate":<Double_value>,      "doscurrentqueuesizerate":<Double_value>,      "dostotjsbytessent":<Double_value>,      "dostotjssent":<Double_value>,      "dostotjsrefused":<Double_value>,      "doscurrentqueuesize":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "dospolicy": [ {      "name":<String_value>,      "dosjsrefusedrate":<Double_value>,      "dosphysicalserviceip":<String_value>,      "dosnongetpostrequestsrate":<Double_value>,      "dosjssentrate":<Double_value>,      "dosphysicalserviceport":<Integer_value>,      "dosjsbytessentrate":<Double_value>,      "doscurrentcltdetectrate":<Double_value>,      "dostotnongetpostrequests":<Double_value>,      "dostotvalidclients":<Double_value>,      "dosvalidclientsrate":<Double_value>,      "doscurrentqueuesizerate":<Double_value>,      "dostotjsbytessent":<Double_value>,      "dostotjssent":<Double_value>,      "dostotjsrefused":<Double_value>,      "doscurrentqueuesize":<Double_value>}]}```
 
 
 

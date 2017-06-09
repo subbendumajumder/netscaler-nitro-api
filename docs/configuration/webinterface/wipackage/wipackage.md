@@ -7,7 +7,7 @@ Configuration for Web Interface resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>jre</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the JRE tar file. You can use OpenJDK7 package for FreeBSD 8.x/amd64.The Java package can be downloaded from http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/8.4-RELEASE/packages/java/openjdk-7.17.02_2.tbz.&lt;br>Default value: "file://tmp/diablo-jdk-freebsd6.amd64.1.6.0.07.02.tbz"&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>wi</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the Web Interface tar file for installing the Web Interface on the NetScaler appliance. This file includes Apache Tomcat Web server. The file name has the following format: nswi-;lt;version number;gt;.tgz (for example, nswi-1.5.tgz).&lt;br>Default value: "http://citrix.com/downloads/nswi-1.7.tgz"&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>maxsites</td><td>&lt;String></td><td>Read-write</td><td>Maximum number of Web Interface sites that can be created on the NetScaler appliance; changes the amount of RAM reserved for Web Interface usage; changing its value results in restart of Tomcat server and invalidates any existing Web Interface sessions.&lt;br>Possible values = 3, 25, 50, 100, 200, 500</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>jre</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the JRE tar file.&lt;br>You can use OpenJDK7 package for FreeBSD 8.x/amd64.The Java package can be downloaded from http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/amd64/8.4-RELEASE/packages/java/openjdk-7.17.02_2.tbz.&lt;br>Default value: "file://tmp/diablo-jdk-freebsd6.amd64.1.6.0.07.02.tbz"&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>wi</td><td>&lt;String></td><td>Read-write</td><td>Complete path to the Web Interface tar file for installing the Web Interface on the NetScaler appliance. This file includes Apache Tomcat Web server. The file name has the following format: nswi-;lt;version number;gt;.tgz (for example, nswi-1.5.tgz).&lt;br>Default value: "http://citrix.com/downloads/nswi-1.7.tgz"&lt;br>Minimum length = 1&lt;br>Maximum length = 255</td><tr><tr><td>maxsites</td><td>&lt;String></td><td>Read-write</td><td>Maximum number of Web Interface sites that can be created on the NetScaler appliance; changes the amount of RAM reserved for Web Interface usage; changing its value results in restart of Tomcat server and invalidates any existing Web Interface sessions.&lt;br>Possible values = 3, 25, 50, 100, 200, 500</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,20 +27,33 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/wipackage
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Install"},"sessionid":"##sessionid","wipackage":{      "jre":<String_value>,      "wi":<String_value>,      "maxsites":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"wipackage":{      "jre":<String_value>,      "wi":<String_value>,      "maxsites":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/wipackage
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/wipackage
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "wipackage": [ {      "jre":<String_value>,      "wi":<String_value>,      "maxsites":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "wipackage": [ {      "jre":<String_value>,      "wi":<String_value>,      "maxsites":<String_value>}]}```
 
 
 

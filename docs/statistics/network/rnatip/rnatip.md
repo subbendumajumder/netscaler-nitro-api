@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/rnatip
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/rnatip
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/rnatip?args=      Rnatip:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/rnatip?args=Rnatip:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get rnatip resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "rnatip": [ {      "Rnatip":<String_value>,      "iprnatrxpktsrate":<Double_value>,      "iprnattxpktsrate":<Double_value>,      "iprnattottxpkts":<Double_value>,      "iptd":<Double_value>,      "iprnattottxbytes":<Double_value>,      "iprnatcursessions":<Double_value>,      "iprnatrxbytesrate":<Double_value>,      "iprnattotrxbytes":<Double_value>,      "iprnattxsynrate":<Double_value>,      "iprnattxbytesrate":<Double_value>,      "iprnattotrxpkts":<Double_value>,      "iprnattottxsyn":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rnatip": [ {      "Rnatip":<String_value>,      "iprnatrxpktsrate":<Double_value>,      "iprnattxpktsrate":<Double_value>,      "iprnattottxpkts":<Double_value>,      "iptd":<Double_value>,      "iprnattottxbytes":<Double_value>,      "iprnatcursessions":<Double_value>,      "iprnatrxbytesrate":<Double_value>,      "iprnattotrxbytes":<Double_value>,      "iprnattxsynrate":<Double_value>,      "iprnattxbytesrate":<Double_value>,      "iprnattotrxpkts":<Double_value>,      "iprnattottxsyn":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "rnatip": [ {      
 
 
 
-URL: http://NS_IP/nitro/v1/stat/rnatip/Rnatip_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/rnatip/Rnatip_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "rnatip": [ {      "Rnatip":<String_value>,      "iprnatrxpktsrate":<Double_value>,      "iprnattxpktsrate":<Double_value>,      "iprnattottxpkts":<Double_value>,      "iptd":<Double_value>,      "iprnattottxbytes":<Double_value>,      "iprnatcursessions":<Double_value>,      "iprnatrxbytesrate":<Double_value>,      "iprnattotrxbytes":<Double_value>,      "iprnattxsynrate":<Double_value>,      "iprnattxbytesrate":<Double_value>,      "iprnattotrxpkts":<Double_value>,      "iprnattottxsyn":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rnatip": [ {      "Rnatip":<String_value>,      "iprnatrxpktsrate":<Double_value>,      "iprnattxpktsrate":<Double_value>,      "iprnattottxpkts":<Double_value>,      "iptd":<Double_value>,      "iprnattottxbytes":<Double_value>,      "iprnatcursessions":<Double_value>,      "iprnatrxbytesrate":<Double_value>,      "iprnattotrxbytes":<Double_value>,      "iprnattxsynrate":<Double_value>,      "iprnattxbytesrate":<Double_value>,      "iprnattotrxpkts":<Double_value>,      "iprnattottxsyn":<Double_value>}]}```
 
 
 

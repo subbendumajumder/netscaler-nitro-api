@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/service
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/service
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/service?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/service?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get service resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "service": [ {      "name":<String_value>,      "svrestablishedconn":<Double_value>,      "curclntconnections":<Double_value>,      "servicetype":<String_value>,      "totalrequests":<Double_value>,      "surgecount":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "throughput":<Double_value>,      "throughputrate":<Double_value>,      "curtflags":<Double_value>,      "cursrvrconnections":<Double_value>,      "primaryipaddress":<String_value>,      "activetransactions":<Double_value>,      "responsesrate":<Double_value>,      "maxclients":<Double_value>,      "avgsvrttfb":<Double_value>,      "curload":<Double_value>,      "totalrequestbytes":<Double_value>,      "curreusepool":<Double_value>,      "state":<String_value>,      "vsvrservicehits":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "vsvrservicehitsrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "service": [ {      "name":<String_value>,      "svrestablishedconn":<Double_value>,      "curclntconnections":<Double_value>,      "servicetype":<String_value>,      "totalrequests":<Double_value>,      "surgecount":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "throughput":<Double_value>,      "throughputrate":<Double_value>,      "curtflags":<Double_value>,      "cursrvrconnections":<Double_value>,      "primaryipaddress":<String_value>,      "activetransactions":<Double_value>,      "responsesrate":<Double_value>,      "maxclients":<Double_value>,      "avgsvrttfb":<Double_value>,      "curload":<Double_value>,      "totalrequestbytes":<Double_value>,      "curreusepool":<Double_value>,      "state":<String_value>,      "vsvrservicehits":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "vsvrservicehitsrate":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "service": [ {     
 
 
 
-URL: http://NS_IP/nitro/v1/stat/service/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/service/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "service": [ {      "name":<String_value>,      "svrestablishedconn":<Double_value>,      "curclntconnections":<Double_value>,      "servicetype":<String_value>,      "totalrequests":<Double_value>,      "surgecount":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "throughput":<Double_value>,      "throughputrate":<Double_value>,      "curtflags":<Double_value>,      "cursrvrconnections":<Double_value>,      "primaryipaddress":<String_value>,      "activetransactions":<Double_value>,      "responsesrate":<Double_value>,      "maxclients":<Double_value>,      "avgsvrttfb":<Double_value>,      "curload":<Double_value>,      "totalrequestbytes":<Double_value>,      "curreusepool":<Double_value>,      "state":<String_value>,      "vsvrservicehits":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "vsvrservicehitsrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "service": [ {      "name":<String_value>,      "svrestablishedconn":<Double_value>,      "curclntconnections":<Double_value>,      "servicetype":<String_value>,      "totalrequests":<Double_value>,      "surgecount":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "throughput":<Double_value>,      "throughputrate":<Double_value>,      "curtflags":<Double_value>,      "cursrvrconnections":<Double_value>,      "primaryipaddress":<String_value>,      "activetransactions":<Double_value>,      "responsesrate":<Double_value>,      "maxclients":<Double_value>,      "avgsvrttfb":<Double_value>,      "curload":<Double_value>,      "totalrequestbytes":<Double_value>,      "curreusepool":<Double_value>,      "state":<String_value>,      "vsvrservicehits":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "vsvrservicehitsrate":<Double_value>}]}```
 
 
 

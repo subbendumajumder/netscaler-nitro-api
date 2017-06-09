@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/snmp
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/snmp
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/snmp?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/snmp?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get snmp resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "snmp": [ {      "snmpdecryptionerrors":<Double_value>,      "snmptotresponses":<Double_value>,      "snmptotbadcommuse":<Double_value>,      "snmptoterrreqdropped":<Double_value>,      "snmpgetnextreqsrate":<Double_value>,      "snmptotrxpkts":<Double_value>,      "snmptottxpkts":<Double_value>,      "snmptotparseerrs":<Double_value>,      "snmptottraps":<Double_value>,      "snmptotbadversions":<Double_value>,      "snmptxpktsrate":<Double_value>,      "snmpresponsesrate":<Double_value>,      "snmpgetreqsrate":<Double_value>,      "snmptotbadcommname":<Double_value>,      "snmptotgetnextreqs":<Double_value>,      "snmpunknownengineids":<Double_value>,      "snmpwrongdigests":<Double_value>,      "snmpgetbulkreqsrate":<Double_value>,      "snmpnotintimewindow":<Double_value>,      "snmptotgetbulkreqs":<Double_value>,      "snmpunknownusername":<Double_value>,      "snmpunsupportedsecuritylevel":<Double_value>,      "snmptotgetreqs":<Double_value>,      "snmprxpktsrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmp": [ {      "snmpdecryptionerrors":<Double_value>,      "snmptotresponses":<Double_value>,      "snmptotbadcommuse":<Double_value>,      "snmptoterrreqdropped":<Double_value>,      "snmpgetnextreqsrate":<Double_value>,      "snmptotrxpkts":<Double_value>,      "snmptottxpkts":<Double_value>,      "snmptotparseerrs":<Double_value>,      "snmptottraps":<Double_value>,      "snmptotbadversions":<Double_value>,      "snmptxpktsrate":<Double_value>,      "snmpresponsesrate":<Double_value>,      "snmpgetreqsrate":<Double_value>,      "snmptotbadcommname":<Double_value>,      "snmptotgetnextreqs":<Double_value>,      "snmpunknownengineids":<Double_value>,      "snmpwrongdigests":<Double_value>,      "snmpgetbulkreqsrate":<Double_value>,      "snmpnotintimewindow":<Double_value>,      "snmptotgetbulkreqs":<Double_value>,      "snmpunknownusername":<Double_value>,      "snmpunsupportedsecuritylevel":<Double_value>,      "snmptotgetreqs":<Double_value>,      "snmprxpktsrate":<Double_value>}]}```
 
 
 

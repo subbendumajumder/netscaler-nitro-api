@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/system
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/system
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/system?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/system?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get system resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "system": [ {      "voltagevbat":<Double_value>,      "auxvolt2":<Double_value>,      "voltagev5n":<Double_value>,      "auxvolt7":<Double_value>,      "cpu0temp":<Double_value>,      "fan0speed":<Double_value>,      "disk1perusage":<Double_value>,      "rescpuusagepcnt":<Double_value>,      "disk1used":<Double_value>,      "disk1avail":<Double_value>,      "fan4speed":<Double_value>,      "rescpuusage":<Double_value>,      "powersupply3status":<String_value>,      "auxvolt5":<Double_value>,      "auxvolt3":<Double_value>,      "disk0perusage":<Double_value>,      "fan2speed":<Double_value>,      "powersupply4status":<String_value>,      "auxvolt1":<Double_value>,      "fanspeed":<Double_value>,      "fan5speed":<Double_value>,      "disk0size":<Double_value>,      "mgmtcpuusagepcnt":<Double_value>,      "cpuusage":<Double_value>,      "voltagev5sb":<Double_value>,      "disk0used":<Double_value>,      "powersupply1status":<String_value>,      "cpufan0speed":<Double_value>,      "disk1size":<Double_value>,      "auxtemp1":<Double_value>,      "numcpus":<Double_value>,      "pktcpuusagepcnt":<Double_value>,      "voltagev5p":<Double_value>,      "voltagevsen2":<Double_value>,      "auxvolt0":<Double_value>,      "auxtemp2":<Double_value>,      "memsizemb":<Double_value>,      "voltagev33main":<Double_value>,      "cpu1temp":<Double_value>,      "voltagev12n":<Double_value>,      "memuseinmb":<Double_value>,      "auxtemp3":<Double_value>,      "internaltemp":<Double_value>,      "voltagev12p":<Double_value>,      "disk0avail":<Double_value>,      "voltagev33stby":<Double_value>,      "voltagevcc1":<Double_value>,      "fan3speed":<Double_value>,      "voltagevtt":<Double_value>,      "auxtemp0":<Double_value>,      "cpufan1speed":<Double_value>,      "voltagevcc0":<Double_value>,      "auxvolt4":<Double_value>,      "starttime":<String_value>,      "systemfanspeed":<Double_value>,      "cpuusagepcnt":<Double_value>,      "mastercpuusage":<Double_value>,      "timesincestart":<String_value>,      "auxvolt6":<Double_value>,      "slavecpuusage":<Double_value>,      "memusagepcnt":<Double_value>,      "powersupply2status":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "system": [ {      "voltagevbat":<Double_value>,      "auxvolt2":<Double_value>,      "voltagev5n":<Double_value>,      "auxvolt7":<Double_value>,      "cpu0temp":<Double_value>,      "fan0speed":<Double_value>,      "disk1perusage":<Double_value>,      "rescpuusagepcnt":<Double_value>,      "disk1used":<Double_value>,      "disk1avail":<Double_value>,      "fan4speed":<Double_value>,      "rescpuusage":<Double_value>,      "powersupply3status":<String_value>,      "auxvolt5":<Double_value>,      "auxvolt3":<Double_value>,      "disk0perusage":<Double_value>,      "fan2speed":<Double_value>,      "powersupply4status":<String_value>,      "auxvolt1":<Double_value>,      "fanspeed":<Double_value>,      "fan5speed":<Double_value>,      "disk0size":<Double_value>,      "mgmtcpuusagepcnt":<Double_value>,      "cpuusage":<Double_value>,      "voltagev5sb":<Double_value>,      "disk0used":<Double_value>,      "powersupply1status":<String_value>,      "cpufan0speed":<Double_value>,      "disk1size":<Double_value>,      "auxtemp1":<Double_value>,      "numcpus":<Double_value>,      "pktcpuusagepcnt":<Double_value>,      "voltagev5p":<Double_value>,      "voltagevsen2":<Double_value>,      "auxvolt0":<Double_value>,      "auxtemp2":<Double_value>,      "memsizemb":<Double_value>,      "voltagev33main":<Double_value>,      "cpu1temp":<Double_value>,      "voltagev12n":<Double_value>,      "memuseinmb":<Double_value>,      "auxtemp3":<Double_value>,      "internaltemp":<Double_value>,      "voltagev12p":<Double_value>,      "disk0avail":<Double_value>,      "voltagev33stby":<Double_value>,      "voltagevcc1":<Double_value>,      "fan3speed":<Double_value>,      "voltagevtt":<Double_value>,      "auxtemp0":<Double_value>,      "cpufan1speed":<Double_value>,      "voltagevcc0":<Double_value>,      "auxvolt4":<Double_value>,      "starttime":<String_value>,      "systemfanspeed":<Double_value>,      "cpuusagepcnt":<Double_value>,      "mastercpuusage":<Double_value>,      "timesincestart":<String_value>,      "auxvolt6":<Double_value>,      "slavecpuusage":<Double_value>,      "memusagepcnt":<Double_value>,      "powersupply2status":<String_value>}]}```
 
 
 

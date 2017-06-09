@@ -27,97 +27,119 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "advertise":<String_value>,      "msr":<String_value>,                  "monitor":<String_value>,      "td":<Double_value>,      "ownergroup":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "advertise":<String_value>,      "msr":<String_value>,      "monitor":<String_value>,      "td":<Double_value>,      "ownergroup":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###clear
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?action=clear
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"clear"},"sessionid":"##sessionid","route6":{      "routetype":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"route6":{      "routetype":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/route6/network_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/route6/network_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6/network_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "advertise":<String_value>,      "msr":<String_value>,                  "monitor":<String_value>,      "td":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "advertise":<String_value>,      "msr":<String_value>,      "monitor":<String_value>,      "td":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "td":<Double_value>,      "weight":true,      "distance":true,      "cost":true,      "advertise":true,      "msr":true,      "monitor":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"route6":{      "network":<String_value>,      "gateway":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "td":<Double_value>,      "weight":true,      "distance":true,      "cost":true,      "advertise":true,      "msr":true,      "monitor":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/route6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/route6?args=      "network":&lt;String_value&gt;,                  "gateway":&lt;String_value&gt;,                  "vlan":&lt;Double_value&gt;,                  "vxlan":&lt;Double_value&gt;,                  "td":&lt;Double_value&gt;,      "routetype":&lt;String_value&gt;,      "detail":&lt;Boolean_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?args=network:&lt;String_value&gt;,gateway:&lt;String_value&gt;,vlan:&lt;Double_value&gt;,vxlan:&lt;Double_value&gt;,td:&lt;Double_value&gt;,routetype:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;
 Use this query-parameter to get route6 resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/route6?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of route6 resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/route6?view=summary
-Use this query-parameter to get the summary output of route6 resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/route6?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?pagesize=#no;pageno=#no
 Use this query-parameter to get the route6 resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/route6?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "route6": [ {      "network":<String_value>,                  "gateway":<String_value>,                  "vlan":<Double_value>,                  "vxlan":<Double_value>,                  "td":<Double_value>,      "routetype":<String_value>,      "detail":<Boolean_value>,      "gatewayname":<String_value>,      "advertise":<String_value>,      "type":<Boolean_value>,      "dynamic":<Boolean_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "data":<Boolean_value>,      "flags":<Boolean_value>,      "msr":<String_value>,      "monitor":<String_value>,      "state":<Double_value>,      "totalprobes":<Double_value>,      "totalfailedprobes":<Double_value>,      "failedprobes":<Double_value>,      "monstatcode":<Integer_value>,      "monstatparam1":<Integer_value>,      "monstatparam2":<Integer_value>,      "monstatparam3":<Integer_value>,      "data1":<String_value>,      "routeowners":<String[]_value>,      "retain":<Integer_value>,      "Static":<Boolean_value>,      "permanent":<Boolean_value>,      "connected":<Boolean_value>,      "ospfv3":<Boolean_value>,      "isis":<Boolean_value>,      "active":<Boolean_value>,      "bgp":<Boolean_value>,      "rip":<Boolean_value>,      "raroute":<Boolean_value>,      "ownergroup":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "route6": [ {network:<String_value>,gateway:<String_value>,vlan:<Double_value>,vxlan:<Double_value>,td:<Double_value>,routetype:<String_value>,detail:<Boolean_value>      "gatewayname":<String_value>,      "advertise":<String_value>,      "type":<Boolean_value>,      "dynamic":<Boolean_value>,      "weight":<Double_value>,      "distance":<Double_value>,      "cost":<Double_value>,      "data":<Boolean_value>,      "flags":<Boolean_value>,      "msr":<String_value>,      "monitor":<String_value>,      "state":<Double_value>,      "totalprobes":<Double_value>,      "totalfailedprobes":<Double_value>,      "failedprobes":<Double_value>,      "monstatcode":<Integer_value>,      "monstatparam1":<Integer_value>,      "monstatparam2":<Integer_value>,      "monstatparam3":<Integer_value>,      "data1":<String_value>,      "routeowners":<String[]_value>,      "retain":<Integer_value>,      "Static":<Boolean_value>,      "permanent":<Boolean_value>,      "connected":<Boolean_value>,      "ospfv3":<Boolean_value>,      "isis":<Boolean_value>,      "active":<Boolean_value>,      "bgp":<Boolean_value>,      "rip":<Boolean_value>,      "raroute":<Boolean_value>,      "ownergroup":<String_value>}]}```
 
 
 
@@ -125,9 +147,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/route6?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/route6?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",route6: [ { "__count": "#no"} ] }
+{ "route6": [ { "__count": "#no"} ] }
 
 

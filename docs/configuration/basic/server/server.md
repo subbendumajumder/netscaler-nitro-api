@@ -7,7 +7,7 @@ Configuration for server resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the server. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Can be changed after the name is created.&lt;br>Minimum length = 1</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>IPv4 or IPv6 address of the server. If you create an IP address based server, you can specify the name of the server, instead of its IP address, when creating a service. Note: If you do not create a server entry, the server IP address that you enter when you create a service becomes the name of the server.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Domain name of the server. For a domain based configuration, you must create the server first.&lt;br>Minimum length = 1</td><tr><tr><td>translationip</td><td>&lt;String></td><td>Read-write</td><td>IP address used to transform the servers DNS-resolved IP address.</td><tr><tr><td>translationmask</td><td>&lt;String></td><td>Read-write</td><td>The netmask of the translation ip.</td><tr><tr><td>domainresolveretry</td><td>&lt;Integer></td><td>Read-write</td><td>Time, in seconds, for which the NetScaler appliance must wait, after DNS resolution fails, before sending the next DNS query to resolve the domain name.&lt;br>Default value: 5&lt;br>Minimum value = 5&lt;br>Maximum value = 20939</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Initial state of the server.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ipv6address</td><td>&lt;String></td><td>Read-write</td><td>Support IPv6 addressing mode. If you configure a server with the IPv6 addressing mode, you cannot use the server in the IPv4 addressing mode.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any information about the server.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>domainresolvenow</td><td>&lt;Boolean></td><td>Read-write</td><td>Immediately send a DNS query to resolve the servers domain name.</td><tr><tr><td>delay</td><td>&lt;Double></td><td>Read-write</td><td>Time, in seconds, after which all the services configured on the server are disabled.</td><tr><tr><td>graceful</td><td>&lt;String></td><td>Read-write</td><td>Shut down gracefully, without accepting any new connections, and disabling each service when all of its connections are closed.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>Internal</td><td>&lt;Boolean></td><td>Read-write</td><td>Display names of the servers that have been created for internal use.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the server. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>statechangetimesec</td><td>&lt;String></td><td>Read-only</td><td>Time when last state change happened. Seconds part.</td><tr><tr><td>tickssincelaststatechange</td><td>&lt;Double></td><td>Read-only</td><td>Time in 10 millisecond ticks since the last state change.</td><tr><tr><td>autoscale</td><td>&lt;String></td><td>Read-only</td><td>Auto scale option for a servicegroup.&lt;br>Default value: DISABLED&lt;br>Possible values = DISABLED, DNS, POLICY</td><tr><tr><td>customserverid</td><td>&lt;String></td><td>Read-only</td><td>A positive integer to identify the service. Used when the persistency type is set to Custom Server ID.&lt;br>Default value: "None"</td><tr><tr><td>monthreshold</td><td>&lt;Double></td><td>Read-only</td><td>Minimum sum of weights of the monitors that are bound to this service. Used to determine whether to mark a service as UP or DOWN.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>maxclient</td><td>&lt;Double></td><td>Read-only</td><td>Maximum number of simultaneous open connections for the service group.&lt;br>Minimum value = 0&lt;br>Maximum value = 4294967294</td><tr><tr><td>maxreq</td><td>&lt;Double></td><td>Read-only</td><td>Maximum number of requests that can be sent on a persistent connection to the service group. Note: Connection requests beyond this value are rejected.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>maxbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Maximum bandwidth, in Kbps, allocated for all the services in the service group.&lt;br>Minimum value = 0&lt;br>Maximum value = 4294967287</td><tr><tr><td>usip</td><td>&lt;String></td><td>Read-only</td><td>Use the clients IP address as the source IP address when initiating a connection to the server. When creating a service, if you do not set this parameter, the service inherits the global Use Source IP setting (available in the enable ns mode and disable ns mode CLI commands, or in the System ;gt; Settings ;gt; Configure modes ;gt; Configure Modes dialog box). However, you can override this setting after you create the service.&lt;br>Possible values = YES, NO</td><tr><tr><td>cka</td><td>&lt;String></td><td>Read-only</td><td>Enable client keep-alive for the service group.&lt;br>Possible values = YES, NO</td><tr><tr><td>tcpb</td><td>&lt;String></td><td>Read-only</td><td>Enable TCP buffering for the service group.&lt;br>Possible values = YES, NO</td><tr><tr><td>cmp</td><td>&lt;String></td><td>Read-only</td><td>Enable compression for the specified service.&lt;br>Possible values = YES, NO</td><tr><tr><td>clttimeout</td><td>&lt;Double></td><td>Read-only</td><td>Time, in seconds, after which to terminate an idle client connection.&lt;br>Minimum value = 0&lt;br>Maximum value = 31536000</td><tr><tr><td>svrtimeout</td><td>&lt;Double></td><td>Read-only</td><td>Time, in seconds, after which to terminate an idle server connection.&lt;br>Minimum value = 0&lt;br>Maximum value = 31536000</td><tr><tr><td>cipheader</td><td>&lt;String></td><td>Read-only</td><td>Name of the HTTP header whose value must be set to the IP address of the client. Used with the Client IP parameter. If client IP insertion is enabled, and the client IP header is not specified, the value of Client IP Header parameter or the value set by the set ns config command is used as clients IP header name.&lt;br>Minimum length = 1</td><tr><tr><td>cip</td><td>&lt;String></td><td>Read-only</td><td>Before forwarding a request to the service, insert an HTTP header with the clients IPv4 or IPv6 address as its value. Used if the server needs the clients IP address for security, accounting, or other purposes, and setting the Use Source IP parameter is not a viable option.&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>cacheable</td><td>&lt;String></td><td>Read-only</td><td>Use the transparent cache redirection virtual server to forward the request to the cache server.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>sc</td><td>&lt;String></td><td>Read-only</td><td>State of the SureConnect feature for the service group.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>sp</td><td>&lt;String></td><td>Read-only</td><td>Enable surge protection for the service group.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>downstateflush</td><td>&lt;String></td><td>Read-only</td><td>Perform delayed clean-up of connections to all services in the service group.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>appflowlog</td><td>&lt;String></td><td>Read-only</td><td>Enable logging of AppFlow information for the specified service group.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>boundtd</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the server. &lt;br>Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Can be changed after the name is created.&lt;br>Minimum length = 1</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>IPv4 or IPv6 address of the server. If you create an IP address based server, you can specify the name of the server, instead of its IP address, when creating a service. Note: If you do not create a server entry, the server IP address that you enter when you create a service becomes the name of the server.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Domain name of the server. For a domain based configuration, you must create the server first.&lt;br>Minimum length = 1</td><tr><tr><td>translationip</td><td>&lt;String></td><td>Read-write</td><td>IP address used to transform the servers DNS-resolved IP address.</td><tr><tr><td>translationmask</td><td>&lt;String></td><td>Read-write</td><td>The netmask of the translation ip.</td><tr><tr><td>domainresolveretry</td><td>&lt;Integer></td><td>Read-write</td><td>Time, in seconds, for which the NetScaler appliance must wait, after DNS resolution fails, before sending the next DNS query to resolve the domain name.&lt;br>Default value: 5&lt;br>Minimum value = 5&lt;br>Maximum value = 20939</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Initial state of the server.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ipv6address</td><td>&lt;String></td><td>Read-write</td><td>Support IPv6 addressing mode. If you configure a server with the IPv6 addressing mode, you cannot use the server in the IPv4 addressing mode.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any information about the server.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>domainresolvenow</td><td>&lt;Boolean></td><td>Read-write</td><td>Immediately send a DNS query to resolve the servers domain name.</td><tr><tr><td>delay</td><td>&lt;Double></td><td>Read-write</td><td>Time, in seconds, after which all the services configured on the server are disabled.</td><tr><tr><td>graceful</td><td>&lt;String></td><td>Read-write</td><td>Shut down gracefully, without accepting any new connections, and disabling each service when all of its connections are closed.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>Internal</td><td>&lt;Boolean></td><td>Read-write</td><td>Display names of the servers that have been created for internal use.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the server. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>statechangetimesec</td><td>&lt;String></td><td>Read-only</td><td>Time when last state change happened. Seconds part.</td><tr><tr><td>tickssincelaststatechange</td><td>&lt;Double></td><td>Read-only</td><td>Time in 10 millisecond ticks since the last state change.</td><tr><tr><td>autoscale</td><td>&lt;String></td><td>Read-only</td><td>Auto scale option for a servicegroup.&lt;br>Default value: DISABLED&lt;br>Possible values = DISABLED, DNS, POLICY</td><tr><tr><td>customserverid</td><td>&lt;String></td><td>Read-only</td><td>A positive integer to identify the service. Used when the persistency type is set to Custom Server ID.&lt;br>Default value: "None"</td><tr><tr><td>monthreshold</td><td>&lt;Double></td><td>Read-only</td><td>Minimum sum of weights of the monitors that are bound to this service. Used to determine whether to mark a service as UP or DOWN.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>maxclient</td><td>&lt;Double></td><td>Read-only</td><td>Maximum number of simultaneous open connections for the service group.&lt;br>Minimum value = 0&lt;br>Maximum value = 4294967294</td><tr><tr><td>maxreq</td><td>&lt;Double></td><td>Read-only</td><td>Maximum number of requests that can be sent on a persistent connection to the service group. &lt;br> Note: Connection requests beyond this value are rejected.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>maxbandwidth</td><td>&lt;Double></td><td>Read-only</td><td>Maximum bandwidth, in Kbps, allocated for all the services in the service group.&lt;br>Minimum value = 0&lt;br>Maximum value = 4294967287</td><tr><tr><td>usip</td><td>&lt;String></td><td>Read-only</td><td>Use the clients IP address as the source IP address when initiating a connection to the server. When creating a service, if you do not set this parameter, the service inherits the global Use Source IP setting (available in the enable ns mode and disable ns mode CLI commands, or in the System ;gt; Settings ;gt; Configure modes ;gt; Configure Modes dialog box). However, you can override this setting after you create the service.&lt;br>Possible values = YES, NO</td><tr><tr><td>cka</td><td>&lt;String></td><td>Read-only</td><td>Enable client keep-alive for the service group.&lt;br>Possible values = YES, NO</td><tr><tr><td>tcpb</td><td>&lt;String></td><td>Read-only</td><td>Enable TCP buffering for the service group.&lt;br>Possible values = YES, NO</td><tr><tr><td>cmp</td><td>&lt;String></td><td>Read-only</td><td>Enable compression for the specified service.&lt;br>Possible values = YES, NO</td><tr><tr><td>clttimeout</td><td>&lt;Double></td><td>Read-only</td><td>Time, in seconds, after which to terminate an idle client connection.&lt;br>Minimum value = 0&lt;br>Maximum value = 31536000</td><tr><tr><td>svrtimeout</td><td>&lt;Double></td><td>Read-only</td><td>Time, in seconds, after which to terminate an idle server connection.&lt;br>Minimum value = 0&lt;br>Maximum value = 31536000</td><tr><tr><td>cipheader</td><td>&lt;String></td><td>Read-only</td><td>Name of the HTTP header whose value must be set to the IP address of the client. Used with the Client IP parameter. If client IP insertion is enabled, and the client IP header is not specified, the value of Client IP Header parameter or the value set by the set ns config command is used as clients IP header name.&lt;br>Minimum length = 1</td><tr><tr><td>cip</td><td>&lt;String></td><td>Read-only</td><td>Before forwarding a request to the service, insert an HTTP header with the clients IPv4 or IPv6 address as its value. Used if the server needs the clients IP address for security, accounting, or other purposes, and setting the Use Source IP parameter is not a viable option.&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>cacheable</td><td>&lt;String></td><td>Read-only</td><td>Use the transparent cache redirection virtual server to forward the request to the cache server.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>sc</td><td>&lt;String></td><td>Read-only</td><td>State of the SureConnect feature for the service group.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>sp</td><td>&lt;String></td><td>Read-only</td><td>Enable surge protection for the service group.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>downstateflush</td><td>&lt;String></td><td>Read-only</td><td>Perform delayed clean-up of connections to all services in the service group.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>appflowlog</td><td>&lt;String></td><td>Read-only</td><td>Enable logging of AppFlow information for the specified service group.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>boundtd</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,119 +27,149 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","server":{      "name":<String_value>,      "ipaddress":<String_value>,      "domain":<String_value>,      "translationip":<String_value>,                  "translationmask":<String_value>,      "domainresolveretry":<Integer_value>,      "state":<String_value>,      "ipv6address":<String_value>,      "comment":<String_value>,      "td":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>,      "ipaddress":<String_value>,      "domain":<String_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "domainresolveretry":<Integer_value>,      "state":<String_value>,      "ipv6address":<String_value>,      "comment":<String_value>,      "td":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/server/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/server/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","server":{      "name":<String_value>,      "ipaddress":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "domainresolvenow":<Boolean_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>,      "ipaddress":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "domainresolvenow":<Boolean_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","server":{      "name":<String_value>,      "comment":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>,      "comment":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###enable
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?action=enable
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"enable"},"sessionid":"##sessionid","server":{      "name":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###disable
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?action=disable
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"disable"},"sessionid":"##sessionid","server":{      "name":<String_value>,      "delay":<Double_value>,      "graceful":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>,      "delay":<Double_value>,      "graceful":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###rename
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?action=rename
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"rename"},"sessionid":"##sessionid","server":{      "name":<String_value>,      "newname":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"server":{      "name":<String_value>,      "newname":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/server
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/server?args=      "name":&lt;String_value&gt;,      "Internal":&lt;Boolean_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?args=name:&lt;String_value&gt;,Internal:&lt;Boolean_value&gt;
 Use this query-parameter to get server resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/server?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of server resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/server?view=summary
-Use this query-parameter to get the summary output of server resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/server?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?pagesize=#no;pageno=#no
 Use this query-parameter to get the server resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/server?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "server": [ {      "name":<String_value>,      "Internal":<Boolean_value>,      "ipaddress":<String_value>,      "state":<String_value>,      "domain":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "comment":<String_value>,      "statechangetimesec":<String_value>,      "tickssincelaststatechange":<Double_value>,      "ipv6address":<String_value>,      "td":<Double_value>,      "autoscale":<String_value>,      "customserverid":<String_value>,      "monthreshold":<Double_value>,      "maxclient":<Double_value>,      "maxreq":<Double_value>,      "maxbandwidth":<Double_value>,      "usip":<String_value>,      "cka":<String_value>,      "tcpb":<String_value>,      "cmp":<String_value>,      "clttimeout":<Double_value>,      "svrtimeout":<Double_value>,      "cipheader":<String_value>,      "cip":<String_value>,      "cacheable":<String_value>,      "sc":<String_value>,      "sp":<String_value>,      "downstateflush":<String_value>,      "appflowlog":<String_value>,      "boundtd":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "server": [ {name:<String_value>,Internal:<Boolean_value>      "ipaddress":<String_value>,      "state":<String_value>,      "domain":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "comment":<String_value>,      "statechangetimesec":<String_value>,      "tickssincelaststatechange":<Double_value>,      "ipv6address":<String_value>,      "td":<Double_value>,      "autoscale":<String_value>,      "customserverid":<String_value>,      "monthreshold":<Double_value>,      "maxclient":<Double_value>,      "maxreq":<Double_value>,      "maxbandwidth":<Double_value>,      "usip":<String_value>,      "cka":<String_value>,      "tcpb":<String_value>,      "cmp":<String_value>,      "clttimeout":<Double_value>,      "svrtimeout":<Double_value>,      "cipheader":<String_value>,      "cip":<String_value>,      "cacheable":<String_value>,      "sc":<String_value>,      "sp":<String_value>,      "downstateflush":<String_value>,      "appflowlog":<String_value>,      "boundtd":<Double_value>}]}```
 
 
 
@@ -147,9 +177,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/server/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "server": [ {      "name":<String_value>,      "Internal":<Boolean_value>,      "ipaddress":<String_value>,      "state":<String_value>,      "domain":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "comment":<String_value>,      "statechangetimesec":<String_value>,      "tickssincelaststatechange":<Double_value>,      "ipv6address":<String_value>,      "td":<Double_value>,      "autoscale":<String_value>,      "customserverid":<String_value>,      "monthreshold":<Double_value>,      "maxclient":<Double_value>,      "maxreq":<Double_value>,      "maxbandwidth":<Double_value>,      "usip":<String_value>,      "cka":<String_value>,      "tcpb":<String_value>,      "cmp":<String_value>,      "clttimeout":<Double_value>,      "svrtimeout":<Double_value>,      "cipheader":<String_value>,      "cip":<String_value>,      "cacheable":<String_value>,      "sc":<String_value>,      "sp":<String_value>,      "downstateflush":<String_value>,      "appflowlog":<String_value>,      "boundtd":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "server": [ {name:<String_value>,Internal:<Boolean_value>      "ipaddress":<String_value>,      "state":<String_value>,      "domain":<String_value>,      "domainresolveretry":<Integer_value>,      "translationip":<String_value>,      "translationmask":<String_value>,      "comment":<String_value>,      "statechangetimesec":<String_value>,      "tickssincelaststatechange":<Double_value>,      "ipv6address":<String_value>,      "td":<Double_value>,      "autoscale":<String_value>,      "customserverid":<String_value>,      "monthreshold":<Double_value>,      "maxclient":<Double_value>,      "maxreq":<Double_value>,      "maxbandwidth":<Double_value>,      "usip":<String_value>,      "cka":<String_value>,      "tcpb":<String_value>,      "cmp":<String_value>,      "clttimeout":<Double_value>,      "svrtimeout":<Double_value>,      "cipheader":<String_value>,      "cip":<String_value>,      "cacheable":<String_value>,      "sc":<String_value>,      "sp":<String_value>,      "downstateflush":<String_value>,      "appflowlog":<String_value>,      "boundtd":<Double_value>}]}```
 
 
 
@@ -157,9 +208,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "server": [ {      
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/server?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/server?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",server: [ { "__count": "#no"} ] }
+{ "server": [ { "__count": "#no"} ] }
 
 

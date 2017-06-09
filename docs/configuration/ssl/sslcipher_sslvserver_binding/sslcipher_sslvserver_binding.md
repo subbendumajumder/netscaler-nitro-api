@@ -3,6 +3,11 @@
 Binding object showing the sslvserver that can be bound to sslcipher.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>Priority of the cipher to be added.&lt;br>Minimum value = 1&lt;br>Maximum value = 1000</td><tr><tr><td>ciphgrpals</td><td>&lt;String></td><td>Read-write</td><td>A cipher-suite can consist of an individual cipher name, the system predefined cipher-alias name, or user defined cipher-group name.&lt;br>Minimum length = 1</td><tr><tr><td>vserver</td><td>&lt;Boolean></td><td>Read-write</td><td>Select the -vServer flag when the cipher operation is performed on an SSL virtual server. Note: By default the bind ssl cipher command internally assumes the flag of -vServer argument. Hence, while working with the SSL vserver, you need not specify this flag.</td><tr><tr><td>vservername</td><td>&lt;String></td><td>Read-write</td><td>The name of the SSL virtual server to which the cipher-suite is to be bound.&lt;br>Minimum length = 1</td><tr><tr><td>ciphergroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the user-defined cipher group.&lt;br>Minimum length = 1</td><tr><tr><td>cipheroperation</td><td>&lt;String></td><td>Read-write</td><td>The operation that is performed when adding the cipher-suite. Possible cipher operations are: ADD - Appends the given cipher-suite to the existing one configured for the virtual server. REM - Removes the given cipher-suite from the existing one configured for the virtual server. ORD - Overrides the current configured cipher-suite for the virtual server with the given cipher-suite.&lt;br>Default value: 0&lt;br>Possible values = ADD, REM, ORD</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

@@ -7,7 +7,7 @@ Configuration for DNS action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the dns action.</td><tr><tr><td>actiontype</td><td>&lt;String></td><td>Read-write</td><td>The type of DNS action that is being configured.&lt;br>Possible values = ViewName, GslbPrefLoc, noop, Drop, Cache_Bypass, Rewrite_Response</td><tr><tr><td>ipaddress</td><td>&lt;String[]></td><td>Read-write</td><td>List of IP address to be returned in case of rewrite_response actiontype. They can be of IPV4 or IPV6 type. In case of set command We will remove all the IP address previously present in the action and will add new once given in set dns action command.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to live, in seconds.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given action.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given action.&lt;br>Minimum length = 1</td><tr><tr><td>dnsprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS profile to be associated with the transaction for which the action is chosen.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-only</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-only</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS action is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the dns action.</td><tr><tr><td>actiontype</td><td>&lt;String></td><td>Read-write</td><td>The type of DNS action that is being configured.&lt;br>Possible values = ViewName, GslbPrefLoc, noop, Drop, Cache_Bypass, Rewrite_Response</td><tr><tr><td>ipaddress</td><td>&lt;String[]></td><td>Read-write</td><td>List of IP address to be returned in case of rewrite_response actiontype. They can be of IPV4 or IPV6 type.&lt;br> In case of set command We will remove all the IP address previously present in the action and will add new once given in set dns action command.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to live, in seconds.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given action.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given action.&lt;br>Minimum length = 1</td><tr><tr><td>dnsprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS profile to be associated with the transaction for which the action is chosen.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-only</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-only</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS action is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "actiontype":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"dnsaction":{      "actionname":<String_value>,      "actiontype":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"dnsaction":{      "actionname":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ttl":true,      "dnsprofilename":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"dnsaction":{      "actionname":<String_value>,      "ttl":true,      "dnsprofilename":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/dnsaction
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/dnsaction?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of dnsaction resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction?view=summary
-Use this query-parameter to get the summary output of dnsaction resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?pagesize=#no;pageno=#no
 Use this query-parameter to get the dnsaction resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "dnsaction": [ {   
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsaction?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",dnsaction: [ { "__count": "#no"} ] }
+{ "dnsaction": [ { "__count": "#no"} ] }
 
 

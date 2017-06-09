@@ -7,7 +7,7 @@ Configuration for ip v6 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ralearning</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to learn about various routes from Router Advertisement (RA) and Router Solicitation (RS) messages sent by the routers.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>routerredirection</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to do Router Redirection.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ndbasereachtime</td><td>&lt;Double></td><td>Read-write</td><td>Base reachable time of the Neighbor Discovery (ND6) protocol. The time, in milliseconds, that the NetScaler appliance assumes an adjacent device is reachable after receiving a reachability confirmation.&lt;br>Default value: 30000&lt;br>Minimum value = 1</td><tr><tr><td>ndretransmissiontime</td><td>&lt;Double></td><td>Read-write</td><td>Retransmission time of the Neighbor Discovery (ND6) protocol. The time, in milliseconds, between retransmitted Neighbor Solicitation (NS) messages, to an adjacent device.&lt;br>Default value: 1000&lt;br>Minimum value = 1</td><tr><tr><td>natprefix</td><td>&lt;String></td><td>Read-write</td><td>Prefix used for translating packets from private IPv6 servers to IPv4 packets. This prefix has a length of 96 bits (128-32 = 96). The IPv6 servers embed the destination IP address of the IPv4 servers or hosts in the last 32 bits of the destination IP address field of the IPv6 packets. The first 96 bits of the destination IP address field are set as the IPv6 NAT prefix. IPv6 packets addressed to this prefix have to be routed to the NetScaler appliance to ensure that the IPv6-IPv4 translation is done by the appliance.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>dodad</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to do Duplicate Address Detection (DAD) for all the NetScaler owned IPv6 addresses regardless of whether they are obtained through stateless auto configuration, DHCPv6, or manual configuration.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>basereachtime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 base reachable time (ms).</td><tr><tr><td>reachtime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 computed reachable time (ms).</td><tr><tr><td>ndreachtime</td><td>&lt;Double></td><td>Read-only</td><td>ND6 computed reachable time (ms).</td><tr><tr><td>retransmissiontime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 retransmission time (ms).</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ralearning</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to learn about various routes from Router Advertisement (RA) and Router Solicitation (RS) messages sent by the routers.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>routerredirection</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to do Router Redirection.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ndbasereachtime</td><td>&lt;Double></td><td>Read-write</td><td>Base reachable time of the Neighbor Discovery (ND6) protocol. The time, in milliseconds, that the NetScaler appliance assumes an adjacent device is reachable after receiving a reachability confirmation.&lt;br>Default value: 30000&lt;br>Minimum value = 1</td><tr><tr><td>ndretransmissiontime</td><td>&lt;Double></td><td>Read-write</td><td>Retransmission time of the Neighbor Discovery (ND6) protocol. The time, in milliseconds, between retransmitted Neighbor Solicitation (NS) messages, to an adjacent device.&lt;br>Default value: 1000&lt;br>Minimum value = 1</td><tr><tr><td>natprefix</td><td>&lt;String></td><td>Read-write</td><td>Prefix used for translating packets from private IPv6 servers to IPv4 packets. This prefix has a length of 96 bits (128-32 = 96). The IPv6 servers embed the destination IP address of the IPv4 servers or hosts in the last 32 bits of the destination IP address field of the IPv6 packets. The first 96 bits of the destination IP address field are set as the IPv6 NAT prefix. IPv6 packets addressed to this prefix have to be routed to the NetScaler appliance to ensure that the IPv6-IPv4 translation is done by the appliance.</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>dodad</td><td>&lt;String></td><td>Read-write</td><td>Enable the NetScaler appliance to do Duplicate Address&lt;br>Detection (DAD) for all the NetScaler owned IPv6 addresses regardless of whether they are obtained through stateless auto configuration, DHCPv6, or manual configuration.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>basereachtime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 base reachable time (ms).</td><tr><tr><td>reachtime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 computed reachable time (ms).</td><tr><tr><td>ndreachtime</td><td>&lt;Double></td><td>Read-only</td><td>ND6 computed reachable time (ms).</td><tr><tr><td>retransmissiontime</td><td>&lt;Integer></td><td>Read-only</td><td>ND6 retransmission time (ms).</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,53 +27,70 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","ipv6":{      "ralearning":<String_value>,      "routerredirection":<String_value>,      "ndbasereachtime":<Double_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,                  "td":<Double_value>,      "dodad":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"ipv6":{      "ralearning":<String_value>,      "routerredirection":<String_value>,      "ndbasereachtime":<Double_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,      "td":<Double_value>,      "dodad":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","ipv6":{      "ralearning":true,      "routerredirection":true,      "ndbasereachtime":true,      "ndretransmissiontime":true,      "natprefix":true,                  "td":<Double_value>,      "dodad":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"ipv6":{      "ralearning":true,      "routerredirection":true,      "ndbasereachtime":true,      "ndretransmissiontime":true,      "natprefix":true,      "td":<Double_value>,      "dodad":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/ipv6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/ipv6?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of ipv6 resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/ipv6?view=summary
-Use this query-parameter to get the summary output of ipv6 resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/ipv6?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?pagesize=#no;pageno=#no
 Use this query-parameter to get the ipv6 resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/ipv6?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "ipv6": [ {      "td":<Double_value>,      "ralearning":<String_value>,      "routerredirection":<String_value>,      "basereachtime":<Integer_value>,      "ndbasereachtime":<Double_value>,      "reachtime":<Integer_value>,      "ndreachtime":<Double_value>,      "retransmissiontime":<Integer_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,      "dodad":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "ipv6": [ {      "td":<Double_value>,      "ralearning":<String_value>,      "routerredirection":<String_value>,      "basereachtime":<Integer_value>,      "ndbasereachtime":<Double_value>,      "reachtime":<Integer_value>,      "ndreachtime":<Double_value>,      "retransmissiontime":<Integer_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,      "dodad":<String_value>}]}```
 
 
 
@@ -81,9 +98,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/ipv6/td_value&lt;Double&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6/td_value&lt;Double&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6/td_value&lt;Double&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6/td_value&lt;Double&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "ipv6": [ {      "td":<Double_value>,      "ralearning":<String_value>,      "routerredirection":<String_value>,      "basereachtime":<Integer_value>,      "ndbasereachtime":<Double_value>,      "reachtime":<Integer_value>,      "ndreachtime":<Double_value>,      "retransmissiontime":<Integer_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,      "dodad":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "ipv6": [ {      "td":<Double_value>,      "ralearning":<String_value>,      "routerredirection":<String_value>,      "basereachtime":<Integer_value>,      "ndbasereachtime":<Double_value>,      "reachtime":<Integer_value>,      "ndreachtime":<Double_value>,      "retransmissiontime":<Integer_value>,      "ndretransmissiontime":<Double_value>,      "natprefix":<String_value>,      "dodad":<String_value>}]}```
 
 
 
@@ -91,9 +129,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "ipv6": [ {      "t
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/ipv6?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/ipv6?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",ipv6: [ { "__count": "#no"} ] }
+{ "ipv6": [ { "__count": "#no"} ] }
 
 

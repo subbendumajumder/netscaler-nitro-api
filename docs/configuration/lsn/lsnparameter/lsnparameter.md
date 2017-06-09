@@ -7,7 +7,7 @@ Configuration for LSN parameter resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>memlimit</td><td>&lt;Double></td><td>Read-write</td><td>Amount of NetScaler memory to reserve for the LSN feature, in multiples of 2MB. Note: If you later reduce the value of this parameter, the amount of active memory is not reduced. Changing the configured memory limit can only increase the amount of active memory. This command is deprecated, use set extendedmemoryparam -memlimit instead.</td><tr><tr><td>sessionsync</td><td>&lt;String></td><td>Read-write</td><td>Synchronize all LSN sessions with the secondary node in a high availability (HA) deployment (global synchronization). After a failover, established TCP connections and UDP packet flows are kept active and resumed on the secondary node (new primary). The global session synchronization parameter and session synchronization parameters (group level) of all LSN groups are enabled by default. For a group, when both the global level and the group level LSN session synchronization parameters are enabled, the primary node synchronizes information of all LSN sessions related to this LSN group with the secondary node.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>memlimitactive</td><td>&lt;Double></td><td>Read-only</td><td>Amount of actual memory reserved for the LSN feature. The amount of active memory for the LSN feature might be less than the configured memory, because the available memory is shared across features.</td><tr><tr><td>maxmemlimit</td><td>&lt;Double></td><td>Read-only</td><td>Maximum amount of NetScaler memory that can be reserved for the LSN feature.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>memlimit</td><td>&lt;Double></td><td>Read-write</td><td>Amount of NetScaler memory to reserve for the LSN feature, in multiples of 2MB.&lt;br>&lt;br>Note: If you later reduce the value of this parameter, the amount of active memory is not reduced. Changing the configured memory limit can only increase the amount of active memory.&lt;br>This command is deprecated, use set extendedmemoryparam -memlimit instead.</td><tr><tr><td>sessionsync</td><td>&lt;String></td><td>Read-write</td><td>Synchronize all LSN sessions with the secondary node in a high availability (HA) deployment (global synchronization). After a failover, established TCP connections and UDP packet flows are kept active and resumed on the secondary node (new primary).&lt;br>&lt;br>The global session synchronization parameter and session synchronization parameters (group level) of all LSN groups are enabled by default.&lt;br>&lt;br>For a group, when both the global level and the group level LSN session synchronization parameters are enabled, the primary node synchronizes information of all LSN sessions related to this LSN group with the secondary node.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>subscrsessionremoval</td><td>&lt;String></td><td>Read-write</td><td>LSN global setting for controlling subscriber aware session removal, when this is enabled, when ever the subscriber info is deleted from subscriber database, sessions corresponding to that subscriber will be removed. if this setting is disabled, subscriber sessions will be timed out as per the idle time out settings.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>memlimitactive</td><td>&lt;Double></td><td>Read-only</td><td>Amount of actual memory reserved for the LSN feature. &lt;br>&lt;br>The amount of active memory for the LSN feature might be less than the configured memory, because the available memory is shared across features.</td><tr><tr><td>maxmemlimit</td><td>&lt;Double></td><td>Read-only</td><td>Maximum amount of NetScaler memory that can be reserved for the LSN feature.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnparameter
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","lsnparameter":{      "memlimit":<Double_value>,      "sessionsync":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"lsnparameter":{      "memlimit":<Double_value>,      "sessionsync":<String_value>,      "subscrsessionremoval":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnparameter?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","lsnparameter":{      "memlimit":true,      "sessionsync":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"lsnparameter":{      "memlimit":true,      "sessionsync":true,      "subscrsessionremoval":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/lsnparameter
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnparameter
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "lsnparameter": [ {      "memlimitactive":<Double_value>,      "maxmemlimit":<Double_value>,      "memlimit":<Double_value>,      "sessionsync":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsnparameter": [ {      "memlimitactive":<Double_value>,      "maxmemlimit":<Double_value>,      "memlimit":<Double_value>,      "sessionsync":<String_value>,      "subscrsessionremoval":<String_value>}]}```
 
 
 

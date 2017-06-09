@@ -7,7 +7,7 @@ Configuration for Extension resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>Local path to and name of, or URL (protocol, host, path, and file name) for, the file in which to store the imported extension. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the extension object on the NetScaler appliance.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about the extension object.&lt;br>Maximum length = 128</td><tr><tr><td>overwrite</td><td>&lt;Boolean></td><td>Read-write</td><td>Overwrites the existing file.</td><tr><tr><td>trace</td><td>&lt;String></td><td>Read-write</td><td>Enables tracing to the NS log file of extension execution: off - turns off tracing (equivalent to unset ns extension ;lt;extension-name;gt; -trace) calls - traces extension function calls with arguments and function returns with the first return value lines - traces the above plus line numbers for executed extension lines all - traces the above plus local variables changed by executed extension lines Note that the DEBUG log level must be enabled to see extension tracing. This can be done by set audit syslogParams -loglevel ALL or -loglevel DEBUG.&lt;br>Default value: off&lt;br>Possible values = off, calls, lines, all</td><tr><tr><td>tracefunctions</td><td>&lt;String></td><td>Read-write</td><td>Comma-separated list of extension functions to trace. By default, all extension functions are traced.&lt;br>Maximum length = 256</td><tr><tr><td>tracevariables</td><td>&lt;String></td><td>Read-write</td><td>Comma-separated list of variables (in traced extension functions) to trace. By default, all variables are traced.&lt;br>Maximum length = 256</td><tr><tr><td>detail</td><td>&lt;String></td><td>Read-write</td><td>Show detail for extension function.&lt;br>Possible values = brief, all</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-only</td><td>.&lt;br>Possible values = WSDL, CustomSettings, XMLSchema, XMLErrorPage, htmlpage, CustomResp, Extension</td><tr><tr><td>functionhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of time function evaluates successfully.</td><tr><tr><td>functionundefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times error occured in evaluating extension function.</td><tr><tr><td>functionhaltcount</td><td>&lt;Double></td><td>Read-only</td><td>Number of time function evaluation is halted.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>Local path to and name of, or URL (protocol, host, path, and file name) for, the file in which to store the imported extension.&lt;br>NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the extension object on the NetScaler appliance.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about the extension object.&lt;br>Maximum length = 128</td><tr><tr><td>overwrite</td><td>&lt;Boolean></td><td>Read-write</td><td>Overwrites the existing file.</td><tr><tr><td>trace</td><td>&lt;String></td><td>Read-write</td><td>Enables tracing to the NS log file of extension execution:&lt;br> off - turns off tracing (equivalent to unset ns extension ;lt;extension-name;gt; -trace)&lt;br> calls - traces extension function calls with arguments and function returns with the first return value&lt;br> lines - traces the above plus line numbers for executed extension lines&lt;br> all - traces the above plus local variables changed by executed extension lines&lt;br>Note that the DEBUG log level must be enabled to see extension tracing.&lt;br>This can be done by set audit syslogParams -loglevel ALL or -loglevel DEBUG.&lt;br>Default value: off&lt;br>Possible values = off, calls, lines, all</td><tr><tr><td>tracefunctions</td><td>&lt;String></td><td>Read-write</td><td>Comma-separated list of extension functions to trace. By default, all extension functions are traced.&lt;br>Maximum length = 256</td><tr><tr><td>tracevariables</td><td>&lt;String></td><td>Read-write</td><td>Comma-separated list of variables (in traced extension functions) to trace. By default, all variables are traced.&lt;br>Maximum length = 256</td><tr><tr><td>detail</td><td>&lt;String></td><td>Read-write</td><td>Show detail for extension function.&lt;br>Possible values = brief, all</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-only</td><td>.&lt;br>Possible values = WSDL, CustomSettings, XMLSchema, XMLErrorPage, htmlpage, CustomResp, Extension</td><tr><tr><td>functionhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of time function evaluates successfully.</td><tr><tr><td>functionundefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times error occured in evaluating extension function.</td><tr><tr><td>functionhaltcount</td><td>&lt;Double></td><td>Read-only</td><td>Number of time function evaluation is halted.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,108 +27,134 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?action=Import
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","nsextension":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>,      "overwrite":<Boolean_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsextension":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>,      "overwrite":<Boolean_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###add
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","nsextension":{      "name":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsextension":{      "name":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###change
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?action=update
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"update"},"sessionid":"##sessionid","nsextension":{      "name":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsextension":{      "name":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","nsextension":{      "name":<String_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsextension":{      "name":<String_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","nsextension":{      "name":<String_value>,      "trace":true,      "tracefunctions":true,      "tracevariables":true,      "comment":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsextension":{      "name":<String_value>,      "trace":true,      "tracefunctions":true,      "tracevariables":true,      "comment":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nsextension
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/nsextension?args=      "name":&lt;String_value&gt;,      "detail":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?args=name:&lt;String_value&gt;,detail:&lt;String_value&gt;
 Use this query-parameter to get nsextension resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/nsextension?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of nsextension resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/nsextension?view=summary
-Use this query-parameter to get the summary output of nsextension resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/nsextension?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?pagesize=#no;pageno=#no
 Use this query-parameter to get the nsextension resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/nsextension?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "nsextension": [ {      "name":<String_value>,      "detail":<String_value>,      "src":<String_value>,      "type":<String_value>,      "comment":<String_value>,      "functionhits":<Double_value>,      "functionundefhits":<Double_value>,      "functionhaltcount":<Double_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsextension": [ {name:<String_value>,detail:<String_value>      "src":<String_value>,      "type":<String_value>,      "comment":<String_value>,      "functionhits":<Double_value>,      "functionundefhits":<Double_value>,      "functionhaltcount":<Double_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>}]}```
 
 
 
@@ -136,9 +162,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "nsextension": [ {      "name":<String_value>,      "detail":<String_value>,      "src":<String_value>,      "type":<String_value>,      "comment":<String_value>,      "functionhits":<Double_value>,      "functionundefhits":<Double_value>,      "functionhaltcount":<Double_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsextension": [ {name:<String_value>,detail:<String_value>      "src":<String_value>,      "type":<String_value>,      "comment":<String_value>,      "functionhits":<Double_value>,      "functionundefhits":<Double_value>,      "functionhaltcount":<Double_value>,      "trace":<String_value>,      "tracefunctions":<String_value>,      "tracevariables":<String_value>}]}```
 
 
 
@@ -146,9 +193,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "nsextension": [ { 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nsextension?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsextension?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",nsextension: [ { "__count": "#no"} ] }
+{ "nsextension": [ { "__count": "#no"} ] }
 
 

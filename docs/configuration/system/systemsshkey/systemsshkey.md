@@ -34,7 +34,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###Import
@@ -49,7 +49,7 @@ Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
 Request Payload: ```{"systemsshkey":{      "name":<String_value>,      "src":<String_value>,      "sshkeytype":<String_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -59,7 +59,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systemsshkey
 Query-parameters:
 args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systemsshkey?args=      "sshkeytype":&lt;String_value&gt;
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/systemsshkey?args=sshkeytype:&lt;String_value&gt;
 Use this query-parameter to get systemsshkey resources based on additional properties.
 
 
@@ -70,11 +70,11 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "systemsshkey": [ {      "sshkeytype":<String_value>,      "name":<String_value>}]}```
+Response Payload: ```{ "systemsshkey": [ {sshkeytype:<String_value>      "name":<String_value>}]}```
 
 
 

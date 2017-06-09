@@ -7,7 +7,7 @@ Configuration for location resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ipfrom</td><td>&lt;String></td><td>Read-write</td><td>First IP address in the range, in dotted decimal notation.&lt;br>Minimum length = 1</td><tr><tr><td>ipto</td><td>&lt;String></td><td>Read-write</td><td>Last IP address in the range, in dotted decimal notation.&lt;br>Minimum length = 1</td><tr><tr><td>preferredlocation</td><td>&lt;String></td><td>Read-write</td><td>String of qualifiers, in dotted notation, describing the geographical location of the IP address range. Each qualifier is more specific than the one that precedes it, as in continent.country.region.city.isp.organization. For example, "NA.US.CA.San Jose.ATT.citrix". Note: A qualifier that includes a dot (.) or space ( ) must be enclosed in double quotation marks.&lt;br>Minimum length = 1</td><tr><tr><td>longitude</td><td>&lt;Integer></td><td>Read-write</td><td>Numerical value, in degrees, specifying the longitude of the geographical location of the IP address-range. Note: Longitude and latitude parameters are used for selecting a service with the static proximity GSLB method. If they are not specified, selection is based on the qualifiers specified for the location.&lt;br>Minimum value = -180&lt;br>Maximum value = 180</td><tr><tr><td>latitude</td><td>&lt;Integer></td><td>Read-write</td><td>Numerical value, in degrees, specifying the latitude of the geographical location of the IP address-range. Note: Longitude and latitude parameters are used for selecting a service with the static proximity GSLB method. If they are not specified, selection is based on the qualifiers specified for the location.&lt;br>Minimum value = -90&lt;br>Maximum value = 90</td><tr><tr><td>q1label</td><td>&lt;String></td><td>Read-only</td><td>Least specific location qualifier.</td><tr><tr><td>q2label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 2.</td><tr><tr><td>q3label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 3.</td><tr><tr><td>q4label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 4.</td><tr><tr><td>q5label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 5.</td><tr><tr><td>q6label</td><td>&lt;String></td><td>Read-only</td><td>Most specific location qualifier.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ipfrom</td><td>&lt;String></td><td>Read-write</td><td>First IP address in the range, in dotted decimal notation.&lt;br>Minimum length = 1</td><tr><tr><td>ipto</td><td>&lt;String></td><td>Read-write</td><td>Last IP address in the range, in dotted decimal notation.&lt;br>Minimum length = 1</td><tr><tr><td>preferredlocation</td><td>&lt;String></td><td>Read-write</td><td>String of qualifiers, in dotted notation, describing the geographical location of the IP address range. Each qualifier is more specific than the one that precedes it, as in continent.country.region.city.isp.organization. For example, "NA.US.CA.San Jose.ATT.citrix". &lt;br>Note: A qualifier that includes a dot (.) or space ( ) must be enclosed in double quotation marks.&lt;br>Minimum length = 1</td><tr><tr><td>longitude</td><td>&lt;Integer></td><td>Read-write</td><td>Numerical value, in degrees, specifying the longitude of the geographical location of the IP address-range. &lt;br>Note: Longitude and latitude parameters are used for selecting a service with the static proximity GSLB method. If they are not specified, selection is based on the qualifiers specified for the location.&lt;br>Minimum value = -180&lt;br>Maximum value = 180</td><tr><tr><td>latitude</td><td>&lt;Integer></td><td>Read-write</td><td>Numerical value, in degrees, specifying the latitude of the geographical location of the IP address-range. &lt;br>Note: Longitude and latitude parameters are used for selecting a service with the static proximity GSLB method. If they are not specified, selection is based on the qualifiers specified for the location.&lt;br>Minimum value = -90&lt;br>Maximum value = 90</td><tr><tr><td>q1label</td><td>&lt;String></td><td>Read-only</td><td>Least specific location qualifier.</td><tr><tr><td>q2label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 2.</td><tr><tr><td>q3label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 3.</td><tr><tr><td>q4label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 4.</td><tr><tr><td>q5label</td><td>&lt;String></td><td>Read-only</td><td>Location qualifier 5.</td><tr><tr><td>q6label</td><td>&lt;String></td><td>Read-only</td><td>Most specific location qualifier.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,59 +27,69 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","location":{      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"location":{      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/location
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/location?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of location resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/location?view=summary
-Use this query-parameter to get the summary output of location resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/location?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location?pagesize=#no;pageno=#no
 Use this query-parameter to get the location resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/location?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "location": [ {      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "location": [ {      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>}]}```
 
 
 
@@ -87,9 +97,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location/ipfrom_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "location": [ {      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "location": [ {      "ipfrom":<String_value>,      "ipto":<String_value>,      "preferredlocation":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "longitude":<Integer_value>,      "latitude":<Integer_value>}]}```
 
 
 
@@ -97,9 +128,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "location": [ {    
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/location?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/location?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",location: [ { "__count": "#no"} ] }
+{ "location": [ { "__count": "#no"} ] }
 
 

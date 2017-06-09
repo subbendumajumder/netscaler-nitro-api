@@ -7,12 +7,12 @@ Configuration for Virtual Router ID for IPv6 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Remove all configured VMAC6 addresses from the NetScaler appliance.</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Interfaces bound to this VRID.</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-only</td><td>Interfaces bound to this VRID.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-only</td><td>Type (static or dynamic) of this VRID.&lt;br>Possible values = STATIC, DYNAMIC</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>The priority of this VRID.</td><tr><tr><td>state</td><td>&lt;Double></td><td>Read-only</td><td>State of this VRID.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-only</td><td>The IP address bound to the VRID6.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Base priority (BP), in an active-active mode configuration, which ordinarily determines the master VIP address.&lt;br>Default value: 255&lt;br>Minimum value = 0&lt;br>Maximum value = 255</td><tr><tr><td>preemption</td><td>&lt;String></td><td>Read-write</td><td>In an active-active mode configuration, make a backup VIP address the master if its priority becomes higher than that of a master VIP address bound to this VMAC address.&lt;br> If you disable pre-emption while a backup VIP address is the master, the backup VIP address remains master until the original master VIPs priority becomes higher than that of the current master.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>sharing</td><td>&lt;String></td><td>Read-write</td><td>In an active-active mode configuration, enable the backup VIP address to process any traffic instead of dropping it.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>preemptiondelaytimer</td><td>&lt;Double></td><td>Read-write</td><td>Preemption delay time in seconds. If any high priority node will come in network, it will wait for these many seconds before becoming master.&lt;br>Default value: 0&lt;br>Minimum value = 1&lt;br>Maximum value = 36000</td><tr><tr><td>trackifnumpriority</td><td>&lt;Double></td><td>Read-write</td><td>Priority by which the Effective priority will be reduced if any of the tracked interfaces goes down.&lt;br>Default value: 0&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Remove all configured VMAC6 addresses from the NetScaler appliance.</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Interfaces bound to this VRID.</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-only</td><td>Interfaces bound to this VRID.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-only</td><td>Type (static or dynamic) of this VRID.&lt;br>Possible values = STATIC, DYNAMIC</td><tr><tr><td>state</td><td>&lt;Double></td><td>Read-only</td><td>State of this VRID.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-only</td><td>The IP address bound to the VRID6.</td><tr><tr><td>effectivepriority</td><td>&lt;Double></td><td>Read-only</td><td>The effective priority of this VRID.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD](#add) | [DELETE](#delete) | [UPDATE](#update) | [UNSET](#unset) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,59 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vrid6":{      "id":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"vrid6":{      "id":<Double_value>,      "priority":<Double_value>,      "preemption":<String_value>,      "sharing":<String_value>,      "preemptiondelaytimer":<Double_value>,      "trackifnumpriority":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###update
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6
+HTTP Method: PUT
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"vrid6":{      "id":<Double_value>,      "priority":<Double_value>,      "preemption":<String_value>,      "sharing":<String_value>,      "preemptiondelaytimer":<Double_value>,      "trackifnumpriority":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###unset
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?action=unset
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"vrid6":{      "id":<Double_value>,      "priority":true,      "preemption":true,      "sharing":true,      "preemptiondelaytimer":true,      "trackifnumpriority":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/vrid6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/vrid6?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of vrid6 resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/vrid6?view=summary
-Use this query-parameter to get the summary output of vrid6 resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/vrid6?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?pagesize=#no;pageno=#no
 Use this query-parameter to get the vrid6 resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/vrid6?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vrid6": [ {      "id":<Double_value>,      "ifaces":<String_value>,      "ifnum":<String_value>,      "type":<String_value>,      "priority":<Double_value>,      "state":<Double_value>,      "flags":<Double_value>,      "ipaddress":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vrid6": [ {      "id":<Double_value>,      "ifaces":<String_value>,      "ifnum":<String_value>,      "type":<String_value>,      "priority":<Double_value>,      "state":<Double_value>,      "flags":<Double_value>,      "ipaddress":<String_value>,      "preemption":<String_value>,      "sharing":<String_value>,      "preemptiondelaytimer":<Double_value>,      "trackifnumpriority":<Double_value>,      "effectivepriority":<Double_value>}]}```
 
 
 
@@ -87,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6/id_value&lt;Double&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vrid6": [ {      "id":<Double_value>,      "ifaces":<String_value>,      "ifnum":<String_value>,      "type":<String_value>,      "priority":<Double_value>,      "state":<Double_value>,      "flags":<Double_value>,      "ipaddress":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vrid6": [ {      "id":<Double_value>,      "ifaces":<String_value>,      "ifnum":<String_value>,      "type":<String_value>,      "priority":<Double_value>,      "state":<Double_value>,      "flags":<Double_value>,      "ipaddress":<String_value>,      "preemption":<String_value>,      "sharing":<String_value>,      "preemptiondelaytimer":<Double_value>,      "trackifnumpriority":<Double_value>,      "effectivepriority":<Double_value>}]}```
 
 
 
@@ -97,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "vrid6": [ {      "
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vrid6?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vrid6?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",vrid6: [ { "__count": "#no"} ] }
+{ "vrid6": [ { "__count": "#no"} ] }
 
 

@@ -7,7 +7,7 @@ Configuration for 0 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>method</td><td>&lt;String></td><td>Read-write</td><td>Cipher method (and key length) to be used to encrypt and decrypt content. The default value is AES256.&lt;br>Possible values = NONE, RC4, DES3, AES128, AES192, AES256</td><tr><tr><td>keyvalue</td><td>&lt;String></td><td>Read-write</td><td>The base64-encoded key generation number, method, and key value. Note: * Do not include this argument if you are changing the encryption method. * To generate a new key value for the current encryption method, specify an empty string \\(""\\) as the value of this parameter. The parameter is passed implicitly, with its automatically generated value, to the NetScaler packet engines even when it is not included in the command. Passing the parameter to the packet engines enables the appliance to save the key value to the configuration file and to propagate the key value to the secondary appliance in a high availability setup.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>method</td><td>&lt;String></td><td>Read-write</td><td>Cipher method (and key length) to be used to encrypt and decrypt content. The default value is AES256.&lt;br>Possible values = NONE, RC4, DES3, AES128, AES192, AES256</td><tr><tr><td>keyvalue</td><td>&lt;String></td><td>Read-write</td><td>The base64-encoded key generation number, method, and key value.&lt;br>Note:&lt;br>* Do not include this argument if you are changing the encryption method.&lt;br>* To generate a new key value for the current encryption method, specify an empty string \\(""\\) as the value of this parameter. The parameter is passed implicitly, with its automatically generated value, to the NetScaler packet engines even when it is not included in the command. Passing the parameter to the packet engines enables the appliance to save the key value to the configuration file and to propagate the key value to the secondary appliance in a high availability setup.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,20 +27,33 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsencryptionparams
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","nsencryptionparams":{      "method":<String_value>,      "keyvalue":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nsencryptionparams":{      "method":<String_value>,      "keyvalue":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nsencryptionparams
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nsencryptionparams
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "nsencryptionparams": [ {      "method":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nsencryptionparams": [ {      "method":<String_value>}]}```
 
 
 

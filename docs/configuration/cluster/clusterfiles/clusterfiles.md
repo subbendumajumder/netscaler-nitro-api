@@ -7,7 +7,7 @@ Configuration for files resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>mode</td><td>&lt;String[]></td><td>Read-write</td><td>The directories and files to be synchronized. The available settings function as follows: Mode Paths all /nsconfig/ssl/ /var/netscaler/ssl/ /var/vpn/bookmark/ /nsconfig/dns/ /nsconfig/htmlinjection/ /netscaler/htmlinjection/ens/ /nsconfig/monitors/ /nsconfig/nstemplates/ /nsconfig/ssh/ /nsconfig/rc.netscaler /nsconfig/resolv.conf /nsconfig/inetd.conf /nsconfig/syslog.conf /nsconfig/snmpd.conf /nsconfig/ntp.conf /nsconfig/httpd.conf /nsconfig/sshd_config /nsconfig/hosts /nsconfig/enckey /var/nslw.bin/etc/krb5.conf /var/nslw.bin/etc/krb5.keytab /var/lib/likewise/db/ /var/download/ /var/wi/tomcat/webapps/ /var/wi/tomcat/conf/Catalina/localhost/ /var/wi/java_home/lib/security/cacerts /var/wi/java_home/jre/lib/security/cacerts /var/netscaler/locdb/ ssl /nsconfig/ssl/ /var/netscaler/ssl/ bookmarks /var/vpn/bookmark/ dns /nsconfig/dns/ htmlinjection /nsconfig/htmlinjection/ imports /var/download/ misc /nsconfig/license/ /nsconfig/rc.conf all_plus_misc Includes *all* files and /nsconfig/license/ and /nsconfig/rc.conf. Default value: all.&lt;br>Possible values = all, bookmarks, ssl, htmlinjection, imports, misc, dns, krb, all_plus_misc, all_minus_misc</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>mode</td><td>&lt;String[]></td><td>Read-write</td><td>The directories and files to be synchronized. The available settings function as follows:&lt;br> Mode Paths&lt;br> all /nsconfig/ssl/&lt;br> /var/netscaler/ssl/&lt;br> /var/vpn/bookmark/&lt;br> /nsconfig/dns/&lt;br> /nsconfig/htmlinjection/&lt;br> /netscaler/htmlinjection/ens/&lt;br> /nsconfig/monitors/&lt;br> /nsconfig/nstemplates/&lt;br> /nsconfig/ssh/&lt;br> /nsconfig/rc.netscaler&lt;br> /nsconfig/resolv.conf&lt;br> /nsconfig/inetd.conf&lt;br> /nsconfig/syslog.conf&lt;br> /nsconfig/snmpd.conf&lt;br> /nsconfig/ntp.conf&lt;br> /nsconfig/httpd.conf&lt;br> /nsconfig/sshd_config&lt;br> /nsconfig/hosts&lt;br> /nsconfig/enckey&lt;br> /var/nslw.bin/etc/krb5.conf&lt;br> /var/nslw.bin/etc/krb5.keytab&lt;br> /var/lib/likewise/db/&lt;br> /var/download/&lt;br> /var/wi/tomcat/webapps/&lt;br> /var/wi/tomcat/conf/Catalina/localhost/&lt;br> /var/wi/java_home/lib/security/cacerts&lt;br> /var/wi/java_home/jre/lib/security/cacerts&lt;br> /var/netscaler/locdb/&lt;br>ssl /nsconfig/ssl/&lt;br> /var/netscaler/ssl/&lt;br>bookmarks /var/vpn/bookmark/&lt;br>dns /nsconfig/dns/&lt;br>htmlinjection /nsconfig/htmlinjection/&lt;br>imports /var/download/&lt;br>misc /nsconfig/license/&lt;br> /nsconfig/rc.conf&lt;br>all_plus_misc Includes *all* files and /nsconfig/license/ and /nsconfig/rc.conf.&lt;br>Default value: all.&lt;br>Possible values = all, bookmarks, ssl, htmlinjection, imports, misc, dns, krb, all_plus_misc, all_minus_misc</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,10 +27,14 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/clusterfiles?action=sync
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"sync"},"sessionid":"##sessionid","clusterfiles":{      "mode":<String[]_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"clusterfiles":{      "mode":<String[]_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 

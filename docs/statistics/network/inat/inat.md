@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/inat
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inat
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/inat?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inat?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get inat resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "inat": [ {      "name":<String_value>,      "nat46udp64rate":<Double_value>,      "nat46totdrop64":<Double_value>,      "nat46totudp46":<Double_value>,      "nat46icmp64rate":<Double_value>,      "inatnat46tcp46":<Double_value>,      "nat46totdrop46":<Double_value>,      "inatnat46tcp64":<Double_value>,      "inatnat46drop46":<Double_value>,      "inatnat46drop64":<Double_value>,      "inatnat46udp46":<Double_value>,      "nat46tottcp64":<Double_value>,      "nat46drop46rate":<Double_value>,      "inatnat46drop46rate":<Double_value>,      "inatnat46tcp64rate":<Double_value>,      "inatnat46icmp64":<Double_value>,      "nat46drop64rate":<Double_value>,      "inatnat46tcp46rate":<Double_value>,      "nat46tottcp46":<Double_value>,      "nat46toticmp46":<Double_value>,      "inatnat46icmp46rate":<Double_value>,      "inatnat46udp64":<Double_value>,      "nat46tcp46rate":<Double_value>,      "inatnat46drop64rate":<Double_value>,      "inatnat46udp64rate":<Double_value>,      "nat46icmp46rate":<Double_value>,      "inatnat46icmp46":<Double_value>,      "inatnat46icmp64rate":<Double_value>,      "nat46tcp64rate":<Double_value>,      "nat46totudp64":<Double_value>,      "nat46udp46rate":<Double_value>,      "nat46toticmp64":<Double_value>,      "inatnat46udp46rate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "inat": [ {      "name":<String_value>,      "nat46udp64rate":<Double_value>,      "nat46totdrop64":<Double_value>,      "nat46totudp46":<Double_value>,      "nat46icmp64rate":<Double_value>,      "inatnat46tcp46":<Double_value>,      "nat46totdrop46":<Double_value>,      "inatnat46tcp64":<Double_value>,      "inatnat46drop46":<Double_value>,      "inatnat46drop64":<Double_value>,      "inatnat46udp46":<Double_value>,      "nat46tottcp64":<Double_value>,      "nat46drop46rate":<Double_value>,      "inatnat46drop46rate":<Double_value>,      "inatnat46tcp64rate":<Double_value>,      "inatnat46icmp64":<Double_value>,      "nat46drop64rate":<Double_value>,      "inatnat46tcp46rate":<Double_value>,      "nat46tottcp46":<Double_value>,      "nat46toticmp46":<Double_value>,      "inatnat46icmp46rate":<Double_value>,      "inatnat46udp64":<Double_value>,      "nat46tcp46rate":<Double_value>,      "inatnat46drop64rate":<Double_value>,      "inatnat46udp64rate":<Double_value>,      "nat46icmp46rate":<Double_value>,      "inatnat46icmp46":<Double_value>,      "inatnat46icmp64rate":<Double_value>,      "nat46tcp64rate":<Double_value>,      "nat46totudp64":<Double_value>,      "nat46udp46rate":<Double_value>,      "nat46toticmp64":<Double_value>,      "inatnat46udp46rate":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "inat": [ {      "n
 
 
 
-URL: http://NS_IP/nitro/v1/stat/inat/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inat/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "inat": [ {      "name":<String_value>,      "nat46udp64rate":<Double_value>,      "nat46totdrop64":<Double_value>,      "nat46totudp46":<Double_value>,      "nat46icmp64rate":<Double_value>,      "inatnat46tcp46":<Double_value>,      "nat46totdrop46":<Double_value>,      "inatnat46tcp64":<Double_value>,      "inatnat46drop46":<Double_value>,      "inatnat46drop64":<Double_value>,      "inatnat46udp46":<Double_value>,      "nat46tottcp64":<Double_value>,      "nat46drop46rate":<Double_value>,      "inatnat46drop46rate":<Double_value>,      "inatnat46tcp64rate":<Double_value>,      "inatnat46icmp64":<Double_value>,      "nat46drop64rate":<Double_value>,      "inatnat46tcp46rate":<Double_value>,      "nat46tottcp46":<Double_value>,      "nat46toticmp46":<Double_value>,      "inatnat46icmp46rate":<Double_value>,      "inatnat46udp64":<Double_value>,      "nat46tcp46rate":<Double_value>,      "inatnat46drop64rate":<Double_value>,      "inatnat46udp64rate":<Double_value>,      "nat46icmp46rate":<Double_value>,      "inatnat46icmp46":<Double_value>,      "inatnat46icmp64rate":<Double_value>,      "nat46tcp64rate":<Double_value>,      "nat46totudp64":<Double_value>,      "nat46udp46rate":<Double_value>,      "nat46toticmp64":<Double_value>,      "inatnat46udp46rate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "inat": [ {      "name":<String_value>,      "nat46udp64rate":<Double_value>,      "nat46totdrop64":<Double_value>,      "nat46totudp46":<Double_value>,      "nat46icmp64rate":<Double_value>,      "inatnat46tcp46":<Double_value>,      "nat46totdrop46":<Double_value>,      "inatnat46tcp64":<Double_value>,      "inatnat46drop46":<Double_value>,      "inatnat46drop64":<Double_value>,      "inatnat46udp46":<Double_value>,      "nat46tottcp64":<Double_value>,      "nat46drop46rate":<Double_value>,      "inatnat46drop46rate":<Double_value>,      "inatnat46tcp64rate":<Double_value>,      "inatnat46icmp64":<Double_value>,      "nat46drop64rate":<Double_value>,      "inatnat46tcp46rate":<Double_value>,      "nat46tottcp46":<Double_value>,      "nat46toticmp46":<Double_value>,      "inatnat46icmp46rate":<Double_value>,      "inatnat46udp64":<Double_value>,      "nat46tcp46rate":<Double_value>,      "inatnat46drop64rate":<Double_value>,      "inatnat46udp64rate":<Double_value>,      "nat46icmp46rate":<Double_value>,      "inatnat46icmp46":<Double_value>,      "inatnat46icmp64rate":<Double_value>,      "nat46tcp64rate":<Double_value>,      "nat46totudp64":<Double_value>,      "nat46udp46rate":<Double_value>,      "nat46toticmp64":<Double_value>,      "inatnat46udp46rate":<Double_value>}]}```
 
 
 

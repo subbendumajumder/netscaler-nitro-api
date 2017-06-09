@@ -27,36 +27,45 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/snmpoid
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/snmpoid?args=      "entitytype":&lt;String_value&gt;,      "name":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?args=entitytype:&lt;String_value&gt;,name:&lt;String_value&gt;
 Use this query-parameter to get snmpoid resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/snmpoid?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of snmpoid resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpoid?view=summary
-Use this query-parameter to get the summary output of snmpoid resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpoid?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?pagesize=#no;pageno=#no
 Use this query-parameter to get the snmpoid resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/snmpoid?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "snmpoid": [ {      "entitytype":<String_value>,      "name":<String_value>,      "Snmpoid":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "snmpoid": [ {entitytype:<String_value>,name:<String_value>      "Snmpoid":<String_value>}]}```
 
 
 
@@ -64,9 +73,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/snmpoid?args=     "entitytype":&lt;String_value&gt;,      "name":&lt;String_value&gt;;count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/snmpoid?args=entitytype:&lt;String_value&gt;,name:&lt;String_value&gt;;count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",snmpoid: [ { "__count": "#no"} ] }
+{ "snmpoid": [ { "__count": "#no"} ] }
 
 

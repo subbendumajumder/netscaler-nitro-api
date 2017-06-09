@@ -3,8 +3,16 @@
 Binding object showing the sslcertkey that can be bound to sslcertchain.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>linkcertkeyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the Linked Certificate.&lt;br>Minimum length = 1</td><tr><tr><td>certkeyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the Certificate.&lt;br>Minimum length = 1</td><tr><tr><td>isca</td><td>&lt;Boolean></td><td>Read-only</td><td>Used to find if certificate is a CA.</td><tr><tr><td>islinked</td><td>&lt;Boolean></td><td>Read-only</td><td>Used to find if certificate is linked.</td><tr><tr><td>addsubject</td><td>&lt;Boolean></td><td>Read-only</td><td>Used to find if certificate is linked.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
+
+
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -14,4 +22,80 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###get
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding/certkeyname_value&lt;String&gt;
+Query-parameters:
+filter
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding/certkeyname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+Use this query-parameter to get the filtered set of sslcertchain_sslcertkey_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
+
+
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding/certkeyname_value&lt;String&gt;?pagesize=#no;pageno=#no
+Use this query-parameter to get the sslcertchain_sslcertkey_binding resources in chunks.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslcertchain_sslcertkey_binding": [ {      "linkcertkeyname":<String_value>,      "certkeyname":<String_value>,      "isca":<Boolean_value>,      "islinked":<Boolean_value>,      "addsubject":<Boolean_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslcertchain_sslcertkey_binding": [ {      "linkcertkeyname":<String_value>,      "certkeyname":<String_value>,      "isca":<Boolean_value>,      "islinked":<Boolean_value>,      "addsubject":<Boolean_value>}]}```
+
+
+
+###count
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcertchain_sslcertkey_binding/certkeyname_value&lt;String&gt;?count=yes
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: 
+{"sslcertchain_sslcertkey_binding": [ { "__count": "#no"} ] }
+
 

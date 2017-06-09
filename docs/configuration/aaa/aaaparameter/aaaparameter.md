@@ -7,7 +7,7 @@ Configuration for AAA parameter resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>enablestaticpagecaching</td><td>&lt;String></td><td>Read-write</td><td>The default state of VPN Static Page caching. If nothing is specified, the default value is set to YES.&lt;br>Default value: YES&lt;br>Possible values = YES, NO</td><tr><tr><td>enableenhancedauthfeedback</td><td>&lt;String></td><td>Read-write</td><td>Enhanced auth feedback provides more information to the end user about the reason for an authentication failure. The default value is set to NO.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>defaultauthtype</td><td>&lt;String></td><td>Read-write</td><td>The default authentication server type.&lt;br>Default value: LOCAL&lt;br>Possible values = LOCAL, LDAP, RADIUS, TACACS, CERT</td><tr><tr><td>maxaaausers</td><td>&lt;Double></td><td>Read-write</td><td>Maximum number of concurrent users allowed to log on to VPN simultaneously.&lt;br>Minimum value = 1</td><tr><tr><td>maxloginattempts</td><td>&lt;Double></td><td>Read-write</td><td>Maximum Number of login Attempts.&lt;br>Minimum value = 1</td><tr><tr><td>failedlogintimeout</td><td>&lt;Double></td><td>Read-write</td><td>Number of minutes an account will be locked if user exceeds maximum permissible attempts.&lt;br>Minimum value = 1</td><tr><tr><td>aaadnatip</td><td>&lt;String></td><td>Read-write</td><td>Source IP address to use for traffic that is sent to the authentication server.</td><tr><tr><td>enablesessionstickiness</td><td>&lt;String></td><td>Read-write</td><td>Enables/Disables stickiness to authentication servers.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>enablestaticpagecaching</td><td>&lt;String></td><td>Read-write</td><td>The default state of VPN Static Page caching. If nothing is specified, the default value is set to YES.&lt;br>Default value: YES&lt;br>Possible values = YES, NO</td><tr><tr><td>enableenhancedauthfeedback</td><td>&lt;String></td><td>Read-write</td><td>Enhanced auth feedback provides more information to the end user about the reason for an authentication failure. The default value is set to NO.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>defaultauthtype</td><td>&lt;String></td><td>Read-write</td><td>The default authentication server type.&lt;br>Default value: LOCAL&lt;br>Possible values = LOCAL, LDAP, RADIUS, TACACS, CERT</td><tr><tr><td>maxaaausers</td><td>&lt;Double></td><td>Read-write</td><td>Maximum number of concurrent users allowed to log on to VPN simultaneously.&lt;br>Minimum value = 1</td><tr><tr><td>maxloginattempts</td><td>&lt;Double></td><td>Read-write</td><td>Maximum Number of login Attempts.&lt;br>Minimum value = 1</td><tr><tr><td>failedlogintimeout</td><td>&lt;Double></td><td>Read-write</td><td>Number of minutes an account will be locked if user exceeds maximum permissible attempts.&lt;br>Minimum value = 1</td><tr><tr><td>aaadnatip</td><td>&lt;String></td><td>Read-write</td><td>Source IP address to use for traffic that is sent to the authentication server.</td><tr><tr><td>enablesessionstickiness</td><td>&lt;String></td><td>Read-write</td><td>Enables/Disables stickiness to authentication servers.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>aaasessionloglevel</td><td>&lt;String></td><td>Read-write</td><td>Audit log level, which specifies the types of events to log for cli executed commands. &lt;br>Available values function as follows: &lt;br>* EMERGENCY - Events that indicate an immediate crisis on the server.&lt;br>* ALERT - Events that might require action.&lt;br>* CRITICAL - Events that indicate an imminent server crisis.&lt;br>* ERROR - Events that indicate some type of error.&lt;br>* WARNING - Events that require action in the near future.&lt;br>* NOTICE - Events that the administrator should know about.&lt;br>* INFORMATIONAL - All but low-level events.&lt;br>* DEBUG - All events, in extreme detail.&lt;br>Default value: DEFAULT_LOGLEVEL_AAA&lt;br>Possible values = EMERGENCY, ALERT, CRITICAL, ERROR, WARNING, NOTICE, INFORMATIONAL, DEBUG</td><tr><tr><td>dynaddr</td><td>&lt;String></td><td>Read-write</td><td>Set by the DHCP client when the IP address was fetched dynamically.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>ftmode</td><td>&lt;String></td><td>Read-write</td><td>First time user mode determines which configuration options are shown by default when logging in to the GUI. This setting is controlled by the GUI.&lt;br>Default value: ON&lt;br>Possible values = ON, HA, OFF</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaaparameter
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","aaaparameter":{      "enablestaticpagecaching":<String_value>,      "enableenhancedauthfeedback":<String_value>,      "defaultauthtype":<String_value>,      "maxaaausers":<Double_value>,      "maxloginattempts":<Double_value>,                  "failedlogintimeout":<Double_value>,      "aaadnatip":<String_value>,      "enablesessionstickiness":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"aaaparameter":{      "enablestaticpagecaching":<String_value>,      "enableenhancedauthfeedback":<String_value>,      "defaultauthtype":<String_value>,      "maxaaausers":<Double_value>,      "maxloginattempts":<Double_value>,      "failedlogintimeout":<Double_value>,      "aaadnatip":<String_value>,      "enablesessionstickiness":<String_value>,      "aaasessionloglevel":<String_value>,      "dynaddr":<String_value>,      "ftmode":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaaparameter?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","aaaparameter":{      "enablestaticpagecaching":true,      "enableenhancedauthfeedback":true,      "defaultauthtype":true,      "maxaaausers":true,      "aaadnatip":true,      "maxloginattempts":true,      "enablesessionstickiness":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"aaaparameter":{      "enablestaticpagecaching":true,      "enableenhancedauthfeedback":true,      "defaultauthtype":true,      "maxaaausers":true,      "aaadnatip":true,      "maxloginattempts":true,      "enablesessionstickiness":true,      "aaasessionloglevel":true,      "dynaddr":true,      "ftmode":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/aaaparameter
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/aaaparameter
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "aaaparameter": [ {      "enablestaticpagecaching":<String_value>,      "enableenhancedauthfeedback":<String_value>,      "defaultauthtype":<String_value>,      "maxaaausers":<Double_value>,      "aaadnatip":<String_value>,      "maxloginattempts":<Double_value>,      "failedlogintimeout":<Double_value>,      "enablesessionstickiness":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "aaaparameter": [ {      "enablestaticpagecaching":<String_value>,      "enableenhancedauthfeedback":<String_value>,      "defaultauthtype":<String_value>,      "maxaaausers":<Double_value>,      "aaadnatip":<String_value>,      "maxloginattempts":<Double_value>,      "failedlogintimeout":<Double_value>,      "enablesessionstickiness":<String_value>,      "aaasessionloglevel":<String_value>,      "dynaddr":<String_value>,      "ftmode":<String_value>}]}```
 
 
 

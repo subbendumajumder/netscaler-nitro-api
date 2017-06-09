@@ -7,7 +7,7 @@ Configuration for FEO parameter resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>cachemaxage</td><td>&lt;Double></td><td>Read-write</td><td>Maximum period (in days), for cache extension.&lt;br>Default value: 30&lt;br>Minimum value = 0&lt;br>Maximum value = 360</td><tr><tr><td>jpegqualitypercent</td><td>&lt;Double></td><td>Read-write</td><td>The percentage value of a JPEG image quality to be reduced. Range: 0 - 100.&lt;br>Default value: 75&lt;br>Minimum value = 0&lt;br>Maximum value = 100</td><tr><tr><td>cssinlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value of the file size (in bytes) for converting external CSS files to inline CSS files.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>jsinlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value of the file size (in bytes), for converting external JavaScript files to inline JavaScript files.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>imginlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Maximum file size of an image (in bytes), for coverting linked images to inline images.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Specify the builtin flags for - set feo param.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>jpegqualitypercent</td><td>&lt;Double></td><td>Read-write</td><td>The percentage value of a JPEG image quality to be reduced. Range: 0 - 100.&lt;br>Default value: 75&lt;br>Minimum value = 0&lt;br>Maximum value = 100</td><tr><tr><td>cssinlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value of the file size (in bytes) for converting external CSS files to inline CSS files.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>jsinlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value of the file size (in bytes), for converting external JavaScript files to inline JavaScript files.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>imginlinethressize</td><td>&lt;Double></td><td>Read-write</td><td>Maximum file size of an image (in bytes), for coverting linked images to inline images.&lt;br>Default value: 1024&lt;br>Minimum value = 1&lt;br>Maximum value = 2048</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Specify the builtin flags for - set feo param.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/feoparameter
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","feoparameter":{      "cachemaxage":<Double_value>,      "jpegqualitypercent":<Double_value>,      "cssinlinethressize":<Double_value>,      "jsinlinethressize":<Double_value>,      "imginlinethressize":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"feoparameter":{      "jpegqualitypercent":<Double_value>,      "cssinlinethressize":<Double_value>,      "jsinlinethressize":<Double_value>,      "imginlinethressize":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/feoparameter?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","feoparameter":{      "cachemaxage":true,      "jpegqualitypercent":true,      "cssinlinethressize":true,      "jsinlinethressize":true,      "imginlinethressize":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"feoparameter":{      "jpegqualitypercent":true,      "cssinlinethressize":true,      "jsinlinethressize":true,      "imginlinethressize":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/feoparameter
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/feoparameter
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "feoparameter": [ {      "cachemaxage":<Double_value>,      "jpegqualitypercent":<Double_value>,      "cssinlinethressize":<Double_value>,      "jsinlinethressize":<Double_value>,      "imginlinethressize":<Double_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "feoparameter": [ {      "jpegqualitypercent":<Double_value>,      "cssinlinethressize":<Double_value>,      "jsinlinethressize":<Double_value>,      "imginlinethressize":<Double_value>,      "builtin":<String[]_value>}]}```
 
 
 

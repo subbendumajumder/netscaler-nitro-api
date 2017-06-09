@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/protocoludp
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocoludp
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/protocoludp?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocoludp?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get protocoludp resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "protocoludp": [ {      "udptxpktsrate":<Double_value>,      "udpcurratethreshold":<Double_value>,      "udptotrxpkts":<Double_value>,      "udptottxpkts":<Double_value>,      "udptotrxbytes":<Double_value>,      "udptxbytesrate":<Double_value>,      "udprxpktsrate":<Double_value>,      "udpbadchecksum":<Double_value>,      "udptottxbytes":<Double_value>,      "udptotunknownsvcpkts":<Double_value>,      "udprxbytesrate":<Double_value>,      "udpcurratethresholdexceeds":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocoludp": [ {      "udptxpktsrate":<Double_value>,      "udpcurratethreshold":<Double_value>,      "udptotrxpkts":<Double_value>,      "udptottxpkts":<Double_value>,      "udptotrxbytes":<Double_value>,      "udptxbytesrate":<Double_value>,      "udprxpktsrate":<Double_value>,      "udpbadchecksum":<Double_value>,      "udptottxbytes":<Double_value>,      "udptotunknownsvcpkts":<Double_value>,      "udprxbytesrate":<Double_value>,      "udpcurratethresholdexceeds":<Double_value>}]}```
 
 
 

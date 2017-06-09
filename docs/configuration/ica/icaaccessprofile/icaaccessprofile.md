@@ -7,7 +7,7 @@ Configuration for ica accessprofile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the ICA accessprofile. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the ICA accessprofile is added. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my ica accessprofile" or my ica accessprofile). Each of the features can be configured as DEFAULT/DISABLED. Here, DISABLED means that the policy settings on the backend XenApp/XenDesktop server are overridden and the NetScaler makes the decision to deny access. Whereas DEFAULT means that the NetScaler allows the request to reach the XenApp/XenDesktop that takes the decision to allow/deny access based on the policy configured on it. For example, if ClientAudioRedirection is enabled on the backend XenApp/XenDesktop server, and the configured profile has ClientAudioRedirection as DISABLED, the NetScaler makes the decision to deny the request irrespective of the configuration on the backend. If the configured profile has ClientAudioRedirection as DEFAULT, then the NetScaler forwards the requests to the backend XenApp/XenDesktop server.It then makes the decision to allow/deny access based on the policy configured on it.&lt;br>Minimum length = 1</td><tr><tr><td>connectclientlptports</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable automatic connection of LPT ports from the client when the user logs on.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientaudioredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable applications hosted on the server to play sounds through a sound device installed on the client computer, also allows or prevents users to record audio input.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>localremotedatasharing</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable file/data sharing via the Reciever for HTML5.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientclipboardredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the clipboard on the client device to be mapped to the clipboard on the server.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientcomportredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable COM port redirection to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientdriveredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disables drive redirection to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientprinterredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable client printers to be mapped to a server when a user logs on to a session.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>multistream</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the multistream feature for the specified users.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientusbdriveredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the redirection of USB devices to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>refcnt</td><td>&lt;Double></td><td>Read-only</td><td>Number of entities using this accessprofile.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that the ICA accessprofile is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default accessprofile.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the ICA accessprofile. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and&lt;br>the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the ICA accessprofile is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my ica accessprofile" or my ica accessprofile).&lt;br>&lt;br>Each of the features can be configured as DEFAULT/DISABLED.&lt;br>Here, DISABLED means that the policy settings on the backend XenApp/XenDesktop server are overridden and the NetScaler makes the decision to deny access. Whereas DEFAULT means that the NetScaler allows the request to reach the XenApp/XenDesktop that takes the decision to allow/deny access based on the policy configured on it. For example, if ClientAudioRedirection is enabled on the backend XenApp/XenDesktop server, and the configured profile has ClientAudioRedirection as DISABLED, the NetScaler makes the decision to deny the request irrespective of the configuration on the backend. If the configured profile has ClientAudioRedirection as DEFAULT, then the NetScaler forwards the requests to the backend XenApp/XenDesktop server.It then makes the decision to allow/deny access based on the policy configured on it.&lt;br>Minimum length = 1</td><tr><tr><td>connectclientlptports</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable automatic connection of LPT ports from the client when the user logs on.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientaudioredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable applications hosted on the server to play sounds through a sound device installed on the client computer, also allows or prevents users to record audio input.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>localremotedatasharing</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable file/data sharing via the Reciever for HTML5.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientclipboardredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the clipboard on the client device to be mapped to the clipboard on the server.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientcomportredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable COM port redirection to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientdriveredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disables drive redirection to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientprinterredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable client printers to be mapped to a server when a user logs on to a session.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>multistream</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the multistream feature for the specified users.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>clientusbdriveredirection</td><td>&lt;String></td><td>Read-write</td><td>Allow Default access/Disable the redirection of USB devices to and from the client.&lt;br>Default value: DISABLED&lt;br>Possible values = DEFAULT, DISABLED</td><tr><tr><td>refcnt</td><td>&lt;Double></td><td>Read-only</td><td>Number of entities using this accessprofile.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that the ICA accessprofile is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>isdefault</td><td>&lt;Boolean></td><td>Read-only</td><td>A value of true is returned if it is a default accessprofile.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":true,      "clientaudioredirection":true,      "localremotedatasharing":true,      "clientclipboardredirection":true,      "clientcomportredirection":true,      "clientdriveredirection":true,      "clientprinterredirection":true,      "multistream":true,      "clientusbdriveredirection":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"icaaccessprofile":{      "name":<String_value>,      "connectclientlptports":true,      "clientaudioredirection":true,      "localremotedatasharing":true,      "clientclipboardredirection":true,      "clientcomportredirection":true,      "clientdriveredirection":true,      "clientprinterredirection":true,      "multistream":true,      "clientusbdriveredirection":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/icaaccessprofile
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/icaaccessprofile?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of icaaccessprofile resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile?view=summary
-Use this query-parameter to get the summary output of icaaccessprofile resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the icaaccessprofile resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "icaaccessprofile": [ {      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,      "refcnt":<Double_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "icaaccessprofile": [ {      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,      "refcnt":<Double_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "icaaccessprofile": [ {      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,      "refcnt":<Double_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "icaaccessprofile": [ {      "name":<String_value>,      "connectclientlptports":<String_value>,      "clientaudioredirection":<String_value>,      "localremotedatasharing":<String_value>,      "clientclipboardredirection":<String_value>,      "clientcomportredirection":<String_value>,      "clientdriveredirection":<String_value>,      "clientprinterredirection":<String_value>,      "multistream":<String_value>,      "clientusbdriveredirection":<String_value>,      "refcnt":<Double_value>,      "builtin":<String[]_value>,      "isdefault":<Boolean_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "icaaccessprofile": 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/icaaccessprofile?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/icaaccessprofile?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",icaaccessprofile: [ { "__count": "#no"} ] }
+{ "icaaccessprofile": [ { "__count": "#no"} ] }
 
 

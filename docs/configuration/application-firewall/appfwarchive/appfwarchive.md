@@ -7,7 +7,7 @@ Configuration for archive resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of tar archive.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>target</td><td>&lt;String></td><td>Read-write</td><td>Path to the file to be exported.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>Indicates the source of the tar archive file as a URL of the form ;lt;protocol;gt;://;lt;host;gt;[:;lt;port;gt;][/;lt;path;gt;] ;lt;protocol;gt; is http or https. ;lt;host;gt; is the DNS name or IP address of the http or https server. ;lt;port;gt; is the port number of the server. If omitted, the default port for http or https will be used. ;lt;path;gt; is the path of the file on the server. Import will fail if an https server requires client certificate authentication. .&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comments associated with this archive.&lt;br>Maximum length = 128</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of tar archive.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>target</td><td>&lt;String></td><td>Read-write</td><td>Path to the file to be exported.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>Indicates the source of the tar archive file as a URL&lt;br>of the form&lt;br>&lt;br> ;lt;protocol;gt;://;lt;host;gt;[:;lt;port;gt;][/;lt;path;gt;]&lt;br>&lt;br>;lt;protocol;gt; is http or https.&lt;br>;lt;host;gt; is the DNS name or IP address of the http or https server.&lt;br>;lt;port;gt; is the port number of the server. If omitted, the&lt;br>default port for http or https will be used.&lt;br>;lt;path;gt; is the path of the file on the server.&lt;br>&lt;br>Import will fail if an https server requires client&lt;br>certificate authentication.&lt;br>&lt;br>&lt;br>.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comments associated with this archive.&lt;br>Maximum length = 128</td><tr><tr><td>response</td><td>&lt;String></td><td>Read-only</td><td>.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,48 +27,62 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwarchive?action=export
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"export"},"sessionid":"##sessionid","appfwarchive":{      "name":<String_value>,      "target":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"appfwarchive":{      "name":<String_value>,      "target":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###Import
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwarchive?action=Import
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","appfwarchive":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"appfwarchive":{      "src":<String_value>,      "name":<String_value>,      "comment":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/appfwarchive/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/appfwarchive/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwarchive/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/appfwarchive
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/appfwarchive
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "appfwarchive": [ {      "response":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "appfwarchive": [ {      "response":<String_value>}]}```
 
 
 

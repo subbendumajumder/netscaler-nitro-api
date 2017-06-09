@@ -7,7 +7,7 @@ Configuration for callhome resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>emailaddress</td><td>&lt;String></td><td>Read-write</td><td>The contact persons E-mail address.&lt;br>Maximum length = 78</td><tr><tr><td>proxymode</td><td>&lt;String></td><td>Read-write</td><td>Deploy the callhome proxy mode.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>Proxy Server IP address.&lt;br>Minimum length = 1</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Proxy Server Port.&lt;br>Minimum value = 1&lt;br>Range 1 - 65535</td><tr><tr><td>sslcardfirstfailure</td><td>&lt;String></td><td>Read-only</td><td>First occurrence SSL card failure.</td><tr><tr><td>sslcardlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence SSL card failure.</td><tr><tr><td>powfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence power supply unit failure.</td><tr><tr><td>powlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence power supply unit failure.</td><tr><tr><td>hddfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence hard disk drive failure.</td><tr><tr><td>hddlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence hard disk drive failure.</td><tr><tr><td>flashfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence compact flash failure.</td><tr><tr><td>flashlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence compact flush failure.</td><tr><tr><td>restartlatestfail</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence warm restart failure.</td><tr><tr><td>callhomestatus</td><td>&lt;String[]></td><td>Read-only</td><td>Callhome feature enabled/disable, register with upload server successful/failed.&lt;br>Possible values = ENABLED, DISABLED, SUCCESSFUL, FAILED</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>emailaddress</td><td>&lt;String></td><td>Read-write</td><td>Email address of the contact administrator.&lt;br>Maximum length = 78</td><tr><tr><td>proxymode</td><td>&lt;String></td><td>Read-write</td><td>Enables or disables the proxy mode. The proxy server can be set by either specifying the IP address of the server or the name of the service representing the proxy server.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>IP address of the proxy server.&lt;br>Minimum length = 1</td><tr><tr><td>proxyauthservice</td><td>&lt;String></td><td>Read-write</td><td>Name of the service that represents the proxy server.&lt;br>Maximum length = 128</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>HTTP port on the Proxy server. This is a mandatory parameter for both IP address and service name based configuration.&lt;br>Minimum value = 1&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>sslcardfirstfailure</td><td>&lt;String></td><td>Read-only</td><td>First occurrence SSL card failure.</td><tr><tr><td>sslcardlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence SSL card failure.</td><tr><tr><td>powfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence power supply unit failure.</td><tr><tr><td>powlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence power supply unit failure.</td><tr><tr><td>hddfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence hard disk drive failure.</td><tr><tr><td>hddlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence hard disk drive failure.</td><tr><tr><td>flashfirstfail</td><td>&lt;String></td><td>Read-only</td><td>First occurrence compact flash failure.</td><tr><tr><td>flashlatestfailure</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence compact flush failure.</td><tr><tr><td>restartlatestfail</td><td>&lt;String></td><td>Read-only</td><td>Latest occurrence warm restart failure.</td><tr><tr><td>callhomestatus</td><td>&lt;String[]></td><td>Read-only</td><td>Callhome feature enabled/disable, register with upload server successful/failed.&lt;br>Possible values = ENABLED, DISABLED, SUCCESSFUL, FAILED</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/callhome
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","callhome":{      "emailaddress":<String_value>,      "proxymode":<String_value>,                  "ipaddress":<String_value>,                  "port":<Integer_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"callhome":{      "emailaddress":<String_value>,      "proxymode":<String_value>,      "ipaddress":<String_value>,      "proxyauthservice":<String_value>,      "port":<Integer_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/callhome?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","callhome":{      "emailaddress":true,      "proxymode":true,      "ipaddress":true,      "port":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"callhome":{      "emailaddress":true,      "proxymode":true,      "ipaddress":true,      "proxyauthservice":true,      "port":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/callhome
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/callhome
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "callhome": [ {      "emailaddress":<String_value>,      "proxymode":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "sslcardfirstfailure":<String_value>,      "sslcardlatestfailure":<String_value>,      "powfirstfail":<String_value>,      "powlatestfailure":<String_value>,      "hddfirstfail":<String_value>,      "hddlatestfailure":<String_value>,      "flashfirstfail":<String_value>,      "flashlatestfailure":<String_value>,      "restartlatestfail":<String_value>,      "callhomestatus":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "callhome": [ {      "emailaddress":<String_value>,      "proxymode":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "proxyauthservice":<String_value>,      "sslcardfirstfailure":<String_value>,      "sslcardlatestfailure":<String_value>,      "powfirstfail":<String_value>,      "powlatestfailure":<String_value>,      "hddfirstfail":<String_value>,      "hddlatestfailure":<String_value>,      "flashfirstfail":<String_value>,      "flashlatestfailure":<String_value>,      "restartlatestfail":<String_value>,      "callhomestatus":<String[]_value>}]}```
 
 
 

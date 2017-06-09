@@ -1,18 +1,18 @@
 #sslservicegroup_binding
 
-Binding object showing the resources that can be bound to sslservicegroup.
+Binding object which returns the resources bound to sslservicegroup.
 
 
 ##Properties 
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service group for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservicegroup_sslcipher_binding</td><td>&lt;sslservicegroup_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslcertkey_binding</td><td>&lt;sslservicegroup_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslciphersuite_binding</td><td>&lt;sslservicegroup_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservicegroup.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service group for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservicegroup_sslcipher_binding</td><td>&lt;sslservicegroup_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_ecccurve_binding</td><td>&lt;sslservicegroup_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslcertkey_binding</td><td>&lt;sslservicegroup_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslciphersuite_binding</td><td>&lt;sslservicegroup_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservicegroup.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslservicegroup_binding/servicegroupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservicegroup_binding/servicegroupname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "sslservicegroup_binding": [ {      "servicegroupname":<String_value>,      "sslservicegroup_sslcipher_binding":<sslservicegroup_sslcipher_binding[]_value>,      "sslservicegroup_sslciphersuite_binding":<sslservicegroup_sslciphersuite_binding[]_value>,      "sslservicegroup_sslcertkey_binding":<sslservicegroup_sslcertkey_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslservicegroup_binding": [ {      "servicegroupname":<String_value>,      "sslservicegroup_sslcipher_binding":<sslservicegroup_sslcipher_binding[]_value>,      "sslservicegroup_sslciphersuite_binding":<sslservicegroup_sslciphersuite_binding[]_value>,      "sslservicegroup_ecccurve_binding":<sslservicegroup_ecccurve_binding[]_value>,      "sslservicegroup_sslcertkey_binding":<sslservicegroup_sslcertkey_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservicegroup_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservicegroup_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslservicegroup_binding": [ {      "servicegroupname":<String_value>,      "sslservicegroup_sslcipher_binding":<sslservicegroup_sslcipher_binding[]_value>,      "sslservicegroup_sslciphersuite_binding":<sslservicegroup_sslciphersuite_binding[]_value>,      "sslservicegroup_ecccurve_binding":<sslservicegroup_ecccurve_binding[]_value>,      "sslservicegroup_sslcertkey_binding":<sslservicegroup_sslcertkey_binding[]_value>}]}```
 
 
 

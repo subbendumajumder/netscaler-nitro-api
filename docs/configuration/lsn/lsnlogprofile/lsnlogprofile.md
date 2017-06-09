@@ -7,7 +7,7 @@ Configuration for LSN logging Profile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>logprofilename</td><td>&lt;String></td><td>Read-write</td><td>The name of the logging Profile.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>logsubscrinfo</td><td>&lt;String></td><td>Read-write</td><td>Subscriber ID information is logged if option is enabled.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>logprofilename</td><td>&lt;String></td><td>Read-write</td><td>The name of the logging Profile.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>logsubscrinfo</td><td>&lt;String></td><td>Read-write</td><td>Subscriber ID information is logged if option is enabled.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>logcompact</td><td>&lt;String></td><td>Read-write</td><td>Logs in Compact Logging format if option is enabled.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,9 +33,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>}}```
+Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>,      "logcompact":<String_value>}}```
 Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
@@ -49,7 +49,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
@@ -62,9 +62,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>}}```
+Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>,      "logcompact":<String_value>}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
@@ -77,9 +77,9 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":true}}```
+Request Payload: ```{"lsnlogprofile":{      "logprofilename":<String_value>,      "logsubscrinfo":true,      "logcompact":true}}```
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error 
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
@@ -88,11 +88,6 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for gene
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnlogprofile
 Query-parameters:
-args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnlogprofile?args=      "logprofilename":&lt;String_value&gt;
-Use this query-parameter to get lsnlogprofile resources based on additional properties.
-
-
 attrs
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnlogprofile?attrs=property-name1,property-name2
 Use this query parameter to specify the resource details that you want to retrieve.
@@ -108,7 +103,7 @@ http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnlogprofile?view=summary
 Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
+pagination
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lsnlogprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the lsnlogprofile resources in chunks.
 
@@ -120,11 +115,11 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnlogprofile": [ {      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>}]}```
+Response Payload: ```{ "lsnlogprofile": [ {      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>,      "logcompact":<String_value>}]}```
 
 
 
@@ -151,11 +146,11 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnlogprofile": [ {      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>}]}```
+Response Payload: ```{ "lsnlogprofile": [ {      "logprofilename":<String_value>,      "logsubscrinfo":<String_value>,      "logcompact":<String_value>}]}```
 
 
 
@@ -170,7 +165,7 @@ Request Headers:
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
 Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx   (for general HTTP errors) or 5xx     (for NetScaler-specific errors). The response payload provides details of the error Response Headers:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
 
 Content-Type:application/json
 

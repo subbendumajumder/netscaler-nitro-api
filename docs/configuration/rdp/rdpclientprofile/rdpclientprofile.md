@@ -7,7 +7,7 @@ Configuration for RDP clientprofile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>The name of the rdp profile.&lt;br>Minimum length = 1</td><tr><tr><td>rdpurloverride</td><td>&lt;String></td><td>Read-write</td><td>This setting determines whether the RDP parameters supplied in the vpn url override those specified in the RDP profile.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectclipboard</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the Clipboard check box on the Local Resources tab under Options in RDC.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectdrives</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections for Drives under More on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectprinters</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selection in the Printers check box on the Local Resources tab under Options in RDC.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>keyboardhook</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selection in the Keyboard drop-down list on the Local Resources tab under Options in RDC.&lt;br>Default value: InFullScreenMode&lt;br>Possible values = OnLocal, OnRemote, InFullScreenMode</td><tr><tr><td>audiocapturemode</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections in the Remote audio area on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>videoplaybackmode</td><td>&lt;String></td><td>Read-write</td><td>This setting determines if Remote Desktop Connection (RDC) will use RDP efficient multimedia streaming for video playback.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>multimonitorsupport</td><td>&lt;String></td><td>Read-write</td><td>Enable/Disable Multiple Monitor Support for Remote Desktop Connection (RDC).&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>rdpcookievalidity</td><td>&lt;Double></td><td>Read-write</td><td>RDP cookie validity period.&lt;br>Default value: 60&lt;br>Minimum value = 60&lt;br>Maximum value = 86400</td><tr><tr><td>addusernameinrdpfile</td><td>&lt;String></td><td>Read-write</td><td>Add username in rdp file.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>rdpfilename</td><td>&lt;String></td><td>Read-write</td><td>RDP file name to be sent to End User.&lt;br>Minimum length = 1</td><tr><tr><td>rdphost</td><td>&lt;String></td><td>Read-write</td><td>Fully-qualified domain name (FQDN) of the RDP Listener.&lt;br>Maximum length = 252</td><tr><tr><td>rdpcustomparams</td><td>&lt;String></td><td>Read-write</td><td>Option for RDP custom parameters settings (if any). Custom params needs to be separated by ;amp;.&lt;br>Default value: 0&lt;br>Minimum length = 1</td><tr><tr><td>psk</td><td>&lt;String></td><td>Read-write</td><td>Pre shared key value.&lt;br>Default value: 0</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>The name of the rdp profile.&lt;br>Minimum length = 1</td><tr><tr><td>rdpurloverride</td><td>&lt;String></td><td>Read-write</td><td>This setting determines whether the RDP parameters supplied in the vpn url override those specified in the RDP profile.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectclipboard</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the Clipboard check box on the Local Resources tab under Options in RDC.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectdrives</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections for Drives under More on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectprinters</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selection in the Printers check box on the Local Resources tab under Options in RDC.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectcomports</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections for comports under More on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>redirectpnpdevices</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections for pnpdevices under More on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>keyboardhook</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selection in the Keyboard drop-down list on the Local Resources tab under Options in RDC.&lt;br>Default value: InFullScreenMode&lt;br>Possible values = OnLocal, OnRemote, InFullScreenMode</td><tr><tr><td>audiocapturemode</td><td>&lt;String></td><td>Read-write</td><td>This setting corresponds to the selections in the Remote audio area on the Local Resources tab under Options in RDC.&lt;br>Default value: DISABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>videoplaybackmode</td><td>&lt;String></td><td>Read-write</td><td>This setting determines if Remote Desktop Connection (RDC) will use RDP efficient multimedia streaming for video playback.&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>multimonitorsupport</td><td>&lt;String></td><td>Read-write</td><td>Enable/Disable Multiple Monitor Support for Remote Desktop Connection (RDC).&lt;br>Default value: ENABLE&lt;br>Possible values = ENABLE, DISABLE</td><tr><tr><td>rdpcookievalidity</td><td>&lt;Double></td><td>Read-write</td><td>RDP cookie validity period.&lt;br>Default value: 60&lt;br>Minimum value = 60&lt;br>Maximum value = 86400</td><tr><tr><td>addusernameinrdpfile</td><td>&lt;String></td><td>Read-write</td><td>Add username in rdp file.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>rdpfilename</td><td>&lt;String></td><td>Read-write</td><td>RDP file name to be sent to End User.&lt;br>Minimum length = 1</td><tr><tr><td>rdphost</td><td>&lt;String></td><td>Read-write</td><td>Fully-qualified domain name (FQDN) of the RDP Listener.&lt;br>Maximum length = 252</td><tr><tr><td>rdplistener</td><td>&lt;String></td><td>Read-write</td><td>Fully-qualified domain name (FQDN) of the RDP Listener with the port in the format FQDN:Port.&lt;br>Maximum length = 258</td><tr><tr><td>rdpcustomparams</td><td>&lt;String></td><td>Read-write</td><td>Option for RDP custom parameters settings (if any). Custom params needs to be separated by ;amp;.&lt;br>Default value: 0&lt;br>Minimum length = 1</td><tr><tr><td>psk</td><td>&lt;String></td><td>Read-write</td><td>Pre shared key value.&lt;br>Default value: 0</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,81 +27,99 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "redirectcomports":<String_value>,      "redirectpnpdevices":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdplistener":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "redirectcomports":<String_value>,      "redirectpnpdevices":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdplistener":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":true,      "redirectclipboard":true,      "redirectdrives":true,      "redirectprinters":true,      "keyboardhook":true,      "audiocapturemode":true,      "videoplaybackmode":true,      "multimonitorsupport":true,      "rdpcookievalidity":true,      "addusernameinrdpfile":true,      "rdpfilename":true,      "rdphost":true,      "rdpcustomparams":true,      "psk":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"rdpclientprofile":{      "name":<String_value>,      "rdpurloverride":true,      "redirectclipboard":true,      "redirectdrives":true,      "redirectprinters":true,      "redirectcomports":true,      "redirectpnpdevices":true,      "keyboardhook":true,      "audiocapturemode":true,      "videoplaybackmode":true,      "multimonitorsupport":true,      "rdpcookievalidity":true,      "addusernameinrdpfile":true,      "rdpfilename":true,      "rdphost":true,      "rdplistener":true,      "rdpcustomparams":true,      "psk":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/rdpclientprofile
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/rdpclientprofile?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of rdpclientprofile resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile?view=summary
-Use this query-parameter to get the summary output of rdpclientprofile resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?pagesize=#no;pageno=#no
 Use this query-parameter to get the rdpclientprofile resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "rdpclientprofile": [ {      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rdpclientprofile": [ {      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "redirectcomports":<String_value>,      "redirectpnpdevices":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdplistener":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -109,9 +127,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "rdpclientprofile": [ {      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "rdpclientprofile": [ {      "name":<String_value>,      "rdpurloverride":<String_value>,      "redirectclipboard":<String_value>,      "redirectdrives":<String_value>,      "redirectprinters":<String_value>,      "redirectcomports":<String_value>,      "redirectpnpdevices":<String_value>,      "keyboardhook":<String_value>,      "audiocapturemode":<String_value>,      "videoplaybackmode":<String_value>,      "multimonitorsupport":<String_value>,      "rdpcookievalidity":<Double_value>,      "addusernameinrdpfile":<String_value>,      "rdpfilename":<String_value>,      "rdphost":<String_value>,      "rdplistener":<String_value>,      "rdpcustomparams":<String_value>,      "psk":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -119,9 +158,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "rdpclientprofile": 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/rdpclientprofile?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/rdpclientprofile?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",rdpclientprofile: [ { "__count": "#no"} ] }
+{ "rdpclientprofile": [ { "__count": "#no"} ] }
 
 

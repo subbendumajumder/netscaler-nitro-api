@@ -1,6 +1,6 @@
 #vpnglobal_binding
 
-Binding object showing the resources that can be bound to vpnglobal.
+Binding object which returns the resources bound to vpnglobal.
 
 
 ##Properties 
@@ -12,7 +12,7 @@ Binding object showing the resources that can be bound to vpnglobal.
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET](#get)
+[GET](#get) | [GET (ALL)](#get-(all))
 
 
 Some options that you can use for each operations:
@@ -27,9 +27,44 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/vpnglobal_binding
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnglobal_binding
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnglobal_binding": [ {      "vpnglobal_vpnintranetapplication_binding":<vpnglobal_vpnintranetapplication_binding[]_value>,      "vpnglobal_authenticationsamlpolicy_binding":<vpnglobal_authenticationsamlpolicy_binding[]_value>,      "vpnglobal_intranetip_binding":<vpnglobal_intranetip_binding[]_value>,      "vpnglobal_authenticationradiuspolicy_binding":<vpnglobal_authenticationradiuspolicy_binding[]_value>,      "vpnglobal_staserver_binding":<vpnglobal_staserver_binding[]_value>,      "vpnglobal_sharefileserver_binding":<vpnglobal_sharefileserver_binding[]_value>,      "vpnglobal_intranetip6_binding":<vpnglobal_intranetip6_binding[]_value>,      "vpnglobal_appcontroller_binding":<vpnglobal_appcontroller_binding[]_value>,      "vpnglobal_authenticationtacacspolicy_binding":<vpnglobal_authenticationtacacspolicy_binding[]_value>,      "vpnglobal_authenticationpolicy_binding":<vpnglobal_authenticationpolicy_binding[]_value>,      "vpnglobal_vpntrafficpolicy_binding":<vpnglobal_vpntrafficpolicy_binding[]_value>,      "vpnglobal_domain_binding":<vpnglobal_domain_binding[]_value>,      "vpnglobal_vpnnexthopserver_binding":<vpnglobal_vpnnexthopserver_binding[]_value>,      "vpnglobal_authenticationldappolicy_binding":<vpnglobal_authenticationldappolicy_binding[]_value>,      "vpnglobal_vpnsessionpolicy_binding":<vpnglobal_vpnsessionpolicy_binding[]_value>,      "vpnglobal_authenticationcertpolicy_binding":<vpnglobal_authenticationcertpolicy_binding[]_value>,      "vpnglobal_authenticationnegotiatepolicy_binding":<vpnglobal_authenticationnegotiatepolicy_binding[]_value>,      "vpnglobal_auditsyslogpolicy_binding":<vpnglobal_auditsyslogpolicy_binding[]_value>,      "vpnglobal_vpneula_binding":<vpnglobal_vpneula_binding[]_value>,      "vpnglobal_vpnurl_binding":<vpnglobal_vpnurl_binding[]_value>,      "vpnglobal_vpnportaltheme_binding":<vpnglobal_vpnportaltheme_binding[]_value>,      "vpnglobal_vpnclientlessaccesspolicy_binding":<vpnglobal_vpnclientlessaccesspolicy_binding[]_value>,      "vpnglobal_authenticationlocalpolicy_binding":<vpnglobal_authenticationlocalpolicy_binding[]_value>,      "vpnglobal_auditnslogpolicy_binding":<vpnglobal_auditnslogpolicy_binding[]_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnglobal_binding": [ {      "vpnglobal_vpnintranetapplication_binding":<vpnglobal_vpnintranetapplication_binding[]_value>,      "vpnglobal_authenticationsamlpolicy_binding":<vpnglobal_authenticationsamlpolicy_binding[]_value>,      "vpnglobal_intranetip_binding":<vpnglobal_intranetip_binding[]_value>,      "vpnglobal_authenticationradiuspolicy_binding":<vpnglobal_authenticationradiuspolicy_binding[]_value>,      "vpnglobal_staserver_binding":<vpnglobal_staserver_binding[]_value>,      "vpnglobal_sharefileserver_binding":<vpnglobal_sharefileserver_binding[]_value>,      "vpnglobal_intranetip6_binding":<vpnglobal_intranetip6_binding[]_value>,      "vpnglobal_appcontroller_binding":<vpnglobal_appcontroller_binding[]_value>,      "vpnglobal_authenticationtacacspolicy_binding":<vpnglobal_authenticationtacacspolicy_binding[]_value>,      "vpnglobal_authenticationpolicy_binding":<vpnglobal_authenticationpolicy_binding[]_value>,      "vpnglobal_vpntrafficpolicy_binding":<vpnglobal_vpntrafficpolicy_binding[]_value>,      "vpnglobal_domain_binding":<vpnglobal_domain_binding[]_value>,      "vpnglobal_vpnnexthopserver_binding":<vpnglobal_vpnnexthopserver_binding[]_value>,      "vpnglobal_authenticationldappolicy_binding":<vpnglobal_authenticationldappolicy_binding[]_value>,      "vpnglobal_vpnsessionpolicy_binding":<vpnglobal_vpnsessionpolicy_binding[]_value>,      "vpnglobal_authenticationcertpolicy_binding":<vpnglobal_authenticationcertpolicy_binding[]_value>,      "vpnglobal_authenticationnegotiatepolicy_binding":<vpnglobal_authenticationnegotiatepolicy_binding[]_value>,      "vpnglobal_auditsyslogpolicy_binding":<vpnglobal_auditsyslogpolicy_binding[]_value>,      "vpnglobal_vpneula_binding":<vpnglobal_vpneula_binding[]_value>,      "vpnglobal_vpnurl_binding":<vpnglobal_vpnurl_binding[]_value>,      "vpnglobal_vpnportaltheme_binding":<vpnglobal_vpnportaltheme_binding[]_value>,      "vpnglobal_vpnclientlessaccesspolicy_binding":<vpnglobal_vpnclientlessaccesspolicy_binding[]_value>,      "vpnglobal_authenticationlocalpolicy_binding":<vpnglobal_authenticationlocalpolicy_binding[]_value>,      "vpnglobal_auditnslogpolicy_binding":<vpnglobal_auditnslogpolicy_binding[]_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnglobal_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnglobal_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "vpnglobal_binding": [ {      "vpnglobal_vpnintranetapplication_binding":<vpnglobal_vpnintranetapplication_binding[]_value>,      "vpnglobal_authenticationsamlpolicy_binding":<vpnglobal_authenticationsamlpolicy_binding[]_value>,      "vpnglobal_intranetip_binding":<vpnglobal_intranetip_binding[]_value>,      "vpnglobal_authenticationradiuspolicy_binding":<vpnglobal_authenticationradiuspolicy_binding[]_value>,      "vpnglobal_staserver_binding":<vpnglobal_staserver_binding[]_value>,      "vpnglobal_sharefileserver_binding":<vpnglobal_sharefileserver_binding[]_value>,      "vpnglobal_intranetip6_binding":<vpnglobal_intranetip6_binding[]_value>,      "vpnglobal_appcontroller_binding":<vpnglobal_appcontroller_binding[]_value>,      "vpnglobal_authenticationtacacspolicy_binding":<vpnglobal_authenticationtacacspolicy_binding[]_value>,      "vpnglobal_authenticationpolicy_binding":<vpnglobal_authenticationpolicy_binding[]_value>,      "vpnglobal_vpntrafficpolicy_binding":<vpnglobal_vpntrafficpolicy_binding[]_value>,      "vpnglobal_domain_binding":<vpnglobal_domain_binding[]_value>,      "vpnglobal_vpnnexthopserver_binding":<vpnglobal_vpnnexthopserver_binding[]_value>,      "vpnglobal_authenticationldappolicy_binding":<vpnglobal_authenticationldappolicy_binding[]_value>,      "vpnglobal_vpnsessionpolicy_binding":<vpnglobal_vpnsessionpolicy_binding[]_value>,      "vpnglobal_authenticationcertpolicy_binding":<vpnglobal_authenticationcertpolicy_binding[]_value>,      "vpnglobal_authenticationnegotiatepolicy_binding":<vpnglobal_authenticationnegotiatepolicy_binding[]_value>,      "vpnglobal_auditsyslogpolicy_binding":<vpnglobal_auditsyslogpolicy_binding[]_value>,      "vpnglobal_vpneula_binding":<vpnglobal_vpneula_binding[]_value>,      "vpnglobal_vpnurl_binding":<vpnglobal_vpnurl_binding[]_value>,      "vpnglobal_vpnportaltheme_binding":<vpnglobal_vpnportaltheme_binding[]_value>,      "vpnglobal_vpnclientlessaccesspolicy_binding":<vpnglobal_vpnclientlessaccesspolicy_binding[]_value>,      "vpnglobal_authenticationlocalpolicy_binding":<vpnglobal_authenticationlocalpolicy_binding[]_value>,      "vpnglobal_auditnslogpolicy_binding":<vpnglobal_auditnslogpolicy_binding[]_value>}]}```
 
 
 

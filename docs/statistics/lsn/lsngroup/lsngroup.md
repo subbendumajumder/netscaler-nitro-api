@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/lsngroup
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/lsngroup
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/lsngroup?args=      groupname:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/lsngroup?args=groupname:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get lsngroup resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "lsngroup": [ {      "groupname":<String_value>,      "lsngrptcptranslbytesrate":<Double_value>,      "lsngrptottranslpkts":<Double_value>,      "lsngrptoticmptranslpkts":<Double_value>,      "lsngrpcurtcpsessions":<Double_value>,      "lsngrpicmptranslbytesrate":<Double_value>,      "lsngrptotudptranslpkts":<Double_value>,      "lsngrptottcpdrppkts":<Double_value>,      "lsngrptranslbytesrate":<Double_value>,      "lsngrptotudptranslbytes":<Double_value>,      "lsngrptoticmptranslbytes":<Double_value>,      "lsngrpcursubscribersrate":<Double_value>,      "lsngrptottranslbytes":<Double_value>,      "lsngrptoticmpdrppkts":<Double_value>,      "lsngrptcptranslpktsrate":<Double_value>,      "lsngrpudptranslpktsrate":<Double_value>,      "lsngrpcursubscribers":<Double_value>,      "lsngrpudptranslbytesrate":<Double_value>,      "lsngrpcuricmpsessionsrate":<Double_value>,      "lsngrpcurudpsessions":<Double_value>,      "lsngrptottcptranslpkts":<Double_value>,      "lsngrptotudpdrppkts":<Double_value>,      "lsngrpicmptranslpktsrate":<Double_value>,      "lsngrpcuricmpsessions":<Double_value>,      "lsngrpcurtcpsessionsrate":<Double_value>,      "lsngrpcurudpsessionsrate":<Double_value>,      "lsngrptranslpktsrate":<Double_value>,      "lsngrptottcptranslbytes":<Double_value>,      "lsngrpicmpdrppktsrate":<Double_value>,      "lsngrpcursessionsrate":<Double_value>,      "lsngrpudpdrppktsrate":<Double_value>,      "lsngrptcpdrppktsrate":<Double_value>,      "lsngrpcursessions":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsngroup": [ {      "groupname":<String_value>,      "lsngrptcptranslbytesrate":<Double_value>,      "lsngrptottranslpkts":<Double_value>,      "lsngrptoticmptranslpkts":<Double_value>,      "lsngrpcurtcpsessions":<Double_value>,      "lsngrpicmptranslbytesrate":<Double_value>,      "lsngrptotudptranslpkts":<Double_value>,      "lsngrptottcpdrppkts":<Double_value>,      "lsngrptranslbytesrate":<Double_value>,      "lsngrptotudptranslbytes":<Double_value>,      "lsngrptoticmptranslbytes":<Double_value>,      "lsngrpcursubscribersrate":<Double_value>,      "lsngrptottranslbytes":<Double_value>,      "lsngrptoticmpdrppkts":<Double_value>,      "lsngrptcptranslpktsrate":<Double_value>,      "lsngrpudptranslpktsrate":<Double_value>,      "lsngrpcursubscribers":<Double_value>,      "lsngrpudptranslbytesrate":<Double_value>,      "lsngrpcuricmpsessionsrate":<Double_value>,      "lsngrpcurudpsessions":<Double_value>,      "lsngrptottcptranslpkts":<Double_value>,      "lsngrptotudpdrppkts":<Double_value>,      "lsngrpicmptranslpktsrate":<Double_value>,      "lsngrpcuricmpsessions":<Double_value>,      "lsngrpcurtcpsessionsrate":<Double_value>,      "lsngrpcurudpsessionsrate":<Double_value>,      "lsngrptranslpktsrate":<Double_value>,      "lsngrptottcptranslbytes":<Double_value>,      "lsngrpicmpdrppktsrate":<Double_value>,      "lsngrpcursessionsrate":<Double_value>,      "lsngrpudpdrppktsrate":<Double_value>,      "lsngrptcpdrppktsrate":<Double_value>,      "lsngrpcursessions":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "lsngroup": [ {    
 
 
 
-URL: http://NS_IP/nitro/v1/stat/lsngroup/groupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/lsngroup/groupname_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "lsngroup": [ {      "groupname":<String_value>,      "lsngrptcptranslbytesrate":<Double_value>,      "lsngrptottranslpkts":<Double_value>,      "lsngrptoticmptranslpkts":<Double_value>,      "lsngrpcurtcpsessions":<Double_value>,      "lsngrpicmptranslbytesrate":<Double_value>,      "lsngrptotudptranslpkts":<Double_value>,      "lsngrptottcpdrppkts":<Double_value>,      "lsngrptranslbytesrate":<Double_value>,      "lsngrptotudptranslbytes":<Double_value>,      "lsngrptoticmptranslbytes":<Double_value>,      "lsngrpcursubscribersrate":<Double_value>,      "lsngrptottranslbytes":<Double_value>,      "lsngrptoticmpdrppkts":<Double_value>,      "lsngrptcptranslpktsrate":<Double_value>,      "lsngrpudptranslpktsrate":<Double_value>,      "lsngrpcursubscribers":<Double_value>,      "lsngrpudptranslbytesrate":<Double_value>,      "lsngrpcuricmpsessionsrate":<Double_value>,      "lsngrpcurudpsessions":<Double_value>,      "lsngrptottcptranslpkts":<Double_value>,      "lsngrptotudpdrppkts":<Double_value>,      "lsngrpicmptranslpktsrate":<Double_value>,      "lsngrpcuricmpsessions":<Double_value>,      "lsngrpcurtcpsessionsrate":<Double_value>,      "lsngrpcurudpsessionsrate":<Double_value>,      "lsngrptranslpktsrate":<Double_value>,      "lsngrptottcptranslbytes":<Double_value>,      "lsngrpicmpdrppktsrate":<Double_value>,      "lsngrpcursessionsrate":<Double_value>,      "lsngrpudpdrppktsrate":<Double_value>,      "lsngrptcpdrppktsrate":<Double_value>,      "lsngrpcursessions":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsngroup": [ {      "groupname":<String_value>,      "lsngrptcptranslbytesrate":<Double_value>,      "lsngrptottranslpkts":<Double_value>,      "lsngrptoticmptranslpkts":<Double_value>,      "lsngrpcurtcpsessions":<Double_value>,      "lsngrpicmptranslbytesrate":<Double_value>,      "lsngrptotudptranslpkts":<Double_value>,      "lsngrptottcpdrppkts":<Double_value>,      "lsngrptranslbytesrate":<Double_value>,      "lsngrptotudptranslbytes":<Double_value>,      "lsngrptoticmptranslbytes":<Double_value>,      "lsngrpcursubscribersrate":<Double_value>,      "lsngrptottranslbytes":<Double_value>,      "lsngrptoticmpdrppkts":<Double_value>,      "lsngrptcptranslpktsrate":<Double_value>,      "lsngrpudptranslpktsrate":<Double_value>,      "lsngrpcursubscribers":<Double_value>,      "lsngrpudptranslbytesrate":<Double_value>,      "lsngrpcuricmpsessionsrate":<Double_value>,      "lsngrpcurudpsessions":<Double_value>,      "lsngrptottcptranslpkts":<Double_value>,      "lsngrptotudpdrppkts":<Double_value>,      "lsngrpicmptranslpktsrate":<Double_value>,      "lsngrpcuricmpsessions":<Double_value>,      "lsngrpcurtcpsessionsrate":<Double_value>,      "lsngrpcurudpsessionsrate":<Double_value>,      "lsngrptranslpktsrate":<Double_value>,      "lsngrptottcptranslbytes":<Double_value>,      "lsngrpicmpdrppktsrate":<Double_value>,      "lsngrpcursessionsrate":<Double_value>,      "lsngrpudpdrppktsrate":<Double_value>,      "lsngrptcpdrppktsrate":<Double_value>,      "lsngrpcursessions":<Double_value>}]}```
 
 
 

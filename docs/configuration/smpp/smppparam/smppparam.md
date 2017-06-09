@@ -7,7 +7,7 @@ Configuration for SMPP configuration parameters resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientmode</td><td>&lt;String></td><td>Read-write</td><td>Mode in which the client binds to the ADC. Applicable settings function as follows: * TRANSCEIVER - Client can send and receive messages to and from the message center. * TRANSMITTERONLY - Client can only send messages. * RECEIVERONLY - Client can only receive messages.&lt;br>Default value: TRANSCEIVER&lt;br>Possible values = TRANSCEIVER, TRANSMITTERONLY, RECEIVERONLY</td><tr><tr><td>msgqueue</td><td>&lt;String></td><td>Read-write</td><td>Queue SMPP messages if a client that is capable of receiving the destination address messages is not available.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>msgqueuesize</td><td>&lt;Double></td><td>Read-write</td><td>Maximum number of SMPP messages that can be queued. After the limit is reached, the NetScaler ADC sends a deliver_sm_resp PDU, with an appropriate error message, to the message center.&lt;br>Default value: 10000</td><tr><tr><td>addrton</td><td>&lt;Double></td><td>Read-write</td><td>Type of Number, such as an international number or a national number, used in the ESME address sent in the bind request.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 256</td><tr><tr><td>addrnpi</td><td>&lt;Double></td><td>Read-write</td><td>Numbering Plan Indicator, such as landline, data, or WAP client, used in the ESME address sent in the bind request.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 256</td><tr><tr><td>addrrange</td><td>&lt;String></td><td>Read-write</td><td>Set of SME addresses, sent in the bind request, serviced by the ESME.&lt;br>Default value: "\\\\d*"</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientmode</td><td>&lt;String></td><td>Read-write</td><td>Mode in which the client binds to the ADC. Applicable settings function as follows:&lt;br>* TRANSCEIVER - Client can send and receive messages to and from the message center.&lt;br>* TRANSMITTERONLY - Client can only send messages.&lt;br>* RECEIVERONLY - Client can only receive messages.&lt;br>Default value: TRANSCEIVER&lt;br>Possible values = TRANSCEIVER, TRANSMITTERONLY, RECEIVERONLY</td><tr><tr><td>msgqueue</td><td>&lt;String></td><td>Read-write</td><td>Queue SMPP messages if a client that is capable of receiving the destination address messages is not available.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>msgqueuesize</td><td>&lt;Double></td><td>Read-write</td><td>Maximum number of SMPP messages that can be queued. After the limit is reached, the NetScaler ADC sends a deliver_sm_resp PDU, with an appropriate error message, to the message center.&lt;br>Default value: 10000</td><tr><tr><td>addrton</td><td>&lt;Double></td><td>Read-write</td><td>Type of Number, such as an international number or a national number, used in the ESME address sent in the bind request.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 256</td><tr><tr><td>addrnpi</td><td>&lt;Double></td><td>Read-write</td><td>Numbering Plan Indicator, such as landline, data, or WAP client, used in the ESME address sent in the bind request.&lt;br>Default value: 0&lt;br>Minimum value = 0&lt;br>Maximum value = 256</td><tr><tr><td>addrrange</td><td>&lt;String></td><td>Read-write</td><td>Set of SME addresses, sent in the bind request, serviced by the ESME.&lt;br>Default value: "\\\\d*"</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/smppparam
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","smppparam":{      "clientmode":<String_value>,      "msgqueue":<String_value>,      "msgqueuesize":<Double_value>,      "addrton":<Double_value>,      "addrnpi":<Double_value>,      "addrrange":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"smppparam":{      "clientmode":<String_value>,      "msgqueue":<String_value>,      "msgqueuesize":<Double_value>,      "addrton":<Double_value>,      "addrnpi":<Double_value>,      "addrrange":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/smppparam?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","smppparam":{      "clientmode":true,      "msgqueue":true,      "msgqueuesize":true,      "addrton":true,      "addrnpi":true,      "addrrange":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"smppparam":{      "clientmode":true,      "msgqueue":true,      "msgqueuesize":true,      "addrton":true,      "addrnpi":true,      "addrrange":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/smppparam
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/smppparam
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "smppparam": [ {      "clientmode":<String_value>,      "msgqueue":<String_value>,      "msgqueuesize":<Double_value>,      "addrton":<Double_value>,      "addrnpi":<Double_value>,      "addrrange":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "smppparam": [ {      "clientmode":<String_value>,      "msgqueue":<String_value>,      "msgqueuesize":<Double_value>,      "addrton":<Double_value>,      "addrnpi":<Double_value>,      "addrrange":<String_value>}]}```
 
 
 

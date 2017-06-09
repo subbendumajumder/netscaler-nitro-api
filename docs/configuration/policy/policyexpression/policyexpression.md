@@ -27,86 +27,104 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","policyexpression":{      "name":<String_value>,      "value":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "clientsecuritymessage":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"policyexpression":{      "name":<String_value>,      "value":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "clientsecuritymessage":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###update
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","policyexpression":{      "name":<String_value>,      "value":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "clientsecuritymessage":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"policyexpression":{      "name":<String_value>,      "value":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "clientsecuritymessage":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","policyexpression":{      "name":<String_value>,      "description":true,      "comment":true,      "clientsecuritymessage":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"policyexpression":{      "name":<String_value>,      "description":true,      "comment":true,      "clientsecuritymessage":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/policyexpression
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/config/policyexpression?args=      "name":&lt;String_value&gt;,      "type":&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?args=name:&lt;String_value&gt;,type:&lt;String_value&gt;
 Use this query-parameter to get policyexpression resources based on additional properties.
 
 
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/policyexpression?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of policyexpression resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression?view=summary
-Use this query-parameter to get the summary output of policyexpression resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?pagesize=#no;pageno=#no
 Use this query-parameter to get the policyexpression resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "policyexpression": [ {      "name":<String_value>,      "type":<String_value>,      "value":<String_value>,      "hits":<Double_value>,      "pihits":<Double_value>,      "type1":<String_value>,      "clientsecuritymessage":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "policyexpression": [ {name:<String_value>,type:<String_value>      "value":<String_value>,      "hits":<Double_value>,      "pihits":<Double_value>,      "type1":<String_value>,      "clientsecuritymessage":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -114,9 +132,30 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;
+Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
+view
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression/name_value&lt;String&gt;?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
+
+
+
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "policyexpression": [ {      "name":<String_value>,      "type":<String_value>,      "value":<String_value>,      "hits":<Double_value>,      "pihits":<Double_value>,      "type1":<String_value>,      "clientsecuritymessage":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "policyexpression": [ {name:<String_value>,type:<String_value>      "value":<String_value>,      "hits":<Double_value>,      "pihits":<Double_value>,      "type1":<String_value>,      "clientsecuritymessage":<String_value>,      "description":<String_value>,      "comment":<String_value>,      "isdefault":<Boolean_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -124,9 +163,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "policyexpression": 
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/policyexpression?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/policyexpression?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",policyexpression: [ { "__count": "#no"} ] }
+{ "policyexpression": [ { "__count": "#no"} ] }
 
 

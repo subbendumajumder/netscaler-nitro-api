@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/lsn
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/lsn
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/lsn?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/lsn?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get lsn resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "lsn": [ {      "lsncursubscribersrate":<Double_value>,      "lsntotudptxbytes":<Double_value>,      "lsncuricmpsessionsrate":<Double_value>,      "lsncursessions":<Double_value>,      "lsntottcptxbytes":<Double_value>,      "lsnudptxbytesrate":<Double_value>,      "lsntotudpdrppkts":<Double_value>,      "lsntottcpdrppkts":<Double_value>,      "lsntoticmptxpkts":<Double_value>,      "lsntcptxbytesrate":<Double_value>,      "lsnudprxbytesrate":<Double_value>,      "lsntcpdrppktsrate":<Double_value>,      "lsntotudprxbytes":<Double_value>,      "lsnicmpdrppktsrate":<Double_value>,      "lsntottcprxbytes":<Double_value>,      "lsntoticmptxbytes":<Double_value>,      "lsntoticmprxpkts":<Double_value>,      "lsnicmptxpktsrate":<Double_value>,      "lsnicmprxbytesrate":<Double_value>,      "lsntoticmpdrppkts":<Double_value>,      "lsntcprxpktsrate":<Double_value>,      "lsntottcptxpkts":<Double_value>,      "lsncurtcpsessionsrate":<Double_value>,      "lsncursubscribers":<Double_value>,      "lsncurudpsessionsrate":<Double_value>,      "lsnudptxpktsrate":<Double_value>,      "lsntottcprxpkts":<Double_value>,      "lsnicmptxbytesrate":<Double_value>,      "lsntotudprxpkts":<Double_value>,      "lsncursessionsrate":<Double_value>,      "lsntcptxpktsrate":<Double_value>,      "lsnudprxpktsrate":<Double_value>,      "lsntotudptxpkts":<Double_value>,      "lsncurudpsessions":<Double_value>,      "lsnudpdrppktsrate":<Double_value>,      "lsntoticmprxbytes":<Double_value>,      "lsncuricmpsessions":<Double_value>,      "lsncurtcpsessions":<Double_value>,      "lsntcprxbytesrate":<Double_value>,      "lsnicmprxpktsrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "lsn": [ {      "lsncursubscribersrate":<Double_value>,      "lsntotudptxbytes":<Double_value>,      "lsncuricmpsessionsrate":<Double_value>,      "lsncursessions":<Double_value>,      "lsntottcptxbytes":<Double_value>,      "lsnudptxbytesrate":<Double_value>,      "lsntotudpdrppkts":<Double_value>,      "lsntottcpdrppkts":<Double_value>,      "lsntoticmptxpkts":<Double_value>,      "lsntcptxbytesrate":<Double_value>,      "lsnudprxbytesrate":<Double_value>,      "lsntcpdrppktsrate":<Double_value>,      "lsntotudprxbytes":<Double_value>,      "lsnicmpdrppktsrate":<Double_value>,      "lsntottcprxbytes":<Double_value>,      "lsntoticmptxbytes":<Double_value>,      "lsntoticmprxpkts":<Double_value>,      "lsnicmptxpktsrate":<Double_value>,      "lsnicmprxbytesrate":<Double_value>,      "lsntoticmpdrppkts":<Double_value>,      "lsntcprxpktsrate":<Double_value>,      "lsntottcptxpkts":<Double_value>,      "lsncurtcpsessionsrate":<Double_value>,      "lsncursubscribers":<Double_value>,      "lsncurudpsessionsrate":<Double_value>,      "lsnudptxpktsrate":<Double_value>,      "lsntottcprxpkts":<Double_value>,      "lsnicmptxbytesrate":<Double_value>,      "lsntotudprxpkts":<Double_value>,      "lsncursessionsrate":<Double_value>,      "lsntcptxpktsrate":<Double_value>,      "lsnudprxpktsrate":<Double_value>,      "lsntotudptxpkts":<Double_value>,      "lsncurudpsessions":<Double_value>,      "lsnudpdrppktsrate":<Double_value>,      "lsntoticmprxbytes":<Double_value>,      "lsncuricmpsessions":<Double_value>,      "lsncurtcpsessions":<Double_value>,      "lsntcprxbytesrate":<Double_value>,      "lsnicmprxpktsrate":<Double_value>}]}```
 
 
 

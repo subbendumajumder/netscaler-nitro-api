@@ -7,7 +7,7 @@ Configuration for nd6 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>neighbor</td><td>&lt;String></td><td>Read-write</td><td>Link-local IPv6 address of the adjacent network device to add to the ND6 table.</td><tr><tr><td>mac</td><td>&lt;String></td><td>Read-write</td><td>MAC address of the adjacent network device.</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interface through which the adjacent network device is available, specified in slot/port notation (for example, 1/3). Use spaces to separate multiple entries.</td><tr><tr><td>vlan</td><td>&lt;Integer></td><td>Read-write</td><td>Integer value that uniquely identifies the VLAN on which the adjacent network device exists.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>vxlan</td><td>&lt;Double></td><td>Read-write</td><td>ID of the VXLAN on which the IPv6 address of this ND6 entry is reachable.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>vtep</td><td>&lt;String></td><td>Read-write</td><td>IP address of the VXLAN tunnel endpoint (VTEP) through which the IPv6 address of this ND6 entry is reachable.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-only</td><td>ND6 state.&lt;br>Default value: REACHABLE&lt;br>Possible values = INCOMPLETE, REACHABLE, STALE, DELAY, PROBE</td><tr><tr><td>timeout</td><td>&lt;Double></td><td>Read-only</td><td>Time elapsed.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>flag for static/permanent entry.</td><tr><tr><td>channel</td><td>&lt;Double></td><td>Read-only</td><td>The tunnel that is bound to a netbridge.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>neighbor</td><td>&lt;String></td><td>Read-write</td><td>Link-local IPv6 address of the adjacent network device to add to the ND6 table.</td><tr><tr><td>mac</td><td>&lt;String></td><td>Read-write</td><td>MAC address of the adjacent network device.</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interface through which the adjacent network device is available, specified in slot/port notation (for example, 1/3). Use spaces to separate multiple entries.</td><tr><tr><td>vlan</td><td>&lt;Integer></td><td>Read-write</td><td>Integer value that uniquely identifies the VLAN on which the adjacent network device exists.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>vxlan</td><td>&lt;Double></td><td>Read-write</td><td>ID of the VXLAN on which the IPv6 address of this ND6 entry is reachable.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>vtep</td><td>&lt;String></td><td>Read-write</td><td>IP address of the VXLAN tunnel endpoint (VTEP) through which the IPv6 address of this ND6 entry is reachable.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-only</td><td>ND6 state.&lt;br>Default value: REACHABLE&lt;br>Possible values = INCOMPLETE, REACHABLE, STALE, DELAY, PROBE</td><tr><tr><td>timeout</td><td>&lt;Double></td><td>Read-only</td><td>Time elapsed.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>flag for static/permanent entry.</td><tr><tr><td>channel</td><td>&lt;Double></td><td>Read-only</td><td>The tunnel that is bound to a netbridge.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,70 +27,89 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","nd6":{      "neighbor":<String_value>,      "mac":<String_value>,      "ifnum":<String_value>,      "vlan":<Integer_value>,      "vxlan":<Double_value>,                  "vtep":<String_value>,      "td":<Double_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nd6":{      "neighbor":<String_value>,      "mac":<String_value>,      "ifnum":<String_value>,      "vlan":<Integer_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "td":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###clear
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?action=clear
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"clear"},"sessionid":"##sessionid","nd6":{}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nd6":{}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nd6/neighbor_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/nd6/neighbor_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6/neighbor_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/nd6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6
 Query-parameters:
+args
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?args=neighbor:&lt;String_value&gt;,td:&lt;Double_value&gt;,nodeid:&lt;Double_value&gt;
+Use this query-parameter to get nd6 resources based on additional properties.
+
+
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/nd6?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of nd6 resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/nd6?view=summary
-Use this query-parameter to get the summary output of nd6 resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/nd6?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?pagesize=#no;pageno=#no
 Use this query-parameter to get the nd6 resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/nd6?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "nd6": [ {      "neighbor":<String_value>,                  "td":<Double_value>,      "mac":<String_value>,      "state":<String_value>,      "timeout":<Double_value>,      "ifnum":<String_value>,      "vlan":<Integer_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "flags":<Double_value>,      "channel":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "nd6": [ {neighbor:<String_value>,td:<Double_value>,nodeid:<Double_value>      "mac":<String_value>,      "state":<String_value>,      "timeout":<Double_value>,      "ifnum":<String_value>,      "vlan":<Integer_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "flags":<Double_value>,      "channel":<Double_value>}]}```
 
 
 
@@ -98,9 +117,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/nd6?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nd6?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",nd6: [ { "__count": "#no"} ] }
+{ "nd6": [ { "__count": "#no"} ] }
 
 

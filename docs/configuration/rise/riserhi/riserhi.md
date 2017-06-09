@@ -27,31 +27,40 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/riserhi
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi
 Query-parameters:
+attrs
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi?attrs=property-name1,property-name2
+Use this query parameter to specify the resource details that you want to retrieve.
+
+
 filter
-http://&lt;NSIP&gt;/nitro/v1/config/riserhi?filter=property-name1:property-val1,property-name2:property-val2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi?filter=property-name1:property-val1,property-name2:property-val2
 Use this query-parameter to get the filtered set of riserhi resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 view
-http://&lt;NS_IP&gt;/nitro/v1/config/riserhi?view=summary
-Use this query-parameter to get the summary output of riserhi resources configured on NetScaler.
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi?view=summary
+Note: By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/riserhi?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi?pagesize=#no;pageno=#no
 Use this query-parameter to get the riserhi resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/riserhi?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "riserhi": [ {      "ipaddress":<String_value>,      "prefixlen":<Double_value>,      "hostrtgw":<String_value>,      "nexthopvlan":<Double_value>,      "weight":<Double_value>,      "vserverrhilevel":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "riserhi": [ {      "ipaddress":<String_value>,      "prefixlen":<Double_value>,      "hostrtgw":<String_value>,      "nexthopvlan":<Double_value>,      "weight":<Double_value>,      "vserverrhilevel":<String_value>}]}```
 
 
 
@@ -59,9 +68,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/riserhi?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/riserhi?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",riserhi: [ { "__count": "#no"} ] }
+{ "riserhi": [ { "__count": "#no"} ] }
 
 

@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/protocolicmp
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolicmp
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/protocolicmp?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/protocolicmp?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get protocolicmp resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "protocolicmp": [ {      "icmprxbytesrate":<Double_value>,      "icmptotpktsdropped":<Double_value>,      "icmptotrxechoreply":<Double_value>,      "icmptotthresholdexceeds":<Double_value>,      "icmptotbadpmtuipchecksum":<Double_value>,      "icmprxechoreplyrate":<Double_value>,      "icmptxpktsrate":<Double_value>,      "icmptotbadchecksum":<Double_value>,      "icmptotnonfirstipfrag":<Double_value>,      "icmptotinvalidbodylen":<Double_value>,      "icmptottxechoreply":<Double_value>,      "icmptotpmtunolink":<Double_value>,      "icmptotinvalidprotocol":<Double_value>,      "icmptottxpkts":<Double_value>,      "icmptotinvalidnextmtuval":<Double_value>,      "icmptotportunreachablerx":<Double_value>,      "icmptotneedfragrx":<Double_value>,      "icmptotrxecho":<Double_value>,      "icmptotdstiplookup":<Double_value>,      "icmprxechorate":<Double_value>,      "icmptotbignextmtu":<Double_value>,      "icmptxechoreplyrate":<Double_value>,      "icmptotpmtudiscoverydisabled":<Double_value>,      "icmprxpktsrate":<Double_value>,      "icmptotnoudpconn":<Double_value>,      "icmptottxbytes":<Double_value>,      "icmptotrxbytes":<Double_value>,      "icmptotrxpkts":<Double_value>,      "icmptotportunreachabletx":<Double_value>,      "icmptotnotcpconn":<Double_value>,      "icmptotinvalidtcpseqno":<Double_value>,      "icmpcurratethreshold":<Double_value>,      "icmptxbytesrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "protocolicmp": [ {      "icmprxbytesrate":<Double_value>,      "icmptotpktsdropped":<Double_value>,      "icmptotrxechoreply":<Double_value>,      "icmptotthresholdexceeds":<Double_value>,      "icmptotbadpmtuipchecksum":<Double_value>,      "icmprxechoreplyrate":<Double_value>,      "icmptxpktsrate":<Double_value>,      "icmptotbadchecksum":<Double_value>,      "icmptotnonfirstipfrag":<Double_value>,      "icmptotinvalidbodylen":<Double_value>,      "icmptottxechoreply":<Double_value>,      "icmptotpmtunolink":<Double_value>,      "icmptotinvalidprotocol":<Double_value>,      "icmptottxpkts":<Double_value>,      "icmptotinvalidnextmtuval":<Double_value>,      "icmptotportunreachablerx":<Double_value>,      "icmptotneedfragrx":<Double_value>,      "icmptotrxecho":<Double_value>,      "icmptotdstiplookup":<Double_value>,      "icmprxechorate":<Double_value>,      "icmptotbignextmtu":<Double_value>,      "icmptxechoreplyrate":<Double_value>,      "icmptotpmtudiscoverydisabled":<Double_value>,      "icmprxpktsrate":<Double_value>,      "icmptotnoudpconn":<Double_value>,      "icmptottxbytes":<Double_value>,      "icmptotrxbytes":<Double_value>,      "icmptotrxpkts":<Double_value>,      "icmptotportunreachabletx":<Double_value>,      "icmptotnotcpconn":<Double_value>,      "icmptotinvalidtcpseqno":<Double_value>,      "icmpcurratethreshold":<Double_value>,      "icmptxbytesrate":<Double_value>}]}```
 
 
 

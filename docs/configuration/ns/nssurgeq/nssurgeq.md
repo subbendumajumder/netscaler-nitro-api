@@ -7,7 +7,7 @@ Configuration for surge queue resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of a virtual server, service or service group for which the SurgeQ must be flushed.</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-write</td><td>Name of a service group member. This argument is needed when you want to flush the SurgeQ of a service group.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>port on which server is bound to the entity(Servicegroup).&lt;br>Range 1 - 65535</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of a virtual server, service or service group for which the SurgeQ must be flushed.</td><tr><tr><td>servername</td><td>&lt;String></td><td>Read-write</td><td>Name of a service group member. This argument is needed when you want to flush the SurgeQ of a service group.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>port on which server is bound to the entity(Servicegroup).&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -27,10 +27,14 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/nssurgeq?action=flush
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"flush"},"sessionid":"##sessionid","nssurgeq":{      "name":<String_value>,      "servername":<String_value>,                  "port":<Integer_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"nssurgeq":{      "name":<String_value>,      "servername":<String_value>,      "port":<Integer_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 

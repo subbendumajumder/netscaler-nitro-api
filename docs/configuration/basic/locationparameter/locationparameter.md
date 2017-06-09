@@ -27,31 +27,48 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/locationparameter
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","locationparameter":{      "context":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"locationparameter":{      "context":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###unset
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/locationparameter?action=unset
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","locationparameter":{      "context":true,      "q1label":true,      "q2label":true,      "q3label":true,      "q4label":true,      "q5label":true,      "q6label":true,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"locationparameter":{      "context":true,      "q1label":true,      "q2label":true,      "q3label":true,      "q4label":true,      "q5label":true,      "q6label":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get (all)
 
 
 
-URL: http://&lt;NSIP&gt;/nitro/v1/config/locationparameter
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/locationparameter
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "locationparameter": [ {      "context":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "Locationfile":<String_value>,      "format":<String_value>,      "custom":<Double_value>,      "Static":<Double_value>,      "lines":<Double_value>,      "errors":<Double_value>,      "warnings":<Double_value>,      "entries":<Double_value>,      "locationfile6":<String_value>,      "format6":<String_value>,      "custom6":<Double_value>,      "static6":<Double_value>,      "lines6":<Double_value>,      "errors6":<Double_value>,      "warnings6":<Double_value>,      "entries6":<Double_value>,      "flags":<Double_value>,      "status":<Double_value>,      "databasemode":<String_value>,      "flushing":<String_value>,      "loading":<String_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "locationparameter": [ {      "context":<String_value>,      "q1label":<String_value>,      "q2label":<String_value>,      "q3label":<String_value>,      "q4label":<String_value>,      "q5label":<String_value>,      "q6label":<String_value>,      "Locationfile":<String_value>,      "format":<String_value>,      "custom":<Double_value>,      "Static":<Double_value>,      "lines":<Double_value>,      "errors":<Double_value>,      "warnings":<Double_value>,      "entries":<Double_value>,      "locationfile6":<String_value>,      "format6":<String_value>,      "custom6":<Double_value>,      "static6":<Double_value>,      "lines6":<Double_value>,      "errors6":<Double_value>,      "warnings6":<Double_value>,      "entries6":<Double_value>,      "flags":<Double_value>,      "status":<Double_value>,      "databasemode":<String_value>,      "flushing":<String_value>,      "loading":<String_value>}]}```
 
 
 

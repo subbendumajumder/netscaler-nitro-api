@@ -7,12 +7,12 @@ Binding object showing the sslcertkey that can be bound to sslservice.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>certkeyname</td><td>&lt;String></td><td>Read-write</td><td>The certificate key pair binding.</td><tr><tr><td>snicert</td><td>&lt;Boolean></td><td>Read-write</td><td>The name of the CertKey. Use this option to bind Certkey(s) which will be used in SNI processing.</td><tr><tr><td>skipcaname</td><td>&lt;Boolean></td><td>Read-write</td><td>The flag is used to indicate whether this particular CA certificates CA_Name needs to be sent to the SSL client while requesting for client certificate in a SSL handshake.</td><tr><tr><td>ca</td><td>&lt;Boolean></td><td>Read-write</td><td>CA certificate.</td><tr><tr><td>crlcheck</td><td>&lt;String></td><td>Read-write</td><td>The state of the CRL check parameter. (Mandatory/Optional).&lt;br>Possible values = Mandatory, Optional</td><tr><tr><td>ocspcheck</td><td>&lt;String></td><td>Read-write</td><td>Rule to use for the OCSP responder associated with the CA certificate during client authentication. If MANDATORY is specified, deny all SSL clients if the OCSP check fails because of connectivity issues with the remote OCSP server, or any other reason that prevents the OCSP check. With the OPTIONAL setting, allow SSL clients even if the OCSP check fails except when the client certificate is revoked.&lt;br>Possible values = Mandatory, Optional</td><tr><tr><td>cleartextport</td><td>&lt;Integer></td><td>Read-only</td><td>The clearTextPort settings.&lt;br>Range 1 - 65535</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>certkeyname</td><td>&lt;String></td><td>Read-write</td><td>The certificate key pair binding.</td><tr><tr><td>snicert</td><td>&lt;Boolean></td><td>Read-write</td><td>The name of the CertKey. Use this option to bind Certkey(s) which will be used in SNI processing.</td><tr><tr><td>skipcaname</td><td>&lt;Boolean></td><td>Read-write</td><td>The flag is used to indicate whether this particular CA certificates CA_Name needs to be sent to the SSL client while requesting for client certificate in a SSL handshake.</td><tr><tr><td>ca</td><td>&lt;Boolean></td><td>Read-write</td><td>CA certificate.</td><tr><tr><td>crlcheck</td><td>&lt;String></td><td>Read-write</td><td>The state of the CRL check parameter. (Mandatory/Optional).&lt;br>Possible values = Mandatory, Optional</td><tr><tr><td>ocspcheck</td><td>&lt;String></td><td>Read-write</td><td>Rule to use for the OCSP responder associated with the CA certificate during client authentication. If MANDATORY is specified, deny all SSL clients if the OCSP check fails because of connectivity issues with the remote OCSP server, or any other reason that prevents the OCSP check. With the OPTIONAL setting, allow SSL clients even if the OCSP check fails except when the client certificate is revoked.&lt;br>Possible values = Mandatory, Optional</td><tr><tr><td>cleartextport</td><td>&lt;Integer></td><td>Read-only</td><td>The clearTextPort settings.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [COUNT](#count)
+[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -27,54 +27,85 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/config
+URL: http://&lt;netscaler-ip-address/nitro/v1/config/sslservice_sslcertkey_binding
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","sslservice_sslcertkey_binding":{      "servicename":<String_value>,      "certkeyname":<String_value>,                  "ca":<Boolean_value>,                  "crlcheck":<String_value>,                  "skipcaname":<Boolean_value>,                  "snicert":<Boolean_value>,                  "ocspcheck":<String_value>,}}```
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"sslservice_sslcertkey_binding":{      "servicename":<String_value>,      "certkeyname":<String_value>,      "ca":<Boolean_value>,      "crlcheck":<String_value>,      "skipcaname":<Boolean_value>,      "snicert":<Boolean_value>,      "ocspcheck":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###delete:
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;
-Query-parameters:
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
-
-
-
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;
 HTTP Method: DELETE
-Response Payload: 
-{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
 ###get
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;
 Query-parameters:
 filter
-http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of sslservice_sslcertkey_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-pagesize=#no;pageno=#no
-http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?pagesize=#no;pageno=#no
+pagination
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?pagesize=#no;pageno=#no
 Use this query-parameter to get the sslservice_sslcertkey_binding resources in chunks.
-
-
-warning
-http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding?warning=yes
-Use this query parameter to get warnings in nitro response. If this field is set to YES, warning message will be sent in 'message' field and 'WARNING' value is set in severity field of the response in case there is a
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "sslservice_sslcertkey_binding": [ {      "servicename":<String_value>,      "certkeyname":<String_value>,      "snicert":<Boolean_value>,      "skipcaname":<Boolean_value>,      "ca":<Boolean_value>,      "crlcheck":<String_value>,      "ocspcheck":<String_value>,      "cleartextport":<Integer_value>,}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslservice_sslcertkey_binding": [ {      "servicename":<String_value>,      "certkeyname":<String_value>,      "snicert":<Boolean_value>,      "skipcaname":<Boolean_value>,      "ca":<Boolean_value>,      "crlcheck":<String_value>,      "ocspcheck":<String_value>,      "cleartextport":<Integer_value>}]}```
+
+
+
+###get (all)
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding
+Query-parameters:
+bulkbindings
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding?bulkbindings=yes
+NITRO allows you to fetch bindings in bulk.
+
+
+
+HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "sslservice_sslcertkey_binding": [ {      "servicename":<String_value>,      "certkeyname":<String_value>,      "snicert":<Boolean_value>,      "skipcaname":<Boolean_value>,      "ca":<Boolean_value>,      "crlcheck":<String_value>,      "ocspcheck":<String_value>,      "cleartextport":<Integer_value>}]}```
 
 
 
@@ -82,9 +113,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 
 
-URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslservice_sslcertkey_binding/servicename_value&lt;String&gt;?count=yes
 HTTP Method: GET
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
 Response Payload: 
-{ "errorcode": 0, "message": "Done",sslservice_sslcertkey_binding: [ { "__count": "#no"} ] }
+{"sslservice_sslcertkey_binding": [ { "__count": "#no"} ] }
 
 

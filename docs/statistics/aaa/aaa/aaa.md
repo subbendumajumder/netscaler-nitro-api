@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/aaa
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/aaa
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/aaa?args=      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/aaa?args=detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get aaa resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "aaa": [ {      "aaatotsessiontimeout":<Double_value>,      "aaaauthfail":<Double_value>,      "aaaauthsuccess":<Double_value>,      "aaatottmsessions":<Double_value>,      "aaaauthonlyhttpfailrate":<Double_value>,      "aaaauthnonhttpsuccess":<Double_value>,      "aaacuricaonlyconnrate":<Double_value>,      "aaaauthonlyhttpsuccessrate":<Double_value>,      "aaacurtmsessions":<Double_value>,      "aaacuricasessions":<Double_value>,      "aaatotsessions":<Double_value>,      "aaaauthonlyhttpfail":<Double_value>,      "aaacuricaonlyconn":<Double_value>,      "aaatmsessionsrate":<Double_value>,      "aaaauthfailrate":<Double_value>,      "aaacursessionsrate":<Double_value>,      "aaaauthnonhttpsuccessrate":<Double_value>,      "aaacuricaconn":<Double_value>,      "aaaauthnonhttpfailrate":<Double_value>,      "aaaauthnonhttpfail":<Double_value>,      "aaacuricaconnrate":<Double_value>,      "aaaauthsuccessrate":<Double_value>,      "aaaauthonlyhttpsuccess":<Double_value>,      "aaacurtmsessionsrate":<Double_value>,      "aaasessiontimeoutrate":<Double_value>,      "aaacuricasessionsrate":<Double_value>,      "aaacursessions":<Double_value>,      "aaasessionsrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "aaa": [ {      "aaatotsessiontimeout":<Double_value>,      "aaaauthfail":<Double_value>,      "aaaauthsuccess":<Double_value>,      "aaatottmsessions":<Double_value>,      "aaaauthonlyhttpfailrate":<Double_value>,      "aaaauthnonhttpsuccess":<Double_value>,      "aaacuricaonlyconnrate":<Double_value>,      "aaaauthonlyhttpsuccessrate":<Double_value>,      "aaacurtmsessions":<Double_value>,      "aaacuricasessions":<Double_value>,      "aaatotsessions":<Double_value>,      "aaaauthonlyhttpfail":<Double_value>,      "aaacuricaonlyconn":<Double_value>,      "aaatmsessionsrate":<Double_value>,      "aaaauthfailrate":<Double_value>,      "aaacursessionsrate":<Double_value>,      "aaaauthnonhttpsuccessrate":<Double_value>,      "aaacuricaconn":<Double_value>,      "aaaauthnonhttpfailrate":<Double_value>,      "aaaauthnonhttpfail":<Double_value>,      "aaacuricaconnrate":<Double_value>,      "aaaauthsuccessrate":<Double_value>,      "aaaauthonlyhttpsuccess":<Double_value>,      "aaacurtmsessionsrate":<Double_value>,      "aaasessiontimeoutrate":<Double_value>,      "aaacuricasessionsrate":<Double_value>,      "aaacursessions":<Double_value>,      "aaasessionsrate":<Double_value>}]}```
 
 
 

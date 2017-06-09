@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/tunnelip6
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/tunnelip6
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/tunnelip6?args=      tunnelip6:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/tunnelip6?args=tunnelip6:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get tunnelip6 resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip6": [ {      "tunnelip6":<String_value>,      "tnltxbytesrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltottxpkts":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "tunnelip6": [ {      "tunnelip6":<String_value>,      "tnltxbytesrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltottxpkts":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip6": [ {   
 
 
 
-URL: http://NS_IP/nitro/v1/stat/tunnelip6/tunnelip6_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/tunnelip6/tunnelip6_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip6": [ {      "tunnelip6":<String_value>,      "tnltxbytesrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltottxpkts":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "tunnelip6": [ {      "tunnelip6":<String_value>,      "tnltxbytesrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltottxpkts":<Double_value>}]}```
 
 
 

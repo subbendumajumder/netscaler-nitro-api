@@ -27,16 +27,25 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 
 
-URL: http://NS_IP/nitro/v1/stat/inatsession
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inatsession
 Query-parameters:
 args
-http://&lt;NSIP&gt;/nitro/v1/stat/inatsession?args=      name:&lt;String_value&gt;,      detail:&lt;Boolean_value&gt;,      fullvalues:&lt;Boolean_value&gt;,      ntimes:&lt;Double_value&gt;,      logfile:&lt;String_value&gt;,      clearstats:&lt;String_value&gt;,
+http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inatsession?args=name:&lt;String_value&gt;,detail:&lt;Boolean_value&gt;,fullvalues:&lt;Boolean_value&gt;,ntimes:&lt;Double_value&gt;,logfile:&lt;String_value&gt;,clearstats:&lt;String_value&gt;
 Use this query-parameter to get inatsession resources based on additional properties.
 
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "inatsession": [ {      "name":<String_value>,      "inattotsentbytes":<Double_value>,      "inatreceivebytesrate":<Double_value>,      "inathitsrate":<Double_value>,      "inattotreceivebytes":<Double_value>,      "inatcursessionsrate":<Double_value>,      "inatcursessions":<Double_value>,      "inatsentbytesrate":<Double_value>,      "inatpktsentrate":<Double_value>,      "inattotpktreceived":<Double_value>,      "inattothits":<Double_value>,      "inattotpktsent":<Double_value>,      "inatpktreceivedrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "inatsession": [ {      "name":<String_value>,      "inattotsentbytes":<Double_value>,      "inatreceivebytesrate":<Double_value>,      "inathitsrate":<Double_value>,      "inattotreceivebytes":<Double_value>,      "inatcursessionsrate":<Double_value>,      "inatcursessions":<Double_value>,      "inatsentbytesrate":<Double_value>,      "inatpktsentrate":<Double_value>,      "inattotpktreceived":<Double_value>,      "inattothits":<Double_value>,      "inattotpktsent":<Double_value>,      "inatpktreceivedrate":<Double_value>}]}```
 
 
 
@@ -44,9 +53,18 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "inatsession": [ { 
 
 
 
-URL: http://NS_IP/nitro/v1/stat/inatsession/name_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/stat/inatsession/name_value&gt;&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "inatsession": [ {      "name":<String_value>,      "inattotsentbytes":<Double_value>,      "inatreceivebytesrate":<Double_value>,      "inathitsrate":<Double_value>,      "inattotreceivebytes":<Double_value>,      "inatcursessionsrate":<Double_value>,      "inatcursessions":<Double_value>,      "inatsentbytesrate":<Double_value>,      "inatpktsentrate":<Double_value>,      "inattotpktreceived":<Double_value>,      "inattothits":<Double_value>,      "inattotpktsent":<Double_value>,      "inatpktreceivedrate":<Double_value>}]}```
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+
+Content-Type:application/json
+
+Response Payload: ```{ "inatsession": [ {      "name":<String_value>,      "inattotsentbytes":<Double_value>,      "inatreceivebytesrate":<Double_value>,      "inathitsrate":<Double_value>,      "inattotreceivebytes":<Double_value>,      "inatcursessionsrate":<Double_value>,      "inatcursessions":<Double_value>,      "inatsentbytesrate":<Double_value>,      "inatpktsentrate":<Double_value>,      "inattotpktreceived":<Double_value>,      "inattothits":<Double_value>,      "inattotpktsent":<Double_value>,      "inatpktreceivedrate":<Double_value>}]}```
 
 
 
