@@ -7,7 +7,7 @@ Binding object showing the linkset that can be bound to vlan.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the virtual LAN ID.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>The interface to be bound to the VLAN, specified in slot/port notation (for example, 1/3).&lt;br>Minimum length = 1</td><tr><tr><td>tagged</td><td>&lt;Boolean></td><td>Read-write</td><td>Make the interface an 802.1q tagged interface. Packets sent on this interface on this VLAN have an additional 4-byte 802.1q tag, which identifies the VLAN. To use 802.1q tagging, you must also configure the switch connected to the appliances interfaces.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for this vlan.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the virtual LAN ID.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>The interface to be bound to the VLAN, specified in slot/port notation (for example, 1/3).&lt;br>Minimum length = 1</td><tr><tr><td>tagged</td><td>&lt;Boolean></td><td>Read-write</td><td>Make the interface an 802.1q tagged interface. Packets sent on this interface on this VLAN have an additional 4-byte 802.1q tag, which identifies the VLAN. To use 802.1q tagging, you must also configure the switch connected to the appliances interfaces.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://NS_IP/nitro/v1/config
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","vlan_linkset_binding":{      "id":<Double_value>,      "ifnum":<String_value>,                  "tagged":<Boolean_value>,}}```
+Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","vlan_linkset_binding":{      "id":<Double_value>,      "ifnum":<String_value>,                  "tagged":<Boolean_value>,      "ownergroup":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -74,7 +74,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vlan_linkset_binding": [ {      "id":<Double_value>,      "ifnum":<String_value>,      "tagged":<Boolean_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vlan_linkset_binding": [ {      "ownergroup":<String_value>,      "id":<Double_value>,      "ifnum":<String_value>,      "tagged":<Boolean_value>,}]}```
 
 
 

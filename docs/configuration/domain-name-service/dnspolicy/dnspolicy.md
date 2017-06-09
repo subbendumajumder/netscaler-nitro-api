@@ -7,12 +7,12 @@ Configuration for DNS policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the DNS policy.</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression against which DNS traffic is evaluated. Written in the default syntax. Note: * On the command line interface, if the expression includes blank spaces, the entire expression must be enclosed in double quotation marks. * If the expression itself includes double quotation marks, you must escape the quotations by using the character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks. Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" Example: CLIENT.UDP.DNS.DOMAIN.EQ("domainname").</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given policy.</td><tr><tr><td>preferredlocation</td><td>&lt;String></td><td>Read-write</td><td>The location used for the given policy. This is deprecated attribute. Please use -prefLocList.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given policy.&lt;br>Minimum length = 1</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-write</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-write</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS action to perform when the rule evaluates to TRUE. The built in actions function as follows: * dns_default_act_Drop. Drop the DNS request. * dns_default_act_Cachebypass. Bypass the DNS cache and forward the request to the name server. You can create custom actions by using the add dns action command in the CLI or the DNS ;gt; Actions ;gt; Create DNS Action dialog box in the NetScaler configuration utility.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the policy has been hit.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of Undef hits.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-only</td><td>Description of the policy.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS policy is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the DNS policy.</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression against which DNS traffic is evaluated. Written in the default syntax. Note: * On the command line interface, if the expression includes blank spaces, the entire expression must be enclosed in double quotation marks. * If the expression itself includes double quotation marks, you must escape the quotations by using the character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks. Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" Example: CLIENT.UDP.DNS.DOMAIN.EQ("domainname").</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given policy.</td><tr><tr><td>preferredlocation</td><td>&lt;String></td><td>Read-write</td><td>The location used for the given policy. This is deprecated attribute. Please use -prefLocList.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given policy.&lt;br>Minimum length = 1</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-write</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-write</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS action to perform when the rule evaluates to TRUE. The built in actions function as follows: * dns_default_act_Drop. Drop the DNS request. * dns_default_act_Cachebypass. Bypass the DNS cache and forward the request to the name server. You can create custom actions by using the add dns action command in the CLI or the DNS ;gt; Actions ;gt; Create DNS Action dialog box in the NetScaler configuration utility.</td><tr><tr><td>logaction</td><td>&lt;String></td><td>Read-write</td><td>Name of the messagelog action to use for requests that match this policy.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the policy has been hit.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of Undef hits.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-only</td><td>Description of the policy.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS policy is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [UPDATE](#update) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD](#add) | [DELETE](#delete) | [UPDATE](#update) | [UNSET](#unset) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnspolicy":{      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "actionname":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnspolicy":{      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "actionname":<String_value>,      "logaction":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,18 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnspolicy":{      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "actionname":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnspolicy":{      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "actionname":<String_value>,      "logaction":<String_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
+
+###unset
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: POST
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","dnspolicy":{      "name":<String_value>,      "logaction":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -90,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnspolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "drop":<String_value>,      "actionname":<String_value>,      "cachebypass":<String_value>,      "description":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnspolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "drop":<String_value>,      "actionname":<String_value>,      "cachebypass":<String_value>,      "description":<String_value>,      "logaction":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -100,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/dnspolicy/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "dnspolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "drop":<String_value>,      "actionname":<String_value>,      "cachebypass":<String_value>,      "description":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "dnspolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "viewname":<String_value>,      "preferredlocation":<String_value>,      "preferredloclist":<String[]_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "drop":<String_value>,      "actionname":<String_value>,      "cachebypass":<String_value>,      "description":<String_value>,      "logaction":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 

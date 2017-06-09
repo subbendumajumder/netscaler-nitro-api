@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to sslservicegroup.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service group for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservicegroup_sslcipher_binding</td><td>&lt;sslservicegroup_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_ecccurve_binding</td><td>&lt;sslservicegroup_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslcertkey_binding</td><td>&lt;sslservicegroup_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslciphersuite_binding</td><td>&lt;sslservicegroup_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservicegroup.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service group for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservicegroup_sslcipher_binding</td><td>&lt;sslservicegroup_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslcertkey_binding</td><td>&lt;sslservicegroup_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservicegroup.</td><tr><tr><td>sslservicegroup_sslciphersuite_binding</td><td>&lt;sslservicegroup_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservicegroup.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/sslservicegroup_binding/servicegroupname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "sslservicegroup_binding": [ {      "servicegroupname":<String_value>,      "sslservicegroup_sslcipher_binding":<sslservicegroup_sslcipher_binding[]_value>,      "sslservicegroup_sslciphersuite_binding":<sslservicegroup_sslciphersuite_binding[]_value>,      "sslservicegroup_ecccurve_binding":<sslservicegroup_ecccurve_binding[]_value>,      "sslservicegroup_sslcertkey_binding":<sslservicegroup_sslcertkey_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "sslservicegroup_binding": [ {      "servicegroupname":<String_value>,      "sslservicegroup_sslcipher_binding":<sslservicegroup_sslcipher_binding[]_value>,      "sslservicegroup_sslciphersuite_binding":<sslservicegroup_sslciphersuite_binding[]_value>,      "sslservicegroup_sslcertkey_binding":<sslservicegroup_sslcertkey_binding[]_value>,}]}```
 
 
 

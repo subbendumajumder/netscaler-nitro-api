@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to appfwpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>appfwpolicy_csvserver_binding</td><td>&lt;appfwpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_appfwglobal_binding</td><td>&lt;appfwpolicy_appfwglobal_binding[]></td><td>Read-only</td><td>appfwglobal that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_lbvserver_binding</td><td>&lt;appfwpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_appfwpolicylabel_binding</td><td>&lt;appfwpolicy_appfwpolicylabel_binding[]></td><td>Read-only</td><td>appfwpolicylabel that can be bound to appfwpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>appfwpolicy_appfwglobal_binding</td><td>&lt;appfwpolicy_appfwglobal_binding[]></td><td>Read-only</td><td>appfwglobal that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_lbvserver_binding</td><td>&lt;appfwpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_csvserver_binding</td><td>&lt;appfwpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to appfwpolicy.</td><tr><tr><td>appfwpolicy_appfwpolicylabel_binding</td><td>&lt;appfwpolicy_appfwpolicylabel_binding[]></td><td>Read-only</td><td>appfwpolicylabel that can be bound to appfwpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/appfwpolicy_binding/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "appfwpolicy_binding": [ {      "name":<String_value>,      "appfwpolicy_appfwpolicylabel_binding":<appfwpolicy_appfwpolicylabel_binding[]_value>,      "appfwpolicy_appfwglobal_binding":<appfwpolicy_appfwglobal_binding[]_value>,      "appfwpolicy_lbvserver_binding":<appfwpolicy_lbvserver_binding[]_value>,      "appfwpolicy_csvserver_binding":<appfwpolicy_csvserver_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "appfwpolicy_binding": [ {      "name":<String_value>,      "appfwpolicy_appfwpolicylabel_binding":<appfwpolicy_appfwpolicylabel_binding[]_value>,      "appfwpolicy_csvserver_binding":<appfwpolicy_csvserver_binding[]_value>,      "appfwpolicy_appfwglobal_binding":<appfwpolicy_appfwglobal_binding[]_value>,      "appfwpolicy_lbvserver_binding":<appfwpolicy_lbvserver_binding[]_value>,}]}```
 
 
 

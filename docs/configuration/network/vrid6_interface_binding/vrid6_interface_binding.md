@@ -7,7 +7,7 @@ Binding object showing the interface that can be bound to vrid6.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interfaces bound to this vrid.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>The VLAN in which this VRID resides.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interfaces bound to this VRID.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>The VLAN in which this VRID resides.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

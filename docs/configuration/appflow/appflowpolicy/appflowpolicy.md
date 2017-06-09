@@ -7,7 +7,7 @@ Configuration for AppFlow policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow policy" or my appflow policy).</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression or other value against which the traffic is evaluated. Must be a Boolean, default syntax expression. Note: Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" The following requirements apply only to the NetScaler CLI: * If the expression includes one or more spaces, enclose the entire expression in double quotation marks. * If the expression itself includes double quotation marks, escape the quotations by using the \\ character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Name of the action to be associated with this policy.</td><tr><tr><td>undefaction</td><td>&lt;String></td><td>Read-write</td><td>Name of the appflow action to be associated with this policy when an undef event occurs.</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments about this policy.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the policy. Must begin with an ASCII alphabetic or underscore (_)character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow policy" or my appflow policy).&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of policy UNDEF hits.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-only</td><td>Description of the policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the policy. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow policy" or my appflow policy).</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression or other value against which the traffic is evaluated. Must be a Boolean, default syntax expression. Note: Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;" The following requirements apply only to the NetScaler CLI: * If the expression includes one or more spaces, enclose the entire expression in double quotation marks. * If the expression itself includes double quotation marks, escape the quotations by using the \\ character. * Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Name of the action to be associated with this policy.</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments about this policy.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the policy. Must begin with an ASCII alphabetic or underscore (_)character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow policy" or my appflow policy).&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of policy UNDEF hits.</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-only</td><td>Description of the policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "undefaction":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "comment":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "undefaction":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "comment":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "undefaction":true,      "comment":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","appflowpolicy":{      "name":<String_value>,      "comment":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -112,7 +112,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "appflowpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "undefaction":<String_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "description":<String_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "appflowpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "description":<String_value>,      "comment":<String_value>}]}```
 
 
 
@@ -122,7 +122,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/appflowpolicy/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "appflowpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "undefaction":<String_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "description":<String_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "appflowpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "hits":<Double_value>,      "undefhits":<Double_value>,      "description":<String_value>,      "comment":<String_value>}]}```
 
 
 

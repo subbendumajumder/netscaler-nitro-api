@@ -7,7 +7,7 @@ Configuration for bridge group resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>An integer that uniquely identifies the bridge group.&lt;br>Minimum value = 1&lt;br>Maximum value = 1000</td><tr><tr><td>ipv6dynamicrouting</td><td>&lt;String></td><td>Read-write</td><td>Enable all IPv6 dynamic routing protocols on all VLANs bound to this bridgegroup. Note: For the ENABLED setting to work, you must configure IPv6 dynamic routing protocols from the VTYSH command line.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>flags</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>portbitmap</td><td>&lt;Double></td><td>Read-only</td><td>Member interfaces of this bridge group.</td><tr><tr><td>tagbitmap</td><td>&lt;Double></td><td>Read-only</td><td>Tagged members of this bridge group.</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all member interfaces of this bridge group.</td><tr><tr><td>tagifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all tagged member interfaces of this bridge group.</td><tr><tr><td>rnat</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>An integer that uniquely identifies the bridge group.&lt;br>Minimum value = 1&lt;br>Maximum value = 1000</td><tr><tr><td>dynamicrouting</td><td>&lt;String></td><td>Read-write</td><td>Enable dynamic routing for this bridgegroup.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ipv6dynamicrouting</td><td>&lt;String></td><td>Read-write</td><td>Enable all IPv6 dynamic routing protocols on all VLANs bound to this bridgegroup. Note: For the ENABLED setting to work, you must configure IPv6 dynamic routing protocols from the VTYSH command line.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>flags</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>portbitmap</td><td>&lt;Double></td><td>Read-only</td><td>Member interfaces of this bridge group.</td><tr><tr><td>tagbitmap</td><td>&lt;Double></td><td>Read-only</td><td>Tagged members of this bridge group.</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all member interfaces of this bridge group.</td><tr><tr><td>tagifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all tagged member interfaces of this bridge group.</td><tr><tr><td>rnat</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>partitionname</td><td>&lt;String></td><td>Read-only</td><td>Name of the Partition to which this vlan bound to.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "ipv6dynamicrouting":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "ipv6dynamicrouting":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "ipv6dynamicrouting":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","bridgegroup":{      "id":<Double_value>,      "dynamicrouting":true,      "ipv6dynamicrouting":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "bridgegroup": [ {      "id":<Double_value>,      "flags":<Boolean_value>,      "portbitmap":<Double_value>,      "tagbitmap":<Double_value>,      "ifaces":<String_value>,      "tagifaces":<String_value>,      "ipv6dynamicrouting":<String_value>,      "rnat":<Boolean_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "bridgegroup": [ {      "id":<Double_value>,      "flags":<Boolean_value>,      "portbitmap":<Double_value>,      "tagbitmap":<Double_value>,      "ifaces":<String_value>,      "tagifaces":<String_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,      "rnat":<Boolean_value>,      "partitionname":<String_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/bridgegroup/id_value&lt;Double&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "bridgegroup": [ {      "id":<Double_value>,      "flags":<Boolean_value>,      "portbitmap":<Double_value>,      "tagbitmap":<Double_value>,      "ifaces":<String_value>,      "tagifaces":<String_value>,      "ipv6dynamicrouting":<String_value>,      "rnat":<Boolean_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "bridgegroup": [ {      "id":<Double_value>,      "flags":<Boolean_value>,      "portbitmap":<Double_value>,      "tagbitmap":<Double_value>,      "ifaces":<String_value>,      "tagifaces":<String_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,      "rnat":<Boolean_value>,      "partitionname":<String_value>}]}```
 
 
 

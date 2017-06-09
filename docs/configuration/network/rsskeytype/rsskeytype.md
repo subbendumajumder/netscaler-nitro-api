@@ -7,7 +7,7 @@ Configuration for RSS key type resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>rsstype</td><td>&lt;String></td><td>Read-write</td><td>Type of RSS key, possible values ASYMMETRIC and SYMMETRIC. .&lt;br>Default value: ASYMMETRIC&lt;br>Possible values = ASYMMETRIC, SYMMETRIC</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>rsstype</td><td>&lt;String></td><td>Read-write</td><td>Type of RSS key, possible values are SYMMETRIC and SYMMETRIC.&lt;br>Default value: SYMMETRIC&lt;br>Possible values = ASYMMETRIC, SYMMETRIC</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

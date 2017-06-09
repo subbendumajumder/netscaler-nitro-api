@@ -1,6 +1,6 @@
 #gslbldnsentries
 
-Configuration for LDAP entries resource.
+Configuration for LDNS entry resource.
 
 
 ##Properties 

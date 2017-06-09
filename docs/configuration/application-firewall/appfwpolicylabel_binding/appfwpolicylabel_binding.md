@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/appfwpolicylabel_binding/labelname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>,}]}```
 
 
 

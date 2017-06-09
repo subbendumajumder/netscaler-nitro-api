@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to systemuser.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>Name of a system user about whom to display information.&lt;br>Minimum length = 1</td><tr><tr><td>systemuser_systemgroup_binding</td><td>&lt;systemuser_systemgroup_binding[]></td><td>Read-only</td><td>systemgroup that can be bound to systemuser.</td><tr><tr><td>systemuser_systemcmdpolicy_binding</td><td>&lt;systemuser_systemcmdpolicy_binding[]></td><td>Read-only</td><td>systemcmdpolicy that can be bound to systemuser.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>Name of a system user about whom to display information.&lt;br>Minimum length = 1</td><tr><tr><td>systemuser_systemgroup_binding</td><td>&lt;systemuser_systemgroup_binding[]></td><td>Read-only</td><td>systemgroup that can be bound to systemuser.</td><tr><tr><td>systemuser_nspartition_binding</td><td>&lt;systemuser_nspartition_binding[]></td><td>Read-only</td><td>nspartition that can be bound to systemuser.</td><tr><tr><td>systemuser_systemcmdpolicy_binding</td><td>&lt;systemuser_systemcmdpolicy_binding[]></td><td>Read-only</td><td>systemcmdpolicy that can be bound to systemuser.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/systemuser_binding/username_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "systemuser_binding": [ {      "username":<String_value>,      "systemuser_systemgroup_binding":<systemuser_systemgroup_binding[]_value>,      "systemuser_systemcmdpolicy_binding":<systemuser_systemcmdpolicy_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "systemuser_binding": [ {      "username":<String_value>,      "systemuser_systemgroup_binding":<systemuser_systemgroup_binding[]_value>,      "systemuser_nspartition_binding":<systemuser_nspartition_binding[]_value>,      "systemuser_systemcmdpolicy_binding":<systemuser_systemcmdpolicy_binding[]_value>,}]}```
 
 
 

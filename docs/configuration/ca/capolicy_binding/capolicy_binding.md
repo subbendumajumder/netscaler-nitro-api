@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to capolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the content adaptation policy to be displayed.</td><tr><tr><td>capolicy_csvserver_binding</td><td>&lt;capolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to capolicy.</td><tr><tr><td>capolicy_lbvserver_binding</td><td>&lt;capolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to capolicy.</td><tr><tr><td>capolicy_caglobal_binding</td><td>&lt;capolicy_caglobal_binding[]></td><td>Read-only</td><td>caglobal that can be bound to capolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the content accelerator policy to be displayed.</td><tr><tr><td>capolicy_lbvserver_binding</td><td>&lt;capolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to capolicy.</td><tr><tr><td>capolicy_caglobal_binding</td><td>&lt;capolicy_caglobal_binding[]></td><td>Read-only</td><td>caglobal that can be bound to capolicy.</td><tr><tr><td>capolicy_csvserver_binding</td><td>&lt;capolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to capolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

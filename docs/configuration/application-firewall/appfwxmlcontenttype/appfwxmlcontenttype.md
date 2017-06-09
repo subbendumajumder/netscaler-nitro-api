@@ -7,7 +7,7 @@ Configuration for XML Content type resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>xmlcontenttypevalue</td><td>&lt;String></td><td>Read-write</td><td>Content type to be classified as XML.&lt;br>Minimum length = 1</td><tr><tr><td>isregex</td><td>&lt;String></td><td>Read-write</td><td>Is field name a regular expression?.&lt;br>Default value: NOTREGEX&lt;br>Possible values = REGEX, NOTREGEX</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine if xmlcontenttype is built-in or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>xmlcontenttypevalue</td><td>&lt;String></td><td>Read-write</td><td>Content type to be classified as XML.&lt;br>Minimum length = 1</td><tr><tr><td>isregex</td><td>&lt;String></td><td>Read-write</td><td>Is field name a regular expression?.&lt;br>Default value: NOTREGEX&lt;br>Possible values = REGEX, NOTREGEX</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine if xmlcontenttype is built-in or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

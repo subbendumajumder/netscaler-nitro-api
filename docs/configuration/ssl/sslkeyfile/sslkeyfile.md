@@ -7,7 +7,7 @@ Configuration for Imported ssl key files resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the imported key file. Must begin with an ASCII alphanumeric or underscore(_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@),equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or my file).&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL specifying the protocol, host, and path, including file name, to the key file to be imported. For example, http://www.example.com/key_file. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name to assign to the imported key file. Must begin with an ASCII alphanumeric or underscore(_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@),equals (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my file" or my file).&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL specifying the protocol, host, and path, including file name, to the key file to be imported. For example, http://www.example.com/key_file. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>password</td><td>&lt;String></td><td>Read-write</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","sslkeyfile":{      "name":<String_value>,      "src":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"Import"},"sessionid":"##sessionid","sslkeyfile":{      "name":<String_value>,      "src":<String_value>,      "password":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 

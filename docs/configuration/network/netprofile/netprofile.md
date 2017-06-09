@@ -7,7 +7,7 @@ Configuration for Network profile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the net profile. Must begin with a letter, number, or the underscore character (_), and can consist of letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore characters. Cannot be changed after the profile is created. Choose a name that helps identify the net profile.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-write</td><td>IP address or the name of an IP set.</td><tr><tr><td>srcippersistency</td><td>&lt;String></td><td>Read-write</td><td>When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the net profile. Must begin with a letter, number, or the underscore character (_), and can consist of letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at sign (@), equals (=), colon (:), and underscore characters. Cannot be changed after the profile is created. Choose a name that helps identify the net profile.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-write</td><td>IP address or the name of an IP set.</td><tr><tr><td>srcippersistency</td><td>&lt;String></td><td>Read-write</td><td>When the net profile is associated with a virtual server or its bound services, this option enables the NetScaler appliance to use the same address, specified in the net profile, to communicate to servers for all sessions initiated from a particular client to the virtual server.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>overridelsn</td><td>&lt;String></td><td>Read-write</td><td>USNIP/USIP settings override LSN settings for configured service/virtual server traffic.. .&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "td":<Double_value>,      "srcip":<String_value>,      "srcippersistency":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "td":<Double_value>,      "srcip":<String_value>,      "srcippersistency":<String_value>,      "overridelsn":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "srcip":<String_value>,      "srcippersistency":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "srcip":<String_value>,      "srcippersistency":<String_value>,      "overridelsn":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "srcip":true,      "srcippersistency":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","netprofile":{      "name":<String_value>,      "srcip":true,      "srcippersistency":true,      "overridelsn":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "netprofile": [ {      "name":<String_value>,      "srcip":<String_value>,      "td":<Double_value>,      "srcippersistency":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "netprofile": [ {      "name":<String_value>,      "srcip":<String_value>,      "td":<Double_value>,      "srcippersistency":<String_value>,      "overridelsn":<String_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/netprofile/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "netprofile": [ {      "name":<String_value>,      "srcip":<String_value>,      "td":<Double_value>,      "srcippersistency":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "netprofile": [ {      "name":<String_value>,      "srcip":<String_value>,      "td":<Double_value>,      "srcippersistency":<String_value>,      "overridelsn":<String_value>}]}```
 
 
 

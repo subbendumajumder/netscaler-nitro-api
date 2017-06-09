@@ -7,12 +7,12 @@ Configuration for name server resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ip</td><td>&lt;String></td><td>Read-write</td><td>IP address of an external name server or, if the Local parameter is set, IP address of a local DNS server (LDNS).&lt;br>Minimum length = 1</td><tr><tr><td>dnsvservername</td><td>&lt;String></td><td>Read-write</td><td>Name of a DNS virtual server. Overrides any IP address-based name servers configured on the NetScaler appliance.&lt;br>Minimum length = 1</td><tr><tr><td>local</td><td>&lt;Boolean></td><td>Read-write</td><td>Mark the IP address as one that belongs to a local recursive DNS server on the NetScaler appliance. The appliance recursively resolves queries received on an IP address that is marked as being local. For recursive resolution to work, the global DNS parameter, Recursion, must also be set. If no name server is marked as being local, the appliance functions as a stub resolver and load balances the name servers.</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Administrative state of the name server.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Protocol used by the name server. UDP_TCP is not valid if the name server is a DNS virtual server configured on the appliance.&lt;br>Default value: UDP&lt;br>Possible values = UDP, TCP, UDP_TCP</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-only</td><td>The name of the dns vserver.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-only</td><td>Port of the service.&lt;br>Range 1 - 65535</td><tr><tr><td>nameserverstate</td><td>&lt;String></td><td>Read-only</td><td>State of the server.&lt;br>Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED</td><tr><tr><td>clmonowner</td><td>&lt;Double></td><td>Read-only</td><td>Tells the mon owner of the service.</td><tr><tr><td>clmonview</td><td>&lt;Double></td><td>Read-only</td><td>Tells the view id by which state of the service is updated.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ip</td><td>&lt;String></td><td>Read-write</td><td>IP address of an external name server or, if the Local parameter is set, IP address of a local DNS server (LDNS).&lt;br>Minimum length = 1</td><tr><tr><td>dnsvservername</td><td>&lt;String></td><td>Read-write</td><td>Name of a DNS virtual server. Overrides any IP address-based name servers configured on the NetScaler appliance.&lt;br>Minimum length = 1</td><tr><tr><td>local</td><td>&lt;Boolean></td><td>Read-write</td><td>Mark the IP address as one that belongs to a local recursive DNS server on the NetScaler appliance. The appliance recursively resolves queries received on an IP address that is marked as being local. For recursive resolution to work, the global DNS parameter, Recursion, must also be set. If no name server is marked as being local, the appliance functions as a stub resolver and load balances the name servers.</td><tr><tr><td>state</td><td>&lt;String></td><td>Read-write</td><td>Administrative state of the name server.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Protocol used by the name server. UDP_TCP is not valid if the name server is a DNS virtual server configured on the appliance.&lt;br>Default value: UDP&lt;br>Possible values = UDP, TCP, UDP_TCP</td><tr><tr><td>dnsprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS profile to be associated with the name server.&lt;br>Minimum length = 1</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-only</td><td>The name of the dns vserver.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-only</td><td>Port of the service.&lt;br>Range 1 - 65535</td><tr><tr><td>nameserverstate</td><td>&lt;String></td><td>Read-only</td><td>State of the server.&lt;br>Possible values = UP, DOWN, UNKNOWN, BUSY, OUT OF SERVICE, GOING OUT OF SERVICE, DOWN WHEN GOING OUT OF SERVICE, NS_EMPTY_STR, Unknown, DISABLED</td><tr><tr><td>clmonowner</td><td>&lt;Double></td><td>Read-only</td><td>Tells the mon owner of the service.</td><tr><tr><td>clmonview</td><td>&lt;Double></td><td>Read-only</td><td>Tells the view id by which state of the service is updated.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [ENABLE](#enable) | [DISABLE](#disable) | [GET (ALL)](#get-(all)) | [COUNT](#count)
+[ADD](#add) | [UPDATE](#update) | [UNSET](#unset) | [DELETE](#delete) | [ENABLE](#enable) | [DISABLE](#disable) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -29,7 +29,29 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnsnameserver":{      "ip":<String_value>,      "dnsvservername":<String_value>,      "local":<Boolean_value>,      "state":<String_value>,      "type":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnsnameserver":{      "ip":<String_value>,      "dnsvservername":<String_value>,      "local":<Boolean_value>,      "state":<String_value>,      "type":<String_value>,      "dnsprofilename":<String_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
+
+###update
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: PUT
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnsnameserver":{      "ip":<String_value>,      "dnsprofilename":<String_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
+
+###unset
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: POST
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","dnsnameserver":{      "ip":<String_value>,      "dnsprofilename":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +123,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnsnameserver": [ {      "ip":<String_value>,      "dnsvservername":<String_value>,      "servicename":<String_value>,      "port":<Integer_value>,      "type":<String_value>,      "state":<String_value>,      "nameserverstate":<String_value>,      "local":<Boolean_value>,      "clmonowner":<Double_value>,      "clmonview":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnsnameserver": [ {      "ip":<String_value>,      "dnsvservername":<String_value>,      "servicename":<String_value>,      "port":<Integer_value>,      "type":<String_value>,      "state":<String_value>,      "nameserverstate":<String_value>,      "local":<Boolean_value>,      "clmonowner":<Double_value>,      "clmonview":<Double_value>,      "dnsprofilename":<String_value>}]}```
 
 
 

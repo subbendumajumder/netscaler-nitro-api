@@ -7,12 +7,12 @@ Configuration for active ica connections resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.&lt;br>Minimum length = 1</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td><tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.&lt;br>Range 1 - 65535</td><tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td><tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.&lt;br>Range 1 - 65535</td><tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.&lt;br>Minimum length = 1</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Terminate all active icaconnections.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td><tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.&lt;br>Range 1 - 65535</td><tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td><tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.&lt;br>Range 1 - 65535</td><tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[GET (ALL)](#get-(all)) | [COUNT](#count)
+[KILL](#kill) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -22,6 +22,17 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###kill
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: POST
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"kill"},"sessionid":"##sessionid","vpnicaconnection":{      "username":<String_value>,      "all":<Boolean_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
 
 ###get (all)
 

@@ -7,7 +7,7 @@ Configuration for Content Switching action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the content switching action. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the content switching action is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my action? or ?my action?).</td><tr><tr><td>targetlbvserver</td><td>&lt;String></td><td>Read-write</td><td>Name of the load balancing virtual server to which the content is switched.</td><tr><tr><td>targetvserverexpr</td><td>&lt;String></td><td>Read-write</td><td>Information about this content switching action.</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comments associated with this cs action.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the content switching action. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my name? or ?my name?).&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the action has been taken.</td><tr><tr><td>referencecount</td><td>&lt;Double></td><td>Read-only</td><td>The number of references to the action.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the action resulted in UNDEF.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the content switching action. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the content switching action is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my action? or ?my action?).</td><tr><tr><td>targetlbvserver</td><td>&lt;String></td><td>Read-write</td><td>Name of the load balancing virtual server to which the content is switched.</td><tr><tr><td>targetvserver</td><td>&lt;String></td><td>Read-write</td><td>Name of the VPN virtual server to which the content is switched.</td><tr><tr><td>targetvserverexpr</td><td>&lt;String></td><td>Read-write</td><td>Information about this content switching action.</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Comments associated with this cs action.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the content switching action. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, my name or my name).&lt;br>Minimum length = 1</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the action has been taken.</td><tr><tr><td>referencecount</td><td>&lt;Double></td><td>Read-only</td><td>The number of references to the action.</td><tr><tr><td>undefhits</td><td>&lt;Double></td><td>Read-only</td><td>The number of times the action resulted in UNDEF.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","csaction":{      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserverexpr":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","csaction":{      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserver":<String_value>,      "targetvserverexpr":<String_value>,      "comment":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","csaction":{      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserverexpr":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","csaction":{      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserver":<String_value>,      "targetvserverexpr":<String_value>,      "comment":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -112,7 +112,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "csaction": [ {      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserverexpr":<String_value>,      "hits":<Double_value>,      "referencecount":<Double_value>,      "undefhits":<Double_value>,      "builtin":<String[]_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "csaction": [ {      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserver":<String_value>,      "targetvserverexpr":<String_value>,      "hits":<Double_value>,      "referencecount":<Double_value>,      "undefhits":<Double_value>,      "builtin":<String[]_value>,      "comment":<String_value>}]}```
 
 
 
@@ -122,7 +122,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/csaction/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "csaction": [ {      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserverexpr":<String_value>,      "hits":<Double_value>,      "referencecount":<Double_value>,      "undefhits":<Double_value>,      "builtin":<String[]_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "csaction": [ {      "name":<String_value>,      "targetlbvserver":<String_value>,      "targetvserver":<String_value>,      "targetvserverexpr":<String_value>,      "hits":<Double_value>,      "referencecount":<Double_value>,      "undefhits":<Double_value>,      "builtin":<String[]_value>,      "comment":<String_value>}]}```
 
 
 

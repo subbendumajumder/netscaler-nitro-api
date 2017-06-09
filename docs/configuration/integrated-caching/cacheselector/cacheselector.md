@@ -7,7 +7,7 @@ Configuration for cache selector resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>selectorname</td><td>&lt;String></td><td>Read-write</td><td>Name for the selector. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.</td><tr><tr><td>rule</td><td>&lt;String[]></td><td>Read-write</td><td>One or multiple PIXL expressions for evaluating an HTTP request or response.&lt;br>Minimum length = 1</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>selectorname</td><td>&lt;String></td><td>Read-write</td><td>Name for the selector. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.</td><tr><tr><td>rule</td><td>&lt;String[]></td><td>Read-write</td><td>One or multiple PIXL expressions for evaluating an HTTP request or response.&lt;br>Minimum length = 1</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -90,7 +90,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "cacheselector": [ {      "selectorname":<String_value>,      "flags":<Double_value>,      "rule":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "cacheselector": [ {      "selectorname":<String_value>,      "flags":<Double_value>,      "rule":<String[]_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -100,7 +100,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/cacheselector/selectorname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "cacheselector": [ {      "selectorname":<String_value>,      "flags":<Double_value>,      "rule":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "cacheselector": [ {      "selectorname":<String_value>,      "flags":<Double_value>,      "rule":<String[]_value>,      "builtin":<String[]_value>}]}```
 
 
 

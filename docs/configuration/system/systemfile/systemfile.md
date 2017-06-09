@@ -12,7 +12,7 @@ Configuration for file resource.
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all))
+[ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get)
 
 
 Some options that you can use for each operations:
@@ -65,6 +65,16 @@ Use this query-parameter to get systemfile resources based on additional propert
 
 HTTP Method: GET
 Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "systemfile": [ {      "filename":<String_value>,      "filelocation":<String_value>,      "filecontent":<String_value>,      "fileencoding":<String_value>,      "fileaccesstime":<String_value>,      "filemodifiedtime":<String_value>,      "filemode":<String[]_value>}]}```
+
+
+
+###get
+
+
+
+URL: http://&lt;NS_IP&gt;/nitro/v1/config/systemfile/filename_value&lt;String&gt;
+HTTP Method: GET
+Response Payload: ```{ "errorcode": 0, "message": "Done", "systemfile": [ {      "filename":<String_value>,      "filelocation":<String_value>,      "filecontent":<String_value>,      "fileencoding":<String_value>,      "fileaccesstime":<String_value>,      "filemodifiedtime":<String_value>,      "filemode":<String[]_value>}]}```
 
 
 

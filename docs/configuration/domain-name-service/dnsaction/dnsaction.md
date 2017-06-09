@@ -7,7 +7,7 @@ Configuration for DNS action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the dns action.</td><tr><tr><td>actiontype</td><td>&lt;String></td><td>Read-write</td><td>The type of DNS action that is being configured.&lt;br>Possible values = ViewName, GslbPrefLoc, noop, Drop, Cache_Bypass, Rewrite_Response</td><tr><tr><td>ipaddress</td><td>&lt;String[]></td><td>Read-write</td><td>List of IP address to be returned in case of rewrite_response actiontype. They can be of IPV4 or IPV6 type. In case of set command We will remove all the IP address previously present in the action and will add new once given in set dns action command.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to live, in seconds.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given action.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given action.&lt;br>Minimum length = 1</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-only</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-only</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS action is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>actionname</td><td>&lt;String></td><td>Read-write</td><td>Name of the dns action.</td><tr><tr><td>actiontype</td><td>&lt;String></td><td>Read-write</td><td>The type of DNS action that is being configured.&lt;br>Possible values = ViewName, GslbPrefLoc, noop, Drop, Cache_Bypass, Rewrite_Response</td><tr><tr><td>ipaddress</td><td>&lt;String[]></td><td>Read-write</td><td>List of IP address to be returned in case of rewrite_response actiontype. They can be of IPV4 or IPV6 type. In case of set command We will remove all the IP address previously present in the action and will add new once given in set dns action command.</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to live, in seconds.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>viewname</td><td>&lt;String></td><td>Read-write</td><td>The view name that must be used for the given action.</td><tr><tr><td>preferredloclist</td><td>&lt;String[]></td><td>Read-write</td><td>The location list in priority order used for the given action.&lt;br>Minimum length = 1</td><tr><tr><td>dnsprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the DNS profile to be associated with the transaction for which the action is chosen.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>drop</td><td>&lt;String></td><td>Read-only</td><td>The dns packet must be dropped.&lt;br>Possible values = YES, NO</td><tr><tr><td>cachebypass</td><td>&lt;String></td><td>Read-only</td><td>By pass dns cache for this.&lt;br>Possible values = YES, NO</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Flag to determine whether DNS action is default or not.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "actiontype":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "actiontype":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ipaddress":<String[]_value>,      "ttl":<Double_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "dnsprofilename":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ttl":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","dnsaction":{      "actionname":<String_value>,      "ttl":true,      "dnsprofilename":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/dnsaction/actionname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "dnsaction": [ {      "actionname":<String_value>,      "actiontype":<String_value>,      "ttl":<Double_value>,      "ipaddress":<String[]_value>,      "viewname":<String_value>,      "preferredloclist":<String[]_value>,      "drop":<String_value>,      "cachebypass":<String_value>,      "dnsprofilename":<String_value>,      "builtin":<String[]_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Configuration for ip6 Tunnel resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the IPv6 Tunnel. Cannot be changed after the service group is created. Must begin with a number or letter, and can consist of letters, numbers, and the @ _ - . (period) : (colon) # and space ( ) characters.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>remote</td><td>&lt;String></td><td>Read-write</td><td>An IPv6 address of the remote NetScaler appliance used to set up the tunnel.&lt;br>Minimum length = 1</td><tr><tr><td>local</td><td>&lt;String></td><td>Read-write</td><td>An IPv6 address of the local NetScaler appliance used to set up the tunnel.</td><tr><tr><td>remoteip</td><td>&lt;String></td><td>Read-only</td><td>The remote IP address or subnet of the tunnel.</td><tr><tr><td>type</td><td>&lt;Double></td><td>Read-only</td><td>The type of this tunnel.</td><tr><tr><td>encapip</td><td>&lt;String></td><td>Read-only</td><td>The effective local IP address of the tunnel. Used as the source of the encapsulated packets.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the IPv6 Tunnel. Cannot be changed after the service group is created. Must begin with a number or letter, and can consist of letters, numbers, and the @ _ - . (period) : (colon) # and space ( ) characters.&lt;br>Minimum length = 1&lt;br>Maximum length = 31</td><tr><tr><td>remote</td><td>&lt;String></td><td>Read-write</td><td>An IPv6 address of the remote NetScaler appliance used to set up the tunnel.&lt;br>Minimum length = 1</td><tr><tr><td>local</td><td>&lt;String></td><td>Read-write</td><td>An IPv6 address of the local NetScaler appliance used to set up the tunnel.</td><tr><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for the tunnel.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>remoteip</td><td>&lt;String></td><td>Read-only</td><td>The remote IP address or subnet of the tunnel.</td><tr><tr><td>type</td><td>&lt;Double></td><td>Read-only</td><td>The type of this tunnel.</td><tr><tr><td>encapip</td><td>&lt;String></td><td>Read-only</td><td>The effective local IP address of the tunnel. Used as the source of the encapsulated packets.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","ip6tunnel":{      "name":<String_value>,      "remote":<String_value>,      "local":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","ip6tunnel":{      "name":<String_value>,      "remote":<String_value>,      "local":<String_value>,      "ownergroup":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -84,7 +84,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "ip6tunnel": [ {      "name":<String_value>,      "remote":<String_value>,      "remoteip":<String_value>,      "local":<String_value>,      "type":<Double_value>,      "encapip":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "ip6tunnel": [ {      "name":<String_value>,      "remote":<String_value>,      "remoteip":<String_value>,      "local":<String_value>,      "type":<Double_value>,      "encapip":<String_value>,      "ownergroup":<String_value>}]}```
 
 
 
@@ -94,7 +94,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/ip6tunnel/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "ip6tunnel": [ {      "name":<String_value>,      "remote":<String_value>,      "remoteip":<String_value>,      "local":<String_value>,      "type":<Double_value>,      "encapip":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "ip6tunnel": [ {      "name":<String_value>,      "remote":<String_value>,      "remoteip":<String_value>,      "local":<String_value>,      "type":<Double_value>,      "encapip":<String_value>,      "ownergroup":<String_value>}]}```
 
 
 

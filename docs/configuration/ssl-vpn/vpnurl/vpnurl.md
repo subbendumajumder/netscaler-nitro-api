@@ -7,7 +7,7 @@ Configuration for VPN URL resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>urlname</td><td>&lt;String></td><td>Read-write</td><td>Name of the bookmark link.&lt;br>Minimum length = 1</td><tr><tr><td>linkname</td><td>&lt;String></td><td>Read-write</td><td>Description of the bookmark link. The description appears in the Access Interface.&lt;br>Minimum length = 1</td><tr><tr><td>actualurl</td><td>&lt;String></td><td>Read-write</td><td>Web address for the bookmark link.&lt;br>Minimum length = 1</td><tr><tr><td>clientlessaccess</td><td>&lt;String></td><td>Read-write</td><td>If clientless access to the resource hosting the link is allowed, also use clientless access for the bookmarked web address in the Secure Client Access based session. Allows single sign-on and other HTTP processing on NetScaler Gateway for HTTPS resources.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments associated with the bookmark link.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>urlname</td><td>&lt;String></td><td>Read-write</td><td>Name of the bookmark link.&lt;br>Minimum length = 1</td><tr><tr><td>linkname</td><td>&lt;String></td><td>Read-write</td><td>Description of the bookmark link. The description appears in the Access Interface.&lt;br>Minimum length = 1</td><tr><tr><td>actualurl</td><td>&lt;String></td><td>Read-write</td><td>Web address for the bookmark link.&lt;br>Minimum length = 1</td><tr><tr><td>vservername</td><td>&lt;String></td><td>Read-write</td><td>Name of the associated LB/CS vserver.</td><tr><tr><td>clientlessaccess</td><td>&lt;String></td><td>Read-write</td><td>If clientless access to the resource hosting the link is allowed, also use clientless access for the bookmarked web address in the Secure Client Access based session. Allows single sign-on and other HTTP processing on NetScaler Gateway for HTTPS resources.&lt;br>Default value: OFF&lt;br>Possible values = ON, OFF</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments associated with the bookmark link.</td><tr><tr><td>iconurl</td><td>&lt;String></td><td>Read-write</td><td>URL to fetch icon file for displaying this resource.</td><tr><tr><td>ssotype</td><td>&lt;String></td><td>Read-write</td><td>Single sign on type for unified gateway.&lt;br>Possible values = unifiedgateway, selfauth, samlauth</td><tr><tr><td>applicationtype</td><td>&lt;String></td><td>Read-write</td><td>The type of application this VPN URL represents. Possible values are CVPN/SaaS/VPN.&lt;br>Possible values = CVPN, VPN, SaaS</td><tr><tr><td>samlssoprofile</td><td>&lt;String></td><td>Read-write</td><td>Profile to be used for doing SAML SSO.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "vservername":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,      "iconurl":<String_value>,      "ssotype":<String_value>,      "applicationtype":<String_value>,      "samlssoprofile":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "vservername":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,      "iconurl":<String_value>,      "ssotype":<String_value>,      "applicationtype":<String_value>,      "samlssoprofile":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "clientlessaccess":true,      "comment":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vpnurl":{      "urlname":<String_value>,      "vservername":true,      "clientlessaccess":true,      "comment":true,      "iconurl":true,      "ssotype":true,      "applicationtype":true,      "samlssoprofile":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vpnurl": [ {      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vpnurl": [ {      "urlname":<String_value>,      "linkname":<String_value>,      "vservername":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,      "iconurl":<String_value>,      "ssotype":<String_value>,      "applicationtype":<String_value>,      "samlssoprofile":<String_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/vpnurl/urlname_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnurl": [ {      "urlname":<String_value>,      "linkname":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "vpnurl": [ {      "urlname":<String_value>,      "linkname":<String_value>,      "vservername":<String_value>,      "actualurl":<String_value>,      "clientlessaccess":<String_value>,      "comment":<String_value>,      "iconurl":<String_value>,      "ssotype":<String_value>,      "applicationtype":<String_value>,      "samlssoprofile":<String_value>}]}```
 
 
 

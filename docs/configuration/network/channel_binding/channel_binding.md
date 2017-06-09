@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to channel.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of an LA channel or LA channel in cluster configuration whose details you want the NetScaler appliance to display. Specify an LA channel in LA/x notation, where x can range from 1 to 8 or a cluster LA channel in CLA/x notation, where x can range from 1 to 4.&lt;br>Minimum length = 1</td><tr><tr><td>channel_interface_binding</td><td>&lt;channel_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to channel.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of an LA channel or LA channel in cluster configuration whose details you want the NetScaler appliance to display. Specify an LA channel in LA/x notation, where x can range from 1 to 8 or a cluster LA channel in CLA/x notation or Link redundant channel in LR/x notation , where x can range from 1 to 4.&lt;br>Minimum length = 1</td><tr><tr><td>channel_interface_binding</td><td>&lt;channel_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to channel.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

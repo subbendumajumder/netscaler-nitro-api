@@ -12,7 +12,7 @@ Configuration for assignment resource.
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [RENAME](#rename) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD](#add) | [UPDATE](#update) | [UNSET](#unset) | [DELETE](#delete) | [RENAME](#rename) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -30,6 +30,28 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
 Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","nsassignment":{      "name":<String_value>,      "variable":<String_value>,      "set":<String_value>,      "Add":<String_value>,      "sub":<String_value>,      "append":<String_value>,      "clear":<Boolean_value>,      "comment":<String_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
+
+###update
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: PUT
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","nsassignment":{      "name":<String_value>,      "variable":<String_value>,      "set":<String_value>,      "Add":<String_value>,      "sub":<String_value>,      "append":<String_value>,      "clear":<Boolean_value>,      "comment":<String_value>,}}```
+Response Payload: 
+{ "errorcode": 0, "message": "Done", "severity": <String_value> }
+
+
+###unset
+
+
+
+URL: http://&lt;NSIP&gt;/nitro/v1/config/
+HTTP Method: POST
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","nsassignment":{      "name":<String_value>,      "comment":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 

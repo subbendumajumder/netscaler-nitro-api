@@ -7,7 +7,7 @@ Configuration for pre authentication action resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the preauthentication action. Must begin with a letter, number, or the underscore character (_), and must consist only of letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after preauthentication action is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my aaa action? or ?my aaa action).&lt;br>Minimum length = 1</td><tr><tr><td>preauthenticationaction</td><td>&lt;String></td><td>Read-write</td><td>Allow or deny logon after endpoint analysis (EPA) results.&lt;br>Possible values = ALLOW, DENY</td><tr><tr><td>killprocess</td><td>&lt;String></td><td>Read-write</td><td>String specifying the name of a process to be terminated by the endpoint analysis (EPA) tool.</td><tr><tr><td>deletefiles</td><td>&lt;String></td><td>Read-write</td><td>String specifying the path(s) and name(s) of the files to be deleted by the endpoint analysis (EPA) tool.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the preauthentication action. Must begin with a letter, number, or the underscore character (_), and must consist only of letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after preauthentication action is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my aaa action? or ?my aaa action).&lt;br>Minimum length = 1</td><tr><tr><td>preauthenticationaction</td><td>&lt;String></td><td>Read-write</td><td>Allow or deny logon after endpoint analysis (EPA) results.&lt;br>Possible values = ALLOW, DENY</td><tr><tr><td>killprocess</td><td>&lt;String></td><td>Read-write</td><td>String specifying the name of a process to be terminated by the endpoint analysis (EPA) tool.</td><tr><tr><td>deletefiles</td><td>&lt;String></td><td>Read-write</td><td>String specifying the path(s) and name(s) of the files to be deleted by the endpoint analysis (EPA) tool.</td><tr><tr><td>defaultepagroup</td><td>&lt;String></td><td>Read-write</td><td>This is the default group that is chosen when the EPA check succeeds.&lt;br>Maximum length = 64</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "defaultepagroup":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "defaultepagroup":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "killprocess":true,      "deletefiles":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","aaapreauthenticationaction":{      "name":<String_value>,      "killprocess":true,      "deletefiles":true,      "defaultepagroup":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "aaapreauthenticationaction": [ {      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "aaapreauthenticationaction": [ {      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "builtin":<String[]_value>,      "defaultepagroup":<String_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/aaapreauthenticationaction/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "aaapreauthenticationaction": [ {      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "aaapreauthenticationaction": [ {      "name":<String_value>,      "preauthenticationaction":<String_value>,      "killprocess":<String_value>,      "deletefiles":<String_value>,      "builtin":<String[]_value>,      "defaultepagroup":<String_value>}]}```
 
 
 

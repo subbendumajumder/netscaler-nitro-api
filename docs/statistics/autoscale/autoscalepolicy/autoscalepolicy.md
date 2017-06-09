@@ -36,7 +36,7 @@ Use this query-parameter to get autoscalepolicy resources based on additional pr
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
 
 
 
@@ -46,7 +46,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "autoscalepolicy": [
 
 URL: http://NS_IP/nitro/v1/stat/autoscalepolicy/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
 
 
 

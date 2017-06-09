@@ -7,7 +7,7 @@ Configuration for "VXLAN" resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>A positive integer, which is also called VXLAN Network Identifier (VNI), that uniquely identifies a VXLAN.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>ID of VLANs whose traffic is allowed over this VXLAN. If you do not specify any VLAN IDs, the NetScaler allows traffic of all VLANs that are not part of any other VXLANs.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Specifies UDP destination port for VXLAN packets.&lt;br>Default value: 4789&lt;br>Minimum value = 1&lt;br>Maximum value = 65534</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>A positive integer, which is also called VXLAN Network Identifier (VNI), that uniquely identifies a VXLAN.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>ID of VLANs whose traffic is allowed over this VXLAN. If you do not specify any VLAN IDs, the NetScaler allows traffic of all VLANs that are not part of any other VXLANs.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Specifies UDP destination port for VXLAN packets.&lt;br>Default value: 4789&lt;br>Minimum value = 1&lt;br>Maximum value = 65534</td><tr><tr><td>dynamicrouting</td><td>&lt;String></td><td>Read-write</td><td>Enable dynamic routing on this VXLAN.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>ipv6dynamicrouting</td><td>&lt;String></td><td>Read-write</td><td>Enable all IPv6 dynamic routing protocols on this VXLAN. Note: For the ENABLED setting to work, you must configure IPv6 dynamic routing protocols from the VTYSH command line.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>},"sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -57,7 +57,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -68,7 +68,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":true,      "port":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vxlan":{      "id":<Double_value>,      "vlan":true,      "port":true,      "dynamicrouting":true,      "ipv6dynamicrouting":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -101,7 +101,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vxlan": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vxlan": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,      "td":<Double_value>}]}```
 
 
 
@@ -111,7 +111,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/vxlan/id_value&lt;Double&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vxlan": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "vxlan": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "port":<Integer_value>,      "dynamicrouting":<String_value>,      "ipv6dynamicrouting":<String_value>,      "td":<Double_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to linkset.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of the linkset for which to display information. If an ID is not provided, the display includes information about all linksets that are available in the cluster.</td><tr><tr><td>linkset_channel_binding</td><td>&lt;linkset_channel_binding[]></td><td>Read-only</td><td>channel that can be bound to linkset.</td><tr><tr><td>linkset_interface_binding</td><td>&lt;linkset_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to linkset.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of the linkset for which to display information. If an ID is not provided, the display includes information about all linksets that are available in the cluster.</td><tr><tr><td>linkset_interface_binding</td><td>&lt;linkset_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to linkset.</td><tr><tr><td>linkset_channel_binding</td><td>&lt;linkset_channel_binding[]></td><td>Read-only</td><td>channel that can be bound to linkset.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

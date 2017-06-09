@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to authenticationsamlpoli
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SAML policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationsamlpolicy_authenticationvserver_binding</td><td>&lt;authenticationsamlpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationsamlpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SAML policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationsamlpolicy_vpnglobal_binding</td><td>&lt;authenticationsamlpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationsamlpolicy.</td><tr><tr><td>authenticationsamlpolicy_vpnvserver_binding</td><td>&lt;authenticationsamlpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationsamlpolicy.</td><tr><tr><td>authenticationsamlpolicy_authenticationvserver_binding</td><td>&lt;authenticationsamlpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationsamlpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/authenticationsamlpolicy_binding/name_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationsamlpolicy_binding": [ {      "name":<String_value>,      "authenticationsamlpolicy_authenticationvserver_binding":<authenticationsamlpolicy_authenticationvserver_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "authenticationsamlpolicy_binding": [ {      "name":<String_value>,      "authenticationsamlpolicy_vpnvserver_binding":<authenticationsamlpolicy_vpnvserver_binding[]_value>,      "authenticationsamlpolicy_vpnglobal_binding":<authenticationsamlpolicy_vpnglobal_binding[]_value>,      "authenticationsamlpolicy_authenticationvserver_binding":<authenticationsamlpolicy_authenticationvserver_binding[]_value>,}]}```
 
 
 

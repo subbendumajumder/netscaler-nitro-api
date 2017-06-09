@@ -7,7 +7,7 @@ Binding object showing the nsip6 that can be bound to vlan.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the virtual LAN ID.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>netmask</td><td>&lt;String></td><td>Read-write</td><td>Subnet mask for the network address defined for this VLAN.&lt;br>Minimum length = 1</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>The IP address assigned to the VLAN.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for this vlan.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the virtual LAN ID.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>netmask</td><td>&lt;String></td><td>Read-write</td><td>Subnet mask for the network address defined for this VLAN.&lt;br>Minimum length = 1</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>The IP address assigned to the VLAN.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://NS_IP/nitro/v1/config
 HTTP Method: PUT
-Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","vlan_nsip6_binding":{      "id":<Double_value>,      "ipaddress":<String_value>,                  "netmask":<String_value>,                  "td":<Double_value>,}}```
+Request Payload: ```{"params":{      "warning":<String_value>,      "onerror":<String_value>},sessionid":"##sessionid","vlan_nsip6_binding":{      "id":<Double_value>,      "ipaddress":<String_value>,                  "netmask":<String_value>,                  "td":<Double_value>,      "ownergroup":<String_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -74,7 +74,7 @@ Use this query parameter to get warnings in nitro response. If this field is set
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vlan_nsip6_binding": [ {      "id":<Double_value>,      "td":<Double_value>,      "netmask":<String_value>,      "ipaddress":<String_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vlan_nsip6_binding": [ {      "ownergroup":<String_value>,      "id":<Double_value>,      "td":<Double_value>,      "netmask":<String_value>,      "ipaddress":<String_value>,}]}```
 
 
 

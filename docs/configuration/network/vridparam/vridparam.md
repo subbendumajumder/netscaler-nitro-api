@@ -7,7 +7,7 @@ Configuration for VR ID parameter resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>sendtomaster</td><td>&lt;String></td><td>Read-write</td><td>Forward packets to the master node, in an active-active mode configuration, if the virtual server is in the backup state and sharing is disabled.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>sendtomaster</td><td>&lt;String></td><td>Read-write</td><td>Forward packets to the master node, in an active-active mode configuration, if the virtual server is in the backup state and sharing is disabled.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>hellointerval</td><td>&lt;Double></td><td>Read-write</td><td>Interval, in milliseconds, between vrrp advertisement messages sent to the peer node in active-active mode.&lt;br>Default value: 1000&lt;br>Minimum value = 200&lt;br>Maximum value = 1000</td><tr><tr><td>deadinterval</td><td>&lt;Double></td><td>Read-write</td><td>Number of seconds after which a peer node in active-active mode is marked down if vrrp advertisements are not received from the peer node.&lt;br>Default value: 3&lt;br>Minimum value = 1&lt;br>Maximum value = 3</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: PUT
-Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vridparam":{      "sendtomaster":<String_value>,}}```
+Request Payload: ```{"params": {      "warning":<String_value>,      "onerror":<String_value>"},sessionid":"##sessionid","vridparam":{      "sendtomaster":<String_value>,      "hellointerval":<Double_value>,      "deadinterval":<Double_value>,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -40,7 +40,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/
 HTTP Method: POST
-Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vridparam":{      "sendtomaster":true,}}```
+Request Payload: ```object={"params":{      "warning":<String_value>,      "onerror":<String_value>,      "action":"unset"},"sessionid":"##sessionid","vridparam":{      "sendtomaster":true,      "hellointerval":true,      "deadinterval":true,}}```
 Response Payload: 
 { "errorcode": 0, "message": "Done", "severity": <String_value> }
 
@@ -51,7 +51,7 @@ Response Payload:
 
 URL: http://&lt;NSIP&gt;/nitro/v1/config/vridparam
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vridparam": [ {      "sendtomaster":<String_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "severity": <String_value>, "vridparam": [ {      "sendtomaster":<String_value>,      "hellointerval":<Double_value>,      "deadinterval":<Double_value>}]}```
 
 
 

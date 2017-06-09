@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to server.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the server for which to display parameters.&lt;br>Minimum length = 1</td><tr><tr><td>server_gslbservice_binding</td><td>&lt;server_gslbservice_binding[]></td><td>Read-only</td><td>gslbservice that can be bound to server.</td><tr><tr><td>server_servicegroup_binding</td><td>&lt;server_servicegroup_binding[]></td><td>Read-only</td><td>servicegroup that can be bound to server.</td><tr><tr><td>server_service_binding</td><td>&lt;server_service_binding[]></td><td>Read-only</td><td>service that can be bound to server.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the server for which to display parameters.&lt;br>Minimum length = 1</td><tr><tr><td>server_service_binding</td><td>&lt;server_service_binding[]></td><td>Read-only</td><td>service that can be bound to server.</td><tr><tr><td>server_gslbservice_binding</td><td>&lt;server_gslbservice_binding[]></td><td>Read-only</td><td>gslbservice that can be bound to server.</td><tr><tr><td>server_servicegroup_binding</td><td>&lt;server_servicegroup_binding[]></td><td>Read-only</td><td>servicegroup that can be bound to server.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

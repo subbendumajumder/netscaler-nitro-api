@@ -7,7 +7,7 @@ Binding object showing the resources that can be bound to vrid6.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>vrid6_nsip_binding</td><td>&lt;vrid6_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to vrid6.</td><tr><tr><td>vrid6_interface_binding</td><td>&lt;vrid6_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to vrid6.</td><tr><tr><td>vrid6_nsip6_binding</td><td>&lt;vrid6_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to vrid6.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies a VMAC6 address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>vrid6_interface_binding</td><td>&lt;vrid6_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to vrid6.</td><tr><tr><td>vrid6_nsip_binding</td><td>&lt;vrid6_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to vrid6.</td><tr><tr><td>vrid6_nsip6_binding</td><td>&lt;vrid6_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to vrid6.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,7 +29,7 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;NS_IP&gt;/nitro/v1/config/vrid6_binding/id_value&lt;Double&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "vrid6_binding": [ {      "id":<Double_value>,      "vrid6_nsip6_binding":<vrid6_nsip6_binding[]_value>,      "vrid6_interface_binding":<vrid6_interface_binding[]_value>,      "vrid6_nsip_binding":<vrid6_nsip_binding[]_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "vrid6_binding": [ {      "id":<Double_value>,      "vrid6_nsip6_binding":<vrid6_nsip6_binding[]_value>,      "vrid6_nsip_binding":<vrid6_nsip_binding[]_value>,      "vrid6_interface_binding":<vrid6_interface_binding[]_value>,}]}```
 
 
 

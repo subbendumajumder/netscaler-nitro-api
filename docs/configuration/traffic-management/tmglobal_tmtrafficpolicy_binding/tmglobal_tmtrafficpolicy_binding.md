@@ -7,7 +7,7 @@ Binding object showing the tmtrafficpolicy that can be bound to tmglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Bindpoint to which the policy is bound.&lt;br>Possible values = REQ_OVERRIDE, REQ_DEFAULT, RES_OVERRIDE, RES_DEFAULT</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>globalbindtype</td><td>&lt;String></td><td>Read-write</td><td>.&lt;br>Default value: SYSTEM_GLOBAL&lt;br>Possible values = SYSTEM_GLOBAL, VPN_GLOBAL, RNAT_GLOBAL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Bindpoint to which the policy is bound.&lt;br>Possible values = REQ_OVERRIDE, REQ_DEFAULT, RES_OVERRIDE, RES_DEFAULT</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -62,7 +62,7 @@ Use this query-parameter to get the tmglobal_tmtrafficpolicy_binding resources i
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tmglobal_tmtrafficpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "type":<String_value>,      "bindpolicytype":<Double_value>,}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "tmglobal_tmtrafficpolicy_binding": [ {      "priority":<Double_value>,      "globalbindtype":<String_value>,      "policyname":<String_value>,      "type":<String_value>,      "bindpolicytype":<Double_value>,}]}```
 
 
 

@@ -36,7 +36,7 @@ Use this query-parameter to get tunnelip resources based on additional propertie
 
 
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip": [ {      "tunnelip":<String_value>,      "tnltottxbytes":<Double_value>,      "tnltottxpkts":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxbytesrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltotrxpkts":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip": [ {      "tunnelip":<String_value>,      "tnltxpktsrate":<Double_value>,      "tnltxbytesrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnltottxpkts":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>}]}```
 
 
 
@@ -46,7 +46,7 @@ Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip": [ {    
 
 URL: http://NS_IP/nitro/v1/stat/tunnelip/tunnelip_value&lt;String&gt;
 HTTP Method: GET
-Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip": [ {      "tunnelip":<String_value>,      "tnltottxbytes":<Double_value>,      "tnltottxpkts":<Double_value>,      "tnltxpktsrate":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>,      "tnltxbytesrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltotrxpkts":<Double_value>}]}```
+Response Payload: ```{ "errorcode": 0, "message": "Done", "tunnelip": [ {      "tunnelip":<String_value>,      "tnltxpktsrate":<Double_value>,      "tnltxbytesrate":<Double_value>,      "tnlrxpktsrate":<Double_value>,      "tnltotrxpkts":<Double_value>,      "tnltottxbytes":<Double_value>,      "tnltottxpkts":<Double_value>,      "tnlrxbytesrate":<Double_value>,      "tnltotrxbytes":<Double_value>}]}```
 
 
 
