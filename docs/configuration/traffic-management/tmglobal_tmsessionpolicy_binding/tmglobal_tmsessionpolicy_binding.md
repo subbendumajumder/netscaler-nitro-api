@@ -7,7 +7,7 @@ Binding object showing the tmsessionpolicy that can be bound to tmglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>bindpolicytype</td><td>&lt;Double></td><td>Read-only</td><td>Bound policy type.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "bindpolicytype":<Double_value>}]}```
+Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "gotopriorityexpression":<String_value>,      "bindpolicytype":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "bindpolicytype":<Double_value>}]}```
+Response Payload: ```{ "tmglobal_tmsessionpolicy_binding": [ {      "priority":<Double_value>,      "builtin":<String[]_value>,      "policyname":<String_value>,      "gotopriorityexpression":<String_value>,      "bindpolicytype":<Double_value>}]}```
 
 
 

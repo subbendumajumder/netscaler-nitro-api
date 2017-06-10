@@ -7,7 +7,7 @@ Binding object showing the sslpolicy that can be bound to sslservice.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policies bound to this SSL service.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The SSL policy binding.</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of policy label invocation.&lt;br>Possible values = vserver, service, policylabel</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label to invoke if the current policy rule evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke flag. This attribute is relevant only for ADVANCED policies.</td><tr><tr><td>polinherit</td><td>&lt;Double></td><td>Read-only</td><td>Whether the bound policy is a inherited policy or not.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policies bound to this SSL service.&lt;br>Minimum value = 0&lt;br>Maximum value = 65534</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The SSL policy binding.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label to invoke if the current policy rule evaluates to TRUE.</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke flag. This attribute is relevant only for ADVANCED policies.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of policy label invocation.&lt;br>Possible values = vserver, service, policylabel</td><tr><tr><td>polinherit</td><td>&lt;Double></td><td>Read-only</td><td>Whether the bound policy is a inherited policy or not.&lt;br>Minimum value = 0&lt;br>Maximum value = 254</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_sslpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "servicename":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke":<Boolean_value>,      "polinherit":<Double_value>}]}```
+Response Payload: ```{ "sslservice_sslpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "servicename":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>,      "polinherit":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_sslpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "servicename":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke":<Boolean_value>,      "polinherit":<Double_value>}]}```
+Response Payload: ```{ "sslservice_sslpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "servicename":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>,      "polinherit":<Double_value>}]}```
 
 
 

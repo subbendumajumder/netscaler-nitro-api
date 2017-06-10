@@ -7,7 +7,7 @@ Configuration for Create a StoreFront configuration file resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>filename</td><td>&lt;String></td><td>Read-only</td><td>Path where file was created.</td><tr><tr><td>vserver</td><td>&lt;String></td><td>Read-only</td><td>Name of exported Gateway virtual server.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>vserver</td><td>&lt;String[]></td><td>Read-write</td><td>Name of Gateway virtual server.</td><tr><tr><td>filename</td><td>&lt;String></td><td>Read-only</td><td>Path where file was created.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -29,6 +29,11 @@ Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and p
 
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnsfconfig
 Query-parameters:
+args
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnsfconfig?args=vserver:&lt;String[]_value&gt;
+Use this query-parameter to get vpnsfconfig resources based on additional properties.
+
+
 attrs
 http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnsfconfig?attrs=property-name1,property-name2
 Use this query parameter to specify the resource details that you want to retrieve.
@@ -60,7 +65,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnsfconfig": [ {      "filename":<String_value>,      "vserver":<String_value>}]}```
+Response Payload: ```{ "vpnsfconfig": [ {vserver:<String[]_value>      "filename":<String_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Binding object which returns the resources bound to sslcertkey.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>certkey</td><td>&lt;String></td><td>Read-write</td><td>Name of the certificate-key pair for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslcertkey_sslvserver_binding</td><td>&lt;sslcertkey_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_sslocspresponder_binding</td><td>&lt;sslcertkey_sslocspresponder_binding[]></td><td>Read-only</td><td>sslocspresponder that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_service_binding</td><td>&lt;sslcertkey_service_binding[]></td><td>Read-only</td><td>service that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_crldistribution_binding</td><td>&lt;sslcertkey_crldistribution_binding[]></td><td>Read-only</td><td>crldistribution that can be bound to sslcertkey.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>certkey</td><td>&lt;String></td><td>Read-write</td><td>Name of the certificate-key pair for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslcertkey_crldistribution_binding</td><td>&lt;sslcertkey_crldistribution_binding[]></td><td>Read-only</td><td>crldistribution that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_sslvserver_binding</td><td>&lt;sslcertkey_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_sslocspresponder_binding</td><td>&lt;sslcertkey_sslocspresponder_binding[]></td><td>Read-only</td><td>sslocspresponder that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_service_binding</td><td>&lt;sslcertkey_service_binding[]></td><td>Read-only</td><td>service that can be bound to sslcertkey.</td><tr><tr><td>sslcertkey_sslprofile_binding</td><td>&lt;sslcertkey_sslprofile_binding[]></td><td>Read-only</td><td>sslprofile that can be bound to sslcertkey.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslcertkey_binding": [ {      "certkey":<String_value>,      "sslcertkey_crldistribution_binding":<sslcertkey_crldistribution_binding[]_value>,      "sslcertkey_sslvserver_binding":<sslcertkey_sslvserver_binding[]_value>,      "sslcertkey_sslocspresponder_binding":<sslcertkey_sslocspresponder_binding[]_value>,      "sslcertkey_service_binding":<sslcertkey_service_binding[]_value>}]}```
+Response Payload: ```{ "sslcertkey_binding": [ {      "certkey":<String_value>,      "sslcertkey_sslprofile_binding":<sslcertkey_sslprofile_binding[]_value>,      "sslcertkey_sslocspresponder_binding":<sslcertkey_sslocspresponder_binding[]_value>,      "sslcertkey_service_binding":<sslcertkey_service_binding[]_value>,      "sslcertkey_crldistribution_binding":<sslcertkey_crldistribution_binding[]_value>,      "sslcertkey_sslvserver_binding":<sslcertkey_sslvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslcertkey_binding": [ {      "certkey":<String_value>,      "sslcertkey_crldistribution_binding":<sslcertkey_crldistribution_binding[]_value>,      "sslcertkey_sslvserver_binding":<sslcertkey_sslvserver_binding[]_value>,      "sslcertkey_sslocspresponder_binding":<sslcertkey_sslocspresponder_binding[]_value>,      "sslcertkey_service_binding":<sslcertkey_service_binding[]_value>}]}```
+Response Payload: ```{ "sslcertkey_binding": [ {      "certkey":<String_value>,      "sslcertkey_sslprofile_binding":<sslcertkey_sslprofile_binding[]_value>,      "sslcertkey_sslocspresponder_binding":<sslcertkey_sslocspresponder_binding[]_value>,      "sslcertkey_service_binding":<sslcertkey_service_binding[]_value>,      "sslcertkey_crldistribution_binding":<sslcertkey_crldistribution_binding[]_value>,      "sslcertkey_sslvserver_binding":<sslcertkey_sslvserver_binding[]_value>}]}```
 
 
 

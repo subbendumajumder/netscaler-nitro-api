@@ -7,7 +7,7 @@ Configuration for VPN session policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new session policy that is applied after the user logs on to NetScaler Gateway.&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, specifying the traffic that matches the policy. Can be written in either default or classic syntax. &lt;br>Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to be applied by the new session policy if the rule criteria are met.&lt;br>Minimum length = 1</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new session policy that is applied after the user logs on to NetScaler Gateway.&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, specifying the traffic that matches the policy. Can be written in either default or classic syntax. &lt;br>Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to be applied by the new session policy if the rule criteria are met.&lt;br>Minimum length = 1</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-only</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>expressiontype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy (Classic/Advanced) .&lt;br>Possible values = Classic Policy, Advanced Policy</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -119,7 +119,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnsessionpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "vpnsessionpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "builtin":<String[]_value>,      "expressiontype":<String_value>,      "hits":<Double_value>}]}```
 
 
 
@@ -150,7 +150,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnsessionpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "builtin":<String[]_value>}]}```
+Response Payload: ```{ "vpnsessionpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "builtin":<String[]_value>,      "expressiontype":<String_value>,      "hits":<Double_value>}]}```
 
 
 

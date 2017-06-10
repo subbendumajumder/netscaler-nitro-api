@@ -7,7 +7,7 @@ Configuration for ip tunnel parameter resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>srcip</td><td>&lt;String></td><td>Read-write</td><td>Common source-IP address for all tunnels. For a specific tunnel, this global setting is overridden if you have specified another source IP address. Must be a MIP or SNIP address.&lt;br>Minimum length = 1</td><tr><tr><td>dropfrag</td><td>&lt;String></td><td>Read-write</td><td>Drop any IP packet that requires fragmentation before it is sent through the tunnel.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>dropfragcputhreshold</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value, as a percentage of CPU usage, at which to drop packets that require fragmentation to use the IP tunnel. Applies only if dropFragparameter is set to NO. The default value, 0, specifies that this parameter is not set.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>srciproundrobin</td><td>&lt;String></td><td>Read-write</td><td>Use a different source IP address for each new session through a particular IP tunnel, as determined by round robin selection of one of the SNIP addresses. This setting is ignored if a common global source IP address has been specified for all the IP tunnels. This setting does not apply to a tunnel for which a source IP address has been specified.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>enablestrictrx</td><td>&lt;String></td><td>Read-write</td><td>Strict PBR check for IPSec packets received through tunnel.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>enablestricttx</td><td>&lt;String></td><td>Read-write</td><td>Strict PBR check for packets to be sent IPSec protected.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>srcip</td><td>&lt;String></td><td>Read-write</td><td>Common source-IP address for all tunnels. For a specific tunnel, this global setting is overridden if you have specified another source IP address. Must be a MIP or SNIP address.&lt;br>Minimum length = 1</td><tr><tr><td>dropfrag</td><td>&lt;String></td><td>Read-write</td><td>Drop any IP packet that requires fragmentation before it is sent through the tunnel.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>dropfragcputhreshold</td><td>&lt;Double></td><td>Read-write</td><td>Threshold value, as a percentage of CPU usage, at which to drop packets that require fragmentation to use the IP tunnel. Applies only if dropFragparameter is set to NO. The default value, 0, specifies that this parameter is not set.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>srciproundrobin</td><td>&lt;String></td><td>Read-write</td><td>Use a different source IP address for each new session through a particular IP tunnel, as determined by round robin selection of one of the SNIP addresses. This setting is ignored if a common global source IP address has been specified for all the IP tunnels. This setting does not apply to a tunnel for which a source IP address has been specified.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>enablestrictrx</td><td>&lt;String></td><td>Read-write</td><td>Strict PBR check for IPSec packets received through tunnel.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>enablestricttx</td><td>&lt;String></td><td>Read-write</td><td>Strict PBR check for packets to be sent IPSec protected.&lt;br>Default value: NO&lt;br>Possible values = YES, NO</td><tr><tr><td>mac</td><td>&lt;String></td><td>Read-write</td><td>The shared MAC used for shared IP between cluster nodes/HA peers.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"iptunnelparam":{      "srcip":<String_value>,      "dropfrag":<String_value>,      "dropfragcputhreshold":<Double_value>,      "srciproundrobin":<String_value>,      "enablestrictrx":<String_value>,      "enablestricttx":<String_value>}}```
+Request Payload: ```{"iptunnelparam":{      "srcip":<String_value>,      "dropfrag":<String_value>,      "dropfragcputhreshold":<Double_value>,      "srciproundrobin":<String_value>,      "enablestrictrx":<String_value>,      "enablestricttx":<String_value>,      "mac":<String_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -48,7 +48,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"iptunnelparam":{      "srcip":true,      "dropfrag":true,      "dropfragcputhreshold":true,      "srciproundrobin":true,      "enablestrictrx":true,      "enablestricttx":true}}```
+Request Payload: ```{"iptunnelparam":{      "srcip":true,      "dropfrag":true,      "dropfragcputhreshold":true,      "srciproundrobin":true,      "enablestrictrx":true,      "enablestricttx":true,      "mac":true}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -68,7 +68,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "iptunnelparam": [ {      "srcip":<String_value>,      "dropfrag":<String_value>,      "dropfragcputhreshold":<Double_value>,      "srciproundrobin":<String_value>,      "enablestrictrx":<String_value>,      "enablestricttx":<String_value>}]}```
+Response Payload: ```{ "iptunnelparam": [ {      "srcip":<String_value>,      "dropfrag":<String_value>,      "dropfragcputhreshold":<Double_value>,      "srciproundrobin":<String_value>,      "enablestrictrx":<String_value>,      "enablestricttx":<String_value>,      "mac":<String_value>}]}```
 
 
 

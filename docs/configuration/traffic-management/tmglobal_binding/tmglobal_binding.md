@@ -7,7 +7,7 @@ Binding object which returns the resources bound to tmglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>tmglobal_tmtrafficpolicy_binding</td><td>&lt;tmglobal_tmtrafficpolicy_binding[]></td><td>Read-only</td><td>tmtrafficpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_auditsyslogpolicy_binding</td><td>&lt;tmglobal_auditsyslogpolicy_binding[]></td><td>Read-only</td><td>auditsyslogpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_auditnslogpolicy_binding</td><td>&lt;tmglobal_auditnslogpolicy_binding[]></td><td>Read-only</td><td>auditnslogpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_tmsessionpolicy_binding</td><td>&lt;tmglobal_tmsessionpolicy_binding[]></td><td>Read-only</td><td>tmsessionpolicy that can be bound to tmglobal.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>tmglobal_auditnslogpolicy_binding</td><td>&lt;tmglobal_auditnslogpolicy_binding[]></td><td>Read-only</td><td>auditnslogpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_tmtrafficpolicy_binding</td><td>&lt;tmglobal_tmtrafficpolicy_binding[]></td><td>Read-only</td><td>tmtrafficpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_auditsyslogpolicy_binding</td><td>&lt;tmglobal_auditsyslogpolicy_binding[]></td><td>Read-only</td><td>auditsyslogpolicy that can be bound to tmglobal.</td><tr><tr><td>tmglobal_tmsessionpolicy_binding</td><td>&lt;tmglobal_tmsessionpolicy_binding[]></td><td>Read-only</td><td>tmsessionpolicy that can be bound to tmglobal.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmglobal_binding": [ {      "tmglobal_tmtrafficpolicy_binding":<tmglobal_tmtrafficpolicy_binding[]_value>,      "tmglobal_auditnslogpolicy_binding":<tmglobal_auditnslogpolicy_binding[]_value>,      "tmglobal_auditsyslogpolicy_binding":<tmglobal_auditsyslogpolicy_binding[]_value>,      "tmglobal_tmsessionpolicy_binding":<tmglobal_tmsessionpolicy_binding[]_value>}]}```
+Response Payload: ```{ "tmglobal_binding": [ {      "tmglobal_tmtrafficpolicy_binding":<tmglobal_tmtrafficpolicy_binding[]_value>,      "tmglobal_auditsyslogpolicy_binding":<tmglobal_auditsyslogpolicy_binding[]_value>,      "tmglobal_tmsessionpolicy_binding":<tmglobal_tmsessionpolicy_binding[]_value>,      "tmglobal_auditnslogpolicy_binding":<tmglobal_auditnslogpolicy_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmglobal_binding": [ {      "tmglobal_tmtrafficpolicy_binding":<tmglobal_tmtrafficpolicy_binding[]_value>,      "tmglobal_auditnslogpolicy_binding":<tmglobal_auditnslogpolicy_binding[]_value>,      "tmglobal_auditsyslogpolicy_binding":<tmglobal_auditsyslogpolicy_binding[]_value>,      "tmglobal_tmsessionpolicy_binding":<tmglobal_tmsessionpolicy_binding[]_value>}]}```
+Response Payload: ```{ "tmglobal_binding": [ {      "tmglobal_tmtrafficpolicy_binding":<tmglobal_tmtrafficpolicy_binding[]_value>,      "tmglobal_auditsyslogpolicy_binding":<tmglobal_auditsyslogpolicy_binding[]_value>,      "tmglobal_tmsessionpolicy_binding":<tmglobal_tmsessionpolicy_binding[]_value>,      "tmglobal_auditnslogpolicy_binding":<tmglobal_auditnslogpolicy_binding[]_value>}]}```
 
 
 

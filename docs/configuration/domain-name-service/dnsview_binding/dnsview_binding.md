@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsview_binding": [ {      "viewname":<String_value>,      "dnsview_dnspolicy_binding":<dnsview_dnspolicy_binding[]_value>,      "dnsview_gslbservice_binding":<dnsview_gslbservice_binding[]_value>}]}```
+Response Payload: ```{ "dnsview_binding": [ {      "viewname":<String_value>,      "dnsview_gslbservice_binding":<dnsview_gslbservice_binding[]_value>,      "dnsview_dnspolicy_binding":<dnsview_dnspolicy_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsview_binding": [ {      "viewname":<String_value>,      "dnsview_dnspolicy_binding":<dnsview_dnspolicy_binding[]_value>,      "dnsview_gslbservice_binding":<dnsview_gslbservice_binding[]_value>}]}```
+Response Payload: ```{ "dnsview_binding": [ {      "viewname":<String_value>,      "dnsview_gslbservice_binding":<dnsview_gslbservice_binding[]_value>,      "dnsview_dnspolicy_binding":<dnsview_dnspolicy_binding[]_value>}]}```
 
 
 

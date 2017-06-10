@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>}]}```
+Response Payload: ```{ "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>}]}```
+Response Payload: ```{ "appfwpolicylabel_binding": [ {      "labelname":<String_value>,      "appfwpolicylabel_appfwpolicy_binding":<appfwpolicylabel_appfwpolicy_binding[]_value>,      "appfwpolicylabel_policybinding_binding":<appfwpolicylabel_policybinding_binding[]_value>}]}```
 
 
 

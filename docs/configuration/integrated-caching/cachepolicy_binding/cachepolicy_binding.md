@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "cachepolicy_binding": [ {      "policyname":<String_value>,      "cachepolicy_cachepolicylabel_binding":<cachepolicy_cachepolicylabel_binding[]_value>,      "cachepolicy_lbvserver_binding":<cachepolicy_lbvserver_binding[]_value>,      "cachepolicy_cacheglobal_binding":<cachepolicy_cacheglobal_binding[]_value>,      "cachepolicy_csvserver_binding":<cachepolicy_csvserver_binding[]_value>}]}```
+Response Payload: ```{ "cachepolicy_binding": [ {      "policyname":<String_value>,      "cachepolicy_lbvserver_binding":<cachepolicy_lbvserver_binding[]_value>,      "cachepolicy_cachepolicylabel_binding":<cachepolicy_cachepolicylabel_binding[]_value>,      "cachepolicy_cacheglobal_binding":<cachepolicy_cacheglobal_binding[]_value>,      "cachepolicy_csvserver_binding":<cachepolicy_csvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "cachepolicy_binding": [ {      "policyname":<String_value>,      "cachepolicy_cachepolicylabel_binding":<cachepolicy_cachepolicylabel_binding[]_value>,      "cachepolicy_lbvserver_binding":<cachepolicy_lbvserver_binding[]_value>,      "cachepolicy_cacheglobal_binding":<cachepolicy_cacheglobal_binding[]_value>,      "cachepolicy_csvserver_binding":<cachepolicy_csvserver_binding[]_value>}]}```
+Response Payload: ```{ "cachepolicy_binding": [ {      "policyname":<String_value>,      "cachepolicy_lbvserver_binding":<cachepolicy_lbvserver_binding[]_value>,      "cachepolicy_cachepolicylabel_binding":<cachepolicy_cachepolicylabel_binding[]_value>,      "cachepolicy_cacheglobal_binding":<cachepolicy_cacheglobal_binding[]_value>,      "cachepolicy_csvserver_binding":<cachepolicy_csvserver_binding[]_value>}]}```
 
 
 

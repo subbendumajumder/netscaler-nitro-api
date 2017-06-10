@@ -7,7 +7,7 @@ Binding object showing the vpnsessionpolicy that can be bound to aaauser.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policy</td><td>&lt;String></td><td>Read-write</td><td>The policy Name.</td><tr><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User account to which to bind the policy.&lt;br>Minimum length = 1</td><tr><tr><td>acttype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Integer specifying the priority of the policy. A lower number indicates a higher priority. Policies are evaluated in the order of their priority numbers. Maximum value for default syntax policies is 2147483647 and for classic policies max priority is 64000. .&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User account to which to bind the policy.&lt;br>Minimum length = 1</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policy</td><td>&lt;String></td><td>Read-write</td><td>The policy Name.</td><tr><tr><td>acttype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "aaauser_vpnsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policy":<String_value>,      "username":<String_value>,      "acttype":<Double_value>}]}```
+Response Payload: ```{ "aaauser_vpnsessionpolicy_binding": [ {      "priority":<Double_value>,      "username":<String_value>,      "gotopriorityexpression":<String_value>,      "policy":<String_value>,      "acttype":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "aaauser_vpnsessionpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policy":<String_value>,      "username":<String_value>,      "acttype":<Double_value>}]}```
+Response Payload: ```{ "aaauser_vpnsessionpolicy_binding": [ {      "priority":<Double_value>,      "username":<String_value>,      "gotopriorityexpression":<String_value>,      "policy":<String_value>,      "acttype":<Double_value>}]}```
 
 
 

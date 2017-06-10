@@ -7,7 +7,7 @@ Binding object which returns the resources bound to appfwglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>appfwglobal_auditsyslogpolicy_binding</td><td>&lt;appfwglobal_auditsyslogpolicy_binding[]></td><td>Read-only</td><td>auditsyslogpolicy that can be bound to appfwglobal.</td><tr><tr><td>appfwglobal_auditnslogpolicy_binding</td><td>&lt;appfwglobal_auditnslogpolicy_binding[]></td><td>Read-only</td><td>auditnslogpolicy that can be bound to appfwglobal.</td><tr><tr><td>appfwglobal_appfwpolicy_binding</td><td>&lt;appfwglobal_appfwpolicy_binding[]></td><td>Read-only</td><td>appfwpolicy that can be bound to appfwglobal.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>appfwglobal_auditnslogpolicy_binding</td><td>&lt;appfwglobal_auditnslogpolicy_binding[]></td><td>Read-only</td><td>auditnslogpolicy that can be bound to appfwglobal.</td><tr><tr><td>appfwglobal_auditsyslogpolicy_binding</td><td>&lt;appfwglobal_auditsyslogpolicy_binding[]></td><td>Read-only</td><td>auditsyslogpolicy that can be bound to appfwglobal.</td><tr><tr><td>appfwglobal_appfwpolicy_binding</td><td>&lt;appfwglobal_appfwpolicy_binding[]></td><td>Read-only</td><td>appfwpolicy that can be bound to appfwglobal.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

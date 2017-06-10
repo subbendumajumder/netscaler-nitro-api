@@ -7,7 +7,7 @@ Binding object showing the intranetip6 that can be bound to vpnglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>intranetip6</td><td>&lt;String></td><td>Read-write</td><td>The intranet ip address or range.</td><tr><tr><td>numaddr</td><td>&lt;Double></td><td>Read-write</td><td>The intranet ip address or ranges netmask.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>intranetip6</td><td>&lt;String></td><td>Read-write</td><td>The intranet ip address or range.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Applicable only to advance vpn session policy. An expression or other value specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>numaddr</td><td>&lt;Double></td><td>Read-write</td><td>The intranet ip address or ranges netmask.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"vpnglobal_intranetip6_binding":{      "intranetip6":<String_value>,      "numaddr":<Double_value>}}```
+Request Payload: ```{"vpnglobal_intranetip6_binding":{      "intranetip6":<String_value>,      "numaddr":<Double_value>,      "gotopriorityexpression":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnglobal_intranetip6_binding": [ {      "intranetip6":<String_value>,      "numaddr":<Double_value>}]}```
+Response Payload: ```{ "vpnglobal_intranetip6_binding": [ {      "intranetip6":<String_value>,      "gotopriorityexpression":<String_value>,      "numaddr":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnglobal_intranetip6_binding": [ {      "intranetip6":<String_value>,      "numaddr":<Double_value>}]}```
+Response Payload: ```{ "vpnglobal_intranetip6_binding": [ {      "intranetip6":<String_value>,      "gotopriorityexpression":<String_value>,      "numaddr":<Double_value>}]}```
 
 
 

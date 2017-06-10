@@ -7,7 +7,7 @@ Binding object which returns the resources bound to appflowpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy about which to display detailed information.</td><tr><tr><td>appflowpolicy_csvserver_binding</td><td>&lt;appflowpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_lbvserver_binding</td><td>&lt;appflowpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_appflowglobal_binding</td><td>&lt;appflowpolicy_appflowglobal_binding[]></td><td>Read-only</td><td>appflowglobal that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_vpnvserver_binding</td><td>&lt;appflowpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_appflowpolicylabel_binding</td><td>&lt;appflowpolicy_appflowpolicylabel_binding[]></td><td>Read-only</td><td>appflowpolicylabel that can be bound to appflowpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy about which to display detailed information.</td><tr><tr><td>appflowpolicy_vpnvserver_binding</td><td>&lt;appflowpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_csvserver_binding</td><td>&lt;appflowpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_lbvserver_binding</td><td>&lt;appflowpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_appflowpolicylabel_binding</td><td>&lt;appflowpolicy_appflowpolicylabel_binding[]></td><td>Read-only</td><td>appflowpolicylabel that can be bound to appflowpolicy.</td><tr><tr><td>appflowpolicy_appflowglobal_binding</td><td>&lt;appflowpolicy_appflowglobal_binding[]></td><td>Read-only</td><td>appflowglobal that can be bound to appflowpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appflowpolicy_binding": [ {      "name":<String_value>,      "appflowpolicy_appflowpolicylabel_binding":<appflowpolicy_appflowpolicylabel_binding[]_value>,      "appflowpolicy_csvserver_binding":<appflowpolicy_csvserver_binding[]_value>,      "appflowpolicy_vpnvserver_binding":<appflowpolicy_vpnvserver_binding[]_value>,      "appflowpolicy_lbvserver_binding":<appflowpolicy_lbvserver_binding[]_value>,      "appflowpolicy_appflowglobal_binding":<appflowpolicy_appflowglobal_binding[]_value>}]}```
+Response Payload: ```{ "appflowpolicy_binding": [ {      "name":<String_value>,      "appflowpolicy_appflowglobal_binding":<appflowpolicy_appflowglobal_binding[]_value>,      "appflowpolicy_appflowpolicylabel_binding":<appflowpolicy_appflowpolicylabel_binding[]_value>,      "appflowpolicy_csvserver_binding":<appflowpolicy_csvserver_binding[]_value>,      "appflowpolicy_lbvserver_binding":<appflowpolicy_lbvserver_binding[]_value>,      "appflowpolicy_vpnvserver_binding":<appflowpolicy_vpnvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appflowpolicy_binding": [ {      "name":<String_value>,      "appflowpolicy_appflowpolicylabel_binding":<appflowpolicy_appflowpolicylabel_binding[]_value>,      "appflowpolicy_csvserver_binding":<appflowpolicy_csvserver_binding[]_value>,      "appflowpolicy_vpnvserver_binding":<appflowpolicy_vpnvserver_binding[]_value>,      "appflowpolicy_lbvserver_binding":<appflowpolicy_lbvserver_binding[]_value>,      "appflowpolicy_appflowglobal_binding":<appflowpolicy_appflowglobal_binding[]_value>}]}```
+Response Payload: ```{ "appflowpolicy_binding": [ {      "name":<String_value>,      "appflowpolicy_appflowglobal_binding":<appflowpolicy_appflowglobal_binding[]_value>,      "appflowpolicy_appflowpolicylabel_binding":<appflowpolicy_appflowpolicylabel_binding[]_value>,      "appflowpolicy_csvserver_binding":<appflowpolicy_csvserver_binding[]_value>,      "appflowpolicy_lbvserver_binding":<appflowpolicy_lbvserver_binding[]_value>,      "appflowpolicy_vpnvserver_binding":<appflowpolicy_vpnvserver_binding[]_value>}]}```
 
 
 

@@ -3,6 +3,11 @@
 Configuration for proxy record resource.
 
 
+##Properties 
+<span>(click to see [Operations](#operations))</span>
+
+
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Filter the DNS records to be flushed.e.g flush dns proxyRecords -type A will flush only the A records from the cache. .&lt;br>Possible values = A, NS, CNAME, SOA, MX, AAAA, SRV, RRSIG, NSEC, DNSKEY, PTR, TXT, NAPTR</td><tr><tr><td>negrectype</td><td>&lt;String></td><td>Read-write</td><td>Filter the Negative DNS records i.e NXDOMAIN and NODATA entries to be flushed. e.g flush dns proxyRecords NXDOMAIN will flush only the NXDOMAIN entries from the cache.&lt;br>Possible values = NXDOMAIN, NODATA</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -28,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"dnsproxyrecords":{}}```
+Request Payload: ```{"dnsproxyrecords":{      "type":<String_value>,      "negrectype":<String_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 

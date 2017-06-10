@@ -7,7 +7,7 @@ Binding object which returns the resources bound to cachepolicylabel.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache-policy label about which to display information.</td><tr><tr><td>cachepolicylabel_policybinding_binding</td><td>&lt;cachepolicylabel_policybinding_binding[]></td><td>Read-only</td><td>policybinding that can be bound to cachepolicylabel.</td><tr><tr><td>cachepolicylabel_cachepolicy_binding</td><td>&lt;cachepolicylabel_cachepolicy_binding[]></td><td>Read-only</td><td>cachepolicy that can be bound to cachepolicylabel.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache-policy label about which to display information.</td><tr><tr><td>cachepolicylabel_cachepolicy_binding</td><td>&lt;cachepolicylabel_cachepolicy_binding[]></td><td>Read-only</td><td>cachepolicy that can be bound to cachepolicylabel.</td><tr><tr><td>cachepolicylabel_policybinding_binding</td><td>&lt;cachepolicylabel_policybinding_binding[]></td><td>Read-only</td><td>policybinding that can be bound to cachepolicylabel.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

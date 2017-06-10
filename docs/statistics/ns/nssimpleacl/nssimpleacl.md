@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nssimpleacl": [ {      "sacltothits":<Double_value>,      "saclscount":<Double_value>,      "saclhitsrate":<Double_value>,      "saclpktsbridgedrate":<Double_value>,      "sacltotpktsdenied":<Double_value>,      "sacltotmisses":<Double_value>,      "saclmissesrate":<Double_value>,      "saclpktsallowedrate":<Double_value>,      "sacltotpktsbridged":<Double_value>,      "saclpktsdeniedrate":<Double_value>,      "sacltotpktsallowed":<Double_value>}]}```
+Response Payload: ```{ "nssimpleacl": [ {      "saclscount":<Double_value>,      "saclhitsrate":<Double_value>,      "sacltotmisses":<Double_value>,      "saclpktsdeniedrate":<Double_value>,      "sacltotpktsallowed":<Double_value>,      "sacltothits":<Double_value>,      "sacltotpktsdenied":<Double_value>,      "saclpktsallowedrate":<Double_value>,      "saclpktsbridgedrate":<Double_value>,      "saclmissesrate":<Double_value>,      "sacltotpktsbridged":<Double_value>}]}```
 
 
 

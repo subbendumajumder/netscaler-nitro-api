@@ -7,7 +7,7 @@ Configuration for authorization policy resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new authorization policy. &lt;br>Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the authorization policy is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, ?my authorization policy? or ?my authorization policy?).&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Name of the NetScaler named rule, or a default syntax expression, that the policy uses to perform the authentication.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to perform if the policy matches: either allow or deny the request.&lt;br>Minimum length = 1</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>The new name of the author policy.&lt;br>Minimum length = 1</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>expressiontype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy (Classic/Advanced) .&lt;br>Possible values = Classic Policy, Advanced Policy</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the new authorization policy. &lt;br>Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) pound (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the authorization policy is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my authorization policy" or my authorization policy).&lt;br>Minimum length = 1</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Name of the NetScaler named rule, or a default syntax expression, that the policy uses to perform the authentication.</td><tr><tr><td>action</td><td>&lt;String></td><td>Read-write</td><td>Action to perform if the policy matches: either allow or deny the request.&lt;br>Minimum length = 1</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>The new name of the author policy.&lt;br>Minimum length = 1</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>expressiontype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy (Classic/Advanced) .&lt;br>Possible values = Classic Policy, Advanced Policy</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -119,7 +119,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authorizationpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "activepolicy":<Double_value>,      "expressiontype":<String_value>}]}```
+Response Payload: ```{ "authorizationpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "activepolicy":<Double_value>,      "expressiontype":<String_value>,      "hits":<Double_value>}]}```
 
 
 
@@ -150,7 +150,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authorizationpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "activepolicy":<Double_value>,      "expressiontype":<String_value>}]}```
+Response Payload: ```{ "authorizationpolicy": [ {      "name":<String_value>,      "rule":<String_value>,      "action":<String_value>,      "activepolicy":<Double_value>,      "expressiontype":<String_value>,      "hits":<Double_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Binding object which returns the resources bound to responderpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the responder policy for which to display settings.</td><tr><tr><td>responderpolicy_responderpolicylabel_binding</td><td>&lt;responderpolicy_responderpolicylabel_binding[]></td><td>Read-only</td><td>responderpolicylabel that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_csvserver_binding</td><td>&lt;responderpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_lbvserver_binding</td><td>&lt;responderpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_responderglobal_binding</td><td>&lt;responderpolicy_responderglobal_binding[]></td><td>Read-only</td><td>responderglobal that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_crvserver_binding</td><td>&lt;responderpolicy_crvserver_binding[]></td><td>Read-only</td><td>crvserver that can be bound to responderpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the responder policy for which to display settings.</td><tr><tr><td>responderpolicy_responderpolicylabel_binding</td><td>&lt;responderpolicy_responderpolicylabel_binding[]></td><td>Read-only</td><td>responderpolicylabel that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_csvserver_binding</td><td>&lt;responderpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_responderglobal_binding</td><td>&lt;responderpolicy_responderglobal_binding[]></td><td>Read-only</td><td>responderglobal that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_lbvserver_binding</td><td>&lt;responderpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to responderpolicy.</td><tr><tr><td>responderpolicy_crvserver_binding</td><td>&lt;responderpolicy_crvserver_binding[]></td><td>Read-only</td><td>crvserver that can be bound to responderpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "responderpolicy_binding": [ {      "name":<String_value>,      "responderpolicy_crvserver_binding":<responderpolicy_crvserver_binding[]_value>,      "responderpolicy_lbvserver_binding":<responderpolicy_lbvserver_binding[]_value>,      "responderpolicy_responderpolicylabel_binding":<responderpolicy_responderpolicylabel_binding[]_value>,      "responderpolicy_responderglobal_binding":<responderpolicy_responderglobal_binding[]_value>,      "responderpolicy_csvserver_binding":<responderpolicy_csvserver_binding[]_value>}]}```
+Response Payload: ```{ "responderpolicy_binding": [ {      "name":<String_value>,      "responderpolicy_crvserver_binding":<responderpolicy_crvserver_binding[]_value>,      "responderpolicy_responderglobal_binding":<responderpolicy_responderglobal_binding[]_value>,      "responderpolicy_csvserver_binding":<responderpolicy_csvserver_binding[]_value>,      "responderpolicy_lbvserver_binding":<responderpolicy_lbvserver_binding[]_value>,      "responderpolicy_responderpolicylabel_binding":<responderpolicy_responderpolicylabel_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "responderpolicy_binding": [ {      "name":<String_value>,      "responderpolicy_crvserver_binding":<responderpolicy_crvserver_binding[]_value>,      "responderpolicy_lbvserver_binding":<responderpolicy_lbvserver_binding[]_value>,      "responderpolicy_responderpolicylabel_binding":<responderpolicy_responderpolicylabel_binding[]_value>,      "responderpolicy_responderglobal_binding":<responderpolicy_responderglobal_binding[]_value>,      "responderpolicy_csvserver_binding":<responderpolicy_csvserver_binding[]_value>}]}```
+Response Payload: ```{ "responderpolicy_binding": [ {      "name":<String_value>,      "responderpolicy_crvserver_binding":<responderpolicy_crvserver_binding[]_value>,      "responderpolicy_responderglobal_binding":<responderpolicy_responderglobal_binding[]_value>,      "responderpolicy_csvserver_binding":<responderpolicy_csvserver_binding[]_value>,      "responderpolicy_lbvserver_binding":<responderpolicy_lbvserver_binding[]_value>,      "responderpolicy_responderpolicylabel_binding":<responderpolicy_responderpolicylabel_binding[]_value>}]}```
 
 
 

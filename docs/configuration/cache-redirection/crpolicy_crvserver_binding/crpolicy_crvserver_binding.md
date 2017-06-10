@@ -7,7 +7,7 @@ Binding object showing the crvserver that can be bound to crpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache redirection policy to display. If this parameter is omitted, details of all the policies are displayed.&lt;br>Minimum length = 1</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Domain name.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>priority of bound policy.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>pipolicyhits</td><td>&lt;Double></td><td>Read-only</td><td>bind hits for PI CR Policy.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label invoked.</td><tr><tr><td>pihits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache redirection policy to display. If this parameter is omitted, details of all the policies are displayed.&lt;br>Minimum length = 1</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Domain name.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>priority of bound policy.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label invoked.</td><tr><tr><td>pihits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Total number of hits.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>pipolicyhits</td><td>&lt;Double></td><td>Read-only</td><td>bind hits for PI CR Policy.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -50,7 +50,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "crpolicy_crvserver_binding": [ {      "policyname":<String_value>,      "domain":<String_value>,      "priority":<Double_value>,      "hits":<Double_value>,      "gotopriorityexpression":<String_value>,      "pipolicyhits":<Double_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "pihits":<Double_value>}]}```
+Response Payload: ```{ "crpolicy_crvserver_binding": [ {      "policyname":<String_value>,      "domain":<String_value>,      "priority":<Double_value>,      "labelname":<String_value>,      "pihits":<Double_value>,      "hits":<Double_value>,      "gotopriorityexpression":<String_value>,      "pipolicyhits":<Double_value>,      "labeltype":<String_value>}]}```
 
 
 
@@ -76,7 +76,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "crpolicy_crvserver_binding": [ {      "policyname":<String_value>,      "domain":<String_value>,      "priority":<Double_value>,      "hits":<Double_value>,      "gotopriorityexpression":<String_value>,      "pipolicyhits":<Double_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "pihits":<Double_value>}]}```
+Response Payload: ```{ "crpolicy_crvserver_binding": [ {      "policyname":<String_value>,      "domain":<String_value>,      "priority":<Double_value>,      "labelname":<String_value>,      "pihits":<Double_value>,      "hits":<Double_value>,      "gotopriorityexpression":<String_value>,      "pipolicyhits":<Double_value>,      "labeltype":<String_value>}]}```
 
 
 

@@ -75,7 +75,7 @@ pages:
         - appflowpolicy_csvserver_binding: configuration/appflow/appflowpolicy_csvserver_binding/appflowpolicy_csvserver_binding.md
         - appflowpolicy_lbvserver_binding: configuration/appflow/appflowpolicy_lbvserver_binding/appflowpolicy_lbvserver_binding.md
         - appflowpolicy_vpnvserver_binding: configuration/appflow/appflowpolicy_vpnvserver_binding/appflowpolicy_vpnvserver_binding.md
-    - Application firewall:
+    - Application Firewall:
         - application-firewall: configuration/application-firewall/application-firewall.md
         - appfwarchive: configuration/application-firewall/appfwarchive/appfwarchive.md
         - appfwconfidfield: configuration/application-firewall/appfwconfidfield/appfwconfidfield.md
@@ -186,6 +186,7 @@ pages:
         - authenticationdfapolicy: configuration/authentication/authenticationdfapolicy/authenticationdfapolicy.md
         - authenticationdfapolicy_binding: configuration/authentication/authenticationdfapolicy_binding/authenticationdfapolicy_binding.md
         - authenticationdfapolicy_vpnvserver_binding: configuration/authentication/authenticationdfapolicy_vpnvserver_binding/authenticationdfapolicy_vpnvserver_binding.md
+        - authenticationepaaction: configuration/authentication/authenticationepaaction/authenticationepaaction.md
         - authenticationldapaction: configuration/authentication/authenticationldapaction/authenticationldapaction.md
         - authenticationldappolicy: configuration/authentication/authenticationldappolicy/authenticationldappolicy.md
         - authenticationldappolicy_authenticationvserver_binding: configuration/authentication/authenticationldappolicy_authenticationvserver_binding/authenticationldappolicy_authenticationvserver_binding.md
@@ -236,6 +237,7 @@ pages:
         - authenticationsamlpolicy_binding: configuration/authentication/authenticationsamlpolicy_binding/authenticationsamlpolicy_binding.md
         - authenticationsamlpolicy_vpnglobal_binding: configuration/authentication/authenticationsamlpolicy_vpnglobal_binding/authenticationsamlpolicy_vpnglobal_binding.md
         - authenticationsamlpolicy_vpnvserver_binding: configuration/authentication/authenticationsamlpolicy_vpnvserver_binding/authenticationsamlpolicy_vpnvserver_binding.md
+        - authenticationstorefrontauthaction: configuration/authentication/authenticationstorefrontauthaction/authenticationstorefrontauthaction.md
         - authenticationtacacsaction: configuration/authentication/authenticationtacacsaction/authenticationtacacsaction.md
         - authenticationtacacspolicy: configuration/authentication/authenticationtacacspolicy/authenticationtacacspolicy.md
         - authenticationtacacspolicy_authenticationvserver_binding: configuration/authentication/authenticationtacacspolicy_authenticationvserver_binding/authenticationtacacspolicy_authenticationvserver_binding.md
@@ -298,6 +300,7 @@ pages:
         - locationfile6: configuration/basic/locationfile6/locationfile6.md
         - locationparameter: configuration/basic/locationparameter/locationparameter.md
         - nstrace: configuration/basic/nstrace/nstrace.md
+        - radiusnode: configuration/basic/radiusnode/radiusnode.md
         - reporting: configuration/basic/reporting/reporting.md
         - server: configuration/basic/server/server.md
         - server_binding: configuration/basic/server_binding/server_binding.md
@@ -317,6 +320,9 @@ pages:
         - service_scpolicy_binding: configuration/basic/service_scpolicy_binding/service_scpolicy_binding.md
         - svcbindings: configuration/basic/svcbindings/svcbindings.md
         - vserver: configuration/basic/vserver/vserver.md
+    - BFD:
+        - bfd: configuration/bfd/bfd.md
+        - bfdsession: configuration/bfd/bfdsession/bfdsession.md
     - CA:
         - ca: configuration/ca/ca.md
         - caaction: configuration/ca/caaction/caaction.md
@@ -350,6 +356,9 @@ pages:
         - crvserver_responderpolicy_binding: configuration/cache-redirection/crvserver_responderpolicy_binding/crvserver_responderpolicy_binding.md
         - crvserver_rewritepolicy_binding: configuration/cache-redirection/crvserver_rewritepolicy_binding/crvserver_rewritepolicy_binding.md
         - crvserver_spilloverpolicy_binding: configuration/cache-redirection/crvserver_spilloverpolicy_binding/crvserver_spilloverpolicy_binding.md
+    - Cloud:
+        - cloud: configuration/cloud/cloud.md
+        - cloudparameter: configuration/cloud/cloudparameter/cloudparameter.md
     - Cluster:
         - cluster: configuration/cluster/cluster.md
         - cluster: configuration/cluster/cluster/cluster.md
@@ -462,6 +471,7 @@ pages:
         - dnsptrrec: configuration/domain-name-service/dnsptrrec/dnsptrrec.md
         - dnssoarec: configuration/domain-name-service/dnssoarec/dnssoarec.md
         - dnssrvrec: configuration/domain-name-service/dnssrvrec/dnssrvrec.md
+        - dnssubnetcache: configuration/domain-name-service/dnssubnetcache/dnssubnetcache.md
         - dnssuffix: configuration/domain-name-service/dnssuffix/dnssuffix.md
         - dnstxtrec: configuration/domain-name-service/dnstxtrec/dnstxtrec.md
         - dnsview: configuration/domain-name-service/dnsview/dnsview.md
@@ -523,7 +533,7 @@ pages:
         - gslbvserver_domain_binding: configuration/global-server-load-balancing/gslbvserver_domain_binding/gslbvserver_domain_binding.md
         - gslbvserver_gslbservice_binding: configuration/global-server-load-balancing/gslbvserver_gslbservice_binding/gslbvserver_gslbservice_binding.md
         - gslbvserver_spilloverpolicy_binding: configuration/global-server-load-balancing/gslbvserver_spilloverpolicy_binding/gslbvserver_spilloverpolicy_binding.md
-    - High availability:
+    - High-Availability:
         - high-availability: configuration/high-availability/high-availability.md
         - hafailover: configuration/high-availability/hafailover/hafailover.md
         - hafiles: configuration/high-availability/hafiles/hafiles.md
@@ -551,7 +561,7 @@ pages:
         - icapolicy_crvserver_binding: configuration/ica/icapolicy_crvserver_binding/icapolicy_crvserver_binding.md
         - icapolicy_icaglobal_binding: configuration/ica/icapolicy_icaglobal_binding/icapolicy_icaglobal_binding.md
         - icapolicy_vpnvserver_binding: configuration/ica/icapolicy_vpnvserver_binding/icapolicy_vpnvserver_binding.md
-    - Integrated Caching:
+    - Integrated caching:
         - integrated-caching: configuration/integrated-caching/integrated-caching.md
         - cachecontentgroup: configuration/integrated-caching/cachecontentgroup/cachecontentgroup.md
         - cacheforwardproxy: configuration/integrated-caching/cacheforwardproxy/cacheforwardproxy.md
@@ -574,6 +584,10 @@ pages:
         - ipsec: configuration/ipsec/ipsec.md
         - ipsecparameter: configuration/ipsec/ipsecparameter/ipsecparameter.md
         - ipsecprofile: configuration/ipsec/ipsecprofile/ipsecprofile.md
+    - IPsecalg:
+        - ipsecalg: configuration/ipsecalg/ipsecalg.md
+        - ipsecalgprofile: configuration/ipsecalg/ipsecalgprofile/ipsecalgprofile.md
+        - ipsecalgsession: configuration/ipsecalg/ipsecalgsession/ipsecalgsession.md
     - LLDP:
         - lldp: configuration/lldp/lldp.md
         - lldpneighbors: configuration/lldp/lldpneighbors/lldpneighbors.md
@@ -628,6 +642,7 @@ pages:
         - lbvserver_spilloverpolicy_binding: configuration/load-balancing/lbvserver_spilloverpolicy_binding/lbvserver_spilloverpolicy_binding.md
         - lbvserver_tmtrafficpolicy_binding: configuration/load-balancing/lbvserver_tmtrafficpolicy_binding/lbvserver_tmtrafficpolicy_binding.md
         - lbvserver_transformpolicy_binding: configuration/load-balancing/lbvserver_transformpolicy_binding/lbvserver_transformpolicy_binding.md
+        - lbvserver_videooptimizationpolicy_binding: configuration/load-balancing/lbvserver_videooptimizationpolicy_binding/lbvserver_videooptimizationpolicy_binding.md
         - lbwlm: configuration/load-balancing/lbwlm/lbwlm.md
         - lbwlm_binding: configuration/load-balancing/lbwlm_binding/lbwlm_binding.md
         - lbwlm_lbvserver_binding: configuration/load-balancing/lbwlm_lbvserver_binding/lbwlm_lbvserver_binding.md
@@ -645,6 +660,7 @@ pages:
         - lsndeterministicnat: configuration/lsn/lsndeterministicnat/lsndeterministicnat.md
         - lsngroup: configuration/lsn/lsngroup/lsngroup.md
         - lsngroup_binding: configuration/lsn/lsngroup_binding/lsngroup_binding.md
+        - lsngroup_ipsecalgprofile_binding: configuration/lsn/lsngroup_ipsecalgprofile_binding/lsngroup_ipsecalgprofile_binding.md
         - lsngroup_lsnappsprofile_binding: configuration/lsn/lsngroup_lsnappsprofile_binding/lsngroup_lsnappsprofile_binding.md
         - lsngroup_lsnhttphdrlogprofile_binding: configuration/lsn/lsngroup_lsnhttphdrlogprofile_binding/lsngroup_lsnhttphdrlogprofile_binding.md
         - lsngroup_lsnlogprofile_binding: configuration/lsn/lsngroup_lsnlogprofile_binding/lsngroup_lsnlogprofile_binding.md
@@ -713,6 +729,13 @@ pages:
         - linkset_binding: configuration/network/linkset_binding/linkset_binding.md
         - linkset_channel_binding: configuration/network/linkset_channel_binding/linkset_channel_binding.md
         - linkset_interface_binding: configuration/network/linkset_interface_binding/linkset_interface_binding.md
+        - mapbmr: configuration/network/mapbmr/mapbmr.md
+        - mapbmr_binding: configuration/network/mapbmr_binding/mapbmr_binding.md
+        - mapbmr_bmrv4network_binding: configuration/network/mapbmr_bmrv4network_binding/mapbmr_bmrv4network_binding.md
+        - mapdmr: configuration/network/mapdmr/mapdmr.md
+        - mapdomain: configuration/network/mapdomain/mapdomain.md
+        - mapdomain_binding: configuration/network/mapdomain_binding/mapdomain_binding.md
+        - mapdomain_mapbmr_binding: configuration/network/mapdomain_mapbmr_binding/mapdomain_mapbmr_binding.md
         - nat64: configuration/network/nat64/nat64.md
         - nat64param: configuration/network/nat64param/nat64param.md
         - nd6: configuration/network/nd6/nd6.md
@@ -748,19 +771,21 @@ pages:
         - vlan_linkset_binding: configuration/network/vlan_linkset_binding/vlan_linkset_binding.md
         - vlan_nsip6_binding: configuration/network/vlan_nsip6_binding/vlan_nsip6_binding.md
         - vlan_nsip_binding: configuration/network/vlan_nsip_binding/vlan_nsip_binding.md
-        - vpath: configuration/network/vpath/vpath.md
-        - vpathparam: configuration/network/vpathparam/vpathparam.md
         - vrid: configuration/network/vrid/vrid.md
         - vrid6: configuration/network/vrid6/vrid6.md
         - vrid6_binding: configuration/network/vrid6_binding/vrid6_binding.md
+        - vrid6_channel_binding: configuration/network/vrid6_channel_binding/vrid6_channel_binding.md
         - vrid6_interface_binding: configuration/network/vrid6_interface_binding/vrid6_interface_binding.md
         - vrid6_nsip6_binding: configuration/network/vrid6_nsip6_binding/vrid6_nsip6_binding.md
         - vrid6_nsip_binding: configuration/network/vrid6_nsip_binding/vrid6_nsip_binding.md
+        - vrid6_trackinterface_binding: configuration/network/vrid6_trackinterface_binding/vrid6_trackinterface_binding.md
         - vridparam: configuration/network/vridparam/vridparam.md
         - vrid_binding: configuration/network/vrid_binding/vrid_binding.md
+        - vrid_channel_binding: configuration/network/vrid_channel_binding/vrid_channel_binding.md
         - vrid_interface_binding: configuration/network/vrid_interface_binding/vrid_interface_binding.md
         - vrid_nsip6_binding: configuration/network/vrid_nsip6_binding/vrid_nsip6_binding.md
         - vrid_nsip_binding: configuration/network/vrid_nsip_binding/vrid_nsip_binding.md
+        - vrid_trackinterface_binding: configuration/network/vrid_trackinterface_binding/vrid_trackinterface_binding.md
         - vxlan: configuration/network/vxlan/vxlan.md
         - vxlanvlanmap: configuration/network/vxlanvlanmap/vxlanvlanmap.md
         - vxlanvlanmap_binding: configuration/network/vxlanvlanmap_binding/vxlanvlanmap_binding.md
@@ -769,6 +794,7 @@ pages:
         - vxlan_iptunnel_binding: configuration/network/vxlan_iptunnel_binding/vxlan_iptunnel_binding.md
         - vxlan_nsip6_binding: configuration/network/vxlan_nsip6_binding/vxlan_nsip6_binding.md
         - vxlan_nsip_binding: configuration/network/vxlan_nsip_binding/vxlan_nsip_binding.md
+        - vxlan_srcip_binding: configuration/network/vxlan_srcip_binding/vxlan_srcip_binding.md
     - NS:
         - ns: configuration/ns/ns.md
         - nsacl: configuration/ns/nsacl/nsacl.md
@@ -787,6 +813,7 @@ pages:
         - nsdhcpip: configuration/ns/nsdhcpip/nsdhcpip.md
         - nsdhcpparams: configuration/ns/nsdhcpparams/nsdhcpparams.md
         - nsdiameter: configuration/ns/nsdiameter/nsdiameter.md
+        - nsencryptionkey: configuration/ns/nsencryptionkey/nsencryptionkey.md
         - nsencryptionparams: configuration/ns/nsencryptionparams/nsencryptionparams.md
         - nsevents: configuration/ns/nsevents/nsevents.md
         - nsextension: configuration/ns/nsextension/nsextension.md
@@ -794,6 +821,7 @@ pages:
         - nsextension_extensionfunction_binding: configuration/ns/nsextension_extensionfunction_binding/nsextension_extensionfunction_binding.md
         - nsfeature: configuration/ns/nsfeature/nsfeature.md
         - nshardware: configuration/ns/nshardware/nshardware.md
+        - nshmackey: configuration/ns/nshmackey/nshmackey.md
         - nshostname: configuration/ns/nshostname/nshostname.md
         - nshttpparam: configuration/ns/nshttpparam/nshttpparam.md
         - nshttpprofile: configuration/ns/nshttpprofile/nshttpprofile.md
@@ -814,6 +842,7 @@ pages:
         - nspartition_binding: configuration/ns/nspartition_binding/nspartition_binding.md
         - nspartition_bridgegroup_binding: configuration/ns/nspartition_bridgegroup_binding/nspartition_bridgegroup_binding.md
         - nspartition_vlan_binding: configuration/ns/nspartition_vlan_binding/nspartition_vlan_binding.md
+        - nspartition_vxlan_binding: configuration/ns/nspartition_vxlan_binding/nspartition_vxlan_binding.md
         - nspbr: configuration/ns/nspbr/nspbr.md
         - nspbr6: configuration/ns/nspbr6/nspbr6.md
         - nspbrs: configuration/ns/nspbrs/nspbrs.md
@@ -846,6 +875,7 @@ pages:
         - nstrafficdomain_vxlan_binding: configuration/ns/nstrafficdomain_vxlan_binding/nstrafficdomain_vxlan_binding.md
         - nsvariable: configuration/ns/nsvariable/nsvariable.md
         - nsversion: configuration/ns/nsversion/nsversion.md
+        - nsvpxparam: configuration/ns/nsvpxparam/nsvpxparam.md
         - nsweblogparam: configuration/ns/nsweblogparam/nsweblogparam.md
         - nsxmlnamespace: configuration/ns/nsxmlnamespace/nsxmlnamespace.md
         - reboot: configuration/ns/reboot/reboot.md
@@ -877,7 +907,8 @@ pages:
         - policystringmap: configuration/policy/policystringmap/policystringmap.md
         - policystringmap_binding: configuration/policy/policystringmap_binding/policystringmap_binding.md
         - policystringmap_pattern_binding: configuration/policy/policystringmap_pattern_binding/policystringmap_pattern_binding.md
-    - Priority-queuing:
+        - policyurlset: configuration/policy/policyurlset/policyurlset.md
+    - Priority queuing:
         - priority-queuing: configuration/priority-queuing/priority-queuing.md
         - pqbinding: configuration/priority-queuing/pqbinding/pqbinding.md
         - pqpolicy: configuration/priority-queuing/pqpolicy/pqpolicy.md
@@ -968,6 +999,7 @@ pages:
         - ssl: configuration/ssl/ssl.md
         - sslaction: configuration/ssl/sslaction/sslaction.md
         - sslcert: configuration/ssl/sslcert/sslcert.md
+        - sslcertbundle: configuration/ssl/sslcertbundle/sslcertbundle.md
         - sslcertchain: configuration/ssl/sslcertchain/sslcertchain.md
         - sslcertchain_binding: configuration/ssl/sslcertchain_binding/sslcertchain_binding.md
         - sslcertchain_sslcertkey_binding: configuration/ssl/sslcertchain_sslcertkey_binding/sslcertchain_sslcertkey_binding.md
@@ -977,6 +1009,7 @@ pages:
         - sslcertkey_crldistribution_binding: configuration/ssl/sslcertkey_crldistribution_binding/sslcertkey_crldistribution_binding.md
         - sslcertkey_service_binding: configuration/ssl/sslcertkey_service_binding/sslcertkey_service_binding.md
         - sslcertkey_sslocspresponder_binding: configuration/ssl/sslcertkey_sslocspresponder_binding/sslcertkey_sslocspresponder_binding.md
+        - sslcertkey_sslprofile_binding: configuration/ssl/sslcertkey_sslprofile_binding/sslcertkey_sslprofile_binding.md
         - sslcertkey_sslvserver_binding: configuration/ssl/sslcertkey_sslvserver_binding/sslcertkey_sslvserver_binding.md
         - sslcertlink: configuration/ssl/sslcertlink/sslcertlink.md
         - sslcertreq: configuration/ssl/sslcertreq/sslcertreq.md
@@ -1023,6 +1056,7 @@ pages:
         - sslprofile: configuration/ssl/sslprofile/sslprofile.md
         - sslprofile_binding: configuration/ssl/sslprofile_binding/sslprofile_binding.md
         - sslprofile_ecccurve_binding: configuration/ssl/sslprofile_ecccurve_binding/sslprofile_ecccurve_binding.md
+        - sslprofile_sslcertkey_binding: configuration/ssl/sslprofile_sslcertkey_binding/sslprofile_sslcertkey_binding.md
         - sslprofile_sslciphersuite_binding: configuration/ssl/sslprofile_sslciphersuite_binding/sslprofile_sslciphersuite_binding.md
         - sslprofile_sslcipher_binding: configuration/ssl/sslprofile_sslcipher_binding/sslprofile_sslcipher_binding.md
         - sslprofile_sslvserver_binding: configuration/ssl/sslprofile_sslvserver_binding/sslprofile_sslvserver_binding.md
@@ -1089,6 +1123,9 @@ pages:
         - vpnintranetapplication: configuration/ssl-vpn/vpnintranetapplication/vpnintranetapplication.md
         - vpnnexthopserver: configuration/ssl-vpn/vpnnexthopserver/vpnnexthopserver.md
         - vpnparameter: configuration/ssl-vpn/vpnparameter/vpnparameter.md
+        - vpnpcoipconnection: configuration/ssl-vpn/vpnpcoipconnection/vpnpcoipconnection.md
+        - vpnpcoipprofile: configuration/ssl-vpn/vpnpcoipprofile/vpnpcoipprofile.md
+        - vpnpcoipvserverprofile: configuration/ssl-vpn/vpnpcoipvserverprofile/vpnpcoipvserverprofile.md
         - vpnportaltheme: configuration/ssl-vpn/vpnportaltheme/vpnportaltheme.md
         - vpnsamlssoprofile: configuration/ssl-vpn/vpnsamlssoprofile/vpnsamlssoprofile.md
         - vpnsessionaction: configuration/ssl-vpn/vpnsessionaction/vpnsessionaction.md
@@ -1177,6 +1214,7 @@ pages:
         - systementitydata: configuration/system/systementitydata/systementitydata.md
         - systementitytype: configuration/system/systementitytype/systementitytype.md
         - systemeventhistory: configuration/system/systemeventhistory/systemeventhistory.md
+        - systemextramgmtcpu: configuration/system/systemextramgmtcpu/systemextramgmtcpu.md
         - systemfile: configuration/system/systemfile/systemfile.md
         - systemglobaldata: configuration/system/systemglobaldata/systemglobaldata.md
         - systemglobal_auditnslogpolicy_binding: configuration/system/systemglobal_auditnslogpolicy_binding/systemglobal_auditnslogpolicy_binding.md
@@ -1189,6 +1227,7 @@ pages:
         - systemglobal_binding: configuration/system/systemglobal_binding/systemglobal_binding.md
         - systemgroup: configuration/system/systemgroup/systemgroup.md
         - systemgroup_binding: configuration/system/systemgroup_binding/systemgroup_binding.md
+        - systemgroup_nspartition_binding: configuration/system/systemgroup_nspartition_binding/systemgroup_nspartition_binding.md
         - systemgroup_systemcmdpolicy_binding: configuration/system/systemgroup_systemcmdpolicy_binding/systemgroup_systemcmdpolicy_binding.md
         - systemgroup_systemuser_binding: configuration/system/systemgroup_systemuser_binding/systemgroup_systemuser_binding.md
         - systemkek: configuration/system/systemkek/systemkek.md
@@ -1251,6 +1290,10 @@ pages:
     - ULFD:
         - ulfd: configuration/ulfd/ulfd.md
         - ulfdserver: configuration/ulfd/ulfdserver/ulfdserver.md
+    - User:
+        - user: configuration/user/user.md
+        - userprotocol: configuration/user/userprotocol/userprotocol.md
+        - uservserver: configuration/user/uservserver/uservserver.md
     - Utility:
         - utility: configuration/utility/utility.md
         - callhome: configuration/utility/callhome/callhome.md
@@ -1261,7 +1304,21 @@ pages:
         - techsupport: configuration/utility/techsupport/techsupport.md
         - traceroute: configuration/utility/traceroute/traceroute.md
         - traceroute6: configuration/utility/traceroute6/traceroute6.md
-    - Webinterface:
+    - Video Optimization:
+        - videooptimization: configuration/videooptimization/videooptimization.md
+        - videooptimizationaction: configuration/videooptimization/videooptimizationaction/videooptimizationaction.md
+        - videooptimizationglobal_binding: configuration/videooptimization/videooptimizationglobal_binding/videooptimizationglobal_binding.md
+        - videooptimizationglobal_videooptimizationpolicy_binding: configuration/videooptimization/videooptimizationglobal_videooptimizationpolicy_binding/videooptimizationglobal_videooptimizationpolicy_binding.md
+        - videooptimizationparameter: configuration/videooptimization/videooptimizationparameter/videooptimizationparameter.md
+        - videooptimizationpolicy: configuration/videooptimization/videooptimizationpolicy/videooptimizationpolicy.md
+        - videooptimizationpolicylabel: configuration/videooptimization/videooptimizationpolicylabel/videooptimizationpolicylabel.md
+        - videooptimizationpolicylabel_binding: configuration/videooptimization/videooptimizationpolicylabel_binding/videooptimizationpolicylabel_binding.md
+        - videooptimizationpolicylabel_policybinding_binding: configuration/videooptimization/videooptimizationpolicylabel_policybinding_binding/videooptimizationpolicylabel_policybinding_binding.md
+        - videooptimizationpolicylabel_videooptimizationpolicy_binding: configuration/videooptimization/videooptimizationpolicylabel_videooptimizationpolicy_binding/videooptimizationpolicylabel_videooptimizationpolicy_binding.md
+        - videooptimizationpolicy_binding: configuration/videooptimization/videooptimizationpolicy_binding/videooptimizationpolicy_binding.md
+        - videooptimizationpolicy_lbvserver_binding: configuration/videooptimization/videooptimizationpolicy_lbvserver_binding/videooptimizationpolicy_lbvserver_binding.md
+        - videooptimizationpolicy_videooptimizationglobal_binding: configuration/videooptimization/videooptimizationpolicy_videooptimizationglobal_binding/videooptimizationpolicy_videooptimizationglobal_binding.md
+    - Web interface:
         - webinterface: configuration/webinterface/webinterface.md
         - wipackage: configuration/webinterface/wipackage/wipackage.md
         - wisite: configuration/webinterface/wisite/wisite.md
@@ -1363,6 +1420,9 @@ pages:
     - ipsec:
         - ipsec: statistics/ipsec/ipsec.md
         - ipseccounters: statistics/ipsec/ipseccounters/ipseccounters.md
+    - ipsecalg:
+        - ipsecalg: statistics/ipsecalg/ipsecalg.md
+        - ipsecalgcounters: statistics/ipsecalg/ipsecalgcounters/ipsecalgcounters.md
     - lldp:
         - lldp: statistics/lldp/lldp.md
         - lldp: statistics/lldp/lldp/lldp.md
@@ -1375,22 +1435,19 @@ pages:
         - lsndslite: statistics/lsn/lsndslite/lsndslite.md
         - lsngroup: statistics/lsn/lsngroup/lsngroup.md
         - lsnnat64: statistics/lsn/lsnnat64/lsnnat64.md
-    - mediaclassification:
-        - mediaclassification: statistics/mediaclassification/mediaclassification.md
-        - mediaclassification: statistics/mediaclassification/mediaclassification/mediaclassification.md
     - network:
         - network: statistics/network/network.md
         - bridge: statistics/network/bridge/bridge.md
         - inat: statistics/network/inat/inat.md
         - inatsession: statistics/network/inatsession/inatsession.md
         - interface: statistics/network/interface/interface.md
+        - mapdomain: statistics/network/mapdomain/mapdomain.md
         - nat64: statistics/network/nat64/nat64.md
         - rnat: statistics/network/rnat/rnat.md
         - rnatip: statistics/network/rnatip/rnatip.md
         - tunnelip: statistics/network/tunnelip/tunnelip.md
         - tunnelip6: statistics/network/tunnelip6/tunnelip6.md
         - vlan: statistics/network/vlan/vlan.md
-        - vpath: statistics/network/vpath/vpath.md
         - vxlan: statistics/network/vxlan/vxlan.md
     - ns:
         - ns: statistics/ns/ns.md
@@ -1419,6 +1476,7 @@ pages:
         - protocolicmpv6: statistics/protocol/protocolicmpv6/protocolicmpv6.md
         - protocolip: statistics/protocol/protocolip/protocolip.md
         - protocolipv6: statistics/protocol/protocolipv6/protocolipv6.md
+        - protocolmptcp: statistics/protocol/protocolmptcp/protocolmptcp.md
         - protocoltcp: statistics/protocol/protocoltcp/protocoltcp.md
         - protocoludp: statistics/protocol/protocoludp/protocoludp.md
     - qos:
@@ -1467,8 +1525,16 @@ pages:
         - transform: statistics/transform/transform.md
         - transformpolicy: statistics/transform/transformpolicy/transformpolicy.md
         - transformpolicylabel: statistics/transform/transformpolicylabel/transformpolicylabel.md
-- Error Messages:
-    - error-messages: error-messages/error-messages.md
+    - user:
+        - user: statistics/user/user.md
+        - uservserver: statistics/user/uservserver/uservserver.md
+    - videooptimization:
+        - videooptimization: statistics/videooptimization/videooptimization.md
+        - videooptimization: statistics/videooptimization/videooptimization/videooptimization.md
+        - videooptimizationpolicy: statistics/videooptimization/videooptimizationpolicy/videooptimizationpolicy.md
+        - videooptimizationpolicylabel: statistics/videooptimization/videooptimizationpolicylabel/videooptimizationpolicylabel.md
+- Error messages:
+    - Error messages: error-messages/error-messages.md
     - 0x300-errors:
         - 0x300-errors: error-messages/0x300-errors/0x300-errors.md
     - 0x850-errors:
@@ -1529,6 +1595,8 @@ pages:
         - lb2-errors: error-messages/lb2-errors/lb2-errors.md
     - lsn-errors:
         - lsn-errors: error-messages/lsn-errors/lsn-errors.md
+    - map-domain-errors:
+        - map-domain-errors: error-messages/map-domain-errors/map-domain-errors.md
     - nat64-errors:
         - nat64-errors: error-messages/nat64-errors/nat64-errors.md
     - net-errors:
@@ -1577,14 +1645,14 @@ pages:
         - svpn-errors: error-messages/svpn-errors/svpn-errors.md
     - td-errors:
         - td-errors: error-messages/td-errors/td-errors.md
+    - urlset-errors:
+        - urlset-errors: error-messages/urlset-errors/urlset-errors.md
     - urltrans-errors:
         - urltrans-errors: error-messages/urltrans-errors/urltrans-errors.md
     - vlan-errors:
         - vlan-errors: error-messages/vlan-errors/vlan-errors.md
     - vmac-errors:
         - vmac-errors: error-messages/vmac-errors/vmac-errors.md
-    - vpath-errors:
-        - vpath-errors: error-messages/vpath-errors/vpath-errors.md
     - vxlan-errors:
         - vxlan-errors: error-messages/vxlan-errors/vxlan-errors.md
     - warning-errors:

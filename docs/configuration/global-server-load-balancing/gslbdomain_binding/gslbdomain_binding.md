@@ -7,7 +7,7 @@ Binding object which returns the resources bound to gslbdomain.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the Domain.&lt;br>Minimum length = 1</td><tr><tr><td>gslbdomain_gslbvserver_binding</td><td>&lt;gslbdomain_gslbvserver_binding[]></td><td>Read-only</td><td>gslbvserver that can be bound to gslbdomain.</td><tr><tr><td>gslbdomain_gslbservice_binding</td><td>&lt;gslbdomain_gslbservice_binding[]></td><td>Read-only</td><td>gslbservice that can be bound to gslbdomain.</td><tr><tr><td>gslbdomain_lbmonitor_binding</td><td>&lt;gslbdomain_lbmonitor_binding[]></td><td>Read-only</td><td>lbmonitor that can be bound to gslbdomain.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the Domain.&lt;br>Minimum length = 1</td><tr><tr><td>gslbdomain_gslbservice_binding</td><td>&lt;gslbdomain_gslbservice_binding[]></td><td>Read-only</td><td>gslbservice that can be bound to gslbdomain.</td><tr><tr><td>gslbdomain_lbmonitor_binding</td><td>&lt;gslbdomain_lbmonitor_binding[]></td><td>Read-only</td><td>lbmonitor that can be bound to gslbdomain.</td><tr><tr><td>gslbdomain_gslbvserver_binding</td><td>&lt;gslbdomain_gslbvserver_binding[]></td><td>Read-only</td><td>gslbvserver that can be bound to gslbdomain.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

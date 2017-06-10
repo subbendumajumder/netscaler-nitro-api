@@ -7,12 +7,12 @@ Configuration for dns key resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>keyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the public-private key pair to publish in the zone.&lt;br>Minimum length = 1</td><tr><tr><td>publickey</td><td>&lt;String></td><td>Read-write</td><td>File name of the public key.</td><tr><tr><td>privatekey</td><td>&lt;String></td><td>Read-write</td><td>File name of the private key.</td><tr><tr><td>expires</td><td>&lt;Double></td><td>Read-write</td><td>Time period for which to consider the key valid, after the key is used to sign a zone.&lt;br>Default value: 120&lt;br>Minimum value = 1&lt;br>Maximum value = 32767</td><tr><tr><td>units1</td><td>&lt;String></td><td>Read-write</td><td>Units for the expiry period.&lt;br>Default value: DAYS&lt;br>Possible values = MINUTES, HOURS, DAYS</td><tr><tr><td>notificationperiod</td><td>&lt;Double></td><td>Read-write</td><td>Time at which to generate notification of key expiration, specified as number of days, hours, or minutes before expiry. Must be less than the expiry period. The notification is an SNMP trap sent to an SNMP manager. To enable the appliance to send the trap, enable the DNSKEY-EXPIRY SNMP alarm.&lt;br>Default value: 7&lt;br>Minimum value = 1&lt;br>Maximum value = 32767</td><tr><tr><td>units2</td><td>&lt;String></td><td>Read-write</td><td>Units for the notification period.&lt;br>Default value: DAYS&lt;br>Possible values = MINUTES, HOURS, DAYS</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to Live (TTL), in seconds, for the DNSKEY resource record created in the zone. TTL is the time for which the record must be cached by the DNS proxies. If the TTL is not specified, either the DNS zones minimum TTL or the default value of 3600 is used.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>zonename</td><td>&lt;String></td><td>Read-write</td><td>Name of the zone for which to create a key.&lt;br>Minimum length = 1</td><tr><tr><td>keytype</td><td>&lt;String></td><td>Read-write</td><td>Type of key to create.&lt;br>Default value: NS_DNSKEY_ZSK&lt;br>Possible values = KSK, KeySigningKey, ZSK, ZoneSigningKey</td><tr><tr><td>algorithm</td><td>&lt;String></td><td>Read-write</td><td>Algorithm to generate for zone signing.&lt;br>Default value: NS_DNSKEYALGO_RSASHA1&lt;br>Possible values = RSASHA1</td><tr><tr><td>keysize</td><td>&lt;Double></td><td>Read-write</td><td>Size of the key, in bits.&lt;br>Default value: 512</td><tr><tr><td>filenameprefix</td><td>&lt;String></td><td>Read-write</td><td>Common prefix for the names of the generated public and private key files and the Delegation Signer (DS) resource record. During key generation, the .key, .private, and .ds suffixes are appended automatically to the file name prefix to produce the names of the public key, the private key, and the DS record, respectively.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>keyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the public-private key pair to publish in the zone.&lt;br>Minimum length = 1</td><tr><tr><td>publickey</td><td>&lt;String></td><td>Read-write</td><td>File name of the public key.</td><tr><tr><td>privatekey</td><td>&lt;String></td><td>Read-write</td><td>File name of the private key.</td><tr><tr><td>expires</td><td>&lt;Double></td><td>Read-write</td><td>Time period for which to consider the key valid, after the key is used to sign a zone.&lt;br>Default value: 120&lt;br>Minimum value = 1&lt;br>Maximum value = 32767</td><tr><tr><td>units1</td><td>&lt;String></td><td>Read-write</td><td>Units for the expiry period.&lt;br>Default value: DAYS&lt;br>Possible values = MINUTES, HOURS, DAYS</td><tr><tr><td>notificationperiod</td><td>&lt;Double></td><td>Read-write</td><td>Time at which to generate notification of key expiration, specified as number of days, hours, or minutes before expiry. Must be less than the expiry period. The notification is an SNMP trap sent to an SNMP manager. To enable the appliance to send the trap, enable the DNSKEY-EXPIRY SNMP alarm.&lt;br>Default value: 7&lt;br>Minimum value = 1&lt;br>Maximum value = 32767</td><tr><tr><td>units2</td><td>&lt;String></td><td>Read-write</td><td>Units for the notification period.&lt;br>Default value: DAYS&lt;br>Possible values = MINUTES, HOURS, DAYS</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to Live (TTL), in seconds, for the DNSKEY resource record created in the zone. TTL is the time for which the record must be cached by the DNS proxies. If the TTL is not specified, either the DNS zones minimum TTL or the default value of 3600 is used.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>password</td><td>&lt;String></td><td>Read-write</td><td>Passphrase for reading the encrypted public/private DNS keys.&lt;br>Minimum length = 1</td><tr><tr><td>zonename</td><td>&lt;String></td><td>Read-write</td><td>Name of the zone for which to create a key.&lt;br>Minimum length = 1</td><tr><tr><td>keytype</td><td>&lt;String></td><td>Read-write</td><td>Type of key to create.&lt;br>Default value: NS_DNSKEY_ZSK&lt;br>Possible values = KSK, KeySigningKey, ZSK, ZoneSigningKey</td><tr><tr><td>algorithm</td><td>&lt;String></td><td>Read-write</td><td>Algorithm to generate for zone signing.&lt;br>Default value: NS_DNSKEYALGO_RSASHA1&lt;br>Possible values = RSASHA1</td><tr><tr><td>keysize</td><td>&lt;Double></td><td>Read-write</td><td>Size of the key, in bits.&lt;br>Default value: 512</td><tr><tr><td>filenameprefix</td><td>&lt;String></td><td>Read-write</td><td>Common prefix for the names of the generated public and private key files and the Delegation Signer (DS) resource record. During key generation, the .key, .private, and .ds suffixes are appended automatically to the file name prefix to produce the names of the public key, the private key, and the DS record, respectively.</td><tr><tr><td>src</td><td>&lt;String></td><td>Read-write</td><td>URL (protocol, host, path, and file name) from where the DNS key file will be imported. NOTE: The import fails if the object to be imported is on an HTTPS server that requires client certificate authentication for access. This is a mandatory argument.&lt;br>Minimum length = 1&lt;br>Maximum length = 2047</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD](#add) | [CREATE](#create) | [UPDATE](#update) | [UNSET](#unset) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD](#add) | [CREATE](#create) | [UPDATE](#update) | [UNSET](#unset) | [DELETE](#delete) | [IMPORT](#import) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"dnskey":{      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>}}```
+Request Payload: ```{"dnskey":{      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>,      "password":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -48,7 +48,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"dnskey":{      "zonename":<String_value>,      "keytype":<String_value>,      "algorithm":<String_value>,      "keysize":<Double_value>,      "filenameprefix":<String_value>}}```
+Request Payload: ```{"dnskey":{      "zonename":<String_value>,      "keytype":<String_value>,      "algorithm":<String_value>,      "keysize":<Double_value>,      "filenameprefix":<String_value>,      "password":<String_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -97,6 +97,21 @@ Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
+###Import
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnskey?action=Import
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"dnskey":{      "keyname":<String_value>,      "src":<String_value>}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
 ###get (all)
 
 
@@ -134,7 +149,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnskey": [ {      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>,      "zonename":<String_value>}]}```
+Response Payload: ```{ "dnskey": [ {      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>,      "zonename":<String_value>,      "password":<String_value>}]}```
 
 
 
@@ -165,7 +180,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnskey": [ {      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>,      "zonename":<String_value>}]}```
+Response Payload: ```{ "dnskey": [ {      "keyname":<String_value>,      "publickey":<String_value>,      "privatekey":<String_value>,      "expires":<Double_value>,      "units1":<String_value>,      "notificationperiod":<Double_value>,      "units2":<String_value>,      "ttl":<Double_value>,      "zonename":<String_value>,      "password":<String_value>}]}```
 
 
 

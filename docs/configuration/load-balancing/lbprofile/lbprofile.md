@@ -7,7 +7,7 @@ Configuration for LB profile resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>lbprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the LB profile.&lt;br>Minimum length = 1</td><tr><tr><td>dbslb</td><td>&lt;String></td><td>Read-write</td><td>Enable database specific load balancing for MySQL and MSSQL service types.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>processlocal</td><td>&lt;String></td><td>Read-write</td><td>By turning on this option packets destined to a vserver in a cluster will not under go any steering. Turn this option for single pa&lt;br>cket request response mode or when the upstream device is performing a proper RSS for connection based distribution.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>httponlycookieflag</td><td>&lt;String></td><td>Read-write</td><td>Include the HttpOnly attribute in persistence cookies. The HttpOnly attribute limits the scope of a cookie to HTTP requests and helps mitigate the risk of cross-site scripting attacks.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>cookiepassphrase</td><td>&lt;String></td><td>Read-write</td><td>Use this parameter to specify the passphrase used to generate secured persistence cookie value. It specifies the passphrase with a maximum of 31 characters.</td><tr><tr><td>usesecuredpersistencecookie</td><td>&lt;String></td><td>Read-write</td><td>Encode persistence cookie values using SHA2 hash.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>vsvrcount</td><td>&lt;Double></td><td>Read-only</td><td>Total number of vservers , the profile is bound to.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>lbprofilename</td><td>&lt;String></td><td>Read-write</td><td>Name of the LB profile.&lt;br>Minimum length = 1</td><tr><tr><td>dbslb</td><td>&lt;String></td><td>Read-write</td><td>Enable database specific load balancing for MySQL and MSSQL service types.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>processlocal</td><td>&lt;String></td><td>Read-write</td><td>By turning on this option packets destined to a vserver in a cluster will not under go any steering. Turn this option for single pa&lt;br>cket request response mode or when the upstream device is performing a proper RSS for connection based distribution.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>httponlycookieflag</td><td>&lt;String></td><td>Read-write</td><td>Include the HttpOnly attribute in persistence cookies. The HttpOnly attribute limits the scope of a cookie to HTTP requests and helps mitigate the risk of cross-site scripting attacks.&lt;br>Default value: ENABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>cookiepassphrase</td><td>&lt;String></td><td>Read-write</td><td>Use this parameter to specify the passphrase used to generate secured persistence cookie value. It specifies the passphrase with a maximum of 31 characters.</td><tr><tr><td>usesecuredpersistencecookie</td><td>&lt;String></td><td>Read-write</td><td>Encode persistence cookie values using SHA2 hash.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>useencryptedpersistencecookie</td><td>&lt;String></td><td>Read-write</td><td>Encode persistence cookie values using SHA2 hash.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>vsvrcount</td><td>&lt;Double></td><td>Read-only</td><td>Total number of vservers , the profile is bound to.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>}}```
+Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "useencryptedpersistencecookie":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -62,7 +62,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>}}```
+Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "useencryptedpersistencecookie":<String_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -77,7 +77,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":true,      "processlocal":true,      "httponlycookieflag":true,      "cookiepassphrase":true,      "usesecuredpersistencecookie":true}}```
+Request Payload: ```{"lbprofile":{      "lbprofilename":<String_value>,      "dbslb":true,      "processlocal":true,      "httponlycookieflag":true,      "cookiepassphrase":true,      "usesecuredpersistencecookie":true,      "useencryptedpersistencecookie":true}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -119,7 +119,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbprofile": [ {      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "vsvrcount":<Double_value>}]}```
+Response Payload: ```{ "lbprofile": [ {      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "useencryptedpersistencecookie":<String_value>,      "vsvrcount":<Double_value>}]}```
 
 
 
@@ -150,7 +150,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbprofile": [ {      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "vsvrcount":<Double_value>}]}```
+Response Payload: ```{ "lbprofile": [ {      "lbprofilename":<String_value>,      "dbslb":<String_value>,      "processlocal":<String_value>,      "httponlycookieflag":<String_value>,      "cookiepassphrase":<String_value>,      "usesecuredpersistencecookie":<String_value>,      "useencryptedpersistencecookie":<String_value>,      "vsvrcount":<Double_value>}]}```
 
 
 

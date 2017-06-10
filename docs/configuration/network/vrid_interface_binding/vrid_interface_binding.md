@@ -7,7 +7,7 @@ Binding object showing the interface that can be bound to vrid.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interfaces to bind to the VMAC, specified in (slot/port) notation (for example, 1/2).Use spaces to separate multiple entries.</td><tr><tr><td>trackifnum</td><td>&lt;String></td><td>Read-write</td><td>Interfaces which need to be tracked for this vrID.</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-write</td><td>Interfaces bound to this VRID.</td><tr><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer that uniquely identifies the VMAC address. The generic VMAC address is in the form of 00:00:5e:00:01:;lt;VRID;gt;. For example, if you add a VRID with a value of 60 and bind it to an interface, the resulting VMAC address is 00:00:5e:00:01:3c, where 3c is the hexadecimal representation of 60.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>The VLAN in which this VRID resides.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer that uniquely identifies the VMAC address. The generic VMAC address is in the form of 00:00:5e:00:01:;lt;VRID;gt;. For example, if you add a VRID with a value of 60 and bind it to an interface, the resulting VMAC address is 00:00:5e:00:01:3c, where 3c is the hexadecimal representation of 60.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>Interfaces to bind to the VMAC, specified in (slot/port) notation (for example, 1/2).Use spaces to separate multiple entries.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Flags.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-only</td><td>The VLAN in which this VRID resides.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"vrid_interface_binding":{      "id":<Double_value>,      "ifnum":<String_value>,      "trackifnum":<String_value>}}```
+Request Payload: ```{"vrid_interface_binding":{      "id":<Double_value>,      "ifnum":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vrid_interface_binding": [ {      "ifnum":<String_value>,      "trackifnum":<String_value>,      "ifaces":<String_value>,      "id":<Double_value>,      "flags":<Double_value>,      "vlan":<Double_value>}]}```
+Response Payload: ```{ "vrid_interface_binding": [ {      "id":<Double_value>,      "ifnum":<String_value>,      "flags":<Double_value>,      "vlan":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vrid_interface_binding": [ {      "ifnum":<String_value>,      "trackifnum":<String_value>,      "ifaces":<String_value>,      "id":<Double_value>,      "flags":<Double_value>,      "vlan":<Double_value>}]}```
+Response Payload: ```{ "vrid_interface_binding": [ {      "id":<Double_value>,      "ifnum":<String_value>,      "flags":<Double_value>,      "vlan":<Double_value>}]}```
 
 
 

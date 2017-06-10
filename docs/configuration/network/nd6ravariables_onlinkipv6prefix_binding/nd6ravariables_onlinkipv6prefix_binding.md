@@ -7,7 +7,7 @@ Binding object showing the onlinkipv6prefix that can be bound to nd6ravariables.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ipv6prefix</td><td>&lt;String></td><td>Read-write</td><td>Onlink prefixes for RA messages.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>The VLAN number.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ipv6prefix</td><td>&lt;String></td><td>Read-write</td><td>Onlink prefixes for RA messages.</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>The VLAN number.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

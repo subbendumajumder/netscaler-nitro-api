@@ -7,7 +7,7 @@ Binding object which returns the resources bound to nsservicepath.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must &lt;br> contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-)&lt;br> characters.&lt;br>Minimum length = 1</td><tr><tr><td>nsservicepath_nsservicefunction_binding</td><td>&lt;nsservicepath_nsservicefunction_binding[]></td><td>Read-only</td><td>nsservicefunction that can be bound to nsservicepath.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must&lt;br> contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-)&lt;br> characters.&lt;br>Minimum length = 1</td><tr><tr><td>nsservicepath_nsservicefunction_binding</td><td>&lt;nsservicepath_nsservicefunction_binding[]></td><td>Read-only</td><td>nsservicefunction that can be bound to nsservicepath.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 

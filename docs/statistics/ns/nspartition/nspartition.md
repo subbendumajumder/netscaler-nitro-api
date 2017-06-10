@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspartition": [ {      "partitionname":<String_value>,      "currentconnections":<Double_value>,      "tokendropsrate":<Double_value>,      "totaltokendrops":<Double_value>,      "maxbandwidth":<Double_value>,      "minbandwidth":<Double_value>,      "totaldrops":<Double_value>,      "connectiondropsrate":<Double_value>,      "totalconnectiondrops":<Double_value>,      "dropsrate":<Double_value>,      "currentbandwidth":<Double_value>,      "maxconnection":<Double_value>,      "maxmemory":<Double_value>,      "memoryusagepcnt":<Double_value>}]}```
+Response Payload: ```{ "nspartition": [ {      "partitionname":<String_value>,      "tokendropsrate":<Double_value>,      "totaltokendrops":<Double_value>,      "totaldrops":<Double_value>,      "dropsrate":<Double_value>,      "totalconnectiondrops":<Double_value>,      "currentconnections":<Double_value>,      "minbandwidth":<Double_value>,      "currentbandwidth":<Double_value>,      "maxconnection":<Double_value>,      "maxbandwidth":<Double_value>,      "connectiondropsrate":<Double_value>,      "maxmemory":<Double_value>,      "memoryusagepcnt":<Double_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspartition": [ {      "partitionname":<String_value>,      "currentconnections":<Double_value>,      "tokendropsrate":<Double_value>,      "totaltokendrops":<Double_value>,      "maxbandwidth":<Double_value>,      "minbandwidth":<Double_value>,      "totaldrops":<Double_value>,      "connectiondropsrate":<Double_value>,      "totalconnectiondrops":<Double_value>,      "dropsrate":<Double_value>,      "currentbandwidth":<Double_value>,      "maxconnection":<Double_value>,      "maxmemory":<Double_value>,      "memoryusagepcnt":<Double_value>}]}```
+Response Payload: ```{ "nspartition": [ {      "partitionname":<String_value>,      "tokendropsrate":<Double_value>,      "totaltokendrops":<Double_value>,      "totaldrops":<Double_value>,      "dropsrate":<Double_value>,      "totalconnectiondrops":<Double_value>,      "currentconnections":<Double_value>,      "minbandwidth":<Double_value>,      "currentbandwidth":<Double_value>,      "maxconnection":<Double_value>,      "maxbandwidth":<Double_value>,      "connectiondropsrate":<Double_value>,      "maxmemory":<Double_value>,      "memoryusagepcnt":<Double_value>}]}```
 
 
 

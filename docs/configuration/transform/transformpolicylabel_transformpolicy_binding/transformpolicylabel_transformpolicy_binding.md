@@ -7,7 +7,7 @@ Binding object showing the transformpolicy that can be bound to transformpolicyl
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation policy to bind to the policy label.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of invocation. Available settings function as follows: * reqvserver - Forward the request to the specified request virtual server. * policylabel - Invoke the specified policy label.&lt;br>Possible values = reqvserver, policylabel</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation policy label to which to bind the policy.</td><tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy label.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>If the current policy evaluates to TRUE, terminate evaluation of policies bound to the current policy label, and then forward the request to the specified virtual server or evaluate the specified policy label.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the priority of the policy.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation policy to bind to the policy label.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the URL Transformation policy label to which to bind the policy.</td><tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy label.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>If the current policy evaluates to TRUE, terminate evaluation of policies bound to the current policy label, and then forward the request to the specified virtual server or evaluate the specified policy label.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of invocation. Available settings function as follows: * reqvserver - Forward the request to the specified request virtual server. * policylabel - Invoke the specified policy label.&lt;br>Possible values = reqvserver, policylabel</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "transformpolicylabel_transformpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "transformpolicylabel_transformpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "transformpolicylabel_transformpolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "transformpolicylabel_transformpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 

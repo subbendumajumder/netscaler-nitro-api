@@ -7,7 +7,7 @@ Binding object which returns the resources bound to authenticationlocalpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the local authentication policy.</td><tr><tr><td>authenticationlocalpolicy_vpnglobal_binding</td><td>&lt;authenticationlocalpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_vpnvserver_binding</td><td>&lt;authenticationlocalpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_systemglobal_binding</td><td>&lt;authenticationlocalpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_authenticationvserver_binding</td><td>&lt;authenticationlocalpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationlocalpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the local authentication policy.</td><tr><tr><td>authenticationlocalpolicy_vpnvserver_binding</td><td>&lt;authenticationlocalpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_systemglobal_binding</td><td>&lt;authenticationlocalpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_authenticationvserver_binding</td><td>&lt;authenticationlocalpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationlocalpolicy.</td><tr><tr><td>authenticationlocalpolicy_vpnglobal_binding</td><td>&lt;authenticationlocalpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationlocalpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationlocalpolicy_binding": [ {      "name":<String_value>,      "authenticationlocalpolicy_vpnvserver_binding":<authenticationlocalpolicy_vpnvserver_binding[]_value>,      "authenticationlocalpolicy_systemglobal_binding":<authenticationlocalpolicy_systemglobal_binding[]_value>,      "authenticationlocalpolicy_vpnglobal_binding":<authenticationlocalpolicy_vpnglobal_binding[]_value>,      "authenticationlocalpolicy_authenticationvserver_binding":<authenticationlocalpolicy_authenticationvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationlocalpolicy_binding": [ {      "name":<String_value>,      "authenticationlocalpolicy_vpnvserver_binding":<authenticationlocalpolicy_vpnvserver_binding[]_value>,      "authenticationlocalpolicy_vpnglobal_binding":<authenticationlocalpolicy_vpnglobal_binding[]_value>,      "authenticationlocalpolicy_systemglobal_binding":<authenticationlocalpolicy_systemglobal_binding[]_value>,      "authenticationlocalpolicy_authenticationvserver_binding":<authenticationlocalpolicy_authenticationvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationlocalpolicy_binding": [ {      "name":<String_value>,      "authenticationlocalpolicy_vpnvserver_binding":<authenticationlocalpolicy_vpnvserver_binding[]_value>,      "authenticationlocalpolicy_systemglobal_binding":<authenticationlocalpolicy_systemglobal_binding[]_value>,      "authenticationlocalpolicy_vpnglobal_binding":<authenticationlocalpolicy_vpnglobal_binding[]_value>,      "authenticationlocalpolicy_authenticationvserver_binding":<authenticationlocalpolicy_authenticationvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationlocalpolicy_binding": [ {      "name":<String_value>,      "authenticationlocalpolicy_vpnvserver_binding":<authenticationlocalpolicy_vpnvserver_binding[]_value>,      "authenticationlocalpolicy_vpnglobal_binding":<authenticationlocalpolicy_vpnglobal_binding[]_value>,      "authenticationlocalpolicy_systemglobal_binding":<authenticationlocalpolicy_systemglobal_binding[]_value>,      "authenticationlocalpolicy_authenticationvserver_binding":<authenticationlocalpolicy_authenticationvserver_binding[]_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Configuration for AppFlow collector resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the collector. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at&lt;br>(@), equals (=), and hyphen (-) characters.&lt;br> Only four collectors can be configured. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow collector" or my appflow collector).&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>IPv4 address of the collector.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>UDP port on which the collector listens.&lt;br>Default value: 4739</td><tr><tr><td>netprofile</td><td>&lt;String></td><td>Read-write</td><td>Netprofile to associate with the collector. The IP address defined in the profile is used as the source IP address for AppFlow traffic for this collector. If you do not set this parameter, the NetScaler IP (NSIP) address is used as the source IP address.&lt;br>Maximum length = 128</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the collector. Must begin with an ASCII alphabetic or underscore (_) character, and must&lt;br>contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at(@), equals (=), and hyphen (-) characters. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow coll" or my appflow coll).&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the collector. Must begin with an ASCII alphabetic or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at&lt;br>(@), equals (=), and hyphen (-) characters.&lt;br> Only four collectors can be configured. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow collector" or my appflow collector).&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>ipaddress</td><td>&lt;String></td><td>Read-write</td><td>IPv4 address of the collector.</td><tr><tr><td>port</td><td>&lt;Integer></td><td>Read-write</td><td>Port on which the collector listens.</td><tr><tr><td>netprofile</td><td>&lt;String></td><td>Read-write</td><td>Netprofile to associate with the collector. The IP address defined in the profile is used as the source IP address for AppFlow traffic for this collector. If you do not set this parameter, the NetScaler IP (NSIP) address is used as the source IP address.&lt;br>Maximum length = 128</td><tr><tr><td>transport</td><td>&lt;String></td><td>Read-write</td><td>Type of collector: either logstream or ipfix.&lt;br>Default value: ipfix,&lt;br>Possible values = ipfix, logstream</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the collector. Must begin with an ASCII alphabetic or underscore (_) character, and must&lt;br>contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at(@), equals (=), and hyphen (-) characters. &lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my appflow coll" or my appflow coll).&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"appflowcollector":{      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>}}```
+Request Payload: ```{"appflowcollector":{      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>,      "transport":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -134,7 +134,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appflowcollector": [ {      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>}]}```
+Response Payload: ```{ "appflowcollector": [ {      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>,      "transport":<String_value>}]}```
 
 
 
@@ -165,7 +165,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "appflowcollector": [ {      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>}]}```
+Response Payload: ```{ "appflowcollector": [ {      "name":<String_value>,      "ipaddress":<String_value>,      "port":<Integer_value>,      "netprofile":<String_value>,      "transport":<String_value>}]}```
 
 
 

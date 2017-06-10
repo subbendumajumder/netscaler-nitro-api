@@ -7,7 +7,7 @@ Binding object which returns the resources bound to lsnclient.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN client entity. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN client is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn client1" or lsn client1). .&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>lsnclient_network6_binding</td><td>&lt;lsnclient_network6_binding[]></td><td>Read-only</td><td>network6 that can be bound to lsnclient.</td><tr><tr><td>lsnclient_nsacl6_binding</td><td>&lt;lsnclient_nsacl6_binding[]></td><td>Read-only</td><td>nsacl6 that can be bound to lsnclient.</td><tr><tr><td>lsnclient_network_binding</td><td>&lt;lsnclient_network_binding[]></td><td>Read-only</td><td>network that can be bound to lsnclient.</td><tr><tr><td>lsnclient_nsacl_binding</td><td>&lt;lsnclient_nsacl_binding[]></td><td>Read-only</td><td>nsacl that can be bound to lsnclient.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>clientname</td><td>&lt;String></td><td>Read-write</td><td>Name for the LSN client entity. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the LSN client is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "lsn client1" or lsn client1). .&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>lsnclient_network_binding</td><td>&lt;lsnclient_network_binding[]></td><td>Read-only</td><td>network that can be bound to lsnclient.</td><tr><tr><td>lsnclient_network6_binding</td><td>&lt;lsnclient_network6_binding[]></td><td>Read-only</td><td>network6 that can be bound to lsnclient.</td><tr><tr><td>lsnclient_nsacl6_binding</td><td>&lt;lsnclient_nsacl6_binding[]></td><td>Read-only</td><td>nsacl6 that can be bound to lsnclient.</td><tr><tr><td>lsnclient_nsacl_binding</td><td>&lt;lsnclient_nsacl_binding[]></td><td>Read-only</td><td>nsacl that can be bound to lsnclient.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnclient_binding": [ {      "clientname":<String_value>,      "lsnclient_nsacl6_binding":<lsnclient_nsacl6_binding[]_value>,      "lsnclient_network_binding":<lsnclient_network_binding[]_value>,      "lsnclient_nsacl_binding":<lsnclient_nsacl_binding[]_value>,      "lsnclient_network6_binding":<lsnclient_network6_binding[]_value>}]}```
+Response Payload: ```{ "lsnclient_binding": [ {      "clientname":<String_value>,      "lsnclient_nsacl6_binding":<lsnclient_nsacl6_binding[]_value>,      "lsnclient_network_binding":<lsnclient_network_binding[]_value>,      "lsnclient_network6_binding":<lsnclient_network6_binding[]_value>,      "lsnclient_nsacl_binding":<lsnclient_nsacl_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnclient_binding": [ {      "clientname":<String_value>,      "lsnclient_nsacl6_binding":<lsnclient_nsacl6_binding[]_value>,      "lsnclient_network_binding":<lsnclient_network_binding[]_value>,      "lsnclient_nsacl_binding":<lsnclient_nsacl_binding[]_value>,      "lsnclient_network6_binding":<lsnclient_network6_binding[]_value>}]}```
+Response Payload: ```{ "lsnclient_binding": [ {      "clientname":<String_value>,      "lsnclient_nsacl6_binding":<lsnclient_nsacl6_binding[]_value>,      "lsnclient_network_binding":<lsnclient_network_binding[]_value>,      "lsnclient_network6_binding":<lsnclient_network6_binding[]_value>,      "lsnclient_nsacl_binding":<lsnclient_nsacl_binding[]_value>}]}```
 
 
 

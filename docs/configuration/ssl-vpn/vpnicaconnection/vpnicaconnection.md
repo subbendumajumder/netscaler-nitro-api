@@ -7,7 +7,7 @@ Configuration for active ica connections resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.&lt;br>Minimum length = 1</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Terminate all active icaconnections.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td><tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td><tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.&lt;br>Minimum length = 1</td><tr><tr><td>transproto</td><td>&lt;String></td><td>Read-write</td><td>Transport type for the existing Existing ICA conenction.&lt;br>Possible values = TCP, UDP</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Terminate all active icaconnections.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td><tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td><tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"vpnicaconnection":{      "username":<String_value>,      "all":<Boolean_value>}}```
+Request Payload: ```{"vpnicaconnection":{      "username":<String_value>,      "transproto":<String_value>,      "all":<Boolean_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection
 Query-parameters:
 args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?args=username:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?args=username:&lt;String_value&gt;,transproto:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
 Use this query-parameter to get vpnicaconnection resources based on additional properties.
 
 
@@ -80,7 +80,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnicaconnection": [ {username:<String_value>,nodeid:<Double_value>      "domain":<String_value>,      "srcip":<String_value>,      "srcport":<Integer_value>,      "destip":<String_value>,      "destport":<Integer_value>,      "peid":<Double_value>}]}```
+Response Payload: ```{ "vpnicaconnection": [ {username:<String_value>,transproto:<String_value>,nodeid:<Double_value>      "domain":<String_value>,      "srcip":<String_value>,      "srcport":<Integer_value>,      "destip":<String_value>,      "destport":<Integer_value>,      "peid":<Double_value>}]}```
 
 
 

@@ -7,12 +7,12 @@ Configuration for bridge table entry resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>bridgeage</td><td>&lt;Double></td><td>Read-write</td><td>Time-out value for the bridge table entries, in seconds. The new value applies only to the entries that are dynamically learned after the new value is set. Previously existing bridge table entries expire after the previously configured time-out value.&lt;br>Default value: 300&lt;br>Minimum value = 60&lt;br>Maximum value = 300</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>VLAN whose entries are to be removed.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>INTERFACE whose entries are to be removed.</td><tr><tr><td>vxlan</td><td>&lt;Double></td><td>Read-write</td><td>VXLAN whose entries are to be removed.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>mac</td><td>&lt;String></td><td>Read-only</td><td>The MAC address of the target.</td><tr><tr><td>vtep</td><td>&lt;String></td><td>Read-only</td><td>The IP address of the VTEP.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Display flags,.</td><tr><tr><td>channel</td><td>&lt;Double></td><td>Read-only</td><td>The Tunnel through which bridge entry is learned.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>mac</td><td>&lt;String></td><td>Read-write</td><td>The MAC address of the target.</td><tr><tr><td>vxlan</td><td>&lt;Double></td><td>Read-write</td><td>The VXLAN to which this address is associated.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>vtep</td><td>&lt;String></td><td>Read-write</td><td>The IP address of the destination VXLAN tunnel endpoint where the Ethernet MAC ADDRESS resides.&lt;br>Minimum length = 1</td><tr><tr><td>vni</td><td>&lt;Double></td><td>Read-write</td><td>The VXLAN VNI Network Identifier (or VXLAN Segment ID) to use to connect to the remote VXLAN tunnel endpoint. If omitted the value specified as vxlan will be used.&lt;br>Minimum value = 1&lt;br>Maximum value = 16777215</td><tr><tr><td>devicevlan</td><td>&lt;Double></td><td>Read-write</td><td>The vlan on which to send multicast packets when the VXLAN tunnel endpoint is a muticast group address.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>bridgeage</td><td>&lt;Double></td><td>Read-write</td><td>Time-out value for the bridge table entries, in seconds. The new value applies only to the entries that are dynamically learned after the new value is set. Previously existing bridge table entries expire after the previously configured time-out value.&lt;br>Default value: 300&lt;br>Minimum value = 60&lt;br>Maximum value = 300</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>VLAN whose entries are to be removed.&lt;br>Minimum value = 1&lt;br>Maximum value = 4094</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>INTERFACE whose entries are to be removed.</td><tr><tr><td>flags</td><td>&lt;Double></td><td>Read-only</td><td>Display flags,.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-only</td><td>Whether static or dynamic.&lt;br>Possible values = STATIC, PERMANENT, DYNAMIC</td><tr><tr><td>channel</td><td>&lt;Double></td><td>Read-only</td><td>The Tunnel through which bridge entry is learned.</td><tr><tr><td>controlplane</td><td>&lt;Boolean></td><td>Read-only</td><td>This bridge table entry is populated by a control plane protocol.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[UPDATE](#update) | [UNSET](#unset) | [CLEAR](#clear) | [GET (ALL)](#get-(all)) | [COUNT](#count)
+[ADD](#add) | [DELETE](#delete) | [UPDATE](#update) | [UNSET](#unset) | [CLEAR](#clear) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -22,6 +22,35 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###add
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/bridgetable
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"bridgetable":{      "mac":<String_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "vni":<Double_value>,      "devicevlan":<Double_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###delete
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/bridgetable
+HTTP Method: DELETE
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
 
 ###update
 
@@ -110,7 +139,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "bridgetable": [ {nodeid:<Double_value>      "bridgeage":<Double_value>,      "mac":<String_value>,      "ifnum":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "flags":<Double_value>,      "channel":<Double_value>}]}```
+Response Payload: ```{ "bridgetable": [ {nodeid:<Double_value>      "bridgeage":<Double_value>,      "mac":<String_value>,      "ifnum":<String_value>,      "vlan":<Double_value>,      "vxlan":<Double_value>,      "vtep":<String_value>,      "vni":<Double_value>,      "devicevlan":<Double_value>,      "flags":<Double_value>,      "type":<String_value>,      "channel":<Double_value>,      "controlplane":<Boolean_value>}]}```
 
 
 

@@ -12,7 +12,7 @@ Binding object showing the iptunnel that can be bound to vxlan.
 <span>(click to see [Properties](#properties))</span>
 
 
-[ADD:](#add:) | [DELETE:](#delete:) | [GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
+[GET](#get) | [GET (ALL)](#get-(all)) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -22,35 +22,6 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
-
-###add:
-
-
-
-URL: http://&lt;netscaler-ip-address/nitro/v1/config/vxlan_iptunnel_binding
-HTTP Method: PUT
-Request Headers:
-
-Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
-
-Request Payload: ```{"vxlan_iptunnel_binding":{      "id":<Double_value>,      "tunnel":<String_value>}}```
-Response:
-HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
-
-
-###delete:
-
-
-
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vxlan_iptunnel_binding/id_value&lt;Double&gt;
-HTTP Method: DELETE
-Request Headers:
-
-Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
-
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
-
 
 ###get
 

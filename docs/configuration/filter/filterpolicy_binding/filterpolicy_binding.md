@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "filterpolicy_binding": [ {      "name":<String_value>,      "filterpolicy_crvserver_binding":<filterpolicy_crvserver_binding[]_value>,      "filterpolicy_lbvserver_binding":<filterpolicy_lbvserver_binding[]_value>,      "filterpolicy_csvserver_binding":<filterpolicy_csvserver_binding[]_value>,      "filterpolicy_filterglobal_binding":<filterpolicy_filterglobal_binding[]_value>}]}```
+Response Payload: ```{ "filterpolicy_binding": [ {      "name":<String_value>,      "filterpolicy_crvserver_binding":<filterpolicy_crvserver_binding[]_value>,      "filterpolicy_filterglobal_binding":<filterpolicy_filterglobal_binding[]_value>,      "filterpolicy_lbvserver_binding":<filterpolicy_lbvserver_binding[]_value>,      "filterpolicy_csvserver_binding":<filterpolicy_csvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "filterpolicy_binding": [ {      "name":<String_value>,      "filterpolicy_crvserver_binding":<filterpolicy_crvserver_binding[]_value>,      "filterpolicy_lbvserver_binding":<filterpolicy_lbvserver_binding[]_value>,      "filterpolicy_csvserver_binding":<filterpolicy_csvserver_binding[]_value>,      "filterpolicy_filterglobal_binding":<filterpolicy_filterglobal_binding[]_value>}]}```
+Response Payload: ```{ "filterpolicy_binding": [ {      "name":<String_value>,      "filterpolicy_crvserver_binding":<filterpolicy_crvserver_binding[]_value>,      "filterpolicy_filterglobal_binding":<filterpolicy_filterglobal_binding[]_value>,      "filterpolicy_lbvserver_binding":<filterpolicy_lbvserver_binding[]_value>,      "filterpolicy_csvserver_binding":<filterpolicy_csvserver_binding[]_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Configuration for LSN RTSPALG session resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>sessionid</td><td>&lt;String></td><td>Read-write</td><td>Session ID for the RTSP call.</td><tr><tr><td>callflags</td><td>&lt;Double></td><td>Read-only</td><td>Flags for the call entry.</td><tr><tr><td>callrefcount</td><td>&lt;Double></td><td>Read-only</td><td>Reference count for the call entry.</td><tr><tr><td>calltimer</td><td>&lt;Double></td><td>Read-only</td><td>Timer for the call entry.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>sessionid</td><td>&lt;String></td><td>Read-write</td><td>Session ID for the RTSP call.</td><tr><tr><td>callflags</td><td>&lt;Double></td><td>Read-only</td><td>Flags for the call entry.</td><tr><tr><td>xlatip</td><td>&lt;String></td><td>Read-only</td><td>XLAT IP Address if its XLAT session.</td><tr><tr><td>callrefcount</td><td>&lt;Double></td><td>Read-only</td><td>Reference count for the call entry.</td><tr><tr><td>calltimer</td><td>&lt;Double></td><td>Read-only</td><td>Timer for the call entry.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -75,7 +75,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnrtspalgsession": [ {      "sessionid":<String_value>,      "callflags":<Double_value>,      "callrefcount":<Double_value>,      "calltimer":<Double_value>}]}```
+Response Payload: ```{ "lsnrtspalgsession": [ {      "sessionid":<String_value>,      "callflags":<Double_value>,      "xlatip":<String_value>,      "callrefcount":<Double_value>,      "calltimer":<Double_value>}]}```
 
 
 
@@ -106,7 +106,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lsnrtspalgsession": [ {      "sessionid":<String_value>,      "callflags":<Double_value>,      "callrefcount":<Double_value>,      "calltimer":<Double_value>}]}```
+Response Payload: ```{ "lsnrtspalgsession": [ {      "sessionid":<String_value>,      "callflags":<Double_value>,      "xlatip":<String_value>,      "callrefcount":<Double_value>,      "calltimer":<Double_value>}]}```
 
 
 

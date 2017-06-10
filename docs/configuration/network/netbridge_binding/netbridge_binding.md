@@ -7,7 +7,7 @@ Binding object which returns the resources bound to netbridge.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>The name of the network bridge.</td><tr><tr><td>netbridge_iptunnel_binding</td><td>&lt;netbridge_iptunnel_binding[]></td><td>Read-only</td><td>iptunnel that can be bound to netbridge.</td><tr><tr><td>netbridge_nsip_binding</td><td>&lt;netbridge_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to netbridge.</td><tr><tr><td>netbridge_vlan_binding</td><td>&lt;netbridge_vlan_binding[]></td><td>Read-only</td><td>vlan that can be bound to netbridge.</td><tr><tr><td>netbridge_nsip6_binding</td><td>&lt;netbridge_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to netbridge.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>The name of the network bridge.</td><tr><tr><td>netbridge_iptunnel_binding</td><td>&lt;netbridge_iptunnel_binding[]></td><td>Read-only</td><td>iptunnel that can be bound to netbridge.</td><tr><tr><td>netbridge_vlan_binding</td><td>&lt;netbridge_vlan_binding[]></td><td>Read-only</td><td>vlan that can be bound to netbridge.</td><tr><tr><td>netbridge_nsip_binding</td><td>&lt;netbridge_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to netbridge.</td><tr><tr><td>netbridge_nsip6_binding</td><td>&lt;netbridge_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to netbridge.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "netbridge_binding": [ {      "name":<String_value>,      "netbridge_nsip6_binding":<netbridge_nsip6_binding[]_value>,      "netbridge_iptunnel_binding":<netbridge_iptunnel_binding[]_value>,      "netbridge_vlan_binding":<netbridge_vlan_binding[]_value>,      "netbridge_nsip_binding":<netbridge_nsip_binding[]_value>}]}```
+Response Payload: ```{ "netbridge_binding": [ {      "name":<String_value>,      "netbridge_iptunnel_binding":<netbridge_iptunnel_binding[]_value>,      "netbridge_nsip6_binding":<netbridge_nsip6_binding[]_value>,      "netbridge_vlan_binding":<netbridge_vlan_binding[]_value>,      "netbridge_nsip_binding":<netbridge_nsip_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "netbridge_binding": [ {      "name":<String_value>,      "netbridge_nsip6_binding":<netbridge_nsip6_binding[]_value>,      "netbridge_iptunnel_binding":<netbridge_iptunnel_binding[]_value>,      "netbridge_vlan_binding":<netbridge_vlan_binding[]_value>,      "netbridge_nsip_binding":<netbridge_nsip_binding[]_value>}]}```
+Response Payload: ```{ "netbridge_binding": [ {      "name":<String_value>,      "netbridge_iptunnel_binding":<netbridge_iptunnel_binding[]_value>,      "netbridge_nsip6_binding":<netbridge_nsip6_binding[]_value>,      "netbridge_vlan_binding":<netbridge_vlan_binding[]_value>,      "netbridge_nsip_binding":<netbridge_nsip_binding[]_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Binding object which returns the resources bound to sslprofile.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL profile for which to show detailed information.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>sslprofile_sslcipher_binding</td><td>&lt;sslprofile_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslprofile.</td><tr><tr><td>sslprofile_ecccurve_binding</td><td>&lt;sslprofile_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslprofile.</td><tr><tr><td>sslprofile_sslvserver_binding</td><td>&lt;sslprofile_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslprofile.</td><tr><tr><td>sslprofile_sslciphersuite_binding</td><td>&lt;sslprofile_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslprofile.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL profile for which to show detailed information.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>sslprofile_sslcipher_binding</td><td>&lt;sslprofile_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslprofile.</td><tr><tr><td>sslprofile_ecccurve_binding</td><td>&lt;sslprofile_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslprofile.</td><tr><tr><td>sslprofile_sslvserver_binding</td><td>&lt;sslprofile_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslprofile.</td><tr><tr><td>sslprofile_sslciphersuite_binding</td><td>&lt;sslprofile_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslprofile.</td><tr><tr><td>sslprofile_sslcertkey_binding</td><td>&lt;sslprofile_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslprofile.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslprofile_binding": [ {      "name":<String_value>,      "sslprofile_ecccurve_binding":<sslprofile_ecccurve_binding[]_value>,      "sslprofile_sslciphersuite_binding":<sslprofile_sslciphersuite_binding[]_value>,      "sslprofile_sslvserver_binding":<sslprofile_sslvserver_binding[]_value>,      "sslprofile_sslcipher_binding":<sslprofile_sslcipher_binding[]_value>}]}```
+Response Payload: ```{ "sslprofile_binding": [ {      "name":<String_value>,      "sslprofile_ecccurve_binding":<sslprofile_ecccurve_binding[]_value>,      "sslprofile_sslcertkey_binding":<sslprofile_sslcertkey_binding[]_value>,      "sslprofile_sslciphersuite_binding":<sslprofile_sslciphersuite_binding[]_value>,      "sslprofile_sslvserver_binding":<sslprofile_sslvserver_binding[]_value>,      "sslprofile_sslcipher_binding":<sslprofile_sslcipher_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslprofile_binding": [ {      "name":<String_value>,      "sslprofile_ecccurve_binding":<sslprofile_ecccurve_binding[]_value>,      "sslprofile_sslciphersuite_binding":<sslprofile_sslciphersuite_binding[]_value>,      "sslprofile_sslvserver_binding":<sslprofile_sslvserver_binding[]_value>,      "sslprofile_sslcipher_binding":<sslprofile_sslcipher_binding[]_value>}]}```
+Response Payload: ```{ "sslprofile_binding": [ {      "name":<String_value>,      "sslprofile_ecccurve_binding":<sslprofile_ecccurve_binding[]_value>,      "sslprofile_sslcertkey_binding":<sslprofile_sslcertkey_binding[]_value>,      "sslprofile_sslciphersuite_binding":<sslprofile_sslciphersuite_binding[]_value>,      "sslprofile_sslvserver_binding":<sslprofile_sslvserver_binding[]_value>,      "sslprofile_sslcipher_binding":<sslprofile_sslcipher_binding[]_value>}]}```
 
 
 

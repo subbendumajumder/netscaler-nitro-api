@@ -7,7 +7,7 @@ Binding object showing the pattern that can be bound to policystringmap.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>key</td><td>&lt;String></td><td>Read-write</td><td>Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes \\xNN. For example, the UTF-8 character ? can be encoded as \\xC3\\xBC.&lt;br>Minimum length = 1</td><tr><tr><td>value</td><td>&lt;String></td><td>Read-write</td><td>Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the string map to which to bind the key-value pair.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>&lt;String></td><td>Read-write</td><td>Character string constituting the value associated with the key. This value is returned when processed data matches the associated key. Refer to the key parameter for details of the value character set.&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the string map to which to bind the key-value pair.&lt;br>Minimum length = 1</td><tr><tr><td>key</td><td>&lt;String></td><td>Read-write</td><td>Character string constituting the key to be bound to the string map. The key is matched against the data processed by the operation that uses the string map. The default character set is ASCII. UTF-8 characters can be included if the character set is UTF-8. UTF-8 characters can be entered directly (if the UI supports it) or can be encoded as a sequence of hexadecimal bytes \\xNN. For example, the UTF-8 character ? can be encoded as \\xC3\\xBC.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "policystringmap_pattern_binding": [ {      "key":<String_value>,      "value":<String_value>,      "name":<String_value>}]}```
+Response Payload: ```{ "policystringmap_pattern_binding": [ {      "value":<String_value>,      "name":<String_value>,      "key":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "policystringmap_pattern_binding": [ {      "key":<String_value>,      "value":<String_value>,      "name":<String_value>}]}```
+Response Payload: ```{ "policystringmap_pattern_binding": [ {      "value":<String_value>,      "name":<String_value>,      "key":<String_value>}]}```
 
 
 

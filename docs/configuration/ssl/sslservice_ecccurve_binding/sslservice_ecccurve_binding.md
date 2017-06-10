@@ -7,7 +7,7 @@ Binding object showing the ecccurve that can be bound to sslservice.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>ecccurvename</td><td>&lt;String></td><td>Read-write</td><td>Named ECC curve bound to service/vserver.&lt;br>Possible values = ALL, P_224, P_256, P_384, P_521</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ecccurvename</td><td>&lt;String></td><td>Read-write</td><td>Named ECC curve bound to service/vserver.&lt;br>Possible values = ALL, P_224, P_256, P_384, P_521</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to set advanced configuration.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_ecccurve_binding": [ {      "servicename":<String_value>,      "ecccurvename":<String_value>}]}```
+Response Payload: ```{ "sslservice_ecccurve_binding": [ {      "ecccurvename":<String_value>,      "servicename":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_ecccurve_binding": [ {      "servicename":<String_value>,      "ecccurvename":<String_value>}]}```
+Response Payload: ```{ "sslservice_ecccurve_binding": [ {      "ecccurvename":<String_value>,      "servicename":<String_value>}]}```
 
 
 

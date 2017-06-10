@@ -7,7 +7,7 @@ Binding object which returns the resources bound to authenticationwebauthpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the WebAuth policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationwebauthpolicy_vpnglobal_binding</td><td>&lt;authenticationwebauthpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_vpnvserver_binding</td><td>&lt;authenticationwebauthpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_systemglobal_binding</td><td>&lt;authenticationwebauthpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_authenticationvserver_binding</td><td>&lt;authenticationwebauthpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationwebauthpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the WebAuth policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationwebauthpolicy_vpnvserver_binding</td><td>&lt;authenticationwebauthpolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_authenticationvserver_binding</td><td>&lt;authenticationwebauthpolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_systemglobal_binding</td><td>&lt;authenticationwebauthpolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationwebauthpolicy.</td><tr><tr><td>authenticationwebauthpolicy_vpnglobal_binding</td><td>&lt;authenticationwebauthpolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationwebauthpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationwebauthpolicy_binding": [ {      "name":<String_value>,      "authenticationwebauthpolicy_vpnglobal_binding":<authenticationwebauthpolicy_vpnglobal_binding[]_value>,      "authenticationwebauthpolicy_authenticationvserver_binding":<authenticationwebauthpolicy_authenticationvserver_binding[]_value>,      "authenticationwebauthpolicy_systemglobal_binding":<authenticationwebauthpolicy_systemglobal_binding[]_value>,      "authenticationwebauthpolicy_vpnvserver_binding":<authenticationwebauthpolicy_vpnvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationwebauthpolicy_binding": [ {      "name":<String_value>,      "authenticationwebauthpolicy_authenticationvserver_binding":<authenticationwebauthpolicy_authenticationvserver_binding[]_value>,      "authenticationwebauthpolicy_systemglobal_binding":<authenticationwebauthpolicy_systemglobal_binding[]_value>,      "authenticationwebauthpolicy_vpnvserver_binding":<authenticationwebauthpolicy_vpnvserver_binding[]_value>,      "authenticationwebauthpolicy_vpnglobal_binding":<authenticationwebauthpolicy_vpnglobal_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationwebauthpolicy_binding": [ {      "name":<String_value>,      "authenticationwebauthpolicy_vpnglobal_binding":<authenticationwebauthpolicy_vpnglobal_binding[]_value>,      "authenticationwebauthpolicy_authenticationvserver_binding":<authenticationwebauthpolicy_authenticationvserver_binding[]_value>,      "authenticationwebauthpolicy_systemglobal_binding":<authenticationwebauthpolicy_systemglobal_binding[]_value>,      "authenticationwebauthpolicy_vpnvserver_binding":<authenticationwebauthpolicy_vpnvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationwebauthpolicy_binding": [ {      "name":<String_value>,      "authenticationwebauthpolicy_authenticationvserver_binding":<authenticationwebauthpolicy_authenticationvserver_binding[]_value>,      "authenticationwebauthpolicy_systemglobal_binding":<authenticationwebauthpolicy_systemglobal_binding[]_value>,      "authenticationwebauthpolicy_vpnvserver_binding":<authenticationwebauthpolicy_vpnvserver_binding[]_value>,      "authenticationwebauthpolicy_vpnglobal_binding":<authenticationwebauthpolicy_vpnglobal_binding[]_value>}]}```
 
 
 

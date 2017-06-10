@@ -7,7 +7,7 @@ Binding object showing the authenticationlocalpolicy that can be bound to system
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the command policy.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the command policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the command policy.</td><tr><tr><td>globalbindtype</td><td>&lt;String></td><td>Read-write</td><td>.&lt;br>Default value: SYSTEM_GLOBAL&lt;br>Possible values = SYSTEM_GLOBAL, VPN_GLOBAL, RNAT_GLOBAL</td><tr><tr><td>nextfactor</td><td>&lt;String></td><td>Read-write</td><td>On success invoke label. Applicable for advanced authentication policy binding.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Applicable only to advance authentication policy. Expression or other value specifying the next policy to be evaluated if the current policy evaluates to TRUE. Specify one of the following values: * NEXT - Evaluate the policy with the next higher priority number. * END - End policy evaluation.</td><tr><tr><td>builtin</td><td>&lt;String[]></td><td>Read-write</td><td>Indicates that a variable is a built-in (SYSTEM INTERNAL) type.&lt;br>Possible values = MODIFIABLE, DELETABLE, IMMUTABLE, PARTITION_ALL</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the command policy.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"systemglobal_authenticationlocalpolicy_binding":{      "policyname":<String_value>,      "priority":<Double_value>}}```
+Request Payload: ```{"systemglobal_authenticationlocalpolicy_binding":{      "policyname":<String_value>,      "priority":<Double_value>,      "nextfactor":<String_value>,      "gotopriorityexpression":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "systemglobal_authenticationlocalpolicy_binding": [ {      "priority":<Double_value>,      "builtin":<String[]_value>,      "policyname":<String_value>}]}```
+Response Payload: ```{ "systemglobal_authenticationlocalpolicy_binding": [ {      "priority":<Double_value>,      "globalbindtype":<String_value>,      "nextfactor":<String_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "systemglobal_authenticationlocalpolicy_binding": [ {      "priority":<Double_value>,      "builtin":<String[]_value>,      "policyname":<String_value>}]}```
+Response Payload: ```{ "systemglobal_authenticationlocalpolicy_binding": [ {      "priority":<Double_value>,      "globalbindtype":<String_value>,      "nextfactor":<String_value>,      "gotopriorityexpression":<String_value>,      "builtin":<String[]_value>,      "policyname":<String_value>}]}```
 
 
 

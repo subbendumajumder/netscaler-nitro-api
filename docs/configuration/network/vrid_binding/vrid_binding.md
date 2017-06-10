@@ -7,7 +7,7 @@ Binding object which returns the resources bound to vrid.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the VMAC address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>vrid_nsip6_binding</td><td>&lt;vrid_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to vrid.</td><tr><tr><td>vrid_interface_binding</td><td>&lt;vrid_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to vrid.</td><tr><tr><td>vrid_nsip_binding</td><td>&lt;vrid_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to vrid.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>Integer value that uniquely identifies the VMAC address.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>vrid_trackinterface_binding</td><td>&lt;vrid_trackinterface_binding[]></td><td>Read-only</td><td>trackinterface that can be bound to vrid.</td><tr><tr><td>vrid_nsip6_binding</td><td>&lt;vrid_nsip6_binding[]></td><td>Read-only</td><td>nsip6 that can be bound to vrid.</td><tr><tr><td>vrid_interface_binding</td><td>&lt;vrid_interface_binding[]></td><td>Read-only</td><td>interface that can be bound to vrid.</td><tr><tr><td>vrid_channel_binding</td><td>&lt;vrid_channel_binding[]></td><td>Read-only</td><td>channel that can be bound to vrid.</td><tr><tr><td>vrid_nsip_binding</td><td>&lt;vrid_nsip_binding[]></td><td>Read-only</td><td>nsip that can be bound to vrid.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vrid_binding": [ {      "id":<Double_value>,      "vrid_nsip6_binding":<vrid_nsip6_binding[]_value>,      "vrid_nsip_binding":<vrid_nsip_binding[]_value>,      "vrid_interface_binding":<vrid_interface_binding[]_value>}]}```
+Response Payload: ```{ "vrid_binding": [ {      "id":<Double_value>,      "vrid_nsip6_binding":<vrid_nsip6_binding[]_value>,      "vrid_nsip_binding":<vrid_nsip_binding[]_value>,      "vrid_interface_binding":<vrid_interface_binding[]_value>,      "vrid_channel_binding":<vrid_channel_binding[]_value>,      "vrid_trackinterface_binding":<vrid_trackinterface_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vrid_binding": [ {      "id":<Double_value>,      "vrid_nsip6_binding":<vrid_nsip6_binding[]_value>,      "vrid_nsip_binding":<vrid_nsip_binding[]_value>,      "vrid_interface_binding":<vrid_interface_binding[]_value>}]}```
+Response Payload: ```{ "vrid_binding": [ {      "id":<Double_value>,      "vrid_nsip6_binding":<vrid_nsip6_binding[]_value>,      "vrid_nsip_binding":<vrid_nsip_binding[]_value>,      "vrid_interface_binding":<vrid_interface_binding[]_value>,      "vrid_channel_binding":<vrid_channel_binding[]_value>,      "vrid_trackinterface_binding":<vrid_trackinterface_binding[]_value>}]}```
 
 
 

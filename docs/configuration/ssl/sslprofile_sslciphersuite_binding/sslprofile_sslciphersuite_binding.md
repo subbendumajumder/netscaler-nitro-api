@@ -7,7 +7,7 @@ Binding object showing the sslciphersuite that can be bound to sslprofile.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>The cipher group/alias/individual cipher configuration.</td><tr><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>cipher priority.&lt;br>Minimum value = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL profile.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>The cipher suite description.</td><tr><tr><td>cipheraliasname</td><td>&lt;String></td><td>Read-only</td><td>The name of the cipher group/alias/individual cipheri bindings.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>The cipher group/alias/individual cipher configuration.</td><tr><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>cipher priority.&lt;br>Minimum value = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL profile.&lt;br>Minimum length = 1&lt;br>Maximum length = 127</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>The cipher suite description.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslprofile_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "cipherpriority":<Double_value>,      "name":<String_value>,      "description":<String_value>,      "cipheraliasname":<String_value>}]}```
+Response Payload: ```{ "sslprofile_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "cipherpriority":<Double_value>,      "name":<String_value>,      "description":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslprofile_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "cipherpriority":<Double_value>,      "name":<String_value>,      "description":<String_value>,      "cipheraliasname":<String_value>}]}```
+Response Payload: ```{ "sslprofile_sslciphersuite_binding": [ {      "ciphername":<String_value>,      "cipherpriority":<Double_value>,      "name":<String_value>,      "description":<String_value>}]}```
 
 
 

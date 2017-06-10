@@ -7,7 +7,7 @@ Binding object showing the sslciphersuite that can be bound to sslcipher.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>Cipher name.</td><tr><tr><td>ciphgrpals</td><td>&lt;String></td><td>Read-write</td><td>A cipher-suite can consist of an individual cipher name, the system predefined cipher-alias name, or user defined cipher-group name.&lt;br>Minimum length = 1</td><tr><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>This indicates priority assigned to the particular cipher.&lt;br>Minimum value = 1</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Cipher suite description.</td><tr><tr><td>ciphergroupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the user-defined cipher group.&lt;br>Minimum length = 1</td><tr><tr><td>cipheroperation</td><td>&lt;String></td><td>Read-write</td><td>The operation that is performed when adding the cipher-suite. Possible cipher operations are: ADD - Appends the given cipher-suite to the existing one configured for the virtual server. REM - Removes the given cipher-suite from the existing one configured for the virtual server. ORD - Overrides the current configured cipher-suite for the virtual server with the given cipher-suite.&lt;br>Default value: 0&lt;br>Possible values = ADD, REM, ORD</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ciphername</td><td>&lt;String></td><td>Read-write</td><td>Cipher name.</td><tr><tr><td>ciphgrpals</td><td>&lt;String></td><td>Read-write</td><td>A cipher-suite can consist of an individual cipher name, the system predefined cipher-alias name, or user defined cipher-group name.&lt;br>Minimum length = 1</td><tr><tr><td>cipherpriority</td><td>&lt;Double></td><td>Read-write</td><td>This indicates priority assigned to the particular cipher.&lt;br>Minimum value = 1</td><tr><tr><td>description</td><td>&lt;String></td><td>Read-write</td><td>Cipher suite description.</td><tr><tr><td>ciphergroupname</td><td>&lt;String></td><td>Read-write</td><td>Name for the user-defined cipher group. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters. Cannot be changed after the cipher group is created. The following requirement applies only to the NetScaler CLI: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my ciphergroup" or my ciphergroup).&lt;br>Minimum length = 1</td><tr><tr><td>cipheroperation</td><td>&lt;String></td><td>Read-write</td><td>The operation that is performed when adding the cipher-suite. Possible cipher operations are: ADD - Appends the given cipher-suite to the existing one configured for the virtual server. REM - Removes the given cipher-suite from the existing one configured for the virtual server. ORD - Overrides the current configured cipher-suite for the virtual server with the given cipher-suite.&lt;br>Default value: 0&lt;br>Possible values = ADD, REM, ORD</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -42,7 +42,7 @@ HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;st
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding
 HTTP Method: DELETE
 Request Headers:
 
@@ -56,15 +56,15 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding
 Query-parameters:
 filter
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?filter=property-name1:property-value1,property-name2:property-value2
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding?filter=property-name1:property-value1,property-name2:property-value2
 Use this query-parameter to get the filtered set of sslcipher_sslciphersuite_binding resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
 pagination
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?pagesize=#no;pageno=#no
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding?pagesize=#no;pageno=#no
 Use this query-parameter to get the sslcipher_sslciphersuite_binding resources in chunks.
 
 
@@ -113,7 +113,7 @@ Response Payload: ```{ "sslcipher_sslciphersuite_binding": [ {      "cipherna
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding/ciphergroupname_value&lt;String&gt;?count=yes
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/sslcipher_sslciphersuite_binding?args=;count=yes
 HTTP Method: GET
 Request Headers:
 
@@ -125,6 +125,6 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 Content-Type:application/json
 
 Response Payload: 
-{"sslcipher_sslciphersuite_binding": [ { "__count": "#no"} ] }
+{ "sslcipher_sslciphersuite_binding": [ { "__count": "#no"} ] }
 
 

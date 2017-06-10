@@ -7,7 +7,7 @@ Binding object which returns the resources bound to sslservice.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservice_sslcipher_binding</td><td>&lt;sslservice_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservice.</td><tr><tr><td>sslservice_ecccurve_binding</td><td>&lt;sslservice_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslservice.</td><tr><tr><td>sslservice_sslpolicy_binding</td><td>&lt;sslservice_sslpolicy_binding[]></td><td>Read-only</td><td>sslpolicy that can be bound to sslservice.</td><tr><tr><td>sslservice_sslcertkey_binding</td><td>&lt;sslservice_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservice.</td><tr><tr><td>sslservice_sslciphersuite_binding</td><td>&lt;sslservice_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservice.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL service for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslservice_ecccurve_binding</td><td>&lt;sslservice_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslservice.</td><tr><tr><td>sslservice_sslpolicy_binding</td><td>&lt;sslservice_sslpolicy_binding[]></td><td>Read-only</td><td>sslpolicy that can be bound to sslservice.</td><tr><tr><td>sslservice_sslcipher_binding</td><td>&lt;sslservice_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslservice.</td><tr><tr><td>sslservice_sslcertkey_binding</td><td>&lt;sslservice_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslservice.</td><tr><tr><td>sslservice_sslciphersuite_binding</td><td>&lt;sslservice_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslservice.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_binding": [ {      "servicename":<String_value>,      "sslservice_sslciphersuite_binding":<sslservice_sslciphersuite_binding[]_value>,      "sslservice_sslcertkey_binding":<sslservice_sslcertkey_binding[]_value>,      "sslservice_sslcipher_binding":<sslservice_sslcipher_binding[]_value>,      "sslservice_ecccurve_binding":<sslservice_ecccurve_binding[]_value>,      "sslservice_sslpolicy_binding":<sslservice_sslpolicy_binding[]_value>}]}```
+Response Payload: ```{ "sslservice_binding": [ {      "servicename":<String_value>,      "sslservice_sslcipher_binding":<sslservice_sslcipher_binding[]_value>,      "sslservice_ecccurve_binding":<sslservice_ecccurve_binding[]_value>,      "sslservice_sslciphersuite_binding":<sslservice_sslciphersuite_binding[]_value>,      "sslservice_sslpolicy_binding":<sslservice_sslpolicy_binding[]_value>,      "sslservice_sslcertkey_binding":<sslservice_sslcertkey_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslservice_binding": [ {      "servicename":<String_value>,      "sslservice_sslciphersuite_binding":<sslservice_sslciphersuite_binding[]_value>,      "sslservice_sslcertkey_binding":<sslservice_sslcertkey_binding[]_value>,      "sslservice_sslcipher_binding":<sslservice_sslcipher_binding[]_value>,      "sslservice_ecccurve_binding":<sslservice_ecccurve_binding[]_value>,      "sslservice_sslpolicy_binding":<sslservice_sslpolicy_binding[]_value>}]}```
+Response Payload: ```{ "sslservice_binding": [ {      "servicename":<String_value>,      "sslservice_sslcipher_binding":<sslservice_sslcipher_binding[]_value>,      "sslservice_ecccurve_binding":<sslservice_ecccurve_binding[]_value>,      "sslservice_sslciphersuite_binding":<sslservice_sslciphersuite_binding[]_value>,      "sslservice_sslpolicy_binding":<sslservice_sslpolicy_binding[]_value>,      "sslservice_sslcertkey_binding":<sslservice_sslcertkey_binding[]_value>}]}```
 
 
 

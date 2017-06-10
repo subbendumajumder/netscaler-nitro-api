@@ -7,7 +7,7 @@ Binding object showing the servicegroup that can be bound to lbvserver.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>weight</td><td>&lt;Double></td><td>Read-write</td><td>Integer specifying the weight of the service. A larger number specifies a greater weight. Defines the capacity of the service relative to the other services in the load balancing configuration. Determines the priority given to the service in load balancing decisions.&lt;br>Default value: 1&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the virtual server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the virtual server is created. CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my vserver" or my vserver). .&lt;br>Minimum length = 1</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Service to bind to the virtual server.&lt;br>Minimum length = 1</td><tr><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>The service group name bound to the selected load balancing virtual server.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicegroupname</td><td>&lt;String></td><td>Read-write</td><td>The service group name bound to the selected load balancing virtual server.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the virtual server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the virtual server is created. CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my vserver" or my vserver). .&lt;br>Minimum length = 1</td><tr><tr><td>servicename</td><td>&lt;String></td><td>Read-write</td><td>Service to bind to the virtual server.&lt;br>Minimum length = 1</td><tr><tr><td>weight</td><td>&lt;Double></td><td>Read-write</td><td>Integer specifying the weight of the service. A larger number specifies a greater weight. Defines the capacity of the service relative to the other services in the load balancing configuration. Determines the priority given to the service in load balancing decisions.&lt;br>Default value: 1&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbvserver_servicegroup_binding": [ {      "weight":<Double_value>,      "name":<String_value>,      "servicename":<String_value>,      "servicegroupname":<String_value>}]}```
+Response Payload: ```{ "lbvserver_servicegroup_binding": [ {      "servicegroupname":<String_value>,      "name":<String_value>,      "servicename":<String_value>,      "weight":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbvserver_servicegroup_binding": [ {      "weight":<Double_value>,      "name":<String_value>,      "servicename":<String_value>,      "servicegroupname":<String_value>}]}```
+Response Payload: ```{ "lbvserver_servicegroup_binding": [ {      "servicegroupname":<String_value>,      "name":<String_value>,      "servicename":<String_value>,      "weight":<Double_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Binding object showing the csvserver that can be bound to lbvserver.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Priority.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy bound to the LB vserver.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the virtual server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the virtual server is created. CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my vserver" or my vserver). .&lt;br>Minimum length = 1</td><tr><tr><td>cachevserver</td><td>&lt;String></td><td>Read-write</td><td>Cache virtual server.</td><tr><tr><td>cachetype</td><td>&lt;String></td><td>Read-only</td><td>Cache type.&lt;br>Possible values = TRANSPARENT, REVERSE, FORWARD</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>pipolicyhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>policysubtype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Priority.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy bound to the LB vserver.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name for the virtual server. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at sign (@), equal sign (=), and hyphen (-) characters. Can be changed after the virtual server is created. CLI Users: If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my vserver" or my vserver). .&lt;br>Minimum length = 1</td><tr><tr><td>cachevserver</td><td>&lt;String></td><td>Read-write</td><td>Cache virtual server.</td><tr><tr><td>policysubtype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>cachetype</td><td>&lt;String></td><td>Read-only</td><td>Cache type.&lt;br>Possible values = TRANSPARENT, REVERSE, FORWARD</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>pipolicyhits</td><td>&lt;Double></td><td>Read-only</td><td>Number of hits.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -50,7 +50,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbvserver_csvserver_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "name":<String_value>,      "cachevserver":<String_value>,      "cachetype":<String_value>,      "hits":<Double_value>,      "pipolicyhits":<Double_value>,      "policysubtype":<Double_value>}]}```
+Response Payload: ```{ "lbvserver_csvserver_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "name":<String_value>,      "cachevserver":<String_value>,      "policysubtype":<Double_value>,      "cachetype":<String_value>,      "hits":<Double_value>,      "pipolicyhits":<Double_value>}]}```
 
 
 
@@ -76,7 +76,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbvserver_csvserver_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "name":<String_value>,      "cachevserver":<String_value>,      "cachetype":<String_value>,      "hits":<Double_value>,      "pipolicyhits":<Double_value>,      "policysubtype":<Double_value>}]}```
+Response Payload: ```{ "lbvserver_csvserver_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "name":<String_value>,      "cachevserver":<String_value>,      "policysubtype":<Double_value>,      "cachetype":<String_value>,      "hits":<Double_value>,      "pipolicyhits":<Double_value>}]}```
 
 
 

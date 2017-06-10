@@ -7,7 +7,7 @@ Binding object which returns the resources bound to tmtrafficpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the traffic policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>tmtrafficpolicy_csvserver_binding</td><td>&lt;tmtrafficpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to tmtrafficpolicy.</td><tr><tr><td>tmtrafficpolicy_lbvserver_binding</td><td>&lt;tmtrafficpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to tmtrafficpolicy.</td><tr><tr><td>tmtrafficpolicy_tmglobal_binding</td><td>&lt;tmtrafficpolicy_tmglobal_binding[]></td><td>Read-only</td><td>tmglobal that can be bound to tmtrafficpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the traffic policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>tmtrafficpolicy_csvserver_binding</td><td>&lt;tmtrafficpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to tmtrafficpolicy.</td><tr><tr><td>tmtrafficpolicy_tmglobal_binding</td><td>&lt;tmtrafficpolicy_tmglobal_binding[]></td><td>Read-only</td><td>tmglobal that can be bound to tmtrafficpolicy.</td><tr><tr><td>tmtrafficpolicy_lbvserver_binding</td><td>&lt;tmtrafficpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to tmtrafficpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmtrafficpolicy_binding": [ {      "name":<String_value>,      "tmtrafficpolicy_csvserver_binding":<tmtrafficpolicy_csvserver_binding[]_value>,      "tmtrafficpolicy_lbvserver_binding":<tmtrafficpolicy_lbvserver_binding[]_value>,      "tmtrafficpolicy_tmglobal_binding":<tmtrafficpolicy_tmglobal_binding[]_value>}]}```
+Response Payload: ```{ "tmtrafficpolicy_binding": [ {      "name":<String_value>,      "tmtrafficpolicy_lbvserver_binding":<tmtrafficpolicy_lbvserver_binding[]_value>,      "tmtrafficpolicy_csvserver_binding":<tmtrafficpolicy_csvserver_binding[]_value>,      "tmtrafficpolicy_tmglobal_binding":<tmtrafficpolicy_tmglobal_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "tmtrafficpolicy_binding": [ {      "name":<String_value>,      "tmtrafficpolicy_csvserver_binding":<tmtrafficpolicy_csvserver_binding[]_value>,      "tmtrafficpolicy_lbvserver_binding":<tmtrafficpolicy_lbvserver_binding[]_value>,      "tmtrafficpolicy_tmglobal_binding":<tmtrafficpolicy_tmglobal_binding[]_value>}]}```
+Response Payload: ```{ "tmtrafficpolicy_binding": [ {      "name":<String_value>,      "tmtrafficpolicy_lbvserver_binding":<tmtrafficpolicy_lbvserver_binding[]_value>,      "tmtrafficpolicy_csvserver_binding":<tmtrafficpolicy_csvserver_binding[]_value>,      "tmtrafficpolicy_tmglobal_binding":<tmtrafficpolicy_tmglobal_binding[]_value>}]}```
 
 
 

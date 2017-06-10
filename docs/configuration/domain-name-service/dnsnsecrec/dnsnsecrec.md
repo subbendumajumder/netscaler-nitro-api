@@ -7,7 +7,7 @@ Configuration for 0 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>hostname</td><td>&lt;String></td><td>Read-write</td><td>Name of the domain.&lt;br>Minimum length = 1</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of records to display. Available settings function as follows:&lt;br>* ADNS - Display all authoritative address records.&lt;br>* PROXY - Display all proxy address records.&lt;br>* ALL - Display all address records.&lt;br>Possible values = ALL, ADNS, PROXY</td><tr><tr><td>nextnsec</td><td>&lt;String></td><td>Read-only</td><td>Next nsec record in the chain.</td><tr><tr><td>nextrecs</td><td>&lt;String[]></td><td>Read-only</td><td>An array of record types associated with the nsec record.&lt;br>Possible values = A, NS, CNAME, SOA, MX, AAAA, SRV, RRSIG, NSEC, DNSKEY, PTR, TXT, NAPTR</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-only</td><td>Time to Live (TTL), in seconds, for the record.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>hostname</td><td>&lt;String></td><td>Read-write</td><td>Name of the domain.&lt;br>Minimum length = 1</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of records to display. Available settings function as follows:&lt;br>* ADNS - Display all authoritative address records.&lt;br>* PROXY - Display all proxy address records.&lt;br>* ALL - Display all address records.&lt;br>Possible values = ALL, ADNS, PROXY</td><tr><tr><td>nextnsec</td><td>&lt;String></td><td>Read-only</td><td>Next nsec record in the chain.</td><tr><tr><td>nextrecs</td><td>&lt;String[]></td><td>Read-only</td><td>An array of record types associated with the nsec record.&lt;br>Possible values = A, NS, CNAME, SOA, MX, AAAA, SRV, RRSIG, NSEC, DNSKEY, PTR, TXT, NAPTR</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-only</td><td>Time to Live (TTL), in seconds, for the record.</td><tr><tr><td>ecssubnet</td><td>&lt;String></td><td>Read-only</td><td>Subnet for which this particular record is cached. Subnet caching will occur for responses with EDNS Client Subnet (ECS) option. Applies to resource records obtained through proxy configurations only.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -65,7 +65,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsnsecrec": [ {hostname:<String_value>,type:<String_value>      "nextnsec":<String_value>,      "nsecbitarray":<String[]_value>,      "nextrecs":<String[]_value>,      "ttl":<Double_value>}]}```
+Response Payload: ```{ "dnsnsecrec": [ {hostname:<String_value>,type:<String_value>      "nextnsec":<String_value>,      "nsecbitarray":<String[]_value>,      "nextrecs":<String[]_value>,      "ttl":<Double_value>,      "ecssubnet":<String_value>}]}```
 
 
 
@@ -96,7 +96,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsnsecrec": [ {hostname:<String_value>,type:<String_value>      "nextnsec":<String_value>,      "nsecbitarray":<String[]_value>,      "nextrecs":<String[]_value>,      "ttl":<Double_value>}]}```
+Response Payload: ```{ "dnsnsecrec": [ {hostname:<String_value>,type:<String_value>      "nextnsec":<String_value>,      "nsecbitarray":<String[]_value>,      "nextrecs":<String[]_value>,      "ttl":<Double_value>,      "ecssubnet":<String_value>}]}```
 
 
 

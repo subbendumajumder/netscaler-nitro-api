@@ -7,7 +7,7 @@ Binding object showing the rewritepolicy that can be bound to crvserver.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority for the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Policies bound to this vserver.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache redirection virtual server to which to bind the cache redirection policy.&lt;br>Minimum length = 1</td><tr><tr><td>bindpoint</td><td>&lt;String></td><td>Read-write</td><td>The bindpoint to which the policy is bound.&lt;br>Possible values = REQUEST, RESPONSE, ICA_REQUEST</td><tr><tr><td>targetvserver</td><td>&lt;String></td><td>Read-write</td><td>Name of the virtual server to which content is forwarded. Applicable only if the policy is a map policy and the cache redirection virtual server is of type REVERSE.&lt;br>Minimum length = 1</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label invoked.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke flag.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority for the policy.</td><tr><tr><td>bindpoint</td><td>&lt;String></td><td>Read-write</td><td>The bindpoint to which the policy is bound.&lt;br>Possible values = REQUEST, RESPONSE, ICA_REQUEST</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>Policies bound to this vserver.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label invoked.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the cache redirection virtual server to which to bind the cache redirection policy.&lt;br>Minimum length = 1</td><tr><tr><td>targetvserver</td><td>&lt;String></td><td>Read-write</td><td>Name of the virtual server to which content is forwarded. Applicable only if the policy is a map policy and the cache redirection virtual server is of type REVERSE.&lt;br>Minimum length = 1</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke flag.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>The invocation type.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "crvserver_rewritepolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "name":<String_value>,      "bindpoint":<String_value>,      "targetvserver":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "crvserver_rewritepolicy_binding": [ {      "priority":<Double_value>,      "bindpoint":<String_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "name":<String_value>,      "targetvserver":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "crvserver_rewritepolicy_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "name":<String_value>,      "bindpoint":<String_value>,      "targetvserver":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "crvserver_rewritepolicy_binding": [ {      "priority":<Double_value>,      "bindpoint":<String_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "name":<String_value>,      "targetvserver":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 

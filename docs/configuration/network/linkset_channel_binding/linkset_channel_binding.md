@@ -7,7 +7,7 @@ Binding object showing the channel that can be bound to linkset.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of the linkset to which to bind the interfaces.</td><tr><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>The interfaces to be bound to the linkset.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ifnum</td><td>&lt;String></td><td>Read-write</td><td>The interfaces to be bound to the linkset.</td><tr><tr><td>id</td><td>&lt;String></td><td>Read-write</td><td>ID of the linkset to which to bind the interfaces.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "linkset_channel_binding": [ {      "id":<String_value>,      "ifnum":<String_value>}]}```
+Response Payload: ```{ "linkset_channel_binding": [ {      "ifnum":<String_value>,      "id":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "linkset_channel_binding": [ {      "id":<String_value>,      "ifnum":<String_value>}]}```
+Response Payload: ```{ "linkset_channel_binding": [ {      "ifnum":<String_value>,      "id":<String_value>}]}```
 
 
 

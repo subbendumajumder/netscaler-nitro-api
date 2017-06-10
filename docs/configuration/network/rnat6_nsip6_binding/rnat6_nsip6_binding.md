@@ -7,7 +7,7 @@ Binding object showing the nsip6 that can be bound to rnat6.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for this rnat rule.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RNAT6 rule to which to bind NAT IPs.&lt;br>Minimum length = 1</td><tr><tr><td>natip6</td><td>&lt;String></td><td>Read-write</td><td>Nat IP Address.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>natip6</td><td>&lt;String></td><td>Read-write</td><td>Nat IP Address.&lt;br>Minimum length = 1</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RNAT6 rule to which to bind NAT IPs.&lt;br>Minimum length = 1</td><tr><tr><td>ownergroup</td><td>&lt;String></td><td>Read-write</td><td>The owner node group in a Cluster for this rnat rule.&lt;br>Default value: DEFAULT_NG&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "rnat6_nsip6_binding": [ {      "ownergroup":<String_value>,      "name":<String_value>,      "natip6":<String_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "rnat6_nsip6_binding": [ {      "natip6":<String_value>,      "name":<String_value>,      "ownergroup":<String_value>,      "td":<Double_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "rnat6_nsip6_binding": [ {      "ownergroup":<String_value>,      "name":<String_value>,      "natip6":<String_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "rnat6_nsip6_binding": [ {      "natip6":<String_value>,      "name":<String_value>,      "ownergroup":<String_value>,      "td":<Double_value>}]}```
 
 
 

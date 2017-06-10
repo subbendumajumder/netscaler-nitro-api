@@ -7,7 +7,7 @@ Binding object showing the policybinding that can be bound to cmppolicylabel.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The compression policy name.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of policy label invocation.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the HTTP compression policy label to which to bind the policy.&lt;br>Minimum length = 1</td><tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label to invoke if the current policy evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke policies bound to a virtual server or a user-defined policy label. After the invoked policies are evaluated, the flow returns to the policy with the next higher priority number in the original label.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Specifies the priority of the policy.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The compression policy name.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the HTTP compression policy label to which to bind the policy.&lt;br>Minimum length = 1</td><tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-write</td><td>Name of the label to invoke if the current policy evaluates to TRUE.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>invoke</td><td>&lt;Boolean></td><td>Read-write</td><td>Invoke policies bound to a virtual server or a user-defined policy label. After the invoked policies are evaluated, the flow returns to the policy with the next higher priority number in the original label.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of policy label invocation.&lt;br>Possible values = reqvserver, resvserver, policylabel</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -50,7 +50,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "cmppolicylabel_policybinding_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "cmppolicylabel_policybinding_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 
@@ -76,7 +76,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "cmppolicylabel_policybinding_binding": [ {      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "policyname":<String_value>,      "labeltype":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "invoke":<Boolean_value>}]}```
+Response Payload: ```{ "cmppolicylabel_policybinding_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "labelname":<String_value>,      "invoke_labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "invoke":<Boolean_value>,      "labeltype":<String_value>}]}```
 
 
 

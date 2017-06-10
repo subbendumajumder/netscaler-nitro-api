@@ -7,7 +7,7 @@ Binding object which returns the resources bound to systemgroup.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>groupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the system group about which to display information.&lt;br>Minimum length = 1</td><tr><tr><td>systemgroup_systemuser_binding</td><td>&lt;systemgroup_systemuser_binding[]></td><td>Read-only</td><td>systemuser that can be bound to systemgroup.</td><tr><tr><td>systemgroup_systemcmdpolicy_binding</td><td>&lt;systemgroup_systemcmdpolicy_binding[]></td><td>Read-only</td><td>systemcmdpolicy that can be bound to systemgroup.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>groupname</td><td>&lt;String></td><td>Read-write</td><td>Name of the system group about which to display information.&lt;br>Minimum length = 1</td><tr><tr><td>systemgroup_systemuser_binding</td><td>&lt;systemgroup_systemuser_binding[]></td><td>Read-only</td><td>systemuser that can be bound to systemgroup.</td><tr><tr><td>systemgroup_nspartition_binding</td><td>&lt;systemgroup_nspartition_binding[]></td><td>Read-only</td><td>nspartition that can be bound to systemgroup.</td><tr><tr><td>systemgroup_systemcmdpolicy_binding</td><td>&lt;systemgroup_systemcmdpolicy_binding[]></td><td>Read-only</td><td>systemcmdpolicy that can be bound to systemgroup.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "systemgroup_binding": [ {      "groupname":<String_value>,      "systemgroup_systemcmdpolicy_binding":<systemgroup_systemcmdpolicy_binding[]_value>,      "systemgroup_systemuser_binding":<systemgroup_systemuser_binding[]_value>}]}```
+Response Payload: ```{ "systemgroup_binding": [ {      "groupname":<String_value>,      "systemgroup_systemcmdpolicy_binding":<systemgroup_systemcmdpolicy_binding[]_value>,      "systemgroup_nspartition_binding":<systemgroup_nspartition_binding[]_value>,      "systemgroup_systemuser_binding":<systemgroup_systemuser_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "systemgroup_binding": [ {      "groupname":<String_value>,      "systemgroup_systemcmdpolicy_binding":<systemgroup_systemcmdpolicy_binding[]_value>,      "systemgroup_systemuser_binding":<systemgroup_systemuser_binding[]_value>}]}```
+Response Payload: ```{ "systemgroup_binding": [ {      "groupname":<String_value>,      "systemgroup_systemcmdpolicy_binding":<systemgroup_systemcmdpolicy_binding[]_value>,      "systemgroup_nspartition_binding":<systemgroup_nspartition_binding[]_value>,      "systemgroup_systemuser_binding":<systemgroup_systemuser_binding[]_value>}]}```
 
 
 

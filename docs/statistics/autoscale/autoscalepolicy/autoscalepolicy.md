@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
+Response Payload: ```{ "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyundefhits":<Double_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyhits":<Double_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyhits":<Double_value>,      "pipolicyundefhits":<Double_value>}]}```
+Response Payload: ```{ "autoscalepolicy": [ {      "name":<String_value>,      "pipolicyundefhitsrate":<Double_value>,      "pipolicyundefhits":<Double_value>,      "pipolicyhitsrate":<Double_value>,      "pipolicyhits":<Double_value>}]}```
 
 
 

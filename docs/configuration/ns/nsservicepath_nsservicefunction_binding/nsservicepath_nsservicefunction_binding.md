@@ -7,7 +7,7 @@ Binding object showing the nsservicefunction that can be bound to nsservicepath.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>servicefunction</td><td>&lt;String></td><td>Read-write</td><td>List of service functions constituting the chain.&lt;br>Minimum length = 1</td><tr><tr><td>index</td><td>&lt;Double></td><td>Read-write</td><td>The serviceindex of each servicefunction in path.&lt;br>Minimum value = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>servicepathname</td><td>&lt;String></td><td>Read-write</td><td>Name for the Service path. Must begin with an ASCII alphanumeric or underscore (_) character, and must contain only ASCII alphanumeric, underscore, hash (#), period (.), space, colon (:), at (@), equals (=), and hyphen (-) characters.&lt;br>Minimum length = 1</td><tr><tr><td>index</td><td>&lt;Double></td><td>Read-write</td><td>The serviceindex of each servicefunction in path.&lt;br>Minimum value = 1</td><tr><tr><td>servicefunction</td><td>&lt;String></td><td>Read-write</td><td>List of service functions constituting the chain.&lt;br>Minimum length = 1</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nsservicepath_nsservicefunction_binding": [ {      "servicepathname":<String_value>,      "servicefunction":<String_value>,      "index":<Double_value>}]}```
+Response Payload: ```{ "nsservicepath_nsservicefunction_binding": [ {      "servicepathname":<String_value>,      "index":<Double_value>,      "servicefunction":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nsservicepath_nsservicefunction_binding": [ {      "servicepathname":<String_value>,      "servicefunction":<String_value>,      "index":<Double_value>}]}```
+Response Payload: ```{ "nsservicepath_nsservicefunction_binding": [ {      "servicepathname":<String_value>,      "index":<Double_value>,      "servicefunction":<String_value>}]}```
 
 
 

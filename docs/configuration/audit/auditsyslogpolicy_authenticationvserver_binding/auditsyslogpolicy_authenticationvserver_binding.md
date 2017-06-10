@@ -7,7 +7,7 @@ Binding object showing the authenticationvserver that can be bound to auditsyslo
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>boundto</td><td>&lt;String></td><td>Read-write</td><td>The entity name to which policy is bound.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>boundto</td><td>&lt;String></td><td>Read-write</td><td>The entity name to which policy is bound.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the policy.&lt;br>Minimum length = 1</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -50,7 +50,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "auditsyslogpolicy_authenticationvserver_binding": [ {      "name":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "activepolicy":<Double_value>}]}```
+Response Payload: ```{ "auditsyslogpolicy_authenticationvserver_binding": [ {      "boundto":<String_value>,      "name":<String_value>,      "priority":<Double_value>,      "activepolicy":<Double_value>}]}```
 
 
 
@@ -76,7 +76,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "auditsyslogpolicy_authenticationvserver_binding": [ {      "name":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "activepolicy":<Double_value>}]}```
+Response Payload: ```{ "auditsyslogpolicy_authenticationvserver_binding": [ {      "boundto":<String_value>,      "name":<String_value>,      "priority":<Double_value>,      "activepolicy":<Double_value>}]}```
 
 
 

@@ -7,7 +7,7 @@ Configuration for 0 resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>url</td><td>&lt;String></td><td>Read-write</td><td>.</td><tr><tr><td>y</td><td>&lt;Boolean></td><td>Read-write</td><td>Do not prompt for yes/no before rebooting.</td><tr><tr><td>l</td><td>&lt;Boolean></td><td>Read-write</td><td>Enable callhome.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>url</td><td>&lt;String></td><td>Read-write</td><td>Url for the build file. Must be in the following formats:&lt;br>http://[user]:[password]@host/path/to/file&lt;br>https://[user]:[password]@host/path/to/file&lt;br>sftp://[user]:[password]@host/path/to/file&lt;br>scp://[user]:[password]@host/path/to/file&lt;br>ftp://[user]:[password]@host/path/to/file&lt;br>file://path/to/file.</td><tr><tr><td>y</td><td>&lt;Boolean></td><td>Read-write</td><td>Do not prompt for yes/no before rebooting.</td><tr><tr><td>l</td><td>&lt;Boolean></td><td>Read-write</td><td>Use this flag to enable callhome.</td><tr><tr><td>enhancedupgrade</td><td>&lt;Boolean></td><td>Read-write</td><td>Use this flag for upgrading from/to enhancement mode.</td><tr><tr><td>resizeswapvar</td><td>&lt;Boolean></td><td>Read-write</td><td>Use this flag to change swap size on ONLY 64bit nCore/MCNS/VMPE systems NON-VPX systems.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"install":{      "url":<String_value>,      "y":<Boolean_value>,      "l":<Boolean_value>}}```
+Request Payload: ```{"install":{      "url":<String_value>,      "y":<Boolean_value>,      "l":<Boolean_value>,      "enhancedupgrade":<Boolean_value>,      "resizeswapvar":<Boolean_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 

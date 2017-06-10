@@ -7,7 +7,7 @@ Binding object which returns the resources bound to nspartition.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>partitionname</td><td>&lt;String></td><td>Read-write</td><td>Name of partition for which to display parameters.&lt;br>Minimum length = 1</td><tr><tr><td>nspartition_bridgegroup_binding</td><td>&lt;nspartition_bridgegroup_binding[]></td><td>Read-only</td><td>bridgegroup that can be bound to nspartition.</td><tr><tr><td>nspartition_vlan_binding</td><td>&lt;nspartition_vlan_binding[]></td><td>Read-only</td><td>vlan that can be bound to nspartition.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>partitionname</td><td>&lt;String></td><td>Read-write</td><td>Name of partition for which to display parameters.&lt;br>Minimum length = 1</td><tr><tr><td>nspartition_bridgegroup_binding</td><td>&lt;nspartition_bridgegroup_binding[]></td><td>Read-only</td><td>bridgegroup that can be bound to nspartition.</td><tr><tr><td>nspartition_vlan_binding</td><td>&lt;nspartition_vlan_binding[]></td><td>Read-only</td><td>vlan that can be bound to nspartition.</td><tr><tr><td>nspartition_vxlan_binding</td><td>&lt;nspartition_vxlan_binding[]></td><td>Read-only</td><td>vxlan that can be bound to nspartition.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>}]}```
+Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vxlan_binding":<nspartition_vxlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>}]}```
+Response Payload: ```{ "nspartition_binding": [ {      "partitionname":<String_value>,      "nspartition_vxlan_binding":<nspartition_vxlan_binding[]_value>,      "nspartition_bridgegroup_binding":<nspartition_bridgegroup_binding[]_value>,      "nspartition_vlan_binding":<nspartition_vlan_binding[]_value>}]}```
 
 
 

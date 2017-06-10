@@ -7,7 +7,7 @@ Binding object showing the metric that can be bound to lbmonitor.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>metric</td><td>&lt;String></td><td>Read-write</td><td>Metric name in the metric table, whose setting is changed. A value zero disables the metric and it will not be used for load calculation.&lt;br>Minimum length = 1&lt;br>Maximum length = 37</td><tr><tr><td>metricthreshold</td><td>&lt;Double></td><td>Read-write</td><td>Threshold to be used for that metric.</td><tr><tr><td>metricweight</td><td>&lt;Double></td><td>Read-write</td><td>The weight for the specified service metric with respect to others.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>monitorname</td><td>&lt;String></td><td>Read-write</td><td>Name of the monitor.&lt;br>Minimum length = 1</td><tr><tr><td>metric_unit</td><td>&lt;String></td><td>Read-only</td><td>Giving the unit of the metric.&lt;br>Possible values = Bytes/s, ms, pkts/s, users</td><tr><tr><td>metrictable</td><td>&lt;String></td><td>Read-only</td><td>Metric table to which to bind metrics.&lt;br>Minimum length = 1&lt;br>Maximum length = 99</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>metric</td><td>&lt;String></td><td>Read-write</td><td>Metric name in the metric table, whose setting is changed. A value zero disables the metric and it will not be used for load calculation.&lt;br>Minimum length = 1&lt;br>Maximum length = 37</td><tr><tr><td>metricthreshold</td><td>&lt;Double></td><td>Read-write</td><td>Threshold to be used for that metric.</td><tr><tr><td>metricweight</td><td>&lt;Double></td><td>Read-write</td><td>The weight for the specified service metric with respect to others.&lt;br>Minimum value = 1&lt;br>Maximum value = 100</td><tr><tr><td>monitorname</td><td>&lt;String></td><td>Read-write</td><td>Name of the monitor.&lt;br>Minimum length = 1</td><tr><tr><td>metrictable</td><td>&lt;String></td><td>Read-only</td><td>Metric table to which to bind metrics.&lt;br>Minimum length = 1&lt;br>Maximum length = 99</td><tr><tr><td>metric_unit</td><td>&lt;String></td><td>Read-only</td><td>Giving the unit of the metric.&lt;br>Possible values = Bytes/s, ms, pkts/s, users</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbmonitor_metric_binding": [ {      "metric":<String_value>,      "metricthreshold":<Double_value>,      "metricweight":<Double_value>,      "monitorname":<String_value>,      "metric_unit":<String_value>,      "metrictable":<String_value>}]}```
+Response Payload: ```{ "lbmonitor_metric_binding": [ {      "metric":<String_value>,      "metricthreshold":<Double_value>,      "metricweight":<Double_value>,      "monitorname":<String_value>,      "metrictable":<String_value>,      "metric_unit":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbmonitor_metric_binding": [ {      "metric":<String_value>,      "metricthreshold":<Double_value>,      "metricweight":<Double_value>,      "monitorname":<String_value>,      "metric_unit":<String_value>,      "metrictable":<String_value>}]}```
+Response Payload: ```{ "lbmonitor_metric_binding": [ {      "metric":<String_value>,      "metricthreshold":<Double_value>,      "metricweight":<Double_value>,      "monitorname":<String_value>,      "metrictable":<String_value>,      "metric_unit":<String_value>}]}```
 
 
 

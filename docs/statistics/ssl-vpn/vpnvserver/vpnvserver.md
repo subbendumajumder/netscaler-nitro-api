@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnvserver": [ {      "name":<String_value>,      "state":<String_value>,      "requestbytesrate":<Double_value>,      "primaryipaddress":<String_value>,      "totalrequests":<Double_value>,      "type":<String_value>,      "responsesrate":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "totalrequestbytes":<Double_value>}]}```
+Response Payload: ```{ "vpnvserver": [ {      "name":<String_value>,      "totalrequests":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "type":<String_value>,      "primaryipaddress":<String_value>,      "responsesrate":<Double_value>,      "totalrequestbytes":<Double_value>,      "state":<String_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnvserver": [ {      "name":<String_value>,      "state":<String_value>,      "requestbytesrate":<Double_value>,      "primaryipaddress":<String_value>,      "totalrequests":<Double_value>,      "type":<String_value>,      "responsesrate":<Double_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "totalrequestbytes":<Double_value>}]}```
+Response Payload: ```{ "vpnvserver": [ {      "name":<String_value>,      "totalrequests":<Double_value>,      "responsebytesrate":<Double_value>,      "totalresponses":<Double_value>,      "requestbytesrate":<Double_value>,      "type":<String_value>,      "primaryipaddress":<String_value>,      "responsesrate":<Double_value>,      "totalrequestbytes":<Double_value>,      "state":<String_value>,      "totalresponsebytes":<Double_value>,      "primaryport":<Integer_value>,      "requestsrate":<Double_value>}]}```
 
 
 

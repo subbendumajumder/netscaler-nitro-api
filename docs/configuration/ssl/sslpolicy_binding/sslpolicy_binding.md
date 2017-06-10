@@ -7,7 +7,7 @@ Binding object which returns the resources bound to sslpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslpolicy_sslservice_binding</td><td>&lt;sslpolicy_sslservice_binding[]></td><td>Read-only</td><td>sslservice that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_lbvserver_binding</td><td>&lt;sslpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslvserver_binding</td><td>&lt;sslpolicy_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_csvserver_binding</td><td>&lt;sslpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslpolicylabel_binding</td><td>&lt;sslpolicy_sslpolicylabel_binding[]></td><td>Read-only</td><td>sslpolicylabel that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslglobal_binding</td><td>&lt;sslpolicy_sslglobal_binding[]></td><td>Read-only</td><td>sslglobal that can be bound to sslpolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslpolicy_csvserver_binding</td><td>&lt;sslpolicy_csvserver_binding[]></td><td>Read-only</td><td>csvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslvserver_binding</td><td>&lt;sslpolicy_sslvserver_binding[]></td><td>Read-only</td><td>sslvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslpolicylabel_binding</td><td>&lt;sslpolicy_sslpolicylabel_binding[]></td><td>Read-only</td><td>sslpolicylabel that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslservice_binding</td><td>&lt;sslpolicy_sslservice_binding[]></td><td>Read-only</td><td>sslservice that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_lbvserver_binding</td><td>&lt;sslpolicy_lbvserver_binding[]></td><td>Read-only</td><td>lbvserver that can be bound to sslpolicy.</td><tr><tr><td>sslpolicy_sslglobal_binding</td><td>&lt;sslpolicy_sslglobal_binding[]></td><td>Read-only</td><td>sslglobal that can be bound to sslpolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslpolicy_binding": [ {      "name":<String_value>,      "sslpolicy_sslvserver_binding":<sslpolicy_sslvserver_binding[]_value>,      "sslpolicy_csvserver_binding":<sslpolicy_csvserver_binding[]_value>,      "sslpolicy_lbvserver_binding":<sslpolicy_lbvserver_binding[]_value>,      "sslpolicy_sslservice_binding":<sslpolicy_sslservice_binding[]_value>,      "sslpolicy_sslpolicylabel_binding":<sslpolicy_sslpolicylabel_binding[]_value>,      "sslpolicy_sslglobal_binding":<sslpolicy_sslglobal_binding[]_value>}]}```
+Response Payload: ```{ "sslpolicy_binding": [ {      "name":<String_value>,      "sslpolicy_csvserver_binding":<sslpolicy_csvserver_binding[]_value>,      "sslpolicy_sslvserver_binding":<sslpolicy_sslvserver_binding[]_value>,      "sslpolicy_lbvserver_binding":<sslpolicy_lbvserver_binding[]_value>,      "sslpolicy_sslservice_binding":<sslpolicy_sslservice_binding[]_value>,      "sslpolicy_sslpolicylabel_binding":<sslpolicy_sslpolicylabel_binding[]_value>,      "sslpolicy_sslglobal_binding":<sslpolicy_sslglobal_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslpolicy_binding": [ {      "name":<String_value>,      "sslpolicy_sslvserver_binding":<sslpolicy_sslvserver_binding[]_value>,      "sslpolicy_csvserver_binding":<sslpolicy_csvserver_binding[]_value>,      "sslpolicy_lbvserver_binding":<sslpolicy_lbvserver_binding[]_value>,      "sslpolicy_sslservice_binding":<sslpolicy_sslservice_binding[]_value>,      "sslpolicy_sslpolicylabel_binding":<sslpolicy_sslpolicylabel_binding[]_value>,      "sslpolicy_sslglobal_binding":<sslpolicy_sslglobal_binding[]_value>}]}```
+Response Payload: ```{ "sslpolicy_binding": [ {      "name":<String_value>,      "sslpolicy_csvserver_binding":<sslpolicy_csvserver_binding[]_value>,      "sslpolicy_sslvserver_binding":<sslpolicy_sslvserver_binding[]_value>,      "sslpolicy_lbvserver_binding":<sslpolicy_lbvserver_binding[]_value>,      "sslpolicy_sslservice_binding":<sslpolicy_sslservice_binding[]_value>,      "sslpolicy_sslpolicylabel_binding":<sslpolicy_sslpolicylabel_binding[]_value>,      "sslpolicy_sslglobal_binding":<sslpolicy_sslglobal_binding[]_value>}]}```
 
 
 

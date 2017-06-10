@@ -7,7 +7,7 @@ Binding object which returns the resources bound to authenticationradiuspolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RADIUS authentication policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationradiuspolicy_vpnglobal_binding</td><td>&lt;authenticationradiuspolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_vpnvserver_binding</td><td>&lt;authenticationradiuspolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_systemglobal_binding</td><td>&lt;authenticationradiuspolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_authenticationvserver_binding</td><td>&lt;authenticationradiuspolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationradiuspolicy.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the RADIUS authentication policy.&lt;br>Minimum length = 1</td><tr><tr><td>authenticationradiuspolicy_vpnvserver_binding</td><td>&lt;authenticationradiuspolicy_vpnvserver_binding[]></td><td>Read-only</td><td>vpnvserver that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_systemglobal_binding</td><td>&lt;authenticationradiuspolicy_systemglobal_binding[]></td><td>Read-only</td><td>systemglobal that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_authenticationvserver_binding</td><td>&lt;authenticationradiuspolicy_authenticationvserver_binding[]></td><td>Read-only</td><td>authenticationvserver that can be bound to authenticationradiuspolicy.</td><tr><tr><td>authenticationradiuspolicy_vpnglobal_binding</td><td>&lt;authenticationradiuspolicy_vpnglobal_binding[]></td><td>Read-only</td><td>vpnglobal that can be bound to authenticationradiuspolicy.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationradiuspolicy_binding": [ {      "name":<String_value>,      "authenticationradiuspolicy_authenticationvserver_binding":<authenticationradiuspolicy_authenticationvserver_binding[]_value>,      "authenticationradiuspolicy_vpnglobal_binding":<authenticationradiuspolicy_vpnglobal_binding[]_value>,      "authenticationradiuspolicy_systemglobal_binding":<authenticationradiuspolicy_systemglobal_binding[]_value>,      "authenticationradiuspolicy_vpnvserver_binding":<authenticationradiuspolicy_vpnvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationradiuspolicy_binding": [ {      "name":<String_value>,      "authenticationradiuspolicy_systemglobal_binding":<authenticationradiuspolicy_systemglobal_binding[]_value>,      "authenticationradiuspolicy_authenticationvserver_binding":<authenticationradiuspolicy_authenticationvserver_binding[]_value>,      "authenticationradiuspolicy_vpnglobal_binding":<authenticationradiuspolicy_vpnglobal_binding[]_value>,      "authenticationradiuspolicy_vpnvserver_binding":<authenticationradiuspolicy_vpnvserver_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "authenticationradiuspolicy_binding": [ {      "name":<String_value>,      "authenticationradiuspolicy_authenticationvserver_binding":<authenticationradiuspolicy_authenticationvserver_binding[]_value>,      "authenticationradiuspolicy_vpnglobal_binding":<authenticationradiuspolicy_vpnglobal_binding[]_value>,      "authenticationradiuspolicy_systemglobal_binding":<authenticationradiuspolicy_systemglobal_binding[]_value>,      "authenticationradiuspolicy_vpnvserver_binding":<authenticationradiuspolicy_vpnvserver_binding[]_value>}]}```
+Response Payload: ```{ "authenticationradiuspolicy_binding": [ {      "name":<String_value>,      "authenticationradiuspolicy_systemglobal_binding":<authenticationradiuspolicy_systemglobal_binding[]_value>,      "authenticationradiuspolicy_authenticationvserver_binding":<authenticationradiuspolicy_authenticationvserver_binding[]_value>,      "authenticationradiuspolicy_vpnglobal_binding":<authenticationradiuspolicy_vpnglobal_binding[]_value>,      "authenticationradiuspolicy_vpnvserver_binding":<authenticationradiuspolicy_vpnvserver_binding[]_value>}]}```
 
 
 

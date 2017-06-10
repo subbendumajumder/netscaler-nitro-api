@@ -7,7 +7,7 @@ Binding object showing the vlan that can be bound to bridgegroup.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>The integer that uniquely identifies the bridge group.&lt;br>Minimum value = 1&lt;br>Maximum value = 1000</td><tr><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>Names of all member VLANs.</td><tr><tr><td>rnat</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>vlan</td><td>&lt;Double></td><td>Read-write</td><td>Names of all member VLANs.</td><tr><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>The integer that uniquely identifies the bridge group.&lt;br>Minimum value = 1&lt;br>Maximum value = 1000</td><tr><tr><td>rnat</td><td>&lt;Boolean></td><td>Read-only</td><td>Temporary flag used for internal purpose.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "bridgegroup_vlan_binding": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "rnat":<Boolean_value>}]}```
+Response Payload: ```{ "bridgegroup_vlan_binding": [ {      "vlan":<Double_value>,      "id":<Double_value>,      "rnat":<Boolean_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "bridgegroup_vlan_binding": [ {      "id":<Double_value>,      "vlan":<Double_value>,      "rnat":<Boolean_value>}]}```
+Response Payload: ```{ "bridgegroup_vlan_binding": [ {      "vlan":<Double_value>,      "id":<Double_value>,      "rnat":<Boolean_value>}]}```
 
 
 

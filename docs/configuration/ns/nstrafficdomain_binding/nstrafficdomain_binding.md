@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nstrafficdomain_binding": [ {      "td":<Double_value>,      "nstrafficdomain_vlan_binding":<nstrafficdomain_vlan_binding[]_value>,      "nstrafficdomain_bridgegroup_binding":<nstrafficdomain_bridgegroup_binding[]_value>,      "nstrafficdomain_vxlan_binding":<nstrafficdomain_vxlan_binding[]_value>}]}```
+Response Payload: ```{ "nstrafficdomain_binding": [ {      "td":<Double_value>,      "nstrafficdomain_vlan_binding":<nstrafficdomain_vlan_binding[]_value>,      "nstrafficdomain_vxlan_binding":<nstrafficdomain_vxlan_binding[]_value>,      "nstrafficdomain_bridgegroup_binding":<nstrafficdomain_bridgegroup_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nstrafficdomain_binding": [ {      "td":<Double_value>,      "nstrafficdomain_vlan_binding":<nstrafficdomain_vlan_binding[]_value>,      "nstrafficdomain_bridgegroup_binding":<nstrafficdomain_bridgegroup_binding[]_value>,      "nstrafficdomain_vxlan_binding":<nstrafficdomain_vxlan_binding[]_value>}]}```
+Response Payload: ```{ "nstrafficdomain_binding": [ {      "td":<Double_value>,      "nstrafficdomain_vlan_binding":<nstrafficdomain_vlan_binding[]_value>,      "nstrafficdomain_vxlan_binding":<nstrafficdomain_vxlan_binding[]_value>,      "nstrafficdomain_bridgegroup_binding":<nstrafficdomain_bridgegroup_binding[]_value>}]}```
 
 
 

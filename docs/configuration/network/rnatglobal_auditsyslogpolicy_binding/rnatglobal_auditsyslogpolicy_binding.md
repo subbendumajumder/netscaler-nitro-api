@@ -7,7 +7,7 @@ Binding object showing the auditsyslogpolicy that can be bound to rnatglobal.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>policy</td><td>&lt;String></td><td>Read-write</td><td>The policy Name.</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Remove all RNAT global config.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Remove all RNAT global config.</td><tr><tr><td>policy</td><td>&lt;String></td><td>Read-write</td><td>The policy Name.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "rnatglobal_auditsyslogpolicy_binding": [ {      "priority":<Double_value>,      "policy":<String_value>,      "all":<Boolean_value>}]}```
+Response Payload: ```{ "rnatglobal_auditsyslogpolicy_binding": [ {      "priority":<Double_value>,      "all":<Boolean_value>,      "policy":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "rnatglobal_auditsyslogpolicy_binding": [ {      "priority":<Double_value>,      "policy":<String_value>,      "all":<Boolean_value>}]}```
+Response Payload: ```{ "rnatglobal_auditsyslogpolicy_binding": [ {      "priority":<Double_value>,      "all":<Boolean_value>,      "policy":<String_value>}]}```
 
 
 

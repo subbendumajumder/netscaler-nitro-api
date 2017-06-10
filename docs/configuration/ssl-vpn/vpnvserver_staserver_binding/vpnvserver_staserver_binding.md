@@ -7,7 +7,7 @@ Binding object showing the staserver that can be bound to vpnvserver.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the virtual server.&lt;br>Minimum length = 1</td><tr><tr><td>staaddresstype</td><td>&lt;String></td><td>Read-write</td><td>Type of the STA server address(ipv4/v6).&lt;br>Possible values = IPV4, IPV6</td><tr><tr><td>staserver</td><td>&lt;String></td><td>Read-write</td><td>Configured Secure Ticketing Authority (STA) server.</td><tr><tr><td>acttype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>staauthid</td><td>&lt;String></td><td>Read-only</td><td>Authority ID of the STA Server. Authority ID is used to match incoming STA tickets in the SOCKS/CGP protocol with the right STA server.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the virtual server.&lt;br>Minimum length = 1</td><tr><tr><td>staaddresstype</td><td>&lt;String></td><td>Read-write</td><td>Type of the STA server address(ipv4/v6).&lt;br>Possible values = IPV4, IPV6</td><tr><tr><td>staserver</td><td>&lt;String></td><td>Read-write</td><td>Configured Secure Ticketing Authority (STA) server.</td><tr><tr><td>stastate</td><td>&lt;String></td><td>Read-only</td><td>State of the STA Server. If Authority ID is set then STA Server is UP else DOWN.&lt;br>Possible values = UP, DOWN</td><tr><tr><td>acttype</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>staauthid</td><td>&lt;String></td><td>Read-only</td><td>Authority ID of the STA Server. Authority ID is used to match incoming STA tickets in the SOCKS/CGP protocol with the right STA server.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnvserver_staserver_binding": [ {      "name":<String_value>,      "staaddresstype":<String_value>,      "staserver":<String_value>,      "acttype":<Double_value>,      "staauthid":<String_value>}]}```
+Response Payload: ```{ "vpnvserver_staserver_binding": [ {      "name":<String_value>,      "staaddresstype":<String_value>,      "staserver":<String_value>,      "stastate":<String_value>,      "acttype":<Double_value>,      "staauthid":<String_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnvserver_staserver_binding": [ {      "name":<String_value>,      "staaddresstype":<String_value>,      "staserver":<String_value>,      "acttype":<Double_value>,      "staauthid":<String_value>}]}```
+Response Payload: ```{ "vpnvserver_staserver_binding": [ {      "name":<String_value>,      "staaddresstype":<String_value>,      "staserver":<String_value>,      "stastate":<String_value>,      "acttype":<Double_value>,      "staauthid":<String_value>}]}```
 
 
 

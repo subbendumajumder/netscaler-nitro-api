@@ -7,7 +7,7 @@ Binding object showing the sslglobal that can be bound to sslpolicy.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>boundto</td><td>&lt;String></td><td>Read-write</td><td>The entity name to which policy is bound.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy label invocation.&lt;br>Possible values = vserver, service, policylabel</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label to invoke if the current policy rule evaluates to TRUE.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>boundto</td><td>&lt;String></td><td>Read-write</td><td>The entity name to which policy is bound.</td><tr><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL policy for which to display detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>labelname</td><td>&lt;String></td><td>Read-only</td><td>Name of the label to invoke if the current policy rule evaluates to TRUE.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy label invocation.&lt;br>Possible values = vserver, service, policylabel</td><tr><tr><td>activepolicy</td><td>&lt;Double></td><td>Read-only</td><td>.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -50,7 +50,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslpolicy_sslglobal_binding": [ {      "name":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Double_value>,      "labelname":<String_value>}]}```
+Response Payload: ```{ "sslpolicy_sslglobal_binding": [ {      "boundto":<String_value>,      "name":<String_value>,      "priority":<Double_value>,      "labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Double_value>}]}```
 
 
 
@@ -76,7 +76,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslpolicy_sslglobal_binding": [ {      "name":<String_value>,      "boundto":<String_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Double_value>,      "labelname":<String_value>}]}```
+Response Payload: ```{ "sslpolicy_sslglobal_binding": [ {      "boundto":<String_value>,      "name":<String_value>,      "priority":<Double_value>,      "labelname":<String_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "activepolicy":<Double_value>}]}```
 
 
 

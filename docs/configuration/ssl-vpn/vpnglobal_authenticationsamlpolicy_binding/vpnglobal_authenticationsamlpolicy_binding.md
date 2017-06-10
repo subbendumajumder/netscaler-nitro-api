@@ -7,7 +7,7 @@ Binding object showing the authenticationsamlpolicy that can be bound to vpnglob
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>The priority of the policy.</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>secondary</td><td>&lt;Boolean></td><td>Read-write</td><td>Bind the authentication policy as the secondary policy to use in a two-factor configuration. A user must then authenticate not only to a primary authentication server but also to a secondary authentication server. User groups are aggregated across both authentication servers. The user name must be exactly the same on both authentication servers, but the authentication servers can require different passwords.</td><tr><tr><td>groupextraction</td><td>&lt;Boolean></td><td>Read-write</td><td>Bind the Authentication policy to a tertiary chain which will be used only for group extraction. The user will not authenticate against this server, and this will only be called it primary and/or secondary authentication has succeeded.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>priority</td><td>&lt;Double></td><td>Read-write</td><td>Integer specifying the policys priority. The lower the priority number, the higher the policys priority. Maximum value for default syntax policies is 2147483647 and for classic policies is 64000.&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>policyname</td><td>&lt;String></td><td>Read-write</td><td>The name of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-write</td><td>Applicable only to advance vpn session policy. An expression or other value specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>secondary</td><td>&lt;Boolean></td><td>Read-write</td><td>Bind the authentication policy as the secondary policy to use in a two-factor configuration. A user must then authenticate not only to a primary authentication server but also to a secondary authentication server. User groups are aggregated across both authentication servers. The user name must be exactly the same on both authentication servers, but the authentication servers can require different passwords.</td><tr><tr><td>groupextraction</td><td>&lt;Boolean></td><td>Read-write</td><td>Bind the Authentication policy to a tertiary chain which will be used only for group extraction. The user will not authenticate against this server, and this will only be called it primary and/or secondary authentication has succeeded.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-write</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -33,7 +33,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"vpnglobal_authenticationsamlpolicy_binding":{      "policyname":<String_value>,      "priority":<Double_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>}}```
+Request Payload: ```{"vpnglobal_authenticationsamlpolicy_binding":{      "policyname":<String_value>,      "priority":<Double_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>,      "gotopriorityexpression":<String_value>}}```
 Response:
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -79,7 +79,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnglobal_authenticationsamlpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>}]}```
+Response Payload: ```{ "vpnglobal_authenticationsamlpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "gotopriorityexpression":<String_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>}]}```
 
 
 
@@ -105,7 +105,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnglobal_authenticationsamlpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>}]}```
+Response Payload: ```{ "vpnglobal_authenticationsamlpolicy_binding": [ {      "priority":<Double_value>,      "policyname":<String_value>,      "gotopriorityexpression":<String_value>,      "secondary":<Boolean_value>,      "groupextraction":<Boolean_value>}]}```
 
 
 

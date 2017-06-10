@@ -7,7 +7,7 @@ Binding object which returns the resources bound to sslvserver.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>vservername</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL virtual server for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslvserver_sslpolicy_binding</td><td>&lt;sslvserver_sslpolicy_binding[]></td><td>Read-only</td><td>sslpolicy that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslcipher_binding</td><td>&lt;sslvserver_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslvserver.</td><tr><tr><td>sslvserver_ecccurve_binding</td><td>&lt;sslvserver_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslcertkey_binding</td><td>&lt;sslvserver_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslciphersuite_binding</td><td>&lt;sslvserver_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslvserver.</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>vservername</td><td>&lt;String></td><td>Read-write</td><td>Name of the SSL virtual server for which to show detailed information.&lt;br>Minimum length = 1</td><tr><tr><td>sslvserver_sslcipher_binding</td><td>&lt;sslvserver_sslcipher_binding[]></td><td>Read-only</td><td>sslcipher that can be bound to sslvserver.</td><tr><tr><td>sslvserver_ecccurve_binding</td><td>&lt;sslvserver_ecccurve_binding[]></td><td>Read-only</td><td>ecccurve that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslpolicy_binding</td><td>&lt;sslvserver_sslpolicy_binding[]></td><td>Read-only</td><td>sslpolicy that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslcertkey_binding</td><td>&lt;sslvserver_sslcertkey_binding[]></td><td>Read-only</td><td>sslcertkey that can be bound to sslvserver.</td><tr><tr><td>sslvserver_sslciphersuite_binding</td><td>&lt;sslvserver_sslciphersuite_binding[]></td><td>Read-only</td><td>sslciphersuite that can be bound to sslvserver.</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslvserver_binding": [ {      "vservername":<String_value>,      "sslvserver_sslpolicy_binding":<sslvserver_sslpolicy_binding[]_value>,      "sslvserver_sslcertkey_binding":<sslvserver_sslcertkey_binding[]_value>,      "sslvserver_sslciphersuite_binding":<sslvserver_sslciphersuite_binding[]_value>,      "sslvserver_ecccurve_binding":<sslvserver_ecccurve_binding[]_value>,      "sslvserver_sslcipher_binding":<sslvserver_sslcipher_binding[]_value>}]}```
+Response Payload: ```{ "sslvserver_binding": [ {      "vservername":<String_value>,      "sslvserver_sslciphersuite_binding":<sslvserver_sslciphersuite_binding[]_value>,      "sslvserver_ecccurve_binding":<sslvserver_ecccurve_binding[]_value>,      "sslvserver_sslpolicy_binding":<sslvserver_sslpolicy_binding[]_value>,      "sslvserver_sslcertkey_binding":<sslvserver_sslcertkey_binding[]_value>,      "sslvserver_sslcipher_binding":<sslvserver_sslcipher_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "sslvserver_binding": [ {      "vservername":<String_value>,      "sslvserver_sslpolicy_binding":<sslvserver_sslpolicy_binding[]_value>,      "sslvserver_sslcertkey_binding":<sslvserver_sslcertkey_binding[]_value>,      "sslvserver_sslciphersuite_binding":<sslvserver_sslciphersuite_binding[]_value>,      "sslvserver_ecccurve_binding":<sslvserver_ecccurve_binding[]_value>,      "sslvserver_sslcipher_binding":<sslvserver_sslcipher_binding[]_value>}]}```
+Response Payload: ```{ "sslvserver_binding": [ {      "vservername":<String_value>,      "sslvserver_sslciphersuite_binding":<sslvserver_sslciphersuite_binding[]_value>,      "sslvserver_ecccurve_binding":<sslvserver_ecccurve_binding[]_value>,      "sslvserver_sslpolicy_binding":<sslvserver_sslpolicy_binding[]_value>,      "sslvserver_sslcertkey_binding":<sslvserver_sslcertkey_binding[]_value>,      "sslvserver_sslcipher_binding":<sslvserver_sslcipher_binding[]_value>}]}```
 
 
 

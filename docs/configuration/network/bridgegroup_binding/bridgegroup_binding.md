@@ -38,7 +38,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "bridgegroup_binding": [ {      "id":<Double_value>,      "bridgegroup_vlan_binding":<bridgegroup_vlan_binding[]_value>,      "bridgegroup_nsip_binding":<bridgegroup_nsip_binding[]_value>,      "bridgegroup_nsip6_binding":<bridgegroup_nsip6_binding[]_value>}]}```
+Response Payload: ```{ "bridgegroup_binding": [ {      "id":<Double_value>,      "bridgegroup_nsip_binding":<bridgegroup_nsip_binding[]_value>,      "bridgegroup_vlan_binding":<bridgegroup_vlan_binding[]_value>,      "bridgegroup_nsip6_binding":<bridgegroup_nsip6_binding[]_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "bridgegroup_binding": [ {      "id":<Double_value>,      "bridgegroup_vlan_binding":<bridgegroup_vlan_binding[]_value>,      "bridgegroup_nsip_binding":<bridgegroup_nsip_binding[]_value>,      "bridgegroup_nsip6_binding":<bridgegroup_nsip6_binding[]_value>}]}```
+Response Payload: ```{ "bridgegroup_binding": [ {      "id":<Double_value>,      "bridgegroup_nsip_binding":<bridgegroup_nsip_binding[]_value>,      "bridgegroup_vlan_binding":<bridgegroup_vlan_binding[]_value>,      "bridgegroup_nsip6_binding":<bridgegroup_nsip6_binding[]_value>}]}```
 
 
 

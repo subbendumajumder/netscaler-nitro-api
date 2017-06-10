@@ -45,7 +45,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
+Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totmisses":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>}]}```
 
 
 
@@ -64,7 +64,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6totmisses":<Double_value>}]}```
+Response Payload: ```{ "nspbr6": [ {      "name":<String_value>,      "pbr6perhits":<Double_value>,      "pbr6totpktsallowed":<Double_value>,      "pbr6pktsallowedrate":<Double_value>,      "pbr6totpktsdenied":<Double_value>,      "pbr6hitsrate":<Double_value>,      "pbr6nulldroprate":<Double_value>,      "pbr6totnulldrop":<Double_value>,      "pbr6perhitsrate":<Double_value>,      "pbr6totmisses":<Double_value>,      "pbr6pktsdeniedrate":<Double_value>,      "pbr6missesrate":<Double_value>,      "pbr6tothits":<Double_value>}]}```
 
 
 

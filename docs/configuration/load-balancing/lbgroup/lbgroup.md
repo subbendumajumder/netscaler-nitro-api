@@ -7,12 +7,12 @@ Configuration for LB group resource.
 <span>(click to see [Operations](#operations))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the load balancing virtual server group.&lt;br>Minimum length = 1</td><tr><tr><td>persistencetype</td><td>&lt;String></td><td>Read-write</td><td>Type of persistence for the group. Available settings function as follows:&lt;br>* SOURCEIP - Create persistence sessions based on the client IP.&lt;br>* COOKIEINSERT - Create persistence sessions based on a cookie in client requests. The cookie is inserted by a Set-Cookie directive from the server, in its first response to a client.&lt;br>* RULE - Create persistence sessions based on a user defined rule.&lt;br>* NONE - Disable persistence for the group.&lt;br>Possible values = SOURCEIP, COOKIEINSERT, RULE, NONE</td><tr><tr><td>persistencebackup</td><td>&lt;String></td><td>Read-write</td><td>Type of backup persistence for the group.&lt;br>Possible values = SOURCEIP, NONE</td><tr><tr><td>backuppersistencetimeout</td><td>&lt;Double></td><td>Read-write</td><td>Time period, in minutes, for which backup persistence is in effect.&lt;br>Default value: 2&lt;br>Minimum value = 2&lt;br>Maximum value = 1440</td><tr><tr><td>persistmask</td><td>&lt;String></td><td>Read-write</td><td>Persistence mask to apply to source IPv4 addresses when creating source IP based persistence sessions.&lt;br>Minimum length = 1</td><tr><tr><td>cookiename</td><td>&lt;String></td><td>Read-write</td><td>Use this parameter to specify the cookie name for COOKIE peristence type. It specifies the name of cookie with a maximum of 32 characters. If not specified, cookie name is internally generated.</td><tr><tr><td>v6persistmasklen</td><td>&lt;Double></td><td>Read-write</td><td>Persistence mask to apply to source IPv6 addresses when creating source IP based persistence sessions.&lt;br>Default value: 128&lt;br>Minimum value = 1&lt;br>Maximum value = 128</td><tr><tr><td>cookiedomain</td><td>&lt;String></td><td>Read-write</td><td>Domain attribute for the HTTP cookie.&lt;br>Minimum length = 1</td><tr><tr><td>timeout</td><td>&lt;Double></td><td>Read-write</td><td>Time period for which a persistence session is in effect.&lt;br>Default value: 2&lt;br>Minimum value = 0&lt;br>Maximum value = 1440</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, against which traffic is evaluated. Written in the classic or default syntax.&lt;br>Note:&lt;br>Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.&lt;br>Default value: "None"</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the load balancing virtual server group.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>&lt;String></td><td>Read-write</td><td>Name of the load balancing virtual server group.&lt;br>Minimum length = 1</td><tr><tr><td>persistencetype</td><td>&lt;String></td><td>Read-write</td><td>Type of persistence for the group. Available settings function as follows:&lt;br>* SOURCEIP - Create persistence sessions based on the client IP.&lt;br>* COOKIEINSERT - Create persistence sessions based on a cookie in client requests. The cookie is inserted by a Set-Cookie directive from the server, in its first response to a client.&lt;br>* RULE - Create persistence sessions based on a user defined rule.&lt;br>* NONE - Disable persistence for the group.&lt;br>Possible values = SOURCEIP, COOKIEINSERT, RULE, NONE</td><tr><tr><td>persistencebackup</td><td>&lt;String></td><td>Read-write</td><td>Type of backup persistence for the group.&lt;br>Possible values = SOURCEIP, NONE</td><tr><tr><td>backuppersistencetimeout</td><td>&lt;Double></td><td>Read-write</td><td>Time period, in minutes, for which backup persistence is in effect.&lt;br>Default value: 2&lt;br>Minimum value = 2&lt;br>Maximum value = 1440</td><tr><tr><td>persistmask</td><td>&lt;String></td><td>Read-write</td><td>Persistence mask to apply to source IPv4 addresses when creating source IP based persistence sessions.&lt;br>Minimum length = 1</td><tr><tr><td>cookiename</td><td>&lt;String></td><td>Read-write</td><td>Use this parameter to specify the cookie name for COOKIE peristence type. It specifies the name of cookie with a maximum of 32 characters. If not specified, cookie name is internally generated.</td><tr><tr><td>v6persistmasklen</td><td>&lt;Double></td><td>Read-write</td><td>Persistence mask to apply to source IPv6 addresses when creating source IP based persistence sessions.&lt;br>Default value: 128&lt;br>Minimum value = 1&lt;br>Maximum value = 128</td><tr><tr><td>cookiedomain</td><td>&lt;String></td><td>Read-write</td><td>Domain attribute for the HTTP cookie.&lt;br>Minimum length = 1</td><tr><tr><td>timeout</td><td>&lt;Double></td><td>Read-write</td><td>Time period for which a persistence session is in effect.&lt;br>Default value: 2&lt;br>Minimum value = 0&lt;br>Maximum value = 1440</td><tr><tr><td>rule</td><td>&lt;String></td><td>Read-write</td><td>Expression, or name of a named expression, against which traffic is evaluated. Written in the classic or default syntax.&lt;br>Note:&lt;br>Maximum length of a string literal in the expression is 255 characters. A longer string can be split into smaller strings of up to 255 characters each, and the smaller strings concatenated with the + operator. For example, you can create a 500-character string as follows: ";lt;string of 255 characters;gt;" + ";lt;string of 245 characters;gt;"&lt;br>&lt;br>The following requirements apply only to the NetScaler CLI:&lt;br>* If the expression includes one or more spaces, enclose the entire expression in double quotation marks.&lt;br>* If the expression itself includes double quotation marks, escape the quotations by using the \\ character. &lt;br>* Alternatively, you can use single quotation marks to enclose the rule, in which case you do not have to escape the double quotation marks.&lt;br>Default value: "None"</td><tr><tr><td>usevserverpersistency</td><td>&lt;String></td><td>Read-write</td><td>.&lt;br>Default value: DISABLED&lt;br>Possible values = ENABLED, DISABLED</td><tr><tr><td>mastervserver</td><td>&lt;String></td><td>Read-write</td><td>.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the load balancing virtual server group.&lt;br>Minimum length = 1</td><tr><tr><td>td</td><td>&lt;Double></td><td>Read-only</td><td>Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If you do not specify an ID, the entity becomes part of the default traffic domain, which has an ID of 0.&lt;br>Minimum value = 0&lt;br>Maximum value = 4094</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
 ##Operations 
 <span>(click to see [Properties](#properties))</span>
 
 
-[UPDATE](#update) | [UNSET](#unset) | [RENAME](#rename) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD](#add) | [UPDATE](#update) | [UNSET](#unset) | [DELETE](#delete) | [RENAME](#rename) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
 
 
 Some options that you can use for each operations:
@@ -22,6 +22,21 @@ Some options that you can use for each operations:
 
 ***Note:*** 
 Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+
+###add
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbgroup
+HTTP Method: POST
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
+
+Request Payload: ```{"lbgroup":{      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "cookiename":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "usevserverpersistency":<String_value>}}```
+Response:
+HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
 
 ###update
 
@@ -33,7 +48,7 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lbgroup":{      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "cookiename":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>}}```
+Request Payload: ```{"lbgroup":{      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "cookiename":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "usevserverpersistency":<String_value>,      "mastervserver":<String_value>}}```
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -48,7 +63,21 @@ Request Headers:
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"lbgroup":{      "name":<String_value>,      "persistencetype":true,      "persistencebackup":true,      "backuppersistencetimeout":true,      "persistmask":true,      "cookiename":true,      "v6persistmasklen":true,      "cookiedomain":true,      "timeout":true,      "rule":true}}```
+Request Payload: ```{"lbgroup":{      "name":<String_value>,      "persistencetype":true,      "persistencebackup":true,      "backuppersistencetimeout":true,      "persistmask":true,      "cookiename":true,      "v6persistmasklen":true,      "cookiedomain":true,      "timeout":true,      "rule":true,      "usevserverpersistency":true,      "mastervserver":true}}```
+Response:
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
+
+
+###delete
+
+
+
+URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/lbgroup/name_value&lt;String&gt;
+HTTP Method: DELETE
+Request Headers:
+
+Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
+
 Response:
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
@@ -105,7 +134,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbgroup": [ {      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiename":<String_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "lbgroup": [ {      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiename":<String_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "td":<Double_value>,      "usevserverpersistency":<String_value>,      "mastervserver":<String_value>}]}```
 
 
 
@@ -136,7 +165,7 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 Content-Type:application/json
 
-Response Payload: ```{ "lbgroup": [ {      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiename":<String_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "td":<Double_value>}]}```
+Response Payload: ```{ "lbgroup": [ {      "name":<String_value>,      "persistencetype":<String_value>,      "persistencebackup":<String_value>,      "backuppersistencetimeout":<Double_value>,      "persistmask":<String_value>,      "v6persistmasklen":<Double_value>,      "cookiename":<String_value>,      "cookiedomain":<String_value>,      "timeout":<Double_value>,      "rule":<String_value>,      "td":<Double_value>,      "usevserverpersistency":<String_value>,      "mastervserver":<String_value>}]}```
 
 
 
