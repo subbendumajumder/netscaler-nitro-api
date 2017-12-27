@@ -1,14 +1,21 @@
-site_name: Netscaler Nitro REST API Reference
-site_description: Reference guide for Netscaler Nitro REST API
+site_name: Citrix NetScaler 12.0 NITRO API Documentation
+site_description: Citrix NetScaler 12.0 NITRO API Documentation
 theme_dir: citrix-sdk
 markdown_extensions:
   - admonition
-  - codehilite
-  - toc:
-     anchorlink: True
+  - codehilite(guess_lang=false)
+  - toc(permalink=true)
+  - footnotes
+  - meta
 
 pages:
-- API Reference: index.md
+- NetScaler REST APIs - NITRO: index.md
+- Before you begin: before-you-begin.md
+- Performing Basic NetScaler Operations: performing-basic-netscaler-operations.md
+- Performing NetScaler Resource Operations: performing-netscaler-resource-operations.md
+- Use cases: usecases.md
+- Error and Exception Handling: error-and-exception-handling.md
+- API Reference: api-reference.md
 - Configuration:
     - Configuration: configuration/configuration.md
     - AAA:
@@ -1657,3 +1664,4 @@ pages:
         - vxlan-errors: error-messages/vxlan-errors/vxlan-errors.md
     - warning-errors:
         - warning-errors: error-messages/warning-errors/warning-errors.md
+
