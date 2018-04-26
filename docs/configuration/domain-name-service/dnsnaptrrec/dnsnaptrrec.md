@@ -4,37 +4,37 @@ Configuration for NAPTR record resource.
 
 
 ##Properties 
-<span>(click to see [Operations](#operations))</span>
+<span>(click to see [Operations](#opera))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Name of the domain for the NAPTR record.&lt;br>Minimum length = 1</td><tr><tr><td>order</td><td>&lt;Double></td><td>Read-write</td><td>An integer specifying the order in which the NAPTR records MUST be processed in order to accurately represent the ordered list of Rules. The ordering is from lowest to highest.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>preference</td><td>&lt;Double></td><td>Read-write</td><td>An integer specifying the preference of this NAPTR among NAPTR records having same order. lower the number, higher the preference.&lt;br>Minimum value = 0&lt;br>Maximum value = 65535</td><tr><tr><td>flags</td><td>&lt;String></td><td>Read-write</td><td>flags for this NAPTR.&lt;br>Maximum length = 255</td><tr><tr><td>services</td><td>&lt;String></td><td>Read-write</td><td>Service Parameters applicable to this delegation path.&lt;br>Maximum length = 255</td><tr><tr><td>regexp</td><td>&lt;String></td><td>Read-write</td><td>The regular expression, that specifies the substitution expression for this NAPTR.&lt;br>Maximum length = 255</td><tr><tr><td>replacement</td><td>&lt;String></td><td>Read-write</td><td>The replacement domain name for this NAPTR.&lt;br>Maximum length = 255</td><tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to Live (TTL), in seconds, for the record. TTL is the time for which the record must be cached by DNS proxies. The specified TTL is applied to all the resource records that are of the same record type and belong to the specified domain name. For example, if you add an address record, with a TTL of 36000, to the domain name example.com, the TTLs of all the address records of example.com are changed to 36000. If the TTL is not specified, the NetScaler appliance uses either the DNS zones minimum TTL or, if the SOA record is not available on the appliance, the default value of 3600.&lt;br>Default value: 3600&lt;br>Minimum value = 0&lt;br>Maximum value = 2147483647</td><tr><tr><td>recordid</td><td>&lt;Double></td><td>Read-write</td><td>Unique, internally generated record ID. View the details of the naptr record to obtain its record ID. Records can be removed by either specifying the domain name and record id OR by specifying&lt;br>domain name and all other naptr record attributes as was supplied during the add command.&lt;br>Minimum value = 1&lt;br>Maximum value = 65535</td><tr><tr><td>ecssubnet</td><td>&lt;String></td><td>Read-write</td><td>Subnet for which the cached NAPTR record need to be removed.</td><tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of records to display. Available settings function as follows:&lt;br>* ADNS - Display all authoritative address records.&lt;br>* PROXY - Display all proxy address records.&lt;br>* ALL - Display all address records.&lt;br>Default value: ADNS&lt;br>Possible values = ALL, ADNS, PROXY</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>authtype</td><td>&lt;String></td><td>Read-only</td><td>Authentication type.&lt;br>Possible values = ALL, ADNS, PROXY</td><tr><tr><td>vservername</td><td>&lt;String></td><td>Read-only</td><td>Virtual server name.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Data Type</th><th>Permissions</th><th>Description</th></tr></thead><tbody><tr><td>domain</td><td>&lt;String></td><td>Read-write</td><td>Name of the domain for the NAPTR record.<br>Minimum length = 1</td></tr><tr><td>order</td><td>&lt;Double></td><td>Read-write</td><td>An integer specifying the order in which the NAPTR records MUST be processed in order to accurately represent the ordered list of Rules. The ordering is from lowest to highest.<br>Minimum value = 0<br>Maximum value = 65535</td></tr><tr><td>preference</td><td>&lt;Double></td><td>Read-write</td><td>An integer specifying the preference of this NAPTR among NAPTR records having same order. lower the number, higher the preference.<br>Minimum value = 0<br>Maximum value = 65535</td></tr><tr><td>flags</td><td>&lt;String></td><td>Read-write</td><td>flags for this NAPTR.<br>Maximum length = 255</td></tr><tr><td>services</td><td>&lt;String></td><td>Read-write</td><td>Service Parameters applicable to this delegation path.<br>Maximum length = 255</td></tr><tr><td>regexp</td><td>&lt;String></td><td>Read-write</td><td>The regular expression, that specifies the substitution expression for this NAPTR.<br>Maximum length = 255</td></tr><tr><td>replacement</td><td>&lt;String></td><td>Read-write</td><td>The replacement domain name for this NAPTR.<br>Maximum length = 255</td></tr><tr><td>ttl</td><td>&lt;Double></td><td>Read-write</td><td>Time to Live (TTL), in seconds, for the record. TTL is the time for which the record must be cached by DNS proxies. The specified TTL is applied to all the resource records that are of the same record type and belong to the specified domain name. For example, if you add an address record, with a TTL of 36000, to the domain name example.com, the TTLs of all the address records of example.com are changed to 36000. If the TTL is not specified, the NetScaler appliance uses either the DNS zone's minimum TTL or, if the SOA record is not available on the appliance, the default value of 3600.<br>Default value: 3600<br>Minimum value = 0<br>Maximum value = 2147483647</td></tr><tr><td>recordid</td><td>&lt;Double></td><td>Read-write</td><td>Unique, internally generated record ID. View the details of the naptr record to obtain its record ID. Records can be removed by either specifying the domain name and record id OR by specifying<br>domain name and all other naptr record attributes as was supplied during the add command.<br>Minimum value = 1<br>Maximum value = 65535</td></tr><tr><td>ecssubnet</td><td>&lt;String></td><td>Read-write</td><td>Subnet for which the cached NAPTR record need to be removed.</td></tr><tr><td>type</td><td>&lt;String></td><td>Read-write</td><td>Type of records to display. Available settings function as follows:<br>* ADNS - Display all authoritative address records.<br>* PROXY - Display all proxy address records.<br>* ALL - Display all address records.<br>Default value: ADNS<br>Possible values = ALL, ADNS, PROXY</td></tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.<br>Minimum value = 0<br>Maximum value = 31</td></tr><tr><td>authtype</td><td>&lt;String></td><td>Read-only</td><td>Authentication type.<br>Possible values = ALL, ADNS, PROXY</td></tr><tr><td>vservername</td><td>&lt;String></td><td>Read-only</td><td>Virtual server name.</td></tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td></tr></tbody></table>
 ##Operations 
-<span>(click to see [Properties](#properties))</span>
+<span>(click to see [Properties](#prope))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD]()| [DELETE](#d)| [GET (ALL)](#get-)| [GET]()| [COUNT](#)
 
 
 Some options that you can use for each operations:
-<ul><li><p><b>Getting warnings in response:</b> NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b> NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b> In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
+<ul><li><p><b>Getting warnings in response:</b>NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b>NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b>In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
 
 
 
 ***Note:*** 
-Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+Mandatory parameters are marked in <span style="color:#FF0000;">red</span>and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
 ###add
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec
-HTTP Method: POST
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec
+<b>HTTP Method:</b>POST
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"dnsnaptrrec":{      "domain":<String_value>,      "order":<Double_value>,      "preference":<Double_value>,      "flags":<String_value>,      "services":<String_value>,      "regexp":<String_value>,      "replacement":<String_value>,      "ttl":<Double_value>}}```
-Response:
+<b>Request Payload: </b>```{"dnsnaptrrec":{<b>"domain":<String_value>,</b><b>"order":<Double_value>,</b><b>"preference":<Double_value>,</b>"flags":<String_value>,"services":<String_value>,"regexp":<String_value>,"replacement":<String_value>,"ttl":<Double_value>}}```
+<b>Response:</b>
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -42,13 +42,13 @@ HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;st
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;
-HTTP Method: DELETE
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;
+<b>HTTP Method:</b>DELETE
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
-Response:
+<b>Response:</b>
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -56,45 +56,45 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec
-Query-parameters:
-args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?args=domain:&lt;String_value&gt;,type:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec
+<b>Query-parameters:</b>
+<b>args</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>args=domain:&lt;String_value&gt;,type:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;</b>
 Use this query-parameter to get dnsnaptrrec resources based on additional properties.
 
 
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?attrs=property-name1,property-name2
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-filter
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?filter=property-name1:property-val1,property-name2:property-val2
+<b>filter</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>filter=property-name1:property-val1,property-name2:property-val2</b>
 Use this query-parameter to get the filtered set of dnsnaptrrec resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagination
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?pagesize=#no;pageno=#no
+<b>pagination</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>pagesize=#no;pageno=#no</b>
 Use this query-parameter to get the dnsnaptrrec resources in chunks.
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_value>,nodeid:<Double_value>      "order":<Double_value>,      "preference":<Double_value>,      "flags":<String_value>,      "services":<String_value>,      "regexp":<String_value>,      "replacement":<String_value>,      "ttl":<Double_value>,      "recordid":<Double_value>,      "authtype":<String_value>,      "ecssubnet":<String_value>,      "vservername":<String_value>}]}```
+<b>Response Payload: </b>```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_value>,nodeid:<Double_value>"order":<Double_value>,"preference":<Double_value>,"flags":<String_value>,"services":<String_value>,"regexp":<String_value>,"replacement":<String_value>,"ttl":<Double_value>,"recordid":<Double_value>,"authtype":<String_value>,"ecssubnet":<String_value>,"vservername":<String_value>}]}```
 
 
 
@@ -102,30 +102,30 @@ Response Payload: ```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_v
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;
-Query-parameters:
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;?attrs=property-name1,property-name2
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;
+<b>Query-parameters:</b>
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec/domain_value&lt;String&gt;?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_value>,nodeid:<Double_value>      "order":<Double_value>,      "preference":<Double_value>,      "flags":<String_value>,      "services":<String_value>,      "regexp":<String_value>,      "replacement":<String_value>,      "ttl":<Double_value>,      "recordid":<Double_value>,      "authtype":<String_value>,      "ecssubnet":<String_value>,      "vservername":<String_value>}]}```
+<b>Response Payload: </b>```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_value>,nodeid:<Double_value>"order":<Double_value>,"preference":<Double_value>,"flags":<String_value>,"services":<String_value>,"regexp":<String_value>,"replacement":<String_value>,"ttl":<Double_value>,"recordid":<Double_value>,"authtype":<String_value>,"ecssubnet":<String_value>,"vservername":<String_value>}]}```
 
 
 
@@ -133,18 +133,18 @@ Response Payload: ```{ "dnsnaptrrec": [ {domain:<String_value>,type:<String_v
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?count=yes
-HTTP Method: GET
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/dnsnaptrrec?<b>count=yes</b>
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: 
-{ "dnsnaptrrec": [ { "__count": "#no"} ] }
+<b>Response Payload: </b>```{ "dnsnaptrrec": [ { "__count": "#no"} ] }```
+
 
 

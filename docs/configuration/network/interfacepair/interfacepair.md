@@ -4,37 +4,37 @@ Configuration for "Interface Pair" resource.
 
 
 ##Properties 
-<span>(click to see [Operations](#operations))</span>
+<span>(click to see [Operations](#opera))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>The Interface pair id.&lt;br>Minimum value = 1&lt;br>Maximum value = 255</td><tr><tr><td>ifnum</td><td>&lt;String[]></td><td>Read-write</td><td>The constituent interfaces in the interface pair.&lt;br>Minimum length = 1</td><tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all member interfaces of this Interface Pair.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Data Type</th><th>Permissions</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>&lt;Double></td><td>Read-write</td><td>The Interface pair id.<br>Minimum value = 1<br>Maximum value = 255</td></tr><tr><td>ifnum</td><td>&lt;String[]></td><td>Read-write</td><td>The constituent interfaces in the interface pair.<br>Minimum length = 1</td></tr><tr><td>ifaces</td><td>&lt;String></td><td>Read-only</td><td>Names of all member interfaces of this Interface Pair.</td></tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td></tr></tbody></table>
 ##Operations 
-<span>(click to see [Properties](#properties))</span>
+<span>(click to see [Properties](#prope))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD]()| [DELETE](#d)| [GET (ALL)](#get-)| [GET]()| [COUNT](#)
 
 
 Some options that you can use for each operations:
-<ul><li><p><b>Getting warnings in response:</b> NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b> NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b> In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
+<ul><li><p><b>Getting warnings in response:</b>NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b>NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b>In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
 
 
 
 ***Note:*** 
-Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+Mandatory parameters are marked in <span style="color:#FF0000;">red</span>and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
 ###add
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair
-HTTP Method: POST
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair
+<b>HTTP Method:</b>POST
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"interfacepair":{      "id":<Double_value>,      "ifnum":<String[]_value>}}```
-Response:
+<b>Request Payload: </b>```{"interfacepair":{<b>"id":<Double_value>,</b><b>"ifnum":<String[]_value></b>}}```
+<b>Response:</b>
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -42,13 +42,13 @@ HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;st
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;
-HTTP Method: DELETE
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;
+<b>HTTP Method:</b>DELETE
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
-Response:
+<b>Response:</b>
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -56,40 +56,40 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair
-Query-parameters:
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?attrs=property-name1,property-name2
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair
+<b>Query-parameters:</b>
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-filter
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?filter=property-name1:property-val1,property-name2:property-val2
+<b>filter</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?<b>filter=property-name1:property-val1,property-name2:property-val2</b>
 Use this query-parameter to get the filtered set of interfacepair resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagination
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?pagesize=#no;pageno=#no
+<b>pagination</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?<b>pagesize=#no;pageno=#no</b>
 Use this query-parameter to get the interfacepair resources in chunks.
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "interfacepair": [ {      "id":<Double_value>,      "ifnum":<String[]_value>,      "ifaces":<String_value>}]}```
+<b>Response Payload: </b>```{ "interfacepair": [ {"id":<Double_value>,"ifnum":<String[]_value>,"ifaces":<String_value>}]}```
 
 
 
@@ -97,30 +97,30 @@ Response Payload: ```{ "interfacepair": [ {      "id":<Double_value>,      "
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;
-Query-parameters:
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;?attrs=property-name1,property-name2
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;
+<b>Query-parameters:</b>
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair/id_value&lt;Double&gt;?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "interfacepair": [ {      "id":<Double_value>,      "ifnum":<String[]_value>,      "ifaces":<String_value>}]}```
+<b>Response Payload: </b>```{ "interfacepair": [ {"id":<Double_value>,"ifnum":<String[]_value>,"ifaces":<String_value>}]}```
 
 
 
@@ -128,18 +128,18 @@ Response Payload: ```{ "interfacepair": [ {      "id":<Double_value>,      "
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?count=yes
-HTTP Method: GET
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/interfacepair?<b>count=yes</b>
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: 
-{ "interfacepair": [ { "__count": "#no"} ] }
+<b>Response Payload: </b>```{ "interfacepair": [ { "__count": "#no"} ] }```
+
 
 

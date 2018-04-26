@@ -4,37 +4,37 @@ Configuration for active ica connections resource.
 
 
 ##Properties 
-<span>(click to see [Operations](#operations))</span>
+<span>(click to see [Operations](#opera))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.&lt;br>Minimum length = 1</td><tr><tr><td>transproto</td><td>&lt;String></td><td>Read-write</td><td>Transport type for the existing Existing ICA conenction.&lt;br>Possible values = TCP, UDP</td><tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.&lt;br>Minimum value = 0&lt;br>Maximum value = 31</td><tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Terminate all active icaconnections.</td><tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td><tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td><tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td><tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.&lt;br>Range 1 - 65535&lt;br>* in CLI is represented as 65535 in NITRO API</td><tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Data Type</th><th>Permissions</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td>&lt;String></td><td>Read-write</td><td>User name for which to display connections.<br>Minimum length = 1</td></tr><tr><td>transproto</td><td>&lt;String></td><td>Read-write</td><td>Transport type for the existing Existing ICA conenction.<br>Possible values = TCP, UDP</td></tr><tr><td>nodeid</td><td>&lt;Double></td><td>Read-write</td><td>Unique number that identifies the cluster node.<br>Minimum value = 0<br>Maximum value = 31</td></tr><tr><td>all</td><td>&lt;Boolean></td><td>Read-write</td><td>Terminate all active icaconnections.</td></tr><tr><td>domain</td><td>&lt;String></td><td>Read-only</td><td>The domain name.</td></tr><tr><td>srcip</td><td>&lt;String></td><td>Read-only</td><td>The client IP address.</td></tr><tr><td>srcport</td><td>&lt;Integer></td><td>Read-only</td><td>The client port.<br>Range 1 - 65535<br>* in CLI is represented as 65535 in NITRO API</td></tr><tr><td>destip</td><td>&lt;String></td><td>Read-only</td><td>The CPS server IP address.</td></tr><tr><td>destport</td><td>&lt;Integer></td><td>Read-only</td><td>The CPS server port.<br>Range 1 - 65535<br>* in CLI is represented as 65535 in NITRO API</td></tr><tr><td>peid</td><td>&lt;Double></td><td>Read-only</td><td>Core id of the session owner.</td></tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td></tr></tbody></table>
 ##Operations 
-<span>(click to see [Properties](#properties))</span>
+<span>(click to see [Properties](#prope))</span>
 
 
-[KILL](#kill) | [GET (ALL)](#get-(all)) | [COUNT](#count)
+[KILL]()| [GET (ALL)](#get-)| [COUNT](#)
 
 
 Some options that you can use for each operations:
-<ul><li><p><b>Getting warnings in response:</b> NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b> NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b> In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
+<ul><li><p><b>Getting warnings in response:</b>NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b>NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b>In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
 
 
 
 ***Note:*** 
-Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+Mandatory parameters are marked in <span style="color:#FF0000;">red</span>and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
 ###kill
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?action=kill
-HTTP Method: POST
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>action=kill</b>
+<b>HTTP Method:</b>POST
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"vpnicaconnection":{      "username":<String_value>,      "transproto":<String_value>,      "all":<Boolean_value>}}```
-Response:
+<b>Request Payload: </b>```{"vpnicaconnection":{"username":<String_value>,"transproto":<String_value>,"all":<Boolean_value>}}```
+<b>Response:</b>
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -42,45 +42,45 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection
-Query-parameters:
-args
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?args=username:&lt;String_value&gt;,transproto:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection
+<b>Query-parameters:</b>
+<b>args</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>args=username:&lt;String_value&gt;,transproto:&lt;String_value&gt;,nodeid:&lt;Double_value&gt;</b>
 Use this query-parameter to get vpnicaconnection resources based on additional properties.
 
 
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?attrs=property-name1,property-name2
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-filter
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?filter=property-name1:property-val1,property-name2:property-val2
+<b>filter</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>filter=property-name1:property-val1,property-name2:property-val2</b>
 Use this query-parameter to get the filtered set of vpnicaconnection resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagination
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?pagesize=#no;pageno=#no
+<b>pagination</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>pagesize=#no;pageno=#no</b>
 Use this query-parameter to get the vpnicaconnection resources in chunks.
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "vpnicaconnection": [ {username:<String_value>,transproto:<String_value>,nodeid:<Double_value>      "domain":<String_value>,      "srcip":<String_value>,      "srcport":<Integer_value>,      "destip":<String_value>,      "destport":<Integer_value>,      "peid":<Double_value>}]}```
+<b>Response Payload: </b>```{ "vpnicaconnection": [ {username:<String_value>,transproto:<String_value>,nodeid:<Double_value>"domain":<String_value>,"srcip":<String_value>,"srcport":<Integer_value>,"destip":<String_value>,"destport":<Integer_value>,"peid":<Double_value>}]}```
 
 
 
@@ -88,18 +88,18 @@ Response Payload: ```{ "vpnicaconnection": [ {username:<String_value>,transpr
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?count=yes
-HTTP Method: GET
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/vpnicaconnection?<b>count=yes</b>
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: 
-{ "vpnicaconnection": [ { "__count": "#no"} ] }
+<b>Response Payload: </b>```{ "vpnicaconnection": [ { "__count": "#no"} ] }```
+
 
 

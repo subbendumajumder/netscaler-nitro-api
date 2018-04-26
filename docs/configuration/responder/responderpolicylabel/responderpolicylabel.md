@@ -4,37 +4,37 @@ Configuration for responder policy label resource.
 
 
 ##Properties 
-<span>(click to see [Operations](#operations))</span>
+<span>(click to see [Operations](#opera))</span>
 
 
-<table><thead><tr><th>Name</th><th> Data Type</th><th> Permissions</th><th>Description</th></tr></thead><tbody><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name for the responder policy label. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) hash (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the responder policy label is added.&lt;br>&lt;br>The following requirement applies only to the NetScaler CLI:&lt;br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my responder policy label" or my responder policy label).</td><tr><tr><td>policylabeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of responses sent by the policies bound to this policy label. Types are:&lt;br>* HTTP - HTTP responses. &lt;br>* OTHERTCP - NON-HTTP TCP responses.&lt;br>* SIP_UDP - SIP responses.&lt;br>* RADIUS - RADIUS responses.&lt;br>* MYSQL - SQL responses in MySQL format.&lt;br>* MSSQL - SQL responses in Microsoft SQL format.&lt;br>* NAT - NAT response.&lt;br>Default value: HTTP&lt;br>Possible values = HTTP, OTHERTCP, SIP_UDP, SIP_TCP, MYSQL, MSSQL, NAT, DIAMETER, RADIUS, DNS</td><tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this responder policy label.</td><tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the responder policy label. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) hash (#), space ( ), at (@), equals (=), colon (:), and underscore characters.&lt;br>Minimum length = 1</td><tr><tr><td>numpol</td><td>&lt;Double></td><td>Read-only</td><td>number of polices bound to label.</td><tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times policy label was invoked.</td><tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>Specifies the priority of the policy.</td><tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td><tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy label to invoke. Available settings function as follows:&lt;br>* vserver - Invoke an unnamed policy label associated with a virtual server.&lt;br>* policylabel - Invoke a user-defined policy label.&lt;br>Possible values = vserver, policylabel</td><tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-only</td><td>* If labelType is policylabel, name of the policy label to invoke. &lt;br>* If labelType is reqvserver or resvserver, name of the virtual server.</td><tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td><tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Data Type</th><th>Permissions</th><th>Description</th></tr></thead><tbody><tr><td>labelname</td><td>&lt;String></td><td>Read-write</td><td>Name for the responder policy label. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) hash (#), space ( ), at (@), equals (=), colon (:), and underscore characters. Cannot be changed after the responder policy label is added.<br><br>The following requirement applies only to the NetScaler CLI:<br>If the name includes one or more spaces, enclose the name in double or single quotation marks (for example, "my responder policy label" or my responder policy label').</td></tr><tr><td>policylabeltype</td><td>&lt;String></td><td>Read-write</td><td>Type of responses sent by the policies bound to this policy label. Types are:<br>* HTTP - HTTP responses. <br>* OTHERTCP - NON-HTTP TCP responses.<br>* SIP_UDP - SIP responses.<br>* RADIUS - RADIUS responses.<br>* MYSQL - SQL responses in MySQL format.<br>* MSSQL - SQL responses in Microsoft SQL format.<br>* NAT - NAT response.<br>Default value: HTTP<br>Possible values = HTTP, OTHERTCP, SIP_UDP, SIP_TCP, MYSQL, MSSQL, NAT, DIAMETER, RADIUS, DNS</td></tr><tr><td>comment</td><td>&lt;String></td><td>Read-write</td><td>Any comments to preserve information about this responder policy label.</td></tr><tr><td>newname</td><td>&lt;String></td><td>Read-write</td><td>New name for the responder policy label. Must begin with a letter, number, or the underscore character (_), and must contain only letters, numbers, and the hyphen (-), period (.) hash (#), space ( ), at (@), equals (=), colon (:), and underscore characters.<br>Minimum length = 1</td></tr><tr><td>numpol</td><td>&lt;Double></td><td>Read-only</td><td>number of polices bound to label.</td></tr><tr><td>hits</td><td>&lt;Double></td><td>Read-only</td><td>Number of times policy label was invoked.</td></tr><tr><td>priority</td><td>&lt;Double></td><td>Read-only</td><td>Specifies the priority of the policy.</td></tr><tr><td>gotopriorityexpression</td><td>&lt;String></td><td>Read-only</td><td>Expression specifying the priority of the next policy which will get evaluated if the current policy rule evaluates to TRUE.</td></tr><tr><td>labeltype</td><td>&lt;String></td><td>Read-only</td><td>Type of policy label to invoke. Available settings function as follows:<br>* vserver - Invoke an unnamed policy label associated with a virtual server.<br>* policylabel - Invoke a user-defined policy label.<br>Possible values = vserver, policylabel</td></tr><tr><td>invoke_labelname</td><td>&lt;String></td><td>Read-only</td><td>* If labelType is policylabel, name of the policy label to invoke. <br>* If labelType is reqvserver or resvserver, name of the virtual server.</td></tr><tr><td>__count</td><td>&lt;Double></td><td>Read-only</td><td>count parameter</td></tr></tbody></table>
 ##Operations 
-<span>(click to see [Properties](#properties))</span>
+<span>(click to see [Properties](#prope))</span>
 
 
-[ADD](#add) | [DELETE](#delete) | [RENAME](#rename) | [GET (ALL)](#get-(all)) | [GET](#get) | [COUNT](#count)
+[ADD]()| [DELETE](#d)| [RENAME](#r)| [GET (ALL)](#get-)| [GET]()| [COUNT](#)
 
 
 Some options that you can use for each operations:
-<ul><li><p><b>Getting warnings in response:</b> NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b> NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b> In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
+<ul><li><p><b>Getting warnings in response:</b>NITRO allows you to get warnings in an operation by specifying the "warning" query parameter as "yes". For example, to get warnings while connecting to the NetScaler appliance, the URL is as follows:</p><p>http://<span style="color:green;font-style:italic;">&lt;netscaler-ip-address&gt;</span>/nitro/v1/config/login?warning=yes</p><p>If any, the warnings are displayed in the response payload with the HTTP code "209 X-NITRO-WARNING".</p></li><li><p><b>Authenticated access for individual NITRO operations:</b>NITRO allows you to logon to the NetScaler appliance to perform individual operations. You can use this option instead of creating a NITRO session (using the login object) and then using that session to perform all operations,</p><p>To do this, you must specify the username and password in the request header of the NITRO request as follows:</p><p>X-NITRO-USER:<span style="color:green;font-style:italic;">&lt;username&gt;</span></p><p>X-NITRO-PASS:<span style="color:green;font-style:italic;">&lt;password&gt;</span></p><p><b>Note:</b>In such cases, make sure that the request header DOES not include the following:</p><p>Cookie:NITRO_AUTH_TOKEN=<span style="color:green;font-style:italic;">&lt;tokenvalue&gt;</span></p></li></ul>
 
 
 
 ***Note:*** 
-Mandatory parameters are marked in <span style="color:#FF0000;">red</span> and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
+Mandatory parameters are marked in <span style="color:#FF0000;">red</span>and placeholder content is marked in <span style="color:green;font-style:italic">&lt;green&gt;</span>.
 
 ###add
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel
-HTTP Method: POST
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel
+<b>HTTP Method:</b>POST
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"responderpolicylabel":{      "labelname":<String_value>,      "policylabeltype":<String_value>,      "comment":<String_value>}}```
-Response:
+<b>Request Payload: </b>```{"responderpolicylabel":{<b>"labelname":<String_value>,</b>"policylabeltype":<String_value>,"comment":<String_value>}}```
+<b>Response:</b>
 HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -42,13 +42,13 @@ HTTP Status Code on Success: 201 CreatedHTTP Status Code on Failure: 4xx &lt;st
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;
-HTTP Method: DELETE
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;
+<b>HTTP Method:</b>DELETE
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;
 
-Response:
+<b>Response:</b>
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -56,14 +56,14 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?action=rename
-HTTP Method: POST
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>action=rename</b>
+<b>HTTP Method:</b>POST
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Content-Type:application/json
 
-Request Payload: ```{"responderpolicylabel":{      "labelname":<String_value>,      "newname":<String_value>}}```
-Response:
+<b>Request Payload: </b>```{"responderpolicylabel":{<b>"labelname":<String_value>,</b><b>"newname":<String_value></b>}}```
+<b>Response:</b>
 HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error
 
 
@@ -71,40 +71,40 @@ HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel
-Query-parameters:
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?attrs=property-name1,property-name2
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel
+<b>Query-parameters:</b>
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-filter
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?filter=property-name1:property-val1,property-name2:property-val2
+<b>filter</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>filter=property-name1:property-val1,property-name2:property-val2</b>
 Use this query-parameter to get the filtered set of responderpolicylabel resources configured on NetScaler.Filtering can be done on any of the properties of the resource.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
-pagination
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?pagesize=#no;pageno=#no
+<b>pagination</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>pagesize=#no;pageno=#no</b>
 Use this query-parameter to get the responderpolicylabel resources in chunks.
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "responderpolicylabel": [ {      "labelname":<String_value>,      "policylabeltype":<String_value>,      "numpol":<Double_value>,      "hits":<Double_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "invoke_labelname":<String_value>,      "comment":<String_value>}]}```
+<b>Response Payload: </b>```{ "responderpolicylabel": [ {"labelname":<String_value>,"policylabeltype":<String_value>,"numpol":<Double_value>,"hits":<Double_value>,"priority":<Double_value>,"gotopriorityexpression":<String_value>,"labeltype":<String_value>,"invoke_labelname":<String_value>,"comment":<String_value>}]}```
 
 
 
@@ -112,30 +112,30 @@ Response Payload: ```{ "responderpolicylabel": [ {      "labelname":<String_v
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;
-Query-parameters:
-attrs
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;?attrs=property-name1,property-name2
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;
+<b>Query-parameters:</b>
+<b>attrs</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;?<b>attrs=property-name1,property-name2</b>
 Use this query parameter to specify the resource details that you want to retrieve.
 
 
-view
-http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;?view=summary
-Note: By default, the retrieved results are displayed in detail view (?view=detail).
+<b>view</b>
+http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel/labelname_value&lt;String&gt;?<b>view=summary</b>
+<b>Note:</b>By default, the retrieved results are displayed in detail view (?view=detail).
 
 
 
-HTTP Method: GET
-Request Headers:
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: ```{ "responderpolicylabel": [ {      "labelname":<String_value>,      "policylabeltype":<String_value>,      "numpol":<Double_value>,      "hits":<Double_value>,      "priority":<Double_value>,      "gotopriorityexpression":<String_value>,      "labeltype":<String_value>,      "invoke_labelname":<String_value>,      "comment":<String_value>}]}```
+<b>Response Payload: </b>```{ "responderpolicylabel": [ {"labelname":<String_value>,"policylabeltype":<String_value>,"numpol":<Double_value>,"hits":<Double_value>,"priority":<Double_value>,"gotopriorityexpression":<String_value>,"labeltype":<String_value>,"invoke_labelname":<String_value>,"comment":<String_value>}]}```
 
 
 
@@ -143,18 +143,18 @@ Response Payload: ```{ "responderpolicylabel": [ {      "labelname":<String_v
 
 
 
-URL: http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?count=yes
-HTTP Method: GET
-Request Headers:
+<b>URL:</b>http://&lt;netscaler-ip-address&gt;/nitro/v1/config/responderpolicylabel?<b>count=yes</b>
+<b>HTTP Method:</b>GET
+<b>Request Headers:</b>
 
 Cookie:NITRO_AUTH_TOKEN=&lt;tokenvalue&gt;Accept:application/json
 
-Response:
-HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the errorResponse Headers:
+<b>Response:</b>
+HTTP Status Code on Success: 200 OKHTTP Status Code on Failure: 4xx &lt;string&gt; (for general HTTP errors) or 5xx &lt;string&gt; (for NetScaler-specific errors). The response payload provides details of the error<b>Response Headers:</b>
 
 Content-Type:application/json
 
-Response Payload: 
-{ "responderpolicylabel": [ { "__count": "#no"} ] }
+<b>Response Payload: </b>```{ "responderpolicylabel": [ { "__count": "#no"} ] }```
+
 
 
