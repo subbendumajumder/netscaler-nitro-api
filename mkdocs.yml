@@ -1,5 +1,5 @@
-site_name: Citrix NetScaler 12.0 NITRO API Documentation  
-site_description: Citrix NetScaler 12.0 NITRO API Documentation
+site_name: Citrix NetScaler 12.1 NITRO API Documentation  
+site_description: Citrix NetScaler 12.1 NITRO API Documentation
 theme_dir: citrix-sdk
 markdown_extensions:
   - admonition

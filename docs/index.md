@@ -1,4 +1,4 @@
-# Citrix NetScaler 12.0 REST APIs - NITRO
+# Citrix NetScaler 12.1 REST APIs - NITRO
 The NetScaler NITRO protocol allows you to configure and monitor the NetScaler appliance programmatically by using Representational State Transfer (REST) interfaces. Therefore, NITRO applications can be developed in any programming language. Additionally, for applications that must be developed in Java or .NET or Python, NITRO APIs are exposed through relevant libraries that are packaged as separate Software Development Kits (SDKs).
 
 **How NITRO Works**
