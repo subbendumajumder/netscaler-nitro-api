@@ -11,6 +11,7 @@ markdown_extensions:
 pages:
 - NetScaler REST APIs - NITRO: index.md
 - Before you begin: before-you-begin.md
+- NITRO Changes Across Releases: nitro-changes-across-releases.md
 - Performing Basic NetScaler Operations: performing-basic-netscaler-operations.md
 - Performing NetScaler Resource Operations: performing-netscaler-resource-operations.md
 - Use cases: usecases.md
